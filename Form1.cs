@@ -14,11 +14,10 @@ namespace ssl_aimbot
     public class Form1 : Form
     {
         private IContainer components = (IContainer) null;
-        private int h, w, x, y, ph, degree, angle, power, wind;
+        private int h, w, x, y, ph, len, degree, angle, power, wind, mode, cs;
         private double g, v, r, ww;
-        private float len;
         private Label lpower, ldegree, lwind;
-
+        private const int maxmode = 1;
         [DllImport("user32.dll")]
         public static extern bool RegisterHotKey(IntPtr hWnd, int id, int fsModifiers, int vlc);
 
@@ -49,17 +48,34 @@ namespace ssl_aimbot
             RegisterHotKey(Handle, 2, 2, 83);
             RegisterHotKey(Handle, 3, 2, 65);
             RegisterHotKey(Handle, 4, 2, 68);
-            RegisterHotKey(Handle, 5, 2, 81);
-            RegisterHotKey(Handle, 7, 2, 39);
-            RegisterHotKey(Handle, 8, 2, 37);
-            RegisterHotKey(Handle, 9, 2, 38);
-            RegisterHotKey(Handle, 10, 2, 40);
-            RegisterHotKey(Handle, 11, 2, 69);
-            RegisterHotKey(Handle, 12, 2, 90);
-            RegisterHotKey(Handle, 13, 2, 70);
-            RegisterHotKey(Handle, 22, 2, 71);
-            RegisterHotKey(Handle, 23, 2, 72);
-            RegisterHotKey(Handle, 24, 2, 82);
+            RegisterHotKey(Handle, 5, 2, 80);
+            RegisterHotKey(Handle, 6, 2, 39);
+            RegisterHotKey(Handle, 7, 2, 37);
+            RegisterHotKey(Handle, 8, 2, 38);
+            RegisterHotKey(Handle, 9, 2, 40);
+            RegisterHotKey(Handle, 31, 6, 87);
+            RegisterHotKey(Handle, 32, 6, 83);
+            RegisterHotKey(Handle, 33, 6, 65);
+            RegisterHotKey(Handle, 34, 6, 68);
+            RegisterHotKey(Handle, 35, 6, 80);
+            RegisterHotKey(Handle, 36, 6, 39);
+            RegisterHotKey(Handle, 37, 6, 37);
+            RegisterHotKey(Handle, 38, 6, 38);
+            RegisterHotKey(Handle, 39, 6, 40);
+            RegisterHotKey(Handle, 10, 2, 69);
+            RegisterHotKey(Handle, 11, 2, 90);
+            RegisterHotKey(Handle, 12, 2, 70);
+            RegisterHotKey(Handle, 13, 2, 71);
+            RegisterHotKey(Handle, 14, 2, 72);
+            RegisterHotKey(Handle, 15, 2, 82);
+            RegisterHotKey(Handle, 16, 2, 77);
+            RegisterHotKey(Handle, 40, 6, 69);
+            RegisterHotKey(Handle, 41, 6, 90);
+            RegisterHotKey(Handle, 42, 6, 70);
+            RegisterHotKey(Handle, 43, 6, 71);
+            RegisterHotKey(Handle, 44, 6, 72);
+            RegisterHotKey(Handle, 45, 6, 82);
+            RegisterHotKey(Handle, 46, 6, 77);
             InitializeComponent();
         }
 
@@ -69,6 +85,7 @@ namespace ssl_aimbot
             w = Width;
             x = w / 2;
             y = h / 2;
+            mode = 0;
             angle = 85;
             degree = 85;
             power = 100;
@@ -78,7 +95,7 @@ namespace ssl_aimbot
             wind = 0;
             ww = 1.0 / 80.0;
             ph = 145;
-            len = 236f;
+            len = 236;
             lpower.Text = power.ToString() + "%";
             ldegree.Text = degree.ToString() + "°";
             lwind.Text = wind.ToString();
@@ -125,16 +142,28 @@ namespace ssl_aimbot
             var num2 = 0.0f;
             while ((double) num2 < 50.0)
             {
-                var single1 = Convert.ToSingle((double) x +
-                                                 ((double) power * v * (double) num2 * Math.Cos(num1)) +
-                                                 (0.5 * (double) wind * ww * (double) num2 * (double) num2));
-                var single2 = Convert.ToSingle((double) y -
-                                                 ((double) power * v * (double) num2 * Math.Sin(num1)) +
-                                                 (0.5 * g * (double) num2 * (double) num2));
-                if ((double) single2 <= (double) (h - ph))
-                    graphics.FillEllipse((Brush) solidBrush2, (float) ((double) single1 + (double) int16_1 - 1.0),
-                        (float) ((double) single2 - (double) int16_2 - 1.0), 2f, 2f);
-                num2 += 0.05f;
+                if (mode == 0)
+                {
+                    var single1 = Convert.ToSingle((double) x +
+                                                   ((double) power * v * (double) num2 * Math.Cos(num1)) +
+                                                   (0.5 * (double) wind * ww * (double) num2 * (double) num2));
+                    var single2 = Convert.ToSingle((double) y -
+                                                   ((double) power * v * (double) num2 * Math.Sin(num1)) +
+                                                   (0.5 * g * (double) num2 * (double) num2));
+                    if ((double) single2 <= (double) (h - ph))
+                        graphics.FillEllipse((Brush) solidBrush2, (float) ((double) single1 + (double) int16_1 - 1.0),
+                            (float) ((double) single2 - (double) int16_2 - 1.0), 2f, 2f);
+                    num2 += 0.05f;
+                }
+
+                if (mode == 1)
+                {
+                    graphics.FillEllipse((Brush) solidBrush2, x + len * (float)Math.Cos(Math.PI * angle / 180f) * num2, 
+                        y - len * (float)Math.Sin(Math.PI * angle / 180f) * num2, 2f, 2f);
+                    num2 += 0.03f;
+                }
+
+                
             }
 
             graphics.Dispose();
@@ -146,107 +175,91 @@ namespace ssl_aimbot
         {
             if (m.Msg == 786)
             {
-                switch (m.WParam.ToInt32())
+                cs = m.WParam.ToInt32();
+                if (cs == 1 || cs == 31) y -= cs == 1 ? 1 : 10;
+                if (cs == 2 || cs == 32) y += cs == 2 ? 1 : 10;
+                if (cs == 3 || cs == 33) x -= cs == 3 ? 1 : 10;
+                if (cs == 4 || cs == 34) x += cs == 4 ? 1 : 10;
+                if (cs == 5 || cs == 35) Close();
+                if (cs == 6 || cs == 36 || cs == 7 || cs == 37)
                 {
-                    case 1:
-                        --y;
-                        break;
-                    case 2:
-                        ++y;
-                        break;
-                    case 3:
-                        --x;
-                        break;
-                    case 4:
-                        ++x;
-                        break;
-                    case 5:
-                        Close();
-                        break;
-                    case 7:
-                        --angle;
-                        degree = angle;
-                        if (degree > 90)
-                            degree = 180 - degree;
-                        if (degree < -90)
-                            degree = -180 - degree;
-                        SendKeys.SendWait("{RIGHT}");
-                        ldegree.Text = degree.ToString() + "°";
-                        break;
-                    case 8:
-                        ++angle;
-                        degree = angle;
-                        if (degree > 90)
-                            degree = 180 - degree;
-                        if (degree < -90)
-                            degree = -180 - degree;
-                        SendKeys.SendWait("{LEFT}");
-                        ldegree.Text = degree.ToString() + "°";
-                        break;
-                    case 9:
-                        if (power < 100)
-                            ++power;
-                        SendKeys.SendWait("{UP}");
-                        lpower.Text = power.ToString() + "%";
-                        break;
-                    case 10:
-                        if (power > 0)
-                            --power;
-                        SendKeys.SendWait("{DOWN}");
-                        lpower.Text = power.ToString() + "%";
-                        break;
-                    case 11:
-                        x = Cursor.Position.X;
-                        y = Cursor.Position.Y - 22;
-                        break;
-                    case 12:
-                        len = 236;
-                        x = w / 2;
-                        y = h / 2;
-                        angle = 85;
-                        degree = 85;
-                        power = 100;
-                        wind = 0;
-                        lpower.Text = power.ToString() + "%";
-                        ldegree.Text = degree.ToString() + "°";
-                        lwind.Text = wind.ToString();
-                        break;
-                    case 13:
-                        try
+                    if (cs == 6 || cs == 36) angle -= cs == 6 ? 1 : 10;
+                    else if (cs == 7 || cs == 37) angle += cs == 7 ? 1 : 10;
+                    degree = angle;
+                    if (degree > 90) degree = 180 - degree;
+                    if (degree < -90) degree = -180 - degree;
+                    SendKeys.SendWait((cs == 6 || cs == 36) ? "{RIGHT}" : "{LEFT}");
+                    ldegree.Text = degree.ToString() + "°";
+                }
+
+                if (cs == 8 || cs == 38 || cs == 9 || cs == 39)
+                {
+                    if (power < 100 && cs == 8) power += 1;
+                    if (power <= 90 && cs == 38) power += 10;
+                    else if (power >= 90 && power < 100 && cs == 38) power = 100;
+                    if (power > 0 && cs == 9) power -= 1;
+                    if (power >= 10 && cs == 39) power -= 10;
+                    else if (power <= 10 && power > 0 && cs == 39) power = 0;
+                    SendKeys.SendWait((cs == 8 || cs == 38) ? "{UP}" : "{DOWN}");
+                    lpower.Text = power.ToString() + "%";
+                }
+
+                if (cs == 10 || cs == 40)
+                {
+                    x = Cursor.Position.X;
+                    y = Cursor.Position.Y - 22;
+                }
+
+                if (cs == 11 || cs == 41)
+                {
+                    len = 236;
+                    x = w / 2;
+                    y = h / 2;
+                    mode = 0;
+                    angle = 85;
+                    degree = 85;
+                    power = 100;
+                    wind = 0;
+                    lpower.Text = power.ToString() + "%";
+                    ldegree.Text = degree.ToString() + "°";
+                    lwind.Text = wind.ToString();
+                }
+
+                if (cs == 12 || cs == 42 || cs == 13 || cs == 43 || cs == 14 || cs == 44 || cs == 15 || cs == 45)
+                {
+                    try
+                    {
+                        if (cs == 12 || cs == 42)
                         {
                             wind = (int) Convert.ToInt16(Interaction.InputBox("Параметр ветра", "Ветер",
                                 Convert.ToString(wind), (w / 2) - 170, (h / 2) - 50));
                             lwind.Text = wind.ToString();
                         }
-                        catch (Exception) { }
-                        break;
-                    case 22:
-                        try
+
+                        if (cs == 13 || cs == 43)
                         {
                             angle = (int) Convert.ToInt16(Interaction.InputBox("Параметр угла", "Угол",
                                 Convert.ToString(degree), (w / 2) - 170, (h / 2) - 50));
                             ldegree.Text = angle.ToString();
                         }
-                        catch (Exception) { }
-                        break;
-                    case 23:
-                        try
+
+                        if (cs == 14 || cs == 44)
                         {
                             power = (int) Convert.ToInt16(Interaction.InputBox("Параметр силы", "Сила",
                                 Convert.ToString(power), (w / 2) - 170, (h / 2) - 50));
                             lpower.Text = power.ToString() + "%";
                         }
-                        catch (Exception) { }
-                        break;
-                    case 24:
-                        try
+
+                        if (cs == 15 || cs == 45)
                         {
-                            len = (int)Convert.ToInt16(Interaction.InputBox("Радиус круга", "Радиус",
+                            len = (int) Convert.ToInt16(Interaction.InputBox("Радиус круга", "Радиус",
                                 Convert.ToString(len), (w / 2) - 170, (h / 2) - 50));
                         }
-                        catch (Exception) { }
-                        break;
+                    }
+                    catch (Exception) { }
                 }
+
+                if (cs == 16 || cs == 46) mode += (mode < maxmode) ? 1 : -mode;
 
                 Invalidate();
                 Update();
@@ -311,7 +324,7 @@ namespace ssl_aimbot
             Controls.Add((Control) lpower);
             Controls.Add((Control) lwind);
             Name = nameof(Form1);
-            Text = "Aim Version 0.61";
+            Text = "Aim Version 0.68";
             TopMost = true;
             Icon = new Icon("..\\..\\Resources\\icon.ico");
             TransparencyKey = Color.Black;

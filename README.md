@@ -4,12 +4,18 @@ My **AIM** development for ShellShock Live. The project has a purely **education
 
 ***Ctrl+E***     Set sight to mouse position
 
-***Ctrl+W|A|S|D***    Per-pixel sight offset
+***Ctrl+(Shift)+W|A|S|D***    Per-pixel sight offset (Shift x 10)
 
-***Ctrl+F|G|H***     Set wind/angle/power
+***Ctrl+(Shift)+F|G|H***     Set wind/angle/power (Shift x 10)
 
-***Ctrl+Arrow Up|Down***     Power up/down
+***Ctrl+(Shift)+Arrow Up|Down***     Power up/down (Shift x 10)
 
-***Ctrl+Arrow Left|right***     Angle left/right
+***Ctrl+(Shift)+Arrow Left|Right***     Angle left/right (Shift x 10)
+
+***Ctrl+M***    Change mode
+
+***Ctrl+Z***    Reset
+
+***Ctrl+P***    Close
 
 If anyone can add the ability to draw rebound walls, black holes, portals, etc. - please send PR, I dont know C# at this level. If there is a desire to help - also glad to see Pull Request.
