@@ -14,11 +14,10 @@ namespace ssl_aimbot
     public class Form1 : Form
     {
         private IContainer components = (IContainer) null;
-        private int h, w, x, y, ph, degree, angle, power, wind, nangle, npower;
+        private int h, w, x, y, ph, degree, angle, power, wind;
         private double g, v, r, ww;
         private float len;
         private Label lpower, ldegree, lwind;
-        //private Label labelv, labelww, labelr, labelph;
 
         [DllImport("user32.dll")]
         public static extern bool RegisterHotKey(IntPtr hWnd, int id, int fsModifiers, int vlc);
@@ -61,8 +60,6 @@ namespace ssl_aimbot
             RegisterHotKey(Handle, 22, 2, 71);
             RegisterHotKey(Handle, 23, 2, 72);
             RegisterHotKey(Handle, 24, 2, 82);
-            RegisterHotKey(Handle, 25, 2, 67);
-            RegisterHotKey(Handle, 26, 2, 86);
             InitializeComponent();
         }
 
@@ -79,17 +76,11 @@ namespace ssl_aimbot
             v = 1.317;
             r = 20.0;
             wind = 0;
-            nangle = -1;
-            npower = -1;
             ww = 1.0 / 80.0;
             ph = 145;
             len = 236f;
             lpower.Text = power.ToString() + "%";
             ldegree.Text = degree.ToString() + "°";
-            //labelv.Text = v.ToString();
-            //labelww.Text = ww.ToString();
-            //labelr.Text = r.ToString();
-            //labelph.Text = ph.ToString();
             lwind.Text = wind.ToString();
         }
 
@@ -147,7 +138,6 @@ namespace ssl_aimbot
             }
 
             graphics.Dispose();
-            //pen.Dispose();
             solidBrush1.Dispose();
             solidBrush2.Dispose();
         }
@@ -217,8 +207,6 @@ namespace ssl_aimbot
                         degree = 85;
                         power = 100;
                         wind = 0;
-                        nangle = -1;
-                        npower = -1;
                         lpower.Text = power.ToString() + "%";
                         ldegree.Text = degree.ToString() + "°";
                         lwind.Text = wind.ToString();
@@ -258,54 +246,6 @@ namespace ssl_aimbot
                         }
                         catch (Exception) { }
                         break;
-                    case 25:
-                        try
-                        {
-                            nangle = (int)Convert.ToInt16(Interaction.InputBox("Требуемый угол", "Требуемый угол",
-                                Convert.ToString(nangle), (w / 2) - 170, (h / 2) - 50));
-                        }
-                        catch (Exception) { }
-                        break;
-                    case 26:
-                        try
-                        {
-                            npower = (int)Convert.ToInt16(Interaction.InputBox("Требуемая сила", "Требуемая сила",
-                                Convert.ToString(npower), (w / 2) - 170, (h / 2) - 50));
-                        }
-                        catch (Exception) { }
-                        break;
-                    //case 14:
-                    //    v += 0.001;
-                    //    labelv.Text = v.ToString();
-                    //    break;
-                    //case 15:
-                    //    v -= 0.001;
-                    //    labelv.Text = v.ToString();
-                    //    break;
-                    //case 16:
-                    //    ww += 0.0001;
-                    //    labelww.Text = ww.ToString();
-                    //    break;
-                    //case 17:
-                    //    ww -= 0.0001;
-                    //    labelww.Text = ww.ToString();
-                    //    break;
-                    //case 18:
-                    //    r += 0.1;
-                    //    labelr.Text = wind.ToString();
-                    //    break;
-                    //case 19:
-                    //    r -= 0.1;
-                    //    labelr.Text = wind.ToString();
-                    //    break;
-                    //case 20:
-                    //    ++ph;
-                    //    labelph.Text = ph.ToString();
-                    //    break;
-                    //case 21:
-                    //    --ph;
-                    //    labelph.Text = ph.ToString();
-                    //    break;
                 }
 
                 Invalidate();
@@ -326,10 +266,6 @@ namespace ssl_aimbot
         {
             lpower = new Label();
             ldegree = new Label();
-            //labelww = new Label();
-            //labelv = new Label();
-            //labelr = new Label();
-            //labelph = new Label();
             lwind = new Label();
             SuspendLayout();
 
@@ -367,69 +303,17 @@ namespace ssl_aimbot
             lwind.TextAlign = ContentAlignment.MiddleCenter;
             lwind.Visible = true;
 
-            //labelww.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            //labelww.BackColor = Color.FromArgb((int) byte.MaxValue, 203, 203);
-            //labelww.Font = new Font("Microsoft Sans Serif", 11f, FontStyle.Bold, GraphicsUnit.Point, (byte) 204);
-            //labelww.ForeColor = Color.FromArgb(144, 10, 10);
-            //labelww.Location = new Point(246, 366);
-            //labelww.Margin = new Padding(0);
-            //labelww.Name = "labelww";
-            //labelww.Size = new Size(81, 30);
-            //labelww.TabIndex = 3;
-            //labelww.TextAlign = ContentAlignment.MiddleCenter;
-            //labelww.Visible = false;
-
-            //labelv.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            //labelv.BackColor = Color.FromArgb((int) byte.MaxValue, 203, 203);
-            //labelv.Font = new Font("Microsoft Sans Serif", 11f, FontStyle.Bold, GraphicsUnit.Point, (byte) 204);
-            //labelv.ForeColor = Color.FromArgb(144, 10, 10);
-            //labelv.Location = new Point(246, 321);
-            //labelv.Margin = new Padding(0);
-            //labelv.Name = "labelv";
-            //labelv.Size = new Size(81, 30);
-            //labelv.TabIndex = 2;
-            //labelv.TextAlign = ContentAlignment.MiddleCenter;
-            //labelv.Visible = false;
-
-            //labelph.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            //labelph.BackColor = Color.FromArgb((int) byte.MaxValue, 203, 203);
-            //labelph.Font = new Font("Microsoft Sans Serif", 11f, FontStyle.Bold, GraphicsUnit.Point, (byte) 204);
-            //labelph.ForeColor = Color.FromArgb(144, 10, 10);
-            //labelph.Location = new Point(443, 366);
-            //labelph.Margin = new Padding(0);
-            //labelph.Name = "labelph";
-            //labelph.Size = new Size(73, 30);
-            //labelph.TabIndex = 5;
-            //labelph.TextAlign = ContentAlignment.MiddleCenter;
-            //labelph.Visible = false;
-
-            //labelr.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            //labelr.BackColor = Color.FromArgb(255, 203, 203);
-            //labelr.Font = new Font("Microsoft Sans Serif", 11f, FontStyle.Bold, GraphicsUnit.Point, (byte) 204);
-            //labelr.ForeColor = Color.FromArgb(144, 10, 10);
-            //labelr.Location = new Point(430, 320);
-            //labelr.Margin = new Padding(0);
-            //labelr.Name = "labelr";
-            //labelr.Size = new Size(70, 30);
-            //labelr.TabIndex = 4;
-            //labelr.TextAlign = ContentAlignment.MiddleCenter;
-            //labelr.Visible = false;
-
             AutoScaleDimensions = new SizeF(6f, 13f);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
             ClientSize = new Size(784, 412);
-            //Controls.Add((Control) labelph);
-            //Controls.Add((Control) labelr);
-            //Controls.Add((Control) labelww);
-            //Controls.Add((Control) labelv);
             Controls.Add((Control) ldegree);
             Controls.Add((Control) lpower);
             Controls.Add((Control) lwind);
             Name = nameof(Form1);
-            Text = "Aim Version 0.58";
+            Text = "Aim Version 0.61";
             TopMost = true;
-            //Icon = new Icon("icon.ico");
+            Icon = new Icon("..\\..\\Resources\\icon.ico");
             TransparencyKey = Color.Black;
             WindowState = FormWindowState.Maximized;
             Shown += new EventHandler(Form1_Shown);
