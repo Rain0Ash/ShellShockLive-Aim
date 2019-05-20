@@ -1,6 +1,6 @@
 My **AIM** development for ShellShock Live. The project has a purely **educational** purpose, and I urge **NOT** to use it when playing with other players.
 
-![Guide](https://github.com/Rain0Ash/ShellShockLive-Aim/blob/master/guide.png)
+![Guide](https://github.com/Rain0Ash/ShellShockLive-Aim/blob/develop/guide.png)
 
 ***Ctrl+[Shift]+E***     Set sight to mouse position
 
