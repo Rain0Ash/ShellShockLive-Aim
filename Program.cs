@@ -3,6 +3,8 @@
 
 using System;
 using System.Windows.Forms;
+using System.Windows.Forms.VisualStyles;
+
 namespace ssl_aimbot
 {
   internal static class Program
@@ -12,7 +14,7 @@ namespace ssl_aimbot
     {
       Application.EnableVisualStyles();
       Application.SetCompatibleTextRenderingDefault(false);
-      Application.Run((Form) new Form1());
+      Application.Run((Form) new MainForm());
     }
   }
 }

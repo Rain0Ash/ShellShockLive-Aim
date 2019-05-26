@@ -1,21 +1,39 @@
 My **AIM** development for ShellShock Live. The project has a purely **educational** purpose, and I urge **NOT** to use it when playing with other players.
 
-![Guide](https://github.com/Rain0Ash/ShellShockLive-Aim/blob/master/img/index.png)
+![Guide](https://github.com/Rain0Ash/ShellShockLive-Aim/blob/develop/guide.png)
 
-***Ctrl+E***     Set sight to mouse position
+Now setting up for 1366x768 game resolution. Other screen resolutions will be available soon (given the speed of development).
+
+***Ctrl+[Shift]+E***     Set sight to mouse position
 
 ***Ctrl+(Shift)+W|A|S|D***    Per-pixel sight offset (Shift x 10)
-
-***Ctrl+(Shift)+F|G|H***     Set wind/angle/power (Shift x 10)
 
 ***Ctrl+(Shift)+Arrow Up|Down***     Power up/down (Shift x 10)
 
 ***Ctrl+(Shift)+Arrow Left|Right***     Angle left/right (Shift x 10)
 
-***Ctrl+M***    Change mode
+***Ctrl+[Shift]+F|G|H***     Set value of wind/angle/power
 
-***Ctrl+Z***    Reset
+***Ctrl+[Shift]+M***    Change guidance to the next mode (standart/line/+will be soon)
 
-***Ctrl+P***    Close
+***Ctrl+[Shift]+Z***    Reset all
 
-If anyone can add the ability to draw rebound walls, black holes, portals, etc. - please send PR, I dont know C# at this level. If there is a desire to help - also glad to see Pull Request.
+***Ctrl+[Shift]+Q***    Close
+
+
+
+***Conceptual functions will be soon (maybe), because i have problems with creating correct math formula. If you know how to do it, please create pull request.***
+
+***!CONCEPTUAL! Ctrl+(Shift)+P***     Set position of first/second portal. Will be soon.
+
+***!CONCEPTUAL! Ctrl+Alt+P***     Set portal radius. Will be soon.
+
+***!CONCEPTUAL! Ctrl+Alt+Shift+P***     Reset portals. Will be soon.
+
+***!CONCEPTUAL! Ctrl+[Shift]+B***     Set position of black hole. Will be soon.
+
+***!CONCEPTUAL! Ctrl+Alt+B***     Set black hole radius. Will be soon.
+
+***!CONCEPTUAL! Ctrl+Alt+Shift+B***     Reset black hole. Will be soon.
+
+If anyone want to help with portals, drawing rebound walls, black holes or something another - please send PR, because without help - development is very slow (Especially considering my knowledge of mathematics (I already figured out a bit with C#)).
