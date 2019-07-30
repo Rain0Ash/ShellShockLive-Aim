@@ -5,7 +5,7 @@ using System;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
 
-namespace ssl_aimbot
+namespace Ruler
 {
   internal static class Program
   {

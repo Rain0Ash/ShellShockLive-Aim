@@ -5,7 +5,7 @@ using System.CodeDom.Compiler;
 using System.Configuration;
 using System.Runtime.CompilerServices;
 
-namespace ssl_aimbot.Properties
+namespace Ruler.Properties
 {
   [CompilerGenerated]
   [GeneratedCode("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "10.0.0.0")]

@@ -11,7 +11,7 @@
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
-    <RootNamespace>ssl_aimbot</RootNamespace>
+    <RootNamespace>Ruler</RootNamespace>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
@@ -75,14 +75,23 @@
   <PropertyGroup>
     <ApplicationIcon>icon.ico</ApplicationIcon>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Ruler.Program</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="System.Data" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System" />
     <Reference Include="System.Drawing" />
     <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form.cs" />
+    <Compile Include="Common\Localization.cs" />
+    <Compile Include="Ruler\BlackHole\BlackHole.cs" />
+    <Compile Include="Ruler\Form.cs" />
+    <Compile Include="Ruler\Localization\RulerLocalization.cs" />
+    <Compile Include="Ruler\Portal\Portal.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -90,6 +99,19 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Properties\Settings.cs" />
+    <Compile Include="Ruler\Rebound\ReboundCircle.cs" />
+    <Compile Include="Ruler\Rebound\ReboundWall.cs" />
+    <Compile Include="Ruler\Sight\Sight.cs" />
+    <Compile Include="Ruler\Trajectory\Guidance.cs" />
+    <Compile Include="Ruler\Trajectory\Guidance\Direct.cs" />
+    <Compile Include="Ruler\Trajectory\Guidance\Parabola.cs" />
+    <Compile Include="Ruler\Trajectory\Trajectory.cs" />
+    <Compile Include="Starter\Starter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Starter\Starter.Designer.cs">
+      <DependentUpon>Starter.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -99,6 +121,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Starter\Starter.resx">
+      <DependentUpon>Starter.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
