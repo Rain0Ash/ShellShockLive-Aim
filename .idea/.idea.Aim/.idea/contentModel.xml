@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\Rain0Ash\.Rider2019.1\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Rain0Ash\.Rider2019.1\system\resharper-host\local\Transient\ReSharperHost\v191\SolutionCaches\_Aim.-192630232.00" t="ExcludeRecursive" />
+    <e p="H:\GitHub\ShellShockLive-Aim" t="IncludeRecursive">
+      <e p="Aim.csproj" t="IncludeRecursive" />
+      <e p="Aim.sln" t="IncludeFlat" />
+      <e p="app.config" t="Include" />
+      <e p="bin" t="ExcludeRecursive" />
+      <e p="Common" t="Include">
+        <e p="Hash.cs" t="Include" />
+        <e p="ImagedComboBox.cs" t="Include" />
+        <e p="LanguageFlags.cs" t="Include" />
+        <e p="Localization.cs" t="Include" />
+        <e p="Settings.cs" t="Include" />
+        <e p="Singleton.cs" t="Include" />
+      </e>
+      <e p="icon.ico" t="Include" />
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="packages.config" t="Include" />
+      <e p="Program.cs" t="Include" />
+      <e p="Properties" t="Include">
+        <e p="Resources.Designer.cs" t="Include" />
+        <e p="Resources.resx" t="Include" />
+        <e p="Settings.cs" t="Include" />
+      </e>
+      <e p="Resources" t="Include">
+        <e p="icon.ico" t="Include" />
+      </e>
+      <e p="Ruler" t="Include">
+        <e p="BlackHole" t="Include">
+          <e p="BlackHole.cs" t="Include" />
+        </e>
+        <e p="Localization" t="Include">
+          <e p="RulerLocalization.cs" t="Include" />
+        </e>
+        <e p="Portal" t="Include">
+          <e p="Portal.cs" t="Include" />
+        </e>
+        <e p="Rebound" t="Include">
+          <e p="ReboundCircle.cs" t="Include" />
+          <e p="ReboundWall.cs" t="Include" />
+        </e>
+        <e p="Ruler.cs" t="Include" />
+        <e p="Sight" t="Include">
+          <e p="Sight.cs" t="Include" />
+        </e>
+        <e p="Trajectory" t="Include">
+          <e p="Guidance" t="Include">
+            <e p="Direct.cs" t="Include" />
+            <e p="Parabola.cs" t="Include" />
+          </e>
+          <e p="Guidance.cs" t="Include" />
+          <e p="Trajectory.cs" t="Include" />
+        </e>
+      </e>
+      <e p="Starter" t="Include">
+        <e p="Licence.cs" t="Include" />
+        <e p="Starter.cs" t="Include" />
+        <e p="Starter.Designer.cs" t="Include" />
+        <e p="Starter.resx" t="Include" />
+        <e p="StarterLocalization.cs" t="Include" />
+      </e>
+    </e>
+  </component>
+</project>

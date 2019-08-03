@@ -79,17 +79,30 @@
     <StartupObject>Ruler.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System.Data" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System" />
     <Reference Include="System.Drawing" />
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\Forms\ImagedComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Common\Forms\WaterMarkTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Common\LanguageFlags.cs" />
+    <Compile Include="Common\Hash.cs" />
+    <Compile Include="Common\Settings.cs" />
     <Compile Include="Common\Localization.cs" />
+    <Compile Include="Common\Singleton.cs" />
     <Compile Include="Ruler\BlackHole\BlackHole.cs" />
-    <Compile Include="Ruler\Form.cs" />
+    <Compile Include="Ruler\Ruler.cs" />
     <Compile Include="Ruler\Localization\RulerLocalization.cs" />
     <Compile Include="Ruler\Portal\Portal.cs" />
     <Compile Include="Program.cs" />
@@ -106,6 +119,8 @@
     <Compile Include="Ruler\Trajectory\Guidance\Direct.cs" />
     <Compile Include="Ruler\Trajectory\Guidance\Parabola.cs" />
     <Compile Include="Ruler\Trajectory\Trajectory.cs" />
+    <Compile Include="Starter\Licence.cs" />
+    <Compile Include="Starter\Localization\StarterLocalization.cs" />
     <Compile Include="Starter\Starter.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -128,6 +143,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="icon.ico" />
+    <None Include="packages.config" />
     <None Include="Resources\icon.ico" />
   </ItemGroup>
   <ItemGroup>

@@ -1,5 +1,6 @@
-﻿// This is an open source non-commercial project. Dear PVS-Studio, please check it.
-// PVS-Studio Static Code Analyzer for C, C++ and C#: http://www.viva64.com
+﻿// This is an independent project of an individual developer. Dear PVS-Studio, please check it.
+// PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
+
 // TODO: Do portals, black holes and rebound walls. Do GUI for control this objects by mouse. Do auto set value of wind, auto setup objects and user tank position.
 // TODO: Дописать порталы и черные дыры. Добавить предустановленные режимы экрана. Сделать дебаг-мод. Сделать стены. Сделать графический интерфейс. Переделать с рисования на рендеринг с фпс. [Computer Vision] Сделать автоопределение ветра, автонаводку, автоопределение позиции танка, автоустановку объектов, поиск оптимального пути снаряда.
 using Microsoft.VisualBasic;
@@ -25,21 +26,21 @@ namespace Ruler
             return value;
         }
     }
-    public class MainForm : Form
+    public class Ruler : Form
     {
-        public Boolean IsDebugged = false;
+        public Boolean IsDebugged, IsDisguise, IsPremium = false;
         private readonly IContainer components = null;
         private Int32 ph, angle, power, wind, guidanceMode;
         private Double gravity, velocity, radius, windw;
         private (Int32 X, Int32 Y, Int32 Radius) sight, blackHole;
         private ((Int32 X, Int32 Y) FirstPortal, (Int32 X, Int32 Y) SecondPortal, Int32 Radius) portal;
         private (Single X, Single Y) point;
-        private readonly RulerLocalization localization = new RulerLocalization(CultureInfo.CurrentCulture.ThreeLetterISOLanguageName);
+        private readonly RulerLocalization localization;
         private const Int32 MaxGuidanceMode = 1;
         private const Int32 Alt = 1, Ctrl = 2, Shift = 4;
          private const Int32 SightUp = 1, SightDown = 2, SightLeft = 3, SightRight = 4, AimQuit = 5, AngleLeft = 6, AngleRight = 7, PowerUp = 8, PowerDown = 9, SetSightPosition = 10, AimReset = 11, SetWind = 12, SetAngle = 13, SetPower = 14, SetRadius = 15, ChangeGuidanceMode = 16, SightUpShift = 31, SightDownShift = 32, SightLeftShift = 33, SightRightShift = 34, AimQuitShift = 35, AngleLeftShift = 36, AngleRightShift = 37, PowerUpShift = 38, PowerDownShift = 39, SetSightPositionShift = 40, AimResetShift = 41, SetWindShift = 42, SetAngleShift = 43, SetPowerShift = 44, SetRadiusShift = 45, ChangeGuidanceModeShift = 46, SetPortalRadius = 60, SetFirstPortal = 61, SetSecondPortal = 62, ResetPortals = 63, SetBlackHoleRadius = 64, SetBlackHole = 65, SetBlackHoleShift = 66, ResetBlackHole = 67;
         private const Double ProgramVersion = 0.78;
-        private static readonly Dictionary<String, (Int32 Lenght, Int32 PointHeight, Double Gravity, Double Velocity, Double Radius, Double WindW, Int32 PortalRadius, Int32 BlackHoleRadius)> Resolutions = new Dictionary<String, (Int32 Lenght, Int32 PointHeight, Double gravity, Double Velocity, Double Radius, Double WindW, Int32 PortalRadius, Int32 BlackHoleRadius)>
+        private static readonly Dictionary<String, (Int32 Length, Int32 PointHeight, Double Gravity, Double Velocity, Double Radius, Double WindW, Int32 PortalRadius, Int32 BlackHoleRadius)> Resolutions = new Dictionary<String, (Int32 Length, Int32 PointHeight, Double gravity, Double Velocity, Double Radius, Double WindW, Int32 PortalRadius, Int32 BlackHoleRadius)>
         {
             {"1280x1024", (220, 145, 9.8d, 1.272d, 19.9d, 1.0d/80.0d, 50, 50)},
             {"1366x768", (236, 145, 9.8d, 1.317d, 20.0d, 1.0d/80.0d, 50, 50)},
@@ -48,7 +49,7 @@ namespace Ruler
             {"1920x1080", (300, 165, 9.8d, 1.559d, 28.0d, 1.0d/80.0d, 50, 50)}, //can't check params
             {"2560x1440", (350, 240, 9.8d, 1.8d, 37.0d, 1.0d/80.0d, 50, 50)} //can't check params
         };
-        private (Int32 Lenght, Int32 PointHeight, Double Gravity, Double Velocity, Double Radius, Double WindW, Int32 PortalRadius, Int32 BlackHoleRadius) Resolution = Resolutions["1366x768"];
+        private (Int32 Length, Int32 PointHeight, Double Gravity, Double Velocity, Double Radius, Double WindW, Int32 PortalRadius, Int32 BlackHoleRadius) Resolution = Resolutions["1366x768"];
         private Label labelPower, labelAngle, labelWind;
         [DllImport("user32.dll")]
         private static extern Boolean RegisterHotKey(IntPtr hWnd, Int32 id, Int32 fsModifiers, Int32 vlc);
@@ -56,7 +57,7 @@ namespace Ruler
         // private static extern Boolean UnregisterHotKey(IntPtr hWnd, Int32 id);
 
         [DllImport("user32.dll")]
-        static extern Int32 SetWindowText(IntPtr hWnd, String text);
+        private static extern Int32 SetWindowText(IntPtr hWnd, String text);
 
         protected override Boolean ProcessDialogKey(Keys keyData)
         {
@@ -75,9 +76,15 @@ namespace Ruler
                 return createParams;
             }
         }
-        internal MainForm()
+        internal Ruler(String languageCode = null, Boolean isDisguise = false, Boolean isPremium = false)
         {
-            SetWindowText(Handle, "notepad.exe");
+            IsDisguise = isDisguise;
+            IsPremium = isPremium;
+            localization = languageCode == null ? new RulerLocalization(CultureInfo.CurrentCulture.TwoLetterISOLanguageName) : new RulerLocalization(languageCode);
+            if (IsDisguise)
+            {
+                SetWindowText(Handle, "notepad.exe");
+            }
 
             RegisterHotKey(Handle, SightUp, Ctrl, 'W');
             RegisterHotKey(Handle, SightLeft, Ctrl, 'A');
@@ -89,14 +96,14 @@ namespace Ruler
             RegisterHotKey(Handle, SightDownShift, Ctrl+Shift, 'S');
             RegisterHotKey(Handle, SightRightShift, Ctrl+Shift, 'D');
             RegisterHotKey(Handle, AimQuitShift, Ctrl+Shift, 'Q');
-            RegisterHotKey(Handle, AngleLeft, Ctrl, '←' - '←' + '\'');
-            RegisterHotKey(Handle, AngleRight, Ctrl, '→' - '→' + '%');
-            RegisterHotKey(Handle, PowerUp, Ctrl, '↑' - '↑' + '&');
-            RegisterHotKey(Handle, PowerDown, Ctrl, '↓' - '↓' + '(');
-            RegisterHotKey(Handle, AngleLeftShift, Ctrl+Shift, '←' - '←' + '\'');
-            RegisterHotKey(Handle, AngleRightShift, Ctrl+Shift, '→' - '→' + '%');
-            RegisterHotKey(Handle, PowerUpShift, Ctrl+Shift, '↑' - '↑' + '&');
-            RegisterHotKey(Handle, PowerDownShift, Ctrl+Shift, '↓' - '↓' + '(');
+            RegisterHotKey(Handle, AngleLeft, Ctrl, '\'');
+            RegisterHotKey(Handle, AngleRight, Ctrl, '%');
+            RegisterHotKey(Handle, PowerUp, Ctrl, '&');
+            RegisterHotKey(Handle, PowerDown, Ctrl, '(');
+            RegisterHotKey(Handle, AngleLeftShift, Ctrl+Shift, '\'');
+            RegisterHotKey(Handle, AngleRightShift, Ctrl+Shift, '%');
+            RegisterHotKey(Handle, PowerUpShift, Ctrl+Shift, '&');
+            RegisterHotKey(Handle, PowerDownShift, Ctrl+Shift, '(');
             RegisterHotKey(Handle, SetSightPosition, Ctrl, 'E');
             RegisterHotKey(Handle, AimReset, Ctrl, 'Z');
             RegisterHotKey(Handle, SetWind, Ctrl, 'F');
@@ -124,8 +131,7 @@ namespace Ruler
 
         private void Main_Form_Init(Object sender = null, EventArgs e = null)
         {
-            localization.UpdateLocalization(CultureInfo.CurrentCulture.ThreeLetterISOLanguageName);
-            sight = (X : Width / 2, Y : Height / 2, Radius : Resolution.Lenght);
+            sight = (X : Width / 2, Y : Height / 2, Radius : Resolution.Length);
             guidanceMode = 0;
             angle = 85;
             power = 100;
@@ -456,7 +462,7 @@ namespace Ruler
             Controls.Add((Control) labelPower);
             Controls.Add((Control) labelWind);
             FormBorderStyle = FormBorderStyle.None;
-            Name = nameof(MainForm);
+            Name = nameof(Ruler);
             Text = $@"Aim Version {ProgramVersion.ToString(CultureInfo.InvariantCulture)}";
             TopMost = true;
             Icon = Resources.icon;
