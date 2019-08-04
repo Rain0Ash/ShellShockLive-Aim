@@ -1,18 +1,14 @@
-﻿using System.Reflection;
+﻿// This is an independent project of an individual developer. Dear PVS-Studio, please check it.
+// PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
+
+using System.Reflection;
 
 namespace Common
 {
-    /// <summary>
-    /// Base class used for singletons
-    /// </summary>
-    /// <typeparam name="T">The class type</typeparam>
     public class Singleton<T> where T : class
     {
         private static T _instance;
 
-        /// <summary>
-        /// Gets the instance of the singleton
-        /// </summary>
         public static T Instance
         {
             get

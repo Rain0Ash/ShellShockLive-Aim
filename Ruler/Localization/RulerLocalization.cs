@@ -26,9 +26,9 @@ namespace Ruler
 
         public RulerLocalization UpdateLocalization(String cultureInfo = null)
         {
-            culture = cultureInfo ?? CultureInfo.CurrentCulture.TwoLetterISOLanguageName;
+            culture = cultureInfo ?? GetCurrentCulture();
 
-            Angle = LocalizedString(new CultureStrings(
+            Angle = LocalizedString(new Localization.CultureStrings(
                 "Angle",
                 "Угол"));
 

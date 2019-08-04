@@ -13,6 +13,7 @@ using System.Globalization;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using Ruler.Properties;
+using Common;
 
 namespace Ruler
 {
@@ -28,7 +29,8 @@ namespace Ruler
     }
     public class Ruler : Form
     {
-        public Boolean IsDebugged, IsDisguise, IsPremium = false;
+        public Boolean IsDebugged, IsDisguise = false;
+        private Licence licence;
         private readonly IContainer components = null;
         private Int32 ph, angle, power, wind, guidanceMode;
         private Double gravity, velocity, radius, windw;
@@ -76,11 +78,11 @@ namespace Ruler
                 return createParams;
             }
         }
-        internal Ruler(String languageCode = null, Boolean isDisguise = false, Boolean isPremium = false)
+        internal Ruler(Licence licence, String languageCode = null, Boolean isDisguise = false)
         {
             IsDisguise = isDisguise;
-            IsPremium = isPremium;
-            localization = languageCode == null ? new RulerLocalization(CultureInfo.CurrentCulture.TwoLetterISOLanguageName) : new RulerLocalization(languageCode);
+            this.licence = licence;
+            localization = languageCode != null ? new RulerLocalization(languageCode) : new RulerLocalization();
             if (IsDisguise)
             {
                 SetWindowText(Handle, "notepad.exe");

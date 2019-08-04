@@ -3,6 +3,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -10,8 +11,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Common;
-using Ruler.Forms;
-using Hash = Common.Hash;
+using Starter.Localization;
 
 namespace Ruler.Starter
 {
@@ -21,6 +21,7 @@ namespace Ruler.Starter
 
         public Starter()
         {
+            Process starter = Process.GetCurrentProcess();
             InitializeComponent();
         }
 
@@ -123,17 +124,17 @@ namespace Ruler.Starter
                 return;
             }
 
-            String isValidKeyID = Hash.Sha256(LicenceID.Text + "@" + LicenceKey.Text);
 
-            if (!Licence.ValidHash.Contains(isValidKeyID))
+            Licence licence = new Licence(LicenceID.Text, LicenceKey.Text);
+            if (!licence.IsValid())
             {
                 await invalidMessage(localization.InvalidKeyID);
                 return;
             }
 
             Hide();
-            Form ruler = new Ruler(CountryData.EnglishNameByIso2.FirstOrDefault(x => x.Value == LanguageComboBox.Text).Key.ToLower(),
-                IsDisguiseRuler.Checked, isValidKeyID != Licence.ValidHash[0]);
+            Form ruler = new Ruler(licence, CountryData.EnglishNameByIso2.FirstOrDefault(x => x.Value == LanguageComboBox.Text).Key.ToLower(),
+                IsDisguiseRuler.Checked);
             ruler.Closed += (s, args) => this.Close();
             ruler.Show();
         }

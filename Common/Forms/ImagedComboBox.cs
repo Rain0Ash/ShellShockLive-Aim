@@ -3,9 +3,8 @@
 
 using System;
 using System.Drawing;
-using System.Windows.Forms;
 
-namespace Ruler.Forms
+namespace System.Windows.Forms
 {
     public sealed class ImagedComboBox : ComboBox
     {

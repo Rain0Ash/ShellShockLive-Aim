@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{23854529-2879-4574-86B7-722D7251300F}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <AssemblyName>Aimbot</AssemblyName>
+    <AssemblyName>Ruler</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
@@ -93,24 +93,21 @@
     <Compile Include="Common\Forms\ImagedComboBox.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Common\Forms\WaterMarkTextBox.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Common\LanguageFlags.cs" />
-    <Compile Include="Common\Hash.cs" />
     <Compile Include="Common\Settings.cs" />
     <Compile Include="Common\Localization.cs" />
     <Compile Include="Common\Singleton.cs" />
-    <Compile Include="Ruler\BlackHole\BlackHole.cs" />
-    <Compile Include="Ruler\Ruler.cs" />
-    <Compile Include="Ruler\Localization\RulerLocalization.cs" />
-    <Compile Include="Ruler\Portal\Portal.cs" />
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Ruler\BlackHole\BlackHole.cs" />
+    <Compile Include="Ruler\Common\Circle.cs" />
+    <Compile Include="Ruler\Ruler.cs" />
+    <Compile Include="Ruler\Localization\RulerLocalization.cs" />
+    <Compile Include="Ruler\Portal\Portal.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\Settings.cs" />
     <Compile Include="Ruler\Rebound\ReboundCircle.cs" />
     <Compile Include="Ruler\Rebound\ReboundWall.cs" />
@@ -119,7 +116,7 @@
     <Compile Include="Ruler\Trajectory\Guidance\Direct.cs" />
     <Compile Include="Ruler\Trajectory\Guidance\Parabola.cs" />
     <Compile Include="Ruler\Trajectory\Trajectory.cs" />
-    <Compile Include="Starter\Licence.cs" />
+    <Compile Include="Common\Licence.cs" />
     <Compile Include="Starter\Localization\StarterLocalization.cs" />
     <Compile Include="Starter\Starter.cs">
       <SubType>Form</SubType>
@@ -134,15 +131,16 @@
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Starter\Starter.resx">
       <DependentUpon>Starter.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="icon.ico" />
+    <None Include="Common\Images\ru.png" />
+    <None Include="Common\Images\en.png" />
     <None Include="packages.config" />
     <None Include="Resources\icon.ico" />
   </ItemGroup>
@@ -152,6 +150,10 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="icon.ico" />
+    <None Include="Resources\notepad.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

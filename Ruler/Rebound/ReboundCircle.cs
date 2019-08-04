@@ -3,18 +3,15 @@
 
 using System;
 using System.Drawing;
+using Ruler.Common;
 
 namespace Ruler
 {
-    public class ReboundCircle
+    internal class ReboundCircle : ICircle
     {
-        public ReboundCircle(Point coord, Single radius)
+        internal ReboundCircle(Point coord, Single radius)
         {
 
-        }
-        public Boolean IsIntersection(Trajectory trajectory)
-        {
-            return false;
         }
     }
 }

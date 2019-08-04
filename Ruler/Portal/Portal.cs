@@ -2,10 +2,11 @@
 // PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
 
 using System;
+using Ruler.Common;
 
 namespace Ruler
 {
-    public class Portal
+    internal class Portal : ICircle
     {
     }
 }

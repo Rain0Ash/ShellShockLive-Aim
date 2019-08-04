@@ -2,14 +2,12 @@
 // PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
 
 using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Reflection;
 using Common;
 
-namespace Ruler.Starter
+namespace Starter.Localization
 {
-    internal class StarterLocalization : Localization
+    internal class StarterLocalization : global::Common.Localization
     {
         public String StarterTitle;
         public String LanguageLabel;
@@ -18,16 +16,15 @@ namespace Ruler.Starter
         public String NotDisplayAnymoreCheckBox;
         public String DisguiseCheckBox;
         public String StartButton;
-
         public String InvalidKeyID;
 
         public StarterLocalization UpdateLocalization(String cultureInfo = null)
         {
-            culture = cultureInfo ?? CultureInfo.CurrentCulture.TwoLetterISOLanguageName;
+            culture = cultureInfo ?? GetCurrentCulture();
 
             StarterTitle = LocalizedString(new CultureStrings(
-                $"Ruler version {Common.Settings.Version}",
-                $"Версия линейки {Common.Settings.Version}"));
+                $"Ruler version {Settings.Version}",
+                $"Версия линейки {Settings.Version}"));
 
             LanguageLabel = LocalizedString(new CultureStrings(
                 "Language",

@@ -1,8 +1,8 @@
 ﻿// This is an independent project of an individual developer. Dear PVS-Studio, please check it.
 // PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
+
 using System;
 using System.Collections.Generic;
-using System.Diagnostics.Eventing.Reader;
 using System.Globalization;
 using System.Linq;
 using System.Reflection;
@@ -12,30 +12,36 @@ namespace Common
 {
     internal abstract class Localization
     {
-        public static Int32 LettersInCultureCode = 2;
-        protected String culture = CultureInfo.CurrentCulture.TwoLetterISOLanguageName;
+        public struct LettersInCultureCode
+        {
+            public const Int32 ThreeLetterWindowsLanguageName = 1;
+            public const Int32 TwoLetterISOLanguageName = 2;
+            public const Int32 ThreeLetterISOLanguageName = 3;
+        }
+        public static Int32 LettersInCultureCodeUsing = 2;
+        protected String culture;
 
         public struct Culture
         {
-            public String cultureCode;
-            public String cultureName;
-            public Image cultureImage;
+            public String CultureCode;
+            public String CultureName;
+            public Image CultureImage;
 
             private void SetDefaultCulture()
             {
-                this.cultureCode = "en";
-                CountryData.EnglishNameByIso2.TryGetValue(cultureCode, out String value);
-                this.cultureName = value ?? "English";
-                this.cultureImage = (Image)new LanguageFlags().GetFlag(cultureCode);
+                this.CultureCode = "en";
+                CountryData.EnglishNameByIso2.TryGetValue(CultureCode, out String cultureName);
+                this.CultureName = cultureName ?? "English";
+                this.CultureImage = (Image)new LanguageFlags().GetFlag(CultureCode);
             }
 
             public Culture(String cultureCode = null, String cultureName = null, Image cultureImage = null)
             {
                 cultureCode = cultureCode?.ToLower();
 
-                this.cultureCode = cultureCode;
-                this.cultureName = cultureName;
-                this.cultureImage = cultureImage;
+                this.CultureCode = cultureCode;
+                this.CultureName = cultureName;
+                this.CultureImage = cultureImage;
 
                 if ((cultureCode == null || cultureCode.Length != 2) && cultureName == null)
                 {
@@ -48,9 +54,9 @@ namespace Common
                     if (cultureKey != null)
                     {
                         cultureCode = cultureKey.ToLower();
-                        this.cultureCode = cultureCode;
-                        this.cultureName = cultureName;
-                        this.cultureImage = (Image)new LanguageFlags().GetFlag(cultureCode);
+                        this.CultureCode = cultureCode;
+                        this.CultureName = cultureName;
+                        this.CultureImage = (Image)new LanguageFlags().GetFlag(cultureCode);
                     }
                     else
                     {
@@ -60,13 +66,13 @@ namespace Common
                 else if (cultureName == null)
                 {
                     CountryData.EnglishNameByIso2.TryGetValue(cultureCode.ToUpper(), out String value);
-                    this.cultureName = value ?? "null";
-                    this.cultureImage = (Image)new LanguageFlags().GetFlag(cultureCode);
+                    this.CultureName = value ?? "null";
+                    this.CultureImage = (Image)new LanguageFlags().GetFlag(cultureCode);
                 }
 
                 if (cultureImage == null)
                 {
-                    this.cultureImage = (Image)new LanguageFlags().GetFlag(this.cultureCode);
+                    this.CultureImage = (Image)new LanguageFlags().GetFlag(this.CultureCode);
                 }
                 
             }
@@ -76,13 +82,21 @@ namespace Common
         {
             public String en, ru;
 
-            public CultureStrings(String english, String russian = null, String deutch = null)
+            public CultureStrings(String english, String russian = null)
             {
                 this.en = english ?? "String is missing!";
                 this.ru = russian;
+
             }
         }
 
+        internal String GetCurrentCulture(Int32? lettersInCultureCode = null)
+        {
+            LettersInCultureCodeUsing = lettersInCultureCode ?? 2;
+            return LettersInCultureCodeUsing == LettersInCultureCode.TwoLetterISOLanguageName ? CultureInfo.CurrentCulture.TwoLetterISOLanguageName :
+                LettersInCultureCodeUsing == LettersInCultureCode.ThreeLetterISOLanguageName ? CultureInfo.CurrentCulture.ThreeLetterISOLanguageName :
+                    CultureInfo.CurrentCulture.ThreeLetterWindowsLanguageName;
+        }
 
         protected String LocalizedString(CultureStrings strings)
         {
@@ -90,7 +104,7 @@ namespace Common
             Array.ForEach(typeof(CultureStrings).GetFields(BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public),
                 field => localString.Add(field.Name, field.GetValue(strings)?.ToString()));
 
-            return localString.ContainsKey(culture) && localString[culture] != null ? localString[culture] : localString["en"];
+            return culture != null && localString.ContainsKey(culture) && localString[culture] != null ? localString[culture] : localString["en"];
         }
 
         public SortedSet<String> GetCultures()
