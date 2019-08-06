@@ -9,12 +9,20 @@
       <e p="app.config" t="Include" />
       <e p="bin" t="ExcludeRecursive" />
       <e p="Common" t="Include">
-        <e p="Hash.cs" t="Include" />
-        <e p="ImagedComboBox.cs" t="Include" />
+        <e p="Forms" t="Include">
+          <e p="ImagedComboBox.cs" t="Include" />
+        </e>
+        <e p="Images" t="Include">
+          <e p="en.png" t="Include" />
+          <e p="ru.png" t="Include" />
+        </e>
         <e p="LanguageFlags.cs" t="Include" />
+        <e p="Licence.cs" t="Include" />
         <e p="Localization.cs" t="Include" />
         <e p="Settings.cs" t="Include" />
-        <e p="Singleton.cs" t="Include" />
+        <e p="Types" t="Include">
+          <e p="OrderedSet.cs" t="Include" />
+        </e>
       </e>
       <e p="icon.ico" t="Include" />
       <e p="obj" t="ExcludeRecursive" />
@@ -28,10 +36,16 @@
       </e>
       <e p="Resources" t="Include">
         <e p="icon.ico" t="Include" />
+        <e p="notepad.ico" t="Include" />
       </e>
       <e p="Ruler" t="Include">
         <e p="BlackHole" t="Include">
           <e p="BlackHole.cs" t="Include" />
+        </e>
+        <e p="Common" t="Include">
+          <e p="Circle.cs" t="Include" />
+          <e p="ElementForm.cs" t="Include" />
+          <e p="Surface.cs" t="Include" />
         </e>
         <e p="Localization" t="Include">
           <e p="RulerLocalization.cs" t="Include" />
@@ -40,11 +54,13 @@
           <e p="Portal.cs" t="Include" />
         </e>
         <e p="Rebound" t="Include">
+          <e p="IRebound.cs" t="Include" />
           <e p="ReboundCircle.cs" t="Include" />
           <e p="ReboundWall.cs" t="Include" />
         </e>
         <e p="Ruler.cs" t="Include" />
         <e p="Sight" t="Include">
+          <e p="Aim.cs" t="Include" />
           <e p="Sight.cs" t="Include" />
         </e>
         <e p="Trajectory" t="Include">
@@ -57,11 +73,12 @@
         </e>
       </e>
       <e p="Starter" t="Include">
-        <e p="Licence.cs" t="Include" />
+        <e p="Localization" t="Include">
+          <e p="StarterLocalization.cs" t="Include" />
+        </e>
         <e p="Starter.cs" t="Include" />
         <e p="Starter.Designer.cs" t="Include" />
         <e p="Starter.resx" t="Include" />
-        <e p="StarterLocalization.cs" t="Include" />
       </e>
     </e>
   </component>

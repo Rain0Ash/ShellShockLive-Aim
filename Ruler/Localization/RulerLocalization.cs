@@ -2,9 +2,6 @@
 // PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
 
 using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Reflection;
 using Common;
 
 namespace Ruler
@@ -26,9 +23,9 @@ namespace Ruler
 
         public RulerLocalization UpdateLocalization(String cultureInfo = null)
         {
-            culture = cultureInfo ?? GetCurrentCulture();
+            LocalCulture = cultureInfo ?? GetCurrentCulture();
 
-            Angle = LocalizedString(new Localization.CultureStrings(
+            Angle = LocalizedString(new CultureStrings(
                 "Angle",
                 "Угол"));
 

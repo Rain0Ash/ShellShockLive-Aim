@@ -2,17 +2,19 @@
 // PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
 
 using System;
+using System.Drawing;
 
 namespace Ruler
 {
-    public class Trajectory
+    internal class Trajectory
     {
-        public Trajectory()
+        private Point[] points;
+        internal Trajectory(Int32 pointsCount = 60)
         {
-
+            
         }
 
-        public void Draw()
+        internal void Draw()
         {
 
         }

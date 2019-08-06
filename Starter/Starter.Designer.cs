@@ -100,10 +100,11 @@ namespace Ruler.Starter
             LicenceID.MaxLength = Licence.MaxIDLength;
             LicenceID.Mask = "Aaaaaaaaaaaa";
             LicenceID.PromptChar = ' ';
+            LicenceID.HidePromptOnLeave = true;
             this.LicenceID.TabIndex = 3;
             this.LicenceID.Text = "FREE";
             this.LicenceID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.LicenceID.TextChanged += new System.EventHandler(this.LicenceID_TextChanged);
+            //this.LicenceID.TextChanged += new System.EventHandler(this.LicenceID_TextChanged);
             // 
             // LicenceKey
             // 

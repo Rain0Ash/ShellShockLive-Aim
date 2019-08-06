@@ -2,7 +2,7 @@
 // PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
 
 // TODO: Do portals, black holes and rebound walls. Do GUI for control this objects by mouse. Do auto set value of wind, auto setup objects and user tank position.
-// TODO: Дописать порталы и черные дыры. Добавить предустановленные режимы экрана. Сделать дебаг-мод. Сделать стены. Сделать графический интерфейс. Переделать с рисования на рендеринг с фпс. [Computer Vision] Сделать автоопределение ветра, автонаводку, автоопределение позиции танка, автоустановку объектов, поиск оптимального пути снаряда.
+// TODO: Дописать порталы и черные дыры. Добавить предустановленные режимы экрана. Сделать дебаг-мод. Сделать стены. Сделать графический интерфейс. Переделать с рисования на рендеринг с фпс. [Maybe] Сделать автоопределение ветра, автонаводку, автоопределение позиции танка, автоустановку объектов, поиск оптимального пути снаряда.
 using Microsoft.VisualBasic;
 using System;
 using System.Collections.Generic;
@@ -36,11 +36,11 @@ namespace Ruler
         private Double gravity, velocity, radius, windw;
         private (Int32 X, Int32 Y, Int32 Radius) sight, blackHole;
         private ((Int32 X, Int32 Y) FirstPortal, (Int32 X, Int32 Y) SecondPortal, Int32 Radius) portal;
-        private (Single X, Single Y) point;
+        private Point point;
         private readonly RulerLocalization localization;
         private const Int32 MaxGuidanceMode = 1;
         private const Int32 Alt = 1, Ctrl = 2, Shift = 4;
-         private const Int32 SightUp = 1, SightDown = 2, SightLeft = 3, SightRight = 4, AimQuit = 5, AngleLeft = 6, AngleRight = 7, PowerUp = 8, PowerDown = 9, SetSightPosition = 10, AimReset = 11, SetWind = 12, SetAngle = 13, SetPower = 14, SetRadius = 15, ChangeGuidanceMode = 16, SightUpShift = 31, SightDownShift = 32, SightLeftShift = 33, SightRightShift = 34, AimQuitShift = 35, AngleLeftShift = 36, AngleRightShift = 37, PowerUpShift = 38, PowerDownShift = 39, SetSightPositionShift = 40, AimResetShift = 41, SetWindShift = 42, SetAngleShift = 43, SetPowerShift = 44, SetRadiusShift = 45, ChangeGuidanceModeShift = 46, SetPortalRadius = 60, SetFirstPortal = 61, SetSecondPortal = 62, ResetPortals = 63, SetBlackHoleRadius = 64, SetBlackHole = 65, SetBlackHoleShift = 66, ResetBlackHole = 67;
+        private const Int32 SightUp = 1, SightDown = 2, SightLeft = 3, SightRight = 4, AimQuit = 5, AngleLeft = 6, AngleRight = 7, PowerUp = 8, PowerDown = 9, SetSightPosition = 10, AimReset = 11, SetWind = 12, SetAngle = 13, SetPower = 14, SetRadius = 15, ChangeGuidanceMode = 16, SightUpShift = 31, SightDownShift = 32, SightLeftShift = 33, SightRightShift = 34, AimQuitShift = 35, AngleLeftShift = 36, AngleRightShift = 37, PowerUpShift = 38, PowerDownShift = 39, SetSightPositionShift = 40, AimResetShift = 41, SetWindShift = 42, SetAngleShift = 43, SetPowerShift = 44, SetRadiusShift = 45, ChangeGuidanceModeShift = 46, SetPortalRadius = 60, SetFirstPortal = 61, SetSecondPortal = 62, ResetPortals = 63, SetBlackHoleRadius = 64, SetBlackHole = 65, SetBlackHoleShift = 66, ResetBlackHole = 67;
         private const Double ProgramVersion = 0.78;
         private static readonly Dictionary<String, (Int32 Length, Int32 PointHeight, Double Gravity, Double Velocity, Double Radius, Double WindW, Int32 PortalRadius, Int32 BlackHoleRadius)> Resolutions = new Dictionary<String, (Int32 Length, Int32 PointHeight, Double gravity, Double Velocity, Double Radius, Double WindW, Int32 PortalRadius, Int32 BlackHoleRadius)>
         {
@@ -145,9 +145,9 @@ namespace Ruler
             ph = Resolution.PointHeight; //point height?
             portal.FirstPortal.X = portal.FirstPortal.Y = portal.SecondPortal.X = portal.SecondPortal.Y = blackHole.X = blackHole.Y = 0;
             portal.Radius = blackHole.Radius = 50;
-            labelPower.Text = power + @"%";
-            labelAngle.Text = angle + @"°";
-            labelWind.Text = wind + @"";
+            labelPower.Text = $@"{power}%";
+            labelAngle.Text = $@"{angle}°";
+            labelWind.Text = $@"{wind}";
         }
 
         private void Main_Form_Paint(Object sender, PaintEventArgs e)
@@ -199,10 +199,10 @@ namespace Ruler
                 {
                     case 0:
                     {
-                        point.X = Convert.ToSingle((Double) _x + 
+                        point.X = Convert.ToInt32((Double) _x + 
                                                   ((Double) power * velocity * (Double) counter * Math.Cos(floatAngle)) +
                                                   (0.5 * (Double) wind * windw * (Double) counter * (Double) counter));
-                        point.Y = Convert.ToSingle((Double) _y -
+                        point.Y = Convert.ToInt32((Double) _y -
                                                   ((Double) power * velocity * (Double) counter * Math.Sin(floatAngle)) +
                                                   (0.5 * gravity * (Double) counter * (Double) counter));
                         if ((Double)point.Y <= (Double)(Height - ph))
@@ -214,8 +214,8 @@ namespace Ruler
                     }
                     case 1:
                     {
-                        point.X = _x + sight.Radius * (Single)Math.Cos(Math.PI * angle / 180f) * counter;
-                        point.Y = _y - sight.Radius * (Single)Math.Sin(Math.PI * angle / 180f) * counter;
+                        point.X = (Int32) (_x + sight.Radius * (Single)Math.Cos(Math.PI * angle / 180f) * counter);
+                        point.Y = (Int32) (_y - sight.Radius * (Single)Math.Sin(Math.PI * angle / 180f) * counter);
                         graphics.FillEllipse((Brush)brush, point.X, point.Y, 2f, 2f);
                         counter += 0.03f;
                         break;
@@ -420,6 +420,7 @@ namespace Ruler
             labelPower = new Label();
             labelAngle = new Label();
             labelWind = new Label();
+            Button imageButtonSight = new Button();
             SuspendLayout();
 
             labelPower.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
@@ -428,7 +429,6 @@ namespace Ruler
             labelPower.ForeColor = Color.FromArgb(255, 255, 255);
             labelPower.Location = new Point(350, 360);
             labelPower.Margin = new Padding(0);
-            labelPower.Name = "labelPower";
             labelPower.Size = new Size(150, 30);
             labelPower.TabIndex = 0;
             labelPower.TextAlign = ContentAlignment.MiddleCenter;
@@ -439,7 +439,6 @@ namespace Ruler
             labelAngle.ForeColor = Color.FromArgb(255, 255, 255);
             labelAngle.Location = new Point(350, 320);
             labelAngle.Margin = new Padding(0);
-            labelAngle.Name = "labelAngle";
             labelAngle.Size = new Size(70, 30);
             labelAngle.TabIndex = 1;
             labelAngle.TextAlign = ContentAlignment.MiddleCenter;
@@ -450,7 +449,6 @@ namespace Ruler
             labelWind.ForeColor = Color.FromArgb(255, 255, 255);
             labelWind.Location = new Point(430, 320);
             labelWind.Margin = new Padding(0);
-            labelWind.Name = "labelWind";
             labelWind.Size = new Size(70, 30);
             labelWind.TabIndex = 4;
             labelWind.TextAlign = ContentAlignment.MiddleCenter;
@@ -460,9 +458,9 @@ namespace Ruler
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
             ClientSize = new Size(784, 412);
-            Controls.Add((Control) labelAngle);
-            Controls.Add((Control) labelPower);
-            Controls.Add((Control) labelWind);
+            Controls.Add(labelAngle);
+            Controls.Add(labelPower);
+            Controls.Add(labelWind);
             FormBorderStyle = FormBorderStyle.None;
             Name = nameof(Ruler);
             Text = $@"Aim Version {ProgramVersion.ToString(CultureInfo.InvariantCulture)}";
@@ -472,6 +470,7 @@ namespace Ruler
             WindowState = FormWindowState.Maximized;
             Shown += new EventHandler(Main_Form_Init);
             Paint += new PaintEventHandler(Main_Form_Paint);
+            
             ResumeLayout(false);
         }
     }

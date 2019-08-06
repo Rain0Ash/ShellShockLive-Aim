@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading;
@@ -24,28 +25,12 @@ namespace Ruler.Starter
             Process starter = Process.GetCurrentProcess();
             InitializeComponent();
         }
-
         private void Starter_Load(Object sender, EventArgs e)
         {
             CenterToScreen();
             LicenceID.Focus();
-
-            List<DropDownItem> languages = new List<DropDownItem>();
-            foreach (String iso2 in new StarterLocalization().GetCultures())
-            {
-                CountryData.EnglishNameByIso2.TryGetValue(iso2.ToUpper(), out String value);
-                if (value == null)
-                {
-                    continue;
-                }
-
-                DropDownItem item = new DropDownItem(value);
-                Image image = (Image)new LanguageFlags().GetFlag(iso2);
-                if (image != null)
-                    item.Image = image;
-                languages.Add(item);
-            }
-            LanguageComboBox.DataSource = languages;
+            LanguageComboBox.DataSource = new StarterLocalization().GetCultures()
+                .Select(culture => new DropDownItem(culture.CultureName) { Image = culture.CultureImage }).ToList();
 
             LanguageComboBox_ChangeStarterLanguage(sender, e);
         }
@@ -70,7 +55,7 @@ namespace Ruler.Starter
         }
         private void LanguageComboBox_ChangeStarterLanguage(Object sender, EventArgs e)
         {
-            localization.UpdateLocalization(CountryData.EnglishNameByIso2.FirstOrDefault(x => x.Value == LanguageComboBox.Text).Key.ToLower());
+            localization.UpdateLocalization(new Localization.Culture(null, LanguageComboBox.Text).CultureCode);
             Text = localization.StarterTitle;
             LanguageLabel.Text = localization.LanguageLabel;
             IDLabel.Text = localization.IDLabel;

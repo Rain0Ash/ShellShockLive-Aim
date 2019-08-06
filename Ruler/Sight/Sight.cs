@@ -3,19 +3,21 @@
 
 using System;
 using System.Drawing;
+using System.Windows.Forms;
+using Ruler.Common;
 
 namespace Ruler
 {
-    public class Sight
+    internal class Sight : Circle
     {
-        public Sight(Point coord, Single radius)
+        internal Sight(Point coord, Single radius, PaintEventArgs e)
+            : base(coord, radius, e)
         {
-
         }
 
-        public Sight Draw()
+        public override void Draw()
         {
-            return this;
+            
         }
     }
 }

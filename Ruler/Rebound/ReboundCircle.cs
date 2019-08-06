@@ -3,15 +3,22 @@
 
 using System;
 using System.Drawing;
+using System.Windows.Forms;
 using Ruler.Common;
 
 namespace Ruler
 {
-    internal class ReboundCircle : ICircle
+    internal class ReboundCircle : Circle, IRebound, IElement 
     {
-        internal ReboundCircle(Point coord, Single radius)
+        internal ReboundCircle(Point coord, Single radius, PaintEventArgs e) :
+            base(coord, radius, e)
         {
-
+        }
+        
+        public override void Draw()
+        {
+            throw new NotImplementedException(
+                $"Method '{GetType().FullName}.{System.Reflection.MethodBase.GetCurrentMethod().Name}' is not implemented");
         }
     }
 }

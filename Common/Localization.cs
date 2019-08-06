@@ -19,7 +19,7 @@ namespace Common
             public const Int32 ThreeLetterISOLanguageName = 3;
         }
         public static Int32 LettersInCultureCodeUsing = 2;
-        protected String culture;
+        protected String LocalCulture;
 
         public struct Culture
         {
@@ -29,19 +29,19 @@ namespace Common
 
             private void SetDefaultCulture()
             {
-                this.CultureCode = "en";
+                CultureCode = "en";
                 CountryData.EnglishNameByIso2.TryGetValue(CultureCode, out String cultureName);
-                this.CultureName = cultureName ?? "English";
-                this.CultureImage = (Image)new LanguageFlags().GetFlag(CultureCode);
+                CultureName = cultureName ?? "English";
+                CultureImage = (Image)LanguageFlags.GetFlag(CultureCode);
             }
 
             public Culture(String cultureCode = null, String cultureName = null, Image cultureImage = null)
             {
                 cultureCode = cultureCode?.ToLower();
 
-                this.CultureCode = cultureCode;
-                this.CultureName = cultureName;
-                this.CultureImage = cultureImage;
+                CultureCode = cultureCode;
+                CultureName = cultureName;
+                CultureImage = cultureImage;
 
                 if ((cultureCode == null || cultureCode.Length != 2) && cultureName == null)
                 {
@@ -54,9 +54,9 @@ namespace Common
                     if (cultureKey != null)
                     {
                         cultureCode = cultureKey.ToLower();
-                        this.CultureCode = cultureCode;
-                        this.CultureName = cultureName;
-                        this.CultureImage = (Image)new LanguageFlags().GetFlag(cultureCode);
+                        CultureCode = cultureCode;
+                        CultureName = cultureName;
+                        CultureImage = (Image)LanguageFlags.GetFlag(cultureCode);
                     }
                     else
                     {
@@ -66,13 +66,13 @@ namespace Common
                 else if (cultureName == null)
                 {
                     CountryData.EnglishNameByIso2.TryGetValue(cultureCode.ToUpper(), out String value);
-                    this.CultureName = value ?? "null";
-                    this.CultureImage = (Image)new LanguageFlags().GetFlag(cultureCode);
+                    CultureName = value ?? "null";
+                    CultureImage = (Image)LanguageFlags.GetFlag(cultureCode);
                 }
 
                 if (cultureImage == null)
                 {
-                    this.CultureImage = (Image)new LanguageFlags().GetFlag(this.CultureCode);
+                    CultureImage = (Image)LanguageFlags.GetFlag(CultureCode);
                 }
                 
             }
@@ -81,21 +81,24 @@ namespace Common
         public struct CultureStrings
         {
             public String en, ru;
-
+            
             public CultureStrings(String english, String russian = null)
             {
-                this.en = english ?? "String is missing!";
-                this.ru = russian;
-
+                en = english ?? "String is missing!";
+                ru = russian;
             }
         }
 
-        internal String GetCurrentCulture(Int32? lettersInCultureCode = null)
+        internal static void SetCurrentCulture(Int32 lettersInCultureCode = 2)
         {
-            LettersInCultureCodeUsing = lettersInCultureCode ?? 2;
-            return LettersInCultureCodeUsing == LettersInCultureCode.TwoLetterISOLanguageName ? CultureInfo.CurrentCulture.TwoLetterISOLanguageName :
+            LettersInCultureCodeUsing = lettersInCultureCode;
+        }
+        
+        internal static String GetCurrentCulture()
+        {
+            return LettersInCultureCodeUsing == LettersInCultureCode.ThreeLetterWindowsLanguageName ? CultureInfo.CurrentCulture.ThreeLetterWindowsLanguageName:
                 LettersInCultureCodeUsing == LettersInCultureCode.ThreeLetterISOLanguageName ? CultureInfo.CurrentCulture.ThreeLetterISOLanguageName :
-                    CultureInfo.CurrentCulture.ThreeLetterWindowsLanguageName;
+                CultureInfo.CurrentCulture.TwoLetterISOLanguageName;
         }
 
         protected String LocalizedString(CultureStrings strings)
@@ -104,14 +107,14 @@ namespace Common
             Array.ForEach(typeof(CultureStrings).GetFields(BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public),
                 field => localString.Add(field.Name, field.GetValue(strings)?.ToString()));
 
-            return culture != null && localString.ContainsKey(culture) && localString[culture] != null ? localString[culture] : localString["en"];
+            return LocalCulture != null && localString.ContainsKey(LocalCulture) && localString[LocalCulture] != null ? localString[LocalCulture] : localString["en"];
         }
 
-        public SortedSet<String> GetCultures()
+        public OrderedSet<Culture> GetCultures()
         {
-            SortedSet<String> cultures = new SortedSet<String>();
+            OrderedSet<Culture> cultures = new OrderedSet<Culture>();
             Array.ForEach(typeof(CultureStrings).GetFields(BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public),
-                field => cultures.Add(field.Name));
+                field => cultures.Add(new Culture(field.Name)));
 
             return cultures;
         }

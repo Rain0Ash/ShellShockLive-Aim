@@ -9,9 +9,9 @@ using System.Linq;
 
 namespace Common
 {
-    public sealed class LanguageFlags
+    public static class LanguageFlags
     {
-        public Object GetFlag(Object value)
+        public static Object GetFlag(Object value)
         {
             if (!(value is String countryId))
                 return null;

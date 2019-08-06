@@ -3,7 +3,6 @@
 
 using System;
 using System.Windows.Forms;
-using System.Windows.Forms.VisualStyles;
 
 namespace Ruler
 {
@@ -14,7 +13,7 @@ namespace Ruler
     {
       Application.EnableVisualStyles();
       Application.SetCompatibleTextRenderingDefault(false);
-      Application.Run((Form) new Starter.Starter());
+      Application.Run(new Starter.Starter());
     }
   }
 }

@@ -20,7 +20,7 @@ namespace Starter.Localization
 
         public StarterLocalization UpdateLocalization(String cultureInfo = null)
         {
-            culture = cultureInfo ?? GetCurrentCulture();
+            LocalCulture = cultureInfo ?? GetCurrentCulture();
 
             StarterTitle = LocalizedString(new CultureStrings(
                 $"Ruler version {Settings.Version}",
