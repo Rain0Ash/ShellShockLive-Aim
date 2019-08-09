@@ -11,6 +11,7 @@ namespace Starter.Localization
     {
         public String StarterTitle;
         public String LanguageLabel;
+        public String ScreenLabel;
         public String IDLabel;
         public String KeyLabel;
         public String NotDisplayAnymoreCheckBox;
@@ -28,7 +29,11 @@ namespace Starter.Localization
 
             LanguageLabel = LocalizedString(new CultureStrings(
                 "Language",
-                "Язык"));
+                "Язык"));            
+            
+            ScreenLabel = LocalizedString(new CultureStrings(
+                "Screen",
+                "Экран"));
 
             IDLabel = LocalizedString(new CultureStrings(
                 "Enter licence ID",

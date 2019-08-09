@@ -1,7 +1,8 @@
 ﻿using System;
-using System.Drawing;
+using SharpDX;
 using System.Windows.Forms;
 using SharpDX.Direct2D1;
+using SharpDX.Mathematics.Interop;
 
 namespace Ruler.Common
 {
@@ -31,7 +32,7 @@ namespace Ruler.Common
         
         public override void Draw(ref RenderTarget renderTarget)
         {
-            
+            renderTarget.DrawEllipse(new Ellipse(new RawVector2(Coord.X, Coord.Y), Radius, Radius), new SolidColorBrush(renderTarget, new RawColor4(255, 0, 0, 255)));
         }
     }
 }

@@ -13,8 +13,256 @@
           <e p="ImagedComboBox.cs" t="Include" />
         </e>
         <e p="Images" t="Include">
+          <e p="ad.png" t="Include" />
+          <e p="ae.png" t="Include" />
+          <e p="af.png" t="Include" />
+          <e p="ag.png" t="Include" />
+          <e p="ai.png" t="Include" />
+          <e p="al.png" t="Include" />
+          <e p="am.png" t="Include" />
+          <e p="an.png" t="Include" />
+          <e p="ao.png" t="Include" />
+          <e p="ar.png" t="Include" />
+          <e p="as.png" t="Include" />
+          <e p="at.png" t="Include" />
+          <e p="au.png" t="Include" />
+          <e p="aw.png" t="Include" />
+          <e p="ax.png" t="Include" />
+          <e p="az.png" t="Include" />
+          <e p="ba.png" t="Include" />
+          <e p="bb.png" t="Include" />
+          <e p="bd.png" t="Include" />
+          <e p="be.png" t="Include" />
+          <e p="bf.png" t="Include" />
+          <e p="bg.png" t="Include" />
+          <e p="bh.png" t="Include" />
+          <e p="bi.png" t="Include" />
+          <e p="bj.png" t="Include" />
+          <e p="bm.png" t="Include" />
+          <e p="bn.png" t="Include" />
+          <e p="bo.png" t="Include" />
+          <e p="br.png" t="Include" />
+          <e p="bs.png" t="Include" />
+          <e p="bt.png" t="Include" />
+          <e p="bv.png" t="Include" />
+          <e p="bw.png" t="Include" />
+          <e p="by.png" t="Include" />
+          <e p="bz.png" t="Include" />
+          <e p="ca.png" t="Include" />
+          <e p="catalonia.png" t="Include" />
+          <e p="cc.png" t="Include" />
+          <e p="cd.png" t="Include" />
+          <e p="cf.png" t="Include" />
+          <e p="cg.png" t="Include" />
+          <e p="ch.png" t="Include" />
+          <e p="ci.png" t="Include" />
+          <e p="ck.png" t="Include" />
+          <e p="cl.png" t="Include" />
+          <e p="cm.png" t="Include" />
+          <e p="cn.png" t="Include" />
+          <e p="co.png" t="Include" />
+          <e p="cr.png" t="Include" />
+          <e p="cs.png" t="Include" />
+          <e p="cu.png" t="Include" />
+          <e p="cv.png" t="Include" />
+          <e p="cw.png" t="Include" />
+          <e p="cx.png" t="Include" />
+          <e p="cy.png" t="Include" />
+          <e p="cz.png" t="Include" />
+          <e p="dd.png" t="Include" />
+          <e p="de.png" t="Include" />
+          <e p="dj.png" t="Include" />
+          <e p="dk.png" t="Include" />
+          <e p="dm.png" t="Include" />
+          <e p="do.png" t="Include" />
+          <e p="dz.png" t="Include" />
+          <e p="ec.png" t="Include" />
+          <e p="ee.png" t="Include" />
+          <e p="eg.png" t="Include" />
+          <e p="eh.png" t="Include" />
           <e p="en.png" t="Include" />
+          <e p="er.png" t="Include" />
+          <e p="es.png" t="Include" />
+          <e p="et.png" t="Include" />
+          <e p="eu.png" t="Include" />
+          <e p="fi.png" t="Include" />
+          <e p="fj.png" t="Include" />
+          <e p="fk.png" t="Include" />
+          <e p="fm.png" t="Include" />
+          <e p="fo.png" t="Include" />
+          <e p="fr.png" t="Include" />
+          <e p="ga.png" t="Include" />
+          <e p="gb.png" t="Include" />
+          <e p="gd.png" t="Include" />
+          <e p="ge.png" t="Include" />
+          <e p="gf.png" t="Include" />
+          <e p="gg.png" t="Include" />
+          <e p="gh.png" t="Include" />
+          <e p="gi.png" t="Include" />
+          <e p="gl.png" t="Include" />
+          <e p="gm.png" t="Include" />
+          <e p="gn.png" t="Include" />
+          <e p="gp.png" t="Include" />
+          <e p="gq.png" t="Include" />
+          <e p="gr.png" t="Include" />
+          <e p="gs.png" t="Include" />
+          <e p="gt.png" t="Include" />
+          <e p="gu.png" t="Include" />
+          <e p="gw.png" t="Include" />
+          <e p="gy.png" t="Include" />
+          <e p="hk.png" t="Include" />
+          <e p="hm.png" t="Include" />
+          <e p="hn.png" t="Include" />
+          <e p="hr.png" t="Include" />
+          <e p="ht.png" t="Include" />
+          <e p="hu.png" t="Include" />
+          <e p="id.png" t="Include" />
+          <e p="ie.png" t="Include" />
+          <e p="il.png" t="Include" />
+          <e p="in.png" t="Include" />
+          <e p="io.png" t="Include" />
+          <e p="iq.png" t="Include" />
+          <e p="ir.png" t="Include" />
+          <e p="is.png" t="Include" />
+          <e p="it.png" t="Include" />
+          <e p="jm.png" t="Include" />
+          <e p="jo.png" t="Include" />
+          <e p="jp.png" t="Include" />
+          <e p="ke.png" t="Include" />
+          <e p="kg.png" t="Include" />
+          <e p="kh.png" t="Include" />
+          <e p="ki.png" t="Include" />
+          <e p="km.png" t="Include" />
+          <e p="kn.png" t="Include" />
+          <e p="kp.png" t="Include" />
+          <e p="kr.png" t="Include" />
+          <e p="kw.png" t="Include" />
+          <e p="ky.png" t="Include" />
+          <e p="kz.png" t="Include" />
+          <e p="la.png" t="Include" />
+          <e p="lb.png" t="Include" />
+          <e p="lc.png" t="Include" />
+          <e p="li.png" t="Include" />
+          <e p="lk.png" t="Include" />
+          <e p="lr.png" t="Include" />
+          <e p="ls.png" t="Include" />
+          <e p="lt.png" t="Include" />
+          <e p="lu.png" t="Include" />
+          <e p="lv.png" t="Include" />
+          <e p="ly.png" t="Include" />
+          <e p="ma.png" t="Include" />
+          <e p="mc.png" t="Include" />
+          <e p="md.png" t="Include" />
+          <e p="me.png" t="Include" />
+          <e p="mg.png" t="Include" />
+          <e p="mh.png" t="Include" />
+          <e p="mk.png" t="Include" />
+          <e p="ml.png" t="Include" />
+          <e p="mm.png" t="Include" />
+          <e p="mn.png" t="Include" />
+          <e p="mo.png" t="Include" />
+          <e p="mp.png" t="Include" />
+          <e p="mq.png" t="Include" />
+          <e p="mr.png" t="Include" />
+          <e p="ms.png" t="Include" />
+          <e p="mt.png" t="Include" />
+          <e p="mu.png" t="Include" />
+          <e p="mv.png" t="Include" />
+          <e p="mw.png" t="Include" />
+          <e p="mx.png" t="Include" />
+          <e p="my.png" t="Include" />
+          <e p="mz.png" t="Include" />
+          <e p="na.png" t="Include" />
+          <e p="nc.png" t="Include" />
+          <e p="ne.png" t="Include" />
+          <e p="nf.png" t="Include" />
+          <e p="ng.png" t="Include" />
+          <e p="ni.png" t="Include" />
+          <e p="nl.png" t="Include" />
+          <e p="no.png" t="Include" />
+          <e p="np.png" t="Include" />
+          <e p="nr.png" t="Include" />
+          <e p="nu.png" t="Include" />
+          <e p="null.png" t="Include" />
+          <e p="nz.png" t="Include" />
+          <e p="om.png" t="Include" />
+          <e p="pa.png" t="Include" />
+          <e p="pe.png" t="Include" />
+          <e p="pf.png" t="Include" />
+          <e p="pg.png" t="Include" />
+          <e p="ph.png" t="Include" />
+          <e p="pk.png" t="Include" />
+          <e p="pl.png" t="Include" />
+          <e p="pm.png" t="Include" />
+          <e p="pn.png" t="Include" />
+          <e p="pr.png" t="Include" />
+          <e p="ps.png" t="Include" />
+          <e p="pt.png" t="Include" />
+          <e p="pw.png" t="Include" />
+          <e p="py.png" t="Include" />
+          <e p="qa.png" t="Include" />
+          <e p="re.png" t="Include" />
+          <e p="ro.png" t="Include" />
+          <e p="rs.png" t="Include" />
           <e p="ru.png" t="Include" />
+          <e p="rw.png" t="Include" />
+          <e p="sa.png" t="Include" />
+          <e p="sb.png" t="Include" />
+          <e p="sc.png" t="Include" />
+          <e p="scotland.png" t="Include" />
+          <e p="sd.png" t="Include" />
+          <e p="se.png" t="Include" />
+          <e p="sg.png" t="Include" />
+          <e p="sh.png" t="Include" />
+          <e p="si.png" t="Include" />
+          <e p="sj.png" t="Include" />
+          <e p="sk.png" t="Include" />
+          <e p="sl.png" t="Include" />
+          <e p="sm.png" t="Include" />
+          <e p="sn.png" t="Include" />
+          <e p="so.png" t="Include" />
+          <e p="sr.png" t="Include" />
+          <e p="st.png" t="Include" />
+          <e p="sv.png" t="Include" />
+          <e p="sy.png" t="Include" />
+          <e p="sz.png" t="Include" />
+          <e p="tc.png" t="Include" />
+          <e p="td.png" t="Include" />
+          <e p="tf.png" t="Include" />
+          <e p="tg.png" t="Include" />
+          <e p="th.png" t="Include" />
+          <e p="tj.png" t="Include" />
+          <e p="tk.png" t="Include" />
+          <e p="tl.png" t="Include" />
+          <e p="tm.png" t="Include" />
+          <e p="tn.png" t="Include" />
+          <e p="to.png" t="Include" />
+          <e p="tr.png" t="Include" />
+          <e p="tt.png" t="Include" />
+          <e p="tv.png" t="Include" />
+          <e p="tw.png" t="Include" />
+          <e p="tz.png" t="Include" />
+          <e p="ua.png" t="Include" />
+          <e p="ug.png" t="Include" />
+          <e p="um.png" t="Include" />
+          <e p="us.png" t="Include" />
+          <e p="uy.png" t="Include" />
+          <e p="uz.png" t="Include" />
+          <e p="va.png" t="Include" />
+          <e p="vc.png" t="Include" />
+          <e p="ve.png" t="Include" />
+          <e p="vg.png" t="Include" />
+          <e p="vi.png" t="Include" />
+          <e p="vn.png" t="Include" />
+          <e p="vu.png" t="Include" />
+          <e p="wales.png" t="Include" />
+          <e p="wf.png" t="Include" />
+          <e p="ws.png" t="Include" />
+          <e p="ye.png" t="Include" />
+          <e p="yt.png" t="Include" />
+          <e p="za.png" t="Include" />
+          <e p="zm.png" t="Include" />
+          <e p="zw.png" t="Include" />
         </e>
         <e p="LanguageFlags.cs" t="Include" />
         <e p="Licence.cs" t="Include" />
@@ -25,6 +273,7 @@
           <e p="OrderedSet.cs" t="Include" />
         </e>
       </e>
+      <e p="FodyWeavers.xml" t="Include" />
       <e p="icon.ico" t="Include" />
       <e p="obj" t="ExcludeRecursive" />
       <e p="packages" t="ExcludeRecursive" />
@@ -37,6 +286,7 @@
       </e>
       <e p="Resources" t="Include">
         <e p="icon.ico" t="Include" />
+        <e p="monitor.png" t="Include" />
         <e p="notepad.ico" t="Include" />
       </e>
       <e p="Ruler" t="Include">
@@ -46,6 +296,10 @@
         <e p="Common" t="Include">
           <e p="Circle.cs" t="Include" />
           <e p="IElement.cs" t="Include" />
+          <e p="Keyboard" t="Include">
+            <e p="KeyboardHook.cs" t="Include" />
+          </e>
+          <e p="KeyboardController.cs" t="Include" />
           <e p="Parametrs.cs" t="Include" />
           <e p="Surface.cs" t="Include" />
         </e>

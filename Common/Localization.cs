@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Reflection;
+using Ruler.Properties;
 using Image = System.Drawing.Image;
 
 namespace Common
@@ -56,7 +57,7 @@ namespace Common
                         cultureCode = cultureKey.ToLower();
                         CultureCode = cultureCode;
                         CultureName = cultureName;
-                        CultureImage = (Image)LanguageFlags.GetFlag(cultureCode);
+                        SetImage(cultureCode);
                     }
                     else
                     {
@@ -67,14 +68,18 @@ namespace Common
                 {
                     CountryData.EnglishNameByIso2.TryGetValue(cultureCode.ToUpper(), out String value);
                     CultureName = value ?? "null";
-                    CultureImage = (Image)LanguageFlags.GetFlag(cultureCode);
+                    SetImage(cultureCode);
                 }
 
                 if (cultureImage == null)
                 {
-                    CultureImage = (Image)LanguageFlags.GetFlag(CultureCode);
+                    SetImage(CultureCode);
                 }
-                
+            }
+
+            private void SetImage(String cultureCode)
+            {
+                CultureImage = (Image)Resources.ResourceManager.GetObject(cultureCode) ?? (Image)Resources.ResourceManager.GetObject(@"null");
             }
         }
 

@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <!--Project was exported from assembly: C:\Users\Rain0Ash\Desktop\Arcer_1366.exe-->
+  <Import Project="packages\Costura.Fody.4.0.0\build\Costura.Fody.props" Condition="Exists('packages\Costura.Fody.4.0.0\build\Costura.Fody.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -84,6 +85,10 @@
     <StartupObject>Ruler.Program</StartupObject>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Costura, Version=4.0.0.0, Culture=neutral, PublicKeyToken=9919ef960d84173d">
+      <HintPath>packages\Costura.Fody.4.0.0\lib\net40\Costura.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="SharpDX, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
@@ -149,42 +154,30 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Ruler\BlackHole\BlackHole.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Ruler\BlackHole\BlackHole.cs" />
     <Compile Include="Ruler\Common\IElement.cs" />
-    <Compile Include="Ruler\Common\Circle.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Ruler\Common\Circle.cs" />
+    <Compile Include="Ruler\Common\KeyboardController.cs" />
+    <Compile Include="Ruler\Common\Keyboard\KeyboardHook.cs" />
     <Compile Include="Ruler\Common\Parametrs.cs" />
-    <Compile Include="Ruler\Common\Surface.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Ruler\Common\Surface.cs" />
     <Compile Include="Ruler\Gui\WeaponPanel.cs" />
     <Compile Include="Ruler\Manager.cs" />
     <Compile Include="Ruler\Rebound\IRebound.cs" />
-    <Compile Include="Ruler\Ruler.cs" />
+    <Compile Include="Ruler\Ruler.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Ruler\RulerBackup.cs" />
     <Compile Include="Ruler\Localization\RulerLocalization.cs" />
     <Compile Include="Ruler\Portal\Portal.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\Settings.cs" />
-    <Compile Include="Ruler\Rebound\ReboundCircle.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Ruler\Rebound\ReboundWall.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Ruler\Sight\Aim.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Ruler\Sight\Sight.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Ruler\Rebound\ReboundCircle.cs" />
+    <Compile Include="Ruler\Rebound\ReboundWall.cs" />
+    <Compile Include="Ruler\Sight\Aim.cs" />
+    <Compile Include="Ruler\Sight\Sight.cs" />
     <Compile Include="Ruler\Trajectory\Guidance.cs" />
-    <Compile Include="Ruler\Trajectory\Trajectory.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Ruler\Trajectory\Trajectory.cs" />
     <Compile Include="Common\Licence.cs" />
     <Compile Include="Ruler\Trajectory\Weapons\Weapon.cs" />
     <Compile Include="Starter\Localization\StarterLocalization.cs" />
@@ -222,8 +215,266 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Common\Images\ad.png" />
+    <None Include="Common\Images\ae.png" />
+    <None Include="Common\Images\af.png" />
+    <None Include="Common\Images\ag.png" />
+    <None Include="Common\Images\ai.png" />
+    <None Include="Common\Images\al.png" />
+    <None Include="Common\Images\am.png" />
+    <None Include="Common\Images\an.png" />
+    <None Include="Common\Images\ao.png" />
+    <None Include="Common\Images\ar.png" />
+    <None Include="Common\Images\as.png" />
+    <None Include="Common\Images\at.png" />
+    <None Include="Common\Images\au.png" />
+    <None Include="Common\Images\aw.png" />
+    <None Include="Common\Images\ax.png" />
+    <None Include="Common\Images\az.png" />
+    <None Include="Common\Images\ba.png" />
+    <None Include="Common\Images\bb.png" />
+    <None Include="Common\Images\bd.png" />
+    <None Include="Common\Images\be.png" />
+    <None Include="Common\Images\bf.png" />
+    <None Include="Common\Images\bg.png" />
+    <None Include="Common\Images\bh.png" />
+    <None Include="Common\Images\bi.png" />
+    <None Include="Common\Images\bj.png" />
+    <None Include="Common\Images\bm.png" />
+    <None Include="Common\Images\bn.png" />
+    <None Include="Common\Images\bo.png" />
+    <None Include="Common\Images\br.png" />
+    <None Include="Common\Images\bs.png" />
+    <None Include="Common\Images\bt.png" />
+    <None Include="Common\Images\bv.png" />
+    <None Include="Common\Images\bw.png" />
+    <None Include="Common\Images\by.png" />
+    <None Include="Common\Images\bz.png" />
+    <None Include="Common\Images\ca.png" />
+    <None Include="Common\Images\catalonia.png" />
+    <None Include="Common\Images\cc.png" />
+    <None Include="Common\Images\cd.png" />
+    <None Include="Common\Images\cf.png" />
+    <None Include="Common\Images\cg.png" />
+    <None Include="Common\Images\ch.png" />
+    <None Include="Common\Images\ci.png" />
+    <None Include="Common\Images\ck.png" />
+    <None Include="Common\Images\cl.png" />
+    <None Include="Common\Images\cm.png" />
+    <None Include="Common\Images\cn.png" />
+    <None Include="Common\Images\co.png" />
+    <None Include="Common\Images\cr.png" />
+    <None Include="Common\Images\cs.png" />
+    <None Include="Common\Images\cu.png" />
+    <None Include="Common\Images\cv.png" />
+    <None Include="Common\Images\cw.png" />
+    <None Include="Common\Images\cx.png" />
+    <None Include="Common\Images\cy.png" />
+    <None Include="Common\Images\cz.png" />
+    <None Include="Common\Images\dd.png" />
+    <None Include="Common\Images\de.png" />
+    <None Include="Common\Images\dj.png" />
+    <None Include="Common\Images\dk.png" />
+    <None Include="Common\Images\dm.png" />
+    <None Include="Common\Images\do.png" />
+    <None Include="Common\Images\dz.png" />
+    <None Include="Common\Images\ec.png" />
+    <None Include="Common\Images\ee.png" />
+    <None Include="Common\Images\eg.png" />
+    <None Include="Common\Images\eh.png" />
+    <None Include="Common\Images\er.png" />
+    <None Include="Common\Images\es.png" />
+    <None Include="Common\Images\et.png" />
+    <None Include="Common\Images\eu.png" />
+    <None Include="Common\Images\fi.png" />
+    <None Include="Common\Images\fj.png" />
+    <None Include="Common\Images\fk.png" />
+    <None Include="Common\Images\fm.png" />
+    <None Include="Common\Images\fo.png" />
+    <None Include="Common\Images\fr.png" />
+    <None Include="Common\Images\ga.png" />
+    <None Include="Common\Images\gb.png" />
+    <None Include="Common\Images\gd.png" />
+    <None Include="Common\Images\ge.png" />
+    <None Include="Common\Images\gf.png" />
+    <None Include="Common\Images\gg.png" />
+    <None Include="Common\Images\gh.png" />
+    <None Include="Common\Images\gi.png" />
+    <None Include="Common\Images\gl.png" />
+    <None Include="Common\Images\gm.png" />
+    <None Include="Common\Images\gn.png" />
+    <None Include="Common\Images\gp.png" />
+    <None Include="Common\Images\gq.png" />
+    <None Include="Common\Images\gr.png" />
+    <None Include="Common\Images\gs.png" />
+    <None Include="Common\Images\gt.png" />
+    <None Include="Common\Images\gu.png" />
+    <None Include="Common\Images\gw.png" />
+    <None Include="Common\Images\gy.png" />
+    <None Include="Common\Images\hk.png" />
+    <None Include="Common\Images\hm.png" />
+    <None Include="Common\Images\hn.png" />
+    <None Include="Common\Images\hr.png" />
+    <None Include="Common\Images\ht.png" />
+    <None Include="Common\Images\hu.png" />
+    <None Include="Common\Images\id.png" />
+    <None Include="Common\Images\ie.png" />
+    <None Include="Common\Images\il.png" />
+    <None Include="Common\Images\in.png" />
+    <None Include="Common\Images\io.png" />
+    <None Include="Common\Images\iq.png" />
+    <None Include="Common\Images\ir.png" />
+    <None Include="Common\Images\is.png" />
+    <None Include="Common\Images\it.png" />
+    <None Include="Common\Images\jm.png" />
+    <None Include="Common\Images\jo.png" />
+    <None Include="Common\Images\jp.png" />
+    <None Include="Common\Images\ke.png" />
+    <None Include="Common\Images\kg.png" />
+    <None Include="Common\Images\kh.png" />
+    <None Include="Common\Images\ki.png" />
+    <None Include="Common\Images\km.png" />
+    <None Include="Common\Images\kn.png" />
+    <None Include="Common\Images\kp.png" />
+    <None Include="Common\Images\kr.png" />
+    <None Include="Common\Images\kw.png" />
+    <None Include="Common\Images\ky.png" />
+    <None Include="Common\Images\kz.png" />
+    <None Include="Common\Images\la.png" />
+    <None Include="Common\Images\lb.png" />
+    <None Include="Common\Images\lc.png" />
+    <None Include="Common\Images\li.png" />
+    <None Include="Common\Images\lk.png" />
+    <None Include="Common\Images\lr.png" />
+    <None Include="Common\Images\ls.png" />
+    <None Include="Common\Images\lt.png" />
+    <None Include="Common\Images\lu.png" />
+    <None Include="Common\Images\lv.png" />
+    <None Include="Common\Images\ly.png" />
+    <None Include="Common\Images\ma.png" />
+    <None Include="Common\Images\mc.png" />
+    <None Include="Common\Images\md.png" />
+    <None Include="Common\Images\me.png" />
+    <None Include="Common\Images\mg.png" />
+    <None Include="Common\Images\mh.png" />
+    <None Include="Common\Images\mk.png" />
+    <None Include="Common\Images\ml.png" />
+    <None Include="Common\Images\mm.png" />
+    <None Include="Common\Images\mn.png" />
+    <None Include="Common\Images\mo.png" />
+    <None Include="Common\Images\mp.png" />
+    <None Include="Common\Images\mq.png" />
+    <None Include="Common\Images\mr.png" />
+    <None Include="Common\Images\ms.png" />
+    <None Include="Common\Images\mt.png" />
+    <None Include="Common\Images\mu.png" />
+    <None Include="Common\Images\mv.png" />
+    <None Include="Common\Images\mw.png" />
+    <None Include="Common\Images\mx.png" />
+    <None Include="Common\Images\my.png" />
+    <None Include="Common\Images\mz.png" />
+    <None Include="Common\Images\na.png" />
+    <None Include="Common\Images\nc.png" />
+    <None Include="Common\Images\ne.png" />
+    <None Include="Common\Images\nf.png" />
+    <None Include="Common\Images\ng.png" />
+    <None Include="Common\Images\ni.png" />
+    <None Include="Common\Images\nl.png" />
+    <None Include="Common\Images\no.png" />
+    <None Include="Common\Images\np.png" />
+    <None Include="Common\Images\nr.png" />
+    <None Include="Common\Images\nu.png" />
+    <None Include="Common\Images\nz.png" />
+    <None Include="Common\Images\om.png" />
+    <None Include="Common\Images\pa.png" />
+    <None Include="Common\Images\pe.png" />
+    <None Include="Common\Images\pf.png" />
+    <None Include="Common\Images\pg.png" />
+    <None Include="Common\Images\ph.png" />
+    <None Include="Common\Images\pk.png" />
+    <None Include="Common\Images\pl.png" />
+    <None Include="Common\Images\pm.png" />
+    <None Include="Common\Images\pn.png" />
+    <None Include="Common\Images\pr.png" />
+    <None Include="Common\Images\ps.png" />
+    <None Include="Common\Images\pt.png" />
+    <None Include="Common\Images\pw.png" />
+    <None Include="Common\Images\py.png" />
+    <None Include="Common\Images\qa.png" />
+    <None Include="Common\Images\re.png" />
+    <None Include="Common\Images\ro.png" />
+    <None Include="Common\Images\rs.png" />
+    <None Include="Common\Images\rw.png" />
+    <None Include="Common\Images\sa.png" />
+    <None Include="Common\Images\sb.png" />
+    <None Include="Common\Images\sc.png" />
+    <None Include="Common\Images\scotland.png" />
+    <None Include="Common\Images\sd.png" />
+    <None Include="Common\Images\se.png" />
+    <None Include="Common\Images\sg.png" />
+    <None Include="Common\Images\sh.png" />
+    <None Include="Common\Images\si.png" />
+    <None Include="Common\Images\sj.png" />
+    <None Include="Common\Images\sk.png" />
+    <None Include="Common\Images\sl.png" />
+    <None Include="Common\Images\sm.png" />
+    <None Include="Common\Images\sn.png" />
+    <None Include="Common\Images\so.png" />
+    <None Include="Common\Images\sr.png" />
+    <None Include="Common\Images\st.png" />
+    <None Include="Common\Images\sv.png" />
+    <None Include="Common\Images\sy.png" />
+    <None Include="Common\Images\sz.png" />
+    <None Include="Common\Images\tc.png" />
+    <None Include="Common\Images\td.png" />
+    <None Include="Common\Images\tf.png" />
+    <None Include="Common\Images\tg.png" />
+    <None Include="Common\Images\th.png" />
+    <None Include="Common\Images\tj.png" />
+    <None Include="Common\Images\tk.png" />
+    <None Include="Common\Images\tl.png" />
+    <None Include="Common\Images\tm.png" />
+    <None Include="Common\Images\tn.png" />
+    <None Include="Common\Images\to.png" />
+    <None Include="Common\Images\tr.png" />
+    <None Include="Common\Images\tt.png" />
+    <None Include="Common\Images\tv.png" />
+    <None Include="Common\Images\tw.png" />
+    <None Include="Common\Images\tz.png" />
+    <None Include="Common\Images\ua.png" />
+    <None Include="Common\Images\ug.png" />
+    <None Include="Common\Images\um.png" />
+    <None Include="Common\Images\us.png" />
+    <None Include="Common\Images\uy.png" />
+    <None Include="Common\Images\uz.png" />
+    <None Include="Common\Images\va.png" />
+    <None Include="Common\Images\vc.png" />
+    <None Include="Common\Images\ve.png" />
+    <None Include="Common\Images\vg.png" />
+    <None Include="Common\Images\vi.png" />
+    <None Include="Common\Images\vn.png" />
+    <None Include="Common\Images\vu.png" />
+    <None Include="Common\Images\wales.png" />
+    <None Include="Common\Images\wf.png" />
+    <None Include="Common\Images\ws.png" />
+    <None Include="Common\Images\ye.png" />
+    <None Include="Common\Images\yt.png" />
+    <None Include="Common\Images\za.png" />
+    <None Include="Common\Images\zm.png" />
+    <None Include="Common\Images\zw.png" />
+    <None Include="Common\Images\null.png" />
+    <Content Include="FodyWeavers.xml" />
     <Content Include="icon.ico" />
+    <None Include="Resources\monitor.png" />
     <None Include="Resources\notepad.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="packages\Fody.5.1.1\build\Fody.targets" Condition="Exists('packages\Fody.5.1.1\build\Fody.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105.The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\Fody.5.1.1\build\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Fody.5.1.1\build\Fody.targets'))" />
+    <Error Condition="!Exists('packages\Costura.Fody.4.0.0\build\Costura.Fody.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Costura.Fody.4.0.0\build\Costura.Fody.props'))" />
+  </Target>
 </Project>

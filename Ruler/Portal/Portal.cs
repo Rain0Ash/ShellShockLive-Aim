@@ -3,10 +3,10 @@
 
 using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Threading;
 using System.Windows.Forms;
 using Ruler.Common;
+using SharpDX;
 using SharpDX.Direct2D1;
 
 namespace Ruler

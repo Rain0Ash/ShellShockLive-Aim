@@ -2,7 +2,7 @@
 // PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
 
 using System;
-using System.Drawing;
+using SharpDX;
 using System.Windows.Forms;
 using Ruler.Common;
 using SharpDX.Direct2D1;

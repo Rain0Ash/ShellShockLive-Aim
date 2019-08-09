@@ -66,16 +66,28 @@ namespace Common
         
         private const Int32 EnumCurrentSettings = -1;
 
-        static Monitor[] GetMonitors()
+        public static Monitor GetPrimaryMonitor()
         {
+            Screen screen = Screen.PrimaryScreen;
+            DEVMODE dm = new DEVMODE(){dmSize = (Int16)Marshal.SizeOf(typeof(DEVMODE))};
+            EnumDisplaySettings(screen.DeviceName, EnumCurrentSettings, ref dm);
+            return new Monitor(screen.DeviceName, screen.Bounds, dm.dmDisplayFrequency);
+        }
+        
+        public static Monitor[] GetMonitors()
+        {
+            Monitor fullScreen = new Monitor(@"0", new Rectangle(0, 0, 0, 0), 0);
             List<Monitor> monitors = new List<Monitor>();
             foreach (Screen screen in Screen.AllScreens)
             {
                 DEVMODE dm = new DEVMODE {dmSize = (Int16)Marshal.SizeOf(typeof(DEVMODE))};
                 EnumDisplaySettings(screen.DeviceName, EnumCurrentSettings, ref dm);
+                fullScreen.Resolution.Width = Math.Max(fullScreen.Resolution.Width, screen.Bounds.Width);
+                fullScreen.Resolution.Height = Math.Max(fullScreen.Resolution.Height, screen.Bounds.Height);
+                fullScreen.Frequency = Math.Max(fullScreen.Frequency, dm.dmDisplayFrequency);
                 monitors.Add(new Monitor(screen.DeviceName, screen.Bounds, dm.dmDisplayFrequency));
             }
-
+            monitors.Insert(0, fullScreen);
             return monitors.ToArray();
         }
     }

@@ -1,4 +1,5 @@
 using System;
+using System.Drawing;
 using System.Globalization;
 using System.Windows.Forms;
 using Common;
@@ -14,8 +15,29 @@ namespace Ruler
 {
     internal sealed class Ruler : RenderForm
     {
-        internal Ruler(Licence licence, String languageCode = null, Boolean isDisguise = false)
+        internal Licence Licence;
+        internal RulerLocalization Localization;
+        internal Boolean IsDisguise;
+
+        internal Ruler(Licence licence, Monitor monitor, String languageCode = null, Boolean isDisguise = false)
         {
+            Licence = licence;
+            Localization = new RulerLocalization(languageCode);
+            IsDisguise = isDisguise;
+
+            TopMost = true;
+            AutoScaleMode = AutoScaleMode.Font;
+            Name = nameof(Ruler);
+            Text = $@"Aim Version {Settings.Version}";
+            BackColor = Color.Black;
+            TransparencyKey = Color.Black;
+            FormBorderStyle = FormBorderStyle.Sizable;
+            WindowState = FormWindowState.Maximized;
+            Icon = Resources.icon;
+            Rectangle resolution = monitor.Resolution;
+            Location = new Point(resolution.X, resolution.Y);
+            Size = new Size(resolution.Width, resolution.Height);
+            
             SwapChainDescription desc = new SwapChainDescription()
             {
                 BufferCount = 1,
@@ -28,16 +50,7 @@ namespace Ruler
                 SwapEffect = SwapEffect.Discard,
                 Usage = Usage.RenderTargetOutput
             };
-            TopMost = true;
-            AutoScaleMode = AutoScaleMode.Font;
-            Name = nameof(Ruler);
-            Text = $@"Aim Version {Settings.Version}";
-            BackColor = System.Drawing.Color.Black;
-            TransparencyKey = System.Drawing.Color.Black;
-            FormBorderStyle = FormBorderStyle.Sizable;
-            WindowState = FormWindowState.Maximized;
-            Icon = Resources.icon;
-            
+
             // Create Device and SwapChain
             SharpDX.Direct3D11.Device.CreateWithSwapChain(DriverType.Hardware, DeviceCreationFlags.BgraSupport, 
                 new[] { SharpDX.Direct3D.FeatureLevel.Level_11_1 }, desc, out SharpDX.Direct3D11.Device device, out SwapChain swapChain);

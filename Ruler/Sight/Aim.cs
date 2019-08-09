@@ -1,5 +1,5 @@
 using System;
-using System.Drawing;
+using SharpDX;
 using System.Windows.Forms;
 using Ruler.Common;
 using SharpDX.Direct2D1;
@@ -8,7 +8,6 @@ namespace Ruler
 {
     internal class Aim : Circle
     {
-        private static readonly Pen LinePaintPen = new Pen(Color.Red);
         internal Int32 Angle { set; get; }
         internal Int32 Power { set; get; }
         

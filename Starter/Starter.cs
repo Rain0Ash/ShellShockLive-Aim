@@ -12,6 +12,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Common;
+using Ruler.Properties;
 using Starter.Localization;
 
 namespace Ruler.Starter
@@ -29,10 +30,14 @@ namespace Ruler.Starter
         {
             CenterToScreen();
             LicenceID.Focus();
-            LanguageComboBox.DataSource = new StarterLocalization().GetCultures()
+            LanguageImagedComboBox.DataSource = new StarterLocalization().GetCultures()
                 .Select(culture => new DropDownItem(culture.CultureName) { Image = culture.CultureImage }).ToList();
+            
+            ScreenImagedComboBox.DataSource = Monitors.GetMonitors()
+                .Select(screen => new DropDownItem($"{screen.Name[screen.Name.Length-1]} {screen.Resolution.Width.ToString()}x{screen.Resolution.Height.ToString()} [{screen.Frequency.ToString()}]"){Image = Resources.monitor}).ToList();
+            
 
-            LanguageComboBox_ChangeStarterLanguage(sender, e);
+            LanguageImagedComboBox_ChangeStarterLanguage(sender, e);
         }
 
         private void LicenceID_TextChanged(Object sender, EventArgs e)
@@ -53,11 +58,12 @@ namespace Ruler.Starter
             }
             
         }
-        private void LanguageComboBox_ChangeStarterLanguage(Object sender, EventArgs e)
+        private void LanguageImagedComboBox_ChangeStarterLanguage(Object sender, EventArgs e)
         {
-            localization.UpdateLocalization(new Localization.Culture(null, LanguageComboBox.Text).CultureCode);
+            localization.UpdateLocalization(new Localization.Culture(null, LanguageImagedComboBox.Text).CultureCode);
             Text = localization.StarterTitle;
             LanguageLabel.Text = localization.LanguageLabel;
+            ScreenLabel.Text = localization.ScreenLabel;
             IDLabel.Text = localization.IDLabel;
             KeyLabel.Text = localization.KeyLabel;
             IsDisguiseRuler.Text = localization.DisguiseCheckBox;
@@ -65,7 +71,7 @@ namespace Ruler.Starter
             StartButton.Text = localization.StartButton;
         }
 
-        private void LanguageComboBox_DropDownClosed(Object sender, EventArgs e)
+        private void ComboBox_DropDownClosed(Object sender, EventArgs e)
         {
             LanguageLabel.Focus();
         }
@@ -80,14 +86,14 @@ namespace Ruler.Starter
                 StartButton.Font = new Font(StartButton.Font, FontStyle.Bold);
                 StartButton.Text = message;
                 StartButton.Enabled = false;
-                LanguageComboBox.Enabled = false;
+                LanguageImagedComboBox.Enabled = false;
                 await Task.Delay(1500);
                 StartButton.BackColor = DefaultBackColor;
                 StartButton.ForeColor = DefaultForeColor;
                 StartButton.Font = new Font(StartButton.Font, FontStyle.Regular);
                 StartButton.Text = text;
                 StartButton.Enabled = true;
-                LanguageComboBox.Enabled = true;
+                LanguageImagedComboBox.Enabled = true;
             }
 
             
@@ -120,8 +126,8 @@ namespace Ruler.Starter
             try
             {
                 Hide();
-                Form ruler = new Ruler(licence,
-                    CountryData.EnglishNameByIso2.FirstOrDefault(x => x.Value == LanguageComboBox.Text).Key.ToLower(),
+                Form ruler = new Ruler(licence, Monitors.GetMonitors()[ScreenImagedComboBox.SelectedIndex],
+                    CountryData.EnglishNameByIso2.FirstOrDefault(x => x.Value == LanguageImagedComboBox.Text).Key.ToLower(),
                     IsDisguiseRuler.Checked);
                 ruler.Closed += (s, args) => Close();
                 ruler.Show();

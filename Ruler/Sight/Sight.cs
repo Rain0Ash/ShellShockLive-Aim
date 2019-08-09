@@ -2,19 +2,20 @@
 // PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
 
 using System;
-using System.Drawing;
-using System.Windows.Forms;
+using SharpDX;
 using Ruler.Common;
 using SharpDX.Direct2D1;
+using SharpDX.Mathematics.Interop;
 
 namespace Ruler
 {
     internal class Sight : Circle
     {
-        private static readonly SolidBrush CenterPaintBrush = new SolidBrush(Color.FromArgb(15, 220, 15));
+        private readonly SolidColorBrush centerPaintBrush;
         internal Sight(Point coord, Single radius, ref RenderTarget renderTarget)
             : base(coord, radius, ref renderTarget)
         {
+            centerPaintBrush = new SolidColorBrush(renderTarget, new RawColor4(15, 220, 15, 255));
         }
 
         public override void Draw(ref RenderTarget renderTarget)
