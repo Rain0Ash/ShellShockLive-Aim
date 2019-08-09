@@ -5,20 +5,19 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 using Ruler.Common;
+using SharpDX.Direct2D1;
 
 namespace Ruler
 {
-    internal class ReboundCircle : Circle, IRebound, IElement 
+    internal class ReboundCircle : Circle, IRebound
     {
-        internal ReboundCircle(Point coord, Single radius, PaintEventArgs e) :
-            base(coord, radius, e)
+        internal ReboundCircle(Point coord, Single radius, ref RenderTarget renderTarget) :
+            base(coord, radius, ref renderTarget)
         {
         }
         
-        public override void Draw()
+        public override void Draw(ref RenderTarget renderTarget)
         {
-            throw new NotImplementedException(
-                $"Method '{GetType().FullName}.{System.Reflection.MethodBase.GetCurrentMethod().Name}' is not implemented");
         }
     }
 }

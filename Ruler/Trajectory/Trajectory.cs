@@ -3,20 +3,29 @@
 
 using System;
 using System.Drawing;
+using System.Windows.Forms;
+using Ruler.Common;
+using SharpDX.Direct2D1;
 
 namespace Ruler
 {
-    internal class Trajectory
+    internal class Trajectory : Surface
     {
+        internal Point Coord;
         private Point[] points;
-        internal Trajectory(Int32 pointsCount = 60)
+        private static readonly SolidBrush PointPaintBrush = new SolidBrush(Color.Red);
+        internal Trajectory(Point coord, ref RenderTarget renderTarget)
+            : base(ref renderTarget)
         {
-            
+            Coord = coord;
         }
 
-        internal void Draw()
+        internal void Draw(ref RenderTarget renderTarget)
         {
-
+            foreach (Point point in points)
+            {
+                //Graphics.FillEllipse(PointPaintBrush, point.X, point.Y, 2f, 2f);
+            }
         }
     }
 }

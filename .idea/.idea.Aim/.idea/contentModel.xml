@@ -19,6 +19,7 @@
         <e p="LanguageFlags.cs" t="Include" />
         <e p="Licence.cs" t="Include" />
         <e p="Localization.cs" t="Include" />
+        <e p="Monitors.cs" t="Include" />
         <e p="Settings.cs" t="Include" />
         <e p="Types" t="Include">
           <e p="OrderedSet.cs" t="Include" />
@@ -44,12 +45,17 @@
         </e>
         <e p="Common" t="Include">
           <e p="Circle.cs" t="Include" />
-          <e p="ElementForm.cs" t="Include" />
+          <e p="IElement.cs" t="Include" />
+          <e p="Parametrs.cs" t="Include" />
           <e p="Surface.cs" t="Include" />
+        </e>
+        <e p="Gui" t="Include">
+          <e p="WeaponPanel.cs" t="Include" />
         </e>
         <e p="Localization" t="Include">
           <e p="RulerLocalization.cs" t="Include" />
         </e>
+        <e p="Manager.cs" t="Include" />
         <e p="Portal" t="Include">
           <e p="Portal.cs" t="Include" />
         </e>
@@ -59,17 +65,17 @@
           <e p="ReboundWall.cs" t="Include" />
         </e>
         <e p="Ruler.cs" t="Include" />
+        <e p="RulerBackup.cs" t="Include" />
         <e p="Sight" t="Include">
           <e p="Aim.cs" t="Include" />
           <e p="Sight.cs" t="Include" />
         </e>
         <e p="Trajectory" t="Include">
-          <e p="Guidance" t="Include">
-            <e p="Direct.cs" t="Include" />
-            <e p="Parabola.cs" t="Include" />
-          </e>
           <e p="Guidance.cs" t="Include" />
           <e p="Trajectory.cs" t="Include" />
+          <e p="Weapons" t="Include">
+            <e p="Weapon.cs" t="Include" />
+          </e>
         </e>
       </e>
       <e p="Starter" t="Include">

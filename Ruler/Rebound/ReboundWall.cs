@@ -5,21 +5,26 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 using Ruler.Common;
+using SharpDX.Direct2D1;
 
 namespace Ruler
 {
-    public class ReboundWall : Surface, IRebound, IElement
+    public class ReboundWall : Surface, IRebound
     {
-        public ReboundWall(Point coord, Single radius, PaintEventArgs e)
-            : base(e)
-        {
+        private Rectangle wallRectangle;
+        private static readonly Pen ReboundWallPaintPen = Pens.Fuchsia;
 
+        public Point FirstCoord, SecondCoord;
+        public ReboundWall(Rectangle rectangle, ref RenderTarget renderTarget)
+            : base(ref renderTarget)
+        {
+            wallRectangle = rectangle;
+            
         }
         
-        public void Draw()
+        public override void Draw(ref RenderTarget drawer)
         {
-            throw new NotImplementedException(
-                $"Method '{GetType().FullName}.{System.Reflection.MethodBase.GetCurrentMethod().Name}' is not implemented");
+            
         }
     }
 }

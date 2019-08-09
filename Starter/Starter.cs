@@ -117,11 +117,21 @@ namespace Ruler.Starter
                 return;
             }
 
-            Hide();
-            Form ruler = new Ruler(licence, CountryData.EnglishNameByIso2.FirstOrDefault(x => x.Value == LanguageComboBox.Text).Key.ToLower(),
-                IsDisguiseRuler.Checked);
-            ruler.Closed += (s, args) => this.Close();
-            ruler.Show();
+            try
+            {
+                Hide();
+                Form ruler = new Ruler(licence,
+                    CountryData.EnglishNameByIso2.FirstOrDefault(x => x.Value == LanguageComboBox.Text).Key.ToLower(),
+                    IsDisguiseRuler.Checked);
+                ruler.Closed += (s, args) => Close();
+                ruler.Show();
+                Dispose();
+            }
+            catch (ObjectDisposedException)
+            {
+                Close();
+                Application.Exit();
+            }
         }
     }
 }

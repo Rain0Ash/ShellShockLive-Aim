@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Threading;
 using System.Windows.Forms;
 using Ruler.Common;
+using SharpDX.Direct2D1;
 
 namespace Ruler
 {
@@ -22,7 +23,7 @@ namespace Ruler
             new[] {Color.Yellow, Color.Red},
         };
 
-    internal readonly Portal FirstPortal, SecondPortal;
+    internal Portal FirstPortal, SecondPortal;
 
     internal Portals(Portal firstPortal, Portal secondPortal)
         {
@@ -61,19 +62,19 @@ namespace Ruler
             return point;
         }
 
-        public void Draw()
+        public void Draw(ref RenderTarget renderTarget)
         {
-            FirstPortal.Draw();
-            SecondPortal.Draw();
+            FirstPortal.Draw(ref renderTarget);
+            SecondPortal.Draw(ref renderTarget);
         }
     }
-    
     internal class Portal : Circle
     {
-        internal Portal(Point coord, Single radius, PaintEventArgs e)
-            : base(coord, radius, e)
+        internal Portal(Point coord, Single radius, ref RenderTarget renderTarget)
+            : base(coord, radius, ref renderTarget)
         {
-            
         }
+        
+        
     }
 }
