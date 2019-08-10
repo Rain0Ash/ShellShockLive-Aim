@@ -2,15 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="17241591-2831-47bf-832a-6ed66df19717" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Starter/Registry/Registry.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitmodules" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Aim/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Aim/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Aim/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Aim/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Aim.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Aim.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aim.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/Aim.sln.DotSettings.user" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Common/Licence.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Common/Licence.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Properties/Resources.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Properties/Resources.Designer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Properties/Resources.resx" beforeDir="false" afterPath="$PROJECT_DIR$/Properties/Resources.resx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Resources/notepad.ico" beforeDir="false" afterPath="$PROJECT_DIR$/Resources/notepad.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ruler/Ruler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Ruler/Ruler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Common/Localization.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Common/Localization.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Common/Monitors.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Common/Monitors.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Common/Settings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Common/Settings.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ruler/Common/Circle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Ruler/Common/Circle.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ruler/Common/Keyboard/KeyboardHook.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Ruler/Common/Keyboard/KeyboardHook.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ruler/Common/KeyboardController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Ruler/Common/KeyboardController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ruler/Common/Surface.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Ruler/Common/Surface.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ruler/Rebound/ReboundCircle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Ruler/Rebound/ReboundCircle.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ruler/Sight/Aim.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Ruler/Sight/Aim.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Starter/Localization/StarterLocalization.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Starter/Localization/StarterLocalization.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Starter/Registry/Registry.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Starter/Registry/Registry.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Starter/Starter.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Starter/Starter.Designer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Starter/Starter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Starter/Starter.cs" afterDir="false" />
     </list>
@@ -23,106 +32,65 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Ruler/Manager.cs">
+        <entry file="file://$PROJECT_DIR$/Ruler/Rebound/ReboundWall.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="560">
-              <caret line="48" column="52" selection-start-line="48" selection-start-column="52" selection-end-line="48" selection-end-column="52" />
+            <state relative-caret-position="16">
+              <caret line="1" column="82" selection-start-line="1" selection-start-column="82" selection-end-line="1" selection-end-column="82" />
               <folding>
-                <marker date="1565365629364" expanded="true" signature="6:224" ph="..." />
-                <marker date="1565365629364" expanded="true" signature="241:1271" ph="{...}" />
-                <marker date="1565365629364" expanded="true" signature="270:1269" ph="{...}" />
-                <marker date="1565365629364" expanded="true" signature="485:607" ph="{...}" />
-                <marker date="1565365629364" expanded="true" signature="638:979" ph="{...}" />
-                <marker date="1565365629364" expanded="true" signature="810:969" ph="{...}" />
-                <marker date="1565365629364" expanded="true" signature="863:926" ph="{...}" />
-                <marker date="1565365629364" expanded="true" signature="1013:1263" ph="{...}" />
+                <marker date="1565353371350" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
+                <marker date="1565353371350" expanded="true" signature="186:288" ph="..." />
+                <marker date="1565353371350" expanded="true" signature="305:819" ph="{...}" />
+                <marker date="1565353371350" expanded="true" signature="356:817" ph="{...}" />
+                <marker date="1565353371350" expanded="true" signature="638:710" ph="{...}" />
+                <marker date="1565353371350" expanded="true" signature="778:811" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Ruler/Common/KeyboardController.cs">
+        <entry file="file://$PROJECT_DIR$/Ruler/Sight/Aim.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="15" column="79" selection-start-line="15" selection-start-column="79" selection-end-line="15" selection-end-column="79" />
+            <state relative-caret-position="64">
+              <caret line="10" column="15" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="15" />
               <folding>
-                <marker date="1565358204538" expanded="false" signature="6:41" ph="..." />
-                <marker date="1565358204538" expanded="true" signature="65:1272" ph="{...}" />
-                <marker date="1565358204538" expanded="true" signature="119:1270" ph="{...}" />
-                <marker date="1565358204538" expanded="true" signature="223:368" ph="{...}" />
-                <marker date="1565358204538" expanded="true" signature="449:1169" ph="{...}" />
-                <marker date="1565358204538" expanded="true" signature="634:970" ph="/* seems, not needed in the life. ... */" />
-                <marker date="1565358204538" expanded="true" signature="1048:1159" ph="{...}" />
-                <marker date="1565358204538" expanded="true" signature="1200:1264" ph="{...}" />
+                <marker date="1565436420355" expanded="true" signature="6:73" ph="..." />
+                <marker date="1565436420355" expanded="true" signature="90:1009" ph="{...}" />
+                <marker date="1565436420355" expanded="true" signature="124:1007" ph="{...}" />
+                <marker date="1565436420355" expanded="true" signature="383:457" ph="{...}" />
+                <marker date="1565436420355" expanded="true" signature="515:561" ph="{...}" />
+                <marker date="1565436420355" expanded="true" signature="642:688" ph="{...}" />
+                <marker date="1565436420355" expanded="true" signature="754:1001" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Ruler/Sight/Sight.cs">
+        <entry file="file://$PROJECT_DIR$/Common/Localization.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="25" column="14" selection-start-line="25" selection-start-column="14" selection-end-line="25" selection-end-column="14" />
+            <state relative-caret-position="1424">
+              <caret line="106" column="58" selection-start-line="106" selection-start-column="58" selection-end-line="106" selection-end-column="58" />
               <folding>
-                <marker date="1565361769627" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
-                <marker date="1565361769627" expanded="true" signature="186:288" ph="..." />
-                <marker date="1565361769627" expanded="true" signature="305:2577" ph="{...}" />
-                <marker date="1565361769627" expanded="true" signature="341:2575" ph="{...}" />
-                <marker date="1565361769627" expanded="true" signature="540:659" ph="{...}" />
-                <marker date="1565361769627" expanded="true" signature="725:2569" ph="{...}" />
-                <marker date="1565361769627" expanded="true" signature="790:2559" ph="/* Pen pen; ... */" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Ruler/Ruler.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="86" column="9" lean-forward="true" selection-start-line="86" selection-start-column="9" selection-end-line="86" selection-end-column="9" />
-              <folding>
-                <marker date="1565391375152" expanded="true" signature="6:281" ph="..." />
-                <marker date="1565391375152" expanded="true" signature="298:3582" ph="{...}" />
-                <marker date="1565391375152" expanded="true" signature="345:3580" ph="{...}" />
-                <marker date="1565391375152" expanded="true" signature="585:3574" ph="{...}" />
-                <marker date="1565391375152" expanded="true" signature="1457:1923" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Starter/Starter.Designer.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-412">
-              <caret line="141" column="56" selection-start-line="141" selection-start-column="56" selection-end-line="141" selection-end-column="56" />
-              <folding>
-                <marker date="1565396459255" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
-                <marker date="1565396459255" expanded="false" signature="186:369" ph="..." />
-                <marker date="1565396459255" expanded="true" signature="394:10081" ph="{...}" />
-                <marker date="1565396459255" expanded="true" signature="422:10079" ph="{...}" />
-                <marker date="1565396459255" expanded="true" signature="507:583" ph="/// Required designer variable. ... " />
-                <marker date="1565396459255" expanded="true" signature="661:852" ph="/// Clean up any resources being used. ... " />
-                <marker date="1565396459255" expanded="true" signature="908:1082" ph="{...}" />
-                <marker date="1565396459255" expanded="true" signature="969:1035" ph="{...}" />
-                <marker date="1565396459255" expanded="true" signature="1092:9623" ph="Windows Form Designer generated code" />
-                <marker date="1565396459255" expanded="true" signature="1146:1309" ph="/// Required method for Designer support - do not modify ... " />
-                <marker date="1565396459255" expanded="true" signature="1352:9603" ph="{...}" />
-                <marker date="1565396459255" expanded="true" signature="2146:2194" ph="/* LanguageLabel ... */" />
-                <marker date="1565396459255" expanded="true" signature="2551:2602" ph="/* LanguageComboBox ... */" />
-                <marker date="1565396459255" expanded="true" signature="3429:3475" ph="/* ScreenLabel ... */" />
-                <marker date="1565396459255" expanded="true" signature="3820:3869" ph="/* ScreenComboBox ... */" />
-                <marker date="1565396459255" expanded="true" signature="4539:4711" ph="/* this.LanguageComboBox.SelectedIndexChanged += new System.EventHandler(this.LanguageComboBox_ChangeStarterLangu ... */" />
-                <marker date="1565396459255" expanded="true" signature="5029:5072" ph="/* KeyLabel ... */" />
-                <marker date="1565396459255" expanded="true" signature="5399:5443" ph="/* LicenceID ... */" />
-                <marker date="1565396459255" expanded="true" signature="6051:6193" ph="/* this.LicenceID.TextChanged += new System.EventHandler(this.LicenceID_TextChanged); ... */" />
-                <marker date="1565396459255" expanded="true" signature="6793:6843" ph="/* IsDisguiseRuler ... */" />
-                <marker date="1565396459255" expanded="true" signature="7292:7345" ph="/* NotDisplayCheckBox ... */" />
-                <marker date="1565396459255" expanded="true" signature="7823:7869" ph="/* StartButton ... */" />
-                <marker date="1565396459255" expanded="true" signature="8315:8357" ph="/* Starter ... */" />
+                <marker date="1565435940484" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
+                <marker date="1565435940484" expanded="false" signature="186:398" ph="..." />
+                <marker date="1565435940484" expanded="true" signature="416:4324" ph="{...}" />
+                <marker date="1565435940484" expanded="true" signature="459:4322" ph="{...}" />
+                <marker date="1565435940484" expanded="true" signature="591:2864" ph="{...}" />
+                <marker date="1565435940484" expanded="true" signature="770:1070" ph="{...}" />
+                <marker date="1565435940484" expanded="true" signature="1181:2628" ph="{...}" />
+                <marker date="1565435940484" expanded="true" signature="1475:1552" ph="{...}" />
+                <marker date="1565435940484" expanded="true" signature="1625:2212" ph="{...}" />
+                <marker date="1565435940484" expanded="true" signature="1827:2080" ph="{...}" />
+                <marker date="1565435940484" expanded="true" signature="2105:2194" ph="{...}" />
+                <marker date="1565435940484" expanded="true" signature="2258:2492" ph="{...}" />
+                <marker date="1565435940484" expanded="true" signature="2535:2614" ph="{...}" />
+                <marker date="1565435940484" expanded="true" signature="2683:2854" ph="{...}" />
+                <marker date="1565435940484" expanded="true" signature="2969:3224" ph="{...}" />
+                <marker date="1565435940484" expanded="true" signature="3102:3214" ph="{...}" />
+                <marker date="1565435940484" expanded="true" signature="3276:3368" ph="{...}" />
+                <marker date="1565435940484" expanded="true" signature="3434:3941" ph="{...}" />
+                <marker date="1565435940484" expanded="true" signature="4001:4316" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -132,49 +100,102 @@
         <entry file="file://$PROJECT_DIR$/Starter/Starter.cs">
           <provider editor-type-id="WinFormsEditor" />
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="233">
-              <caret line="40" column="118" selection-start-line="40" selection-start-column="118" selection-end-line="40" selection-end-column="118" />
+            <state relative-caret-position="114">
+              <caret line="151" column="23" lean-forward="true" selection-start-line="151" selection-start-column="23" selection-end-line="151" selection-end-column="23" />
               <folding>
-                <marker date="1565397648213" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
-                <marker date="1565397648213" expanded="true" signature="186:527" ph="..." />
-                <marker date="1565397648213" expanded="true" signature="552:5992" ph="{...}" />
-                <marker date="1565397648213" expanded="true" signature="594:5990" ph="{...}" />
-                <marker date="1565397648213" expanded="true" signature="626:740" ph="{...}" />
-                <marker date="1565397648213" expanded="true" signature="802:1890" ph="{...}" />
-                <marker date="1565397648213" expanded="true" signature="1962:2644" ph="{...}" />
-                <marker date="1565397648213" expanded="true" signature="2116:2423" ph="{...}" />
-                <marker date="1565397648213" expanded="true" signature="2440:2621" ph="{...}" />
-                <marker date="1565397648213" expanded="true" signature="2738:3341" ph="{...}" />
-                <marker date="1565397648213" expanded="true" signature="3415:3470" ph="{...}" />
-                <marker date="1565397648213" expanded="true" signature="3544:5984" ph="{...}" />
-                <marker date="1565397648213" expanded="true" signature="3608:4396" ph="{...}" />
-                <marker date="1565397648213" expanded="true" signature="4454:4601" ph="{...}" />
-                <marker date="1565397648213" expanded="true" signature="4639:5151" ph="{...}" />
-                <marker date="1565397648213" expanded="true" signature="5265:5382" ph="{...}" />
-                <marker date="1565397648213" expanded="true" signature="5399:5841" ph="{...}" />
-                <marker date="1565397648213" expanded="true" signature="5885:5974" ph="{...}" />
+                <marker date="1565452635407" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
+                <marker date="1565452635407" expanded="true" signature="186:486" ph="..." />
+                <marker date="1565452635407" expanded="true" signature="511:8007" ph="{...}" />
+                <marker date="1565452635407" expanded="true" signature="553:8005" ph="{...}" />
+                <marker date="1565452635407" expanded="true" signature="584:698" ph="{...}" />
+                <marker date="1565452635407" expanded="true" signature="760:3279" ph="{...}" />
+                <marker date="1565452635407" expanded="true" signature="2102:2607" ph="{...}" />
+                <marker date="1565452635407" expanded="true" signature="2195:2567" ph="{...}" />
+                <marker date="1565452635407" expanded="true" signature="2471:2549" ph="{...}" />
+                <marker date="1565452635407" expanded="true" signature="3351:4033" ph="{...}" />
+                <marker date="1565452635407" expanded="true" signature="3505:3812" ph="{...}" />
+                <marker date="1565452635407" expanded="true" signature="3829:4010" ph="{...}" />
+                <marker date="1565452635407" expanded="true" signature="4127:4810" ph="{...}" />
+                <marker date="1565452635407" expanded="true" signature="4884:4939" ph="{...}" />
+                <marker date="1565452635407" expanded="true" signature="5013:7999" ph="{...}" />
+                <marker date="1565452635407" expanded="true" signature="5077:5865" ph="{...}" />
+                <marker date="1565452635407" expanded="true" signature="5923:6070" ph="{...}" />
+                <marker date="1565452635407" expanded="true" signature="6108:6620" ph="{...}" />
+                <marker date="1565452635407" expanded="true" signature="6734:6851" ph="{...}" />
+                <marker date="1565452635407" expanded="true" signature="6868:7856" ph="{...}" />
+                <marker date="1565452635407" expanded="true" signature="7096:7405" ph="{...}" />
+                <marker date="1565452635407" expanded="true" signature="7426:7518" ph="{...}" />
+                <marker date="1565452635407" expanded="true" signature="7900:7989" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Common/Licence.cs">
+        <entry file="file://$PROJECT_DIR$/Common/Monitors.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="15" column="49" selection-start-line="15" selection-start-column="49" selection-end-line="15" selection-end-column="49" />
+            <state relative-caret-position="289">
+              <caret line="57" column="12" selection-start-line="57" selection-start-column="12" selection-end-line="57" selection-end-column="12" />
               <folding>
-                <marker date="1565397676586" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
-                <marker date="1565397676586" expanded="false" signature="186:301" ph="..." />
-                <marker date="1565397676586" expanded="true" signature="319:1947" ph="{...}" />
-                <marker date="1565397676586" expanded="true" signature="348:1945" ph="{...}" />
-                <marker date="1565397676586" expanded="true" signature="839:974" ph="{...}" />
-                <marker date="1565397676586" expanded="true" signature="1032:1305" ph="{...}" />
-                <marker date="1565397676586" expanded="true" signature="1374:1436" ph="{...}" />
-                <marker date="1565397676586" expanded="true" signature="1495:1560" ph="{...}" />
-                <marker date="1565397676586" expanded="true" signature="1628:1706" ph="{...}" />
-                <marker date="1565397676586" expanded="true" signature="1755:1822" ph="{...}" />
-                <marker date="1565397676586" expanded="true" signature="1858:1939" ph="{...}" />
+                <marker date="1565452738272" expanded="true" signature="6:174" ph="..." />
+                <marker date="1565452738272" expanded="true" signature="192:3882" ph="{...}" />
+                <marker date="1565452738272" expanded="true" signature="220:578" ph="{...}" />
+                <marker date="1565452738272" expanded="true" signature="434:572" ph="{...}" />
+                <marker date="1565452738272" expanded="true" signature="616:2318" ph="{...}" />
+                <marker date="1565452738272" expanded="true" signature="892:1224" ph="{...}" />
+                <marker date="1565452738272" expanded="true" signature="1279:2312" ph="{...}" />
+                <marker date="1565452738272" expanded="true" signature="1529:2149" ph="{...}" />
+                <marker date="1565452738272" expanded="true" signature="2580:3880" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Common/Settings.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="176">
+              <caret line="11" column="53" selection-start-line="11" selection-start-column="53" selection-end-line="11" selection-end-column="53" />
+              <folding>
+                <marker date="1565445136813" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
+                <marker date="1565445136813" expanded="true" signature="186:240" ph="..." />
+                <marker date="1565445136813" expanded="true" signature="258:361" ph="{...}" />
+                <marker date="1565445136813" expanded="true" signature="293:359" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Starter/Starter.Designer.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-32">
+              <caret line="98" column="15" selection-start-line="98" selection-start-column="15" selection-end-line="98" selection-end-column="15" />
+              <folding>
+                <marker date="1565440669565" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
+                <marker date="1565440669565" expanded="false" signature="186:369" ph="..." />
+                <marker date="1565440669565" expanded="true" signature="394:10182" ph="{...}" />
+                <marker date="1565440669565" expanded="true" signature="422:10180" ph="{...}" />
+                <marker date="1565440669565" expanded="true" signature="507:583" ph="/// Required designer variable. ... " />
+                <marker date="1565440669565" expanded="true" signature="661:852" ph="/// Clean up any resources being used. ... " />
+                <marker date="1565440669565" expanded="true" signature="908:1082" ph="{...}" />
+                <marker date="1565440669565" expanded="true" signature="969:1035" ph="{...}" />
+                <marker date="1565440669565" expanded="true" signature="1092:9667" ph="Windows Form Designer generated code" />
+                <marker date="1565440669565" expanded="true" signature="1146:1309" ph="/// Required method for Designer support - do not modify ... " />
+                <marker date="1565440669565" expanded="true" signature="1352:9647" ph="{...}" />
+                <marker date="1565440669565" expanded="true" signature="2233:2281" ph="/* LanguageLabel ... */" />
+                <marker date="1565440669565" expanded="true" signature="2588:2639" ph="/* LanguageComboBox ... */" />
+                <marker date="1565440669565" expanded="true" signature="3466:3512" ph="/* ScreenLabel ... */" />
+                <marker date="1565440669565" expanded="true" signature="3810:3859" ph="/* ScreenComboBox ... */" />
+                <marker date="1565440669565" expanded="true" signature="4529:4701" ph="/* this.LanguageComboBox.SelectedIndexChanged += new System.EventHandler(this.LanguageComboBox_ChangeStarterLangu ... */" />
+                <marker date="1565440669565" expanded="true" signature="4973:5016" ph="/* KeyLabel ... */" />
+                <marker date="1565440669565" expanded="true" signature="5295:5339" ph="/* LicenceID ... */" />
+                <marker date="1565440669565" expanded="true" signature="5812:5954" ph="/* this.LicenceID.TextChanged += new System.EventHandler(this.LicenceID_TextChanged); ... */" />
+                <marker date="1565440669565" expanded="true" signature="6383:6433" ph="/* IsDisguiseRuler ... */" />
+                <marker date="1565440669565" expanded="true" signature="6820:6873" ph="/* NotDisplayCheckBox ... */" />
+                <marker date="1565440669565" expanded="true" signature="7343:7401" ph="/* NotSaveSettingsCheckBox ... */" />
+                <marker date="1565440669565" expanded="true" signature="7844:7890" ph="/* StartButton ... */" />
+                <marker date="1565440669565" expanded="true" signature="8291:8333" ph="/* Starter ... */" />
               </folding>
             </state>
           </provider>
@@ -183,53 +204,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Starter/Registry/Registry.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="377">
-              <caret line="34" column="64" lean-forward="true" selection-start-line="34" selection-start-column="64" selection-end-line="34" selection-end-column="64" />
+            <state relative-caret-position="68">
+              <caret line="57" column="37" lean-forward="true" selection-start-line="57" selection-start-column="37" selection-end-line="57" selection-end-column="37" />
               <folding>
-                <marker date="1565394337157" expanded="true" signature="6:73" ph="..." />
-                <marker date="1565394337157" expanded="true" signature="107:2363" ph="{...}" />
-                <marker date="1565394337157" expanded="true" signature="146:719" ph="{...}" />
-                <marker date="1565394337157" expanded="true" signature="487:713" ph="{...}" />
-                <marker date="1565394337157" expanded="true" signature="759:2361" ph="{...}" />
-                <marker date="1565394337157" expanded="true" signature="878:1625" ph="{...}" />
-                <marker date="1565394337157" expanded="true" signature="904:1444" ph="{...}" />
-                <marker date="1565394337157" expanded="true" signature="1540:1615" ph="{...}" />
-                <marker date="1565394337157" expanded="true" signature="1702:1835" ph="{...}" />
-                <marker date="1565394337157" expanded="true" signature="1924:2001" ph="{...}" />
-                <marker date="1565394337157" expanded="true" signature="2070:2355" ph="{...}" />
-                <marker date="1565394337157" expanded="true" signature="2117:2345" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Common/Localization.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="193">
-              <caret line="81" column="142" selection-start-line="81" selection-start-column="142" selection-end-line="81" selection-end-column="142" />
-              <folding>
-                <marker date="1565388496436" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
-                <marker date="1565388496436" expanded="false" signature="186:359" ph="..." />
-                <marker date="1565388496436" expanded="true" signature="377:4913" ph="{...}" />
-                <marker date="1565388496436" expanded="true" signature="420:4911" ph="{...}" />
-                <marker date="1565388496436" expanded="true" signature="469:680" ph="{...}" />
-                <marker date="1565388496436" expanded="true" signature="809:3064" ph="{...}" />
-                <marker date="1565388496436" expanded="true" signature="982:1272" ph="{...}" />
-                <marker date="1565388496436" expanded="true" signature="1381:2828" ph="{...}" />
-                <marker date="1565388496436" expanded="true" signature="1675:1752" ph="{...}" />
-                <marker date="1565388496436" expanded="true" signature="1825:2412" ph="{...}" />
-                <marker date="1565388496436" expanded="true" signature="2027:2280" ph="{...}" />
-                <marker date="1565388496436" expanded="true" signature="2305:2394" ph="{...}" />
-                <marker date="1565388496436" expanded="true" signature="2458:2692" ph="{...}" />
-                <marker date="1565388496436" expanded="true" signature="2735:2814" ph="{...}" />
-                <marker date="1565388496436" expanded="true" signature="2883:3054" ph="{...}" />
-                <marker date="1565388496436" expanded="true" signature="3102:3354" ph="{...}" />
-                <marker date="1565388496436" expanded="true" signature="3232:3344" ph="{...}" />
-                <marker date="1565388496436" expanded="true" signature="3434:3516" ph="{...}" />
-                <marker date="1565388496436" expanded="true" signature="3576:3977" ph="{...}" />
-                <marker date="1565388496436" expanded="true" signature="4043:4540" ph="{...}" />
-                <marker date="1565388496436" expanded="true" signature="4590:4905" ph="{...}" />
+                <marker date="1565452424931" expanded="true" signature="6:148" ph="..." />
+                <marker date="1565452424931" expanded="true" signature="182:5118" ph="{...}" />
+                <marker date="1565452424931" expanded="true" signature="221:1199" ph="{...}" />
+                <marker date="1565452424931" expanded="true" signature="767:1193" ph="{...}" />
+                <marker date="1565452424931" expanded="true" signature="1239:5116" ph="{...}" />
+                <marker date="1565452424931" expanded="true" signature="1384:2725" ph="{...}" />
+                <marker date="1565452424931" expanded="true" signature="1486:2474" ph="{...}" />
+                <marker date="1565452424931" expanded="true" signature="2636:2715" ph="{...}" />
+                <marker date="1565452424931" expanded="true" signature="2805:4041" ph="{...}" />
+                <marker date="1565452424931" expanded="true" signature="2831:3783" ph="{...}" />
+                <marker date="1565452424931" expanded="true" signature="3973:4031" ph="{...}" />
+                <marker date="1565452424931" expanded="true" signature="4091:4590" ph="{...}" />
+                <marker date="1565452424931" expanded="true" signature="4117:4342" ph="{...}" />
+                <marker date="1565452424931" expanded="true" signature="4522:4580" ph="{...}" />
+                <marker date="1565452424931" expanded="true" signature="4679:4756" ph="{...}" />
+                <marker date="1565452424931" expanded="true" signature="4825:5110" ph="{...}" />
+                <marker date="1565452424931" expanded="true" signature="4872:5100" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -238,15 +232,15 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Starter/Localization/StarterLocalization.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="14" column="30" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
+            <state relative-caret-position="393">
+              <caret line="51" column="39" selection-start-line="51" selection-start-column="39" selection-end-line="51" selection-end-column="39" />
               <folding>
-                <marker date="1565367799169" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
-                <marker date="1565367799169" expanded="true" signature="186:235" ph="..." />
-                <marker date="1565367799169" expanded="true" signature="267:2270" ph="{...}" />
-                <marker date="1565367799169" expanded="true" signature="338:2268" ph="{...}" />
-                <marker date="1565367799169" expanded="true" signature="757:2135" ph="{...}" />
-                <marker date="1565367799169" expanded="true" signature="2197:2262" ph="{...}" />
+                <marker date="1565440790955" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
+                <marker date="1565440790955" expanded="true" signature="186:207" ph="..." />
+                <marker date="1565440790955" expanded="true" signature="239:2443" ph="{...}" />
+                <marker date="1565440790955" expanded="true" signature="310:2441" ph="{...}" />
+                <marker date="1565440790955" expanded="true" signature="768:2308" ph="{...}" />
+                <marker date="1565440790955" expanded="true" signature="2370:2435" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -257,6 +251,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>Message</find>
+      <find>&quot;en&quot;</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -278,7 +273,8 @@
     <setting file="file://$PROJECT_DIR$/Common/Monitors.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Ruler/Common/Circle.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Starter/Localization/StarterLocalization.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Ruler/RulerBackup.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Ruler/RulerBackup.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/app.config" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Ruler/Sight/Sight.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Ruler/Portal/Portal.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Ruler/Localization/RulerLocalization.cs" root0="FORCE_HIGHLIGHTING" />
@@ -295,10 +291,10 @@
     <setting file="file://$PROJECT_DIR$/Ruler/Ruler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Ruler/Rebound/IRebound.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Starter/Registry/Registry.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///C# Console" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Ruler/Common/Keyboard/KeyboardHook.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Properties/Resources.resx" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Ruler/Rebound/ReboundCircle.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Properties/Resources.Designer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Ruler/Rebound/ReboundWall.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Properties/Settings.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Ruler/BlackHole/BlackHole.cs" root0="FORCE_HIGHLIGHTING" />
@@ -330,29 +326,34 @@
         <option value="$PROJECT_DIR$/Ruler/RulerBackup.cs" />
         <option value="$PROJECT_DIR$/Ruler/Rebound/ReboundWall.cs" />
         <option value="$PROJECT_DIR$/Ruler/Common/IElement.cs" />
-        <option value="$PROJECT_DIR$/Ruler/Common/Surface.cs" />
         <option value="$PROJECT_DIR$/Ruler/Trajectory/Trajectory.cs" />
         <option value="$PROJECT_DIR$/Ruler/Common/Keyboard/Keyboard.cs" />
         <option value="$PROJECT_DIR$/Ruler/Common/Keyboard.cs" />
-        <option value="$PROJECT_DIR$/Program.cs" />
         <option value="$PROJECT_DIR$/Ruler/Portal/Portal.cs" />
         <option value="$PROJECT_DIR$/Ruler/BlackHole/BlackHole.cs" />
-        <option value="$PROJECT_DIR$/Ruler/Rebound/ReboundCircle.cs" />
-        <option value="$PROJECT_DIR$/Ruler/Sight/Aim.cs" />
         <option value="$PROJECT_DIR$/Ruler/Sight/Sight.cs" />
-        <option value="$PROJECT_DIR$/Ruler/Common/KeyboardController.cs" />
         <option value="$PROJECT_DIR$/Ruler/Manager.cs" />
-        <option value="$PROJECT_DIR$/Ruler/Common/Circle.cs" />
-        <option value="$PROJECT_DIR$/Starter/Localization/StarterLocalization.cs" />
-        <option value="$PROJECT_DIR$/Common/Monitors.cs" />
-        <option value="$PROJECT_DIR$/Common/Localization.cs" />
         <option value="$PROJECT_DIR$/Properties/Resources.resx" />
         <option value="$PROJECT_DIR$/FodyWeavers.xml" />
         <option value="$PROJECT_DIR$/Ruler/Ruler.cs" />
-        <option value="$PROJECT_DIR$/Starter/Registry/Registry.cs" />
+        <option value="$PROJECT_DIR$/Program.cs" />
+        <option value="$PROJECT_DIR$/Ruler/Rebound/ReboundCircle.cs" />
+        <option value="$PROJECT_DIR$/Ruler/Sight/Aim.cs" />
+        <option value="$PROJECT_DIR$/Ruler/Common/Keyboard/KeyboardHook.cs" />
+        <option value="$PROJECT_DIR$/Ruler/Common/KeyboardController.cs" />
+        <option value="$PROJECT_DIR$/Ruler/Common/Surface.cs" />
+        <option value="$PROJECT_DIR$/Common/Localization.cs" />
         <option value="$PROJECT_DIR$/Starter/Starter.Designer.cs" />
-        <option value="$PROJECT_DIR$/Starter/Starter.cs" />
+        <option value="$PROJECT_DIR$/Starter/Localization/StarterLocalization.cs" />
+        <option value="$PROJECT_DIR$/Ruler/Common/Circle.cs" />
         <option value="$PROJECT_DIR$/Common/Licence.cs" />
+        <option value="$PROJECT_DIR$/Common/BuildDateTime.cs" />
+        <option value="$PROJECT_DIR$/Common/Settings.cs" />
+        <option value="$PROJECT_DIR$/BuildInfo.tt" />
+        <option value="$PROJECT_DIR$/BuildInfo.cs" />
+        <option value="$PROJECT_DIR$/Starter/Registry/Registry.cs" />
+        <option value="$PROJECT_DIR$/Starter/Starter.cs" />
+        <option value="$PROJECT_DIR$/Common/Monitors.cs" />
       </list>
     </option>
   </component>
@@ -374,7 +375,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="FileSystemExplorer" />
       <pane id="AssemblyExplorer" />
       <pane id="SolutionExplorer">
         <subPane>
@@ -400,11 +400,19 @@
               <item name="Aim" type="24d0babc:SolutionExplorerModelNode" />
               <item name="Starter" type="24d0babc:SolutionExplorerModelNode" />
             </path>
+            <path>
+              <item name="" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="Aim" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Aim" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Starter" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Starter.cs" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
           </expand>
           <select />
         </subPane>
         <option name="show-all-files" value="false" />
       </pane>
+      <pane id="FileSystemExplorer" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -412,6 +420,7 @@
     <property name="Rider.ProjectViewActivator.IsNotFirstRun" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="editor.config.ad.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/BuildInfo" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.stylelint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -479,7 +488,9 @@
       <workItem from="1565207740700" duration="17985000" />
       <workItem from="1565278454905" duration="1280000" />
       <workItem from="1565350331689" duration="26180000" />
-      <workItem from="1565391215018" duration="6457000" />
+      <workItem from="1565391215018" duration="6630000" />
+      <workItem from="1565431446340" duration="13905000" />
+      <workItem from="1565449387879" duration="3348000" />
     </task>
     <task id="LOCAL-00001" summary="Update">
       <created>1565097028546</created>
@@ -502,11 +513,18 @@
       <option name="project" value="LOCAL" />
       <updated>1565389470378</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Starter update">
+      <created>1565397849149</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1565397849149</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="108115000" />
+    <option name="totallyTimeSpent" value="125541000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -540,13 +558,14 @@
       <window_info anchor="bottom" id="Terminal" order="14" weight="0.32977587" />
       <window_info anchor="bottom" id="Event Log" order="15" sideWeight="0.5002664" side_tool="true" weight="0.32977587" />
       <window_info anchor="bottom" id="Build" order="16" weight="0.32977587" />
+      <window_info anchor="bottom" id="Inspection Results" order="17" weight="0.32977587" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.24986681" />
-      <window_info anchor="right" content_ui="combo" id="Project" order="3" sideWeight="0.49840763" visible="true" weight="0.19765583" />
+      <window_info anchor="right" content_ui="combo" id="Project" order="3" sideWeight="0.49733192" visible="true" weight="0.1449121" />
       <window_info anchor="right" id="Database" order="4" />
       <window_info anchor="right" id="Unit Tests Coverage" order="5" />
-      <window_info anchor="right" id="Designer Toolbox" order="6" sideWeight="0.50159234" side_tool="true" weight="0.19552477" />
+      <window_info anchor="right" id="Designer Toolbox" order="6" sideWeight="0.5026681" side_tool="true" weight="0.1433138" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -556,20 +575,10 @@
     <MESSAGE value="Update" />
     <MESSAGE value="DirectX window" />
     <MESSAGE value="Add screen choise to starter" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add screen choise to starter" />
+    <MESSAGE value="Starter update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Starter update" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Aim.csproj">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Symbols/src/Source/03761.00/Source/ndp/fx/src/winforms/Managed/System/WinForms/Form.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1151">
-          <caret line="7524" column="56" lean-forward="true" selection-start-line="7524" selection-start-column="56" selection-end-line="7524" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ruler/Portal/Colors.cs" />
     <entry file="file://$PROJECT_DIR$/Common/Forms/ImagedComboBox.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="67">
@@ -754,33 +763,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Common/Settings.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="7" column="24" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
-          <folding>
-            <marker date="1564874711980" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
-            <marker date="1564874711980" expanded="true" signature="211:315" ph="{...}" />
-            <marker date="1564874711980" expanded="true" signature="246:313" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ruler/Rebound/ReboundWall.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="388">
-          <caret line="26" column="12" selection-start-line="26" selection-start-column="12" selection-end-line="26" selection-end-column="12" />
-          <folding>
-            <marker date="1565353371350" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
-            <marker date="1565353371350" expanded="true" signature="186:288" ph="..." />
-            <marker date="1565353371350" expanded="true" signature="305:819" ph="{...}" />
-            <marker date="1565353371350" expanded="true" signature="356:817" ph="{...}" />
-            <marker date="1565353371350" expanded="true" signature="638:710" ph="{...}" />
-            <marker date="1565353371350" expanded="true" signature="778:811" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Ruler/Trajectory/Trajectory.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="372">
@@ -797,10 +779,912 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Ruler/Portal/Portal.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-752">
+          <caret line="4" column="33" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
+          <folding>
+            <marker date="1565361415090" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
+            <marker date="1565361415090" expanded="true" signature="186:339" ph="..." />
+            <marker date="1565361415090" expanded="true" signature="356:2459" ph="{...}" />
+            <marker date="1565361415090" expanded="true" signature="403:2237" ph="{...}" />
+            <marker date="1565361415090" expanded="true" signature="579:734" ph="{...}" />
+            <marker date="1565361415090" expanded="true" signature="846:1229" ph="{...}" />
+            <marker date="1565361415090" expanded="true" signature="1249:1318" ph="{...}" />
+            <marker date="1565361415090" expanded="true" signature="1369:1475" ph="{...}" />
+            <marker date="1565361415090" expanded="true" signature="1532:2057" ph="{...}" />
+            <marker date="1565361415090" expanded="true" signature="1590:1778" ph="{...}" />
+            <marker date="1565361415090" expanded="true" signature="1832:2020" ph="{...}" />
+            <marker date="1565361415090" expanded="true" signature="2114:2231" ph="{...}" />
+            <marker date="1565361415090" expanded="true" signature="2272:2457" ph="{...}" />
+            <marker date="1565361415090" expanded="true" signature="2413:2433" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Starter/Starter.resx">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ruler/BlackHole/BlackHole.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="4" column="14" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
+          <folding>
+            <marker date="1565361426673" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
+            <marker date="1565361426673" expanded="true" signature="186:281" ph="..." />
+            <marker date="1565361426673" expanded="true" signature="298:959" ph="{...}" />
+            <marker date="1565361426673" expanded="true" signature="338:957" ph="{...}" />
+            <marker date="1565361426673" expanded="true" signature="482:502" ph="{...}" />
+            <marker date="1565361426673" expanded="true" signature="566:633" ph="{...}" />
+            <marker date="1565361426673" expanded="true" signature="699:951" ph="{...}" />
+            <marker date="1565361426673" expanded="true" signature="722:941" ph="/* Graphics.DrawEllipse(Pens.DarkBlue, Coord.X - Radius / 2, Coord.Y - Radius / 2, Radius, Radius); ... */" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FodyWeavers.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="32">
+          <caret line="2" column="11" selection-start-line="2" selection-start-column="11" selection-end-line="2" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Properties/Resources.resx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="122" column="9" selection-start-line="122" selection-start-column="9" selection-end-line="122" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ruler/Common/IElement.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="6" column="47" selection-start-line="6" selection-start-column="47" selection-end-line="6" selection-end-column="47" />
+          <folding>
+            <marker date="1565353423824" expanded="true" signature="48:146" ph="{...}" />
+            <marker date="1565353423824" expanded="true" signature="82:144" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ruler/Manager.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="560">
+          <caret line="48" column="52" selection-start-line="48" selection-start-column="52" selection-end-line="48" selection-end-column="52" />
+          <folding>
+            <marker date="1565365629364" expanded="true" signature="6:224" ph="..." />
+            <marker date="1565365629364" expanded="true" signature="241:1271" ph="{...}" />
+            <marker date="1565365629364" expanded="true" signature="270:1269" ph="{...}" />
+            <marker date="1565365629364" expanded="true" signature="485:607" ph="{...}" />
+            <marker date="1565365629364" expanded="true" signature="638:979" ph="{...}" />
+            <marker date="1565365629364" expanded="true" signature="810:969" ph="{...}" />
+            <marker date="1565365629364" expanded="true" signature="863:926" ph="{...}" />
+            <marker date="1565365629364" expanded="true" signature="1013:1263" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ruler/Sight/Sight.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="25" column="14" selection-start-line="25" selection-start-column="14" selection-end-line="25" selection-end-column="14" />
+          <folding>
+            <marker date="1565361769627" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
+            <marker date="1565361769627" expanded="true" signature="186:288" ph="..." />
+            <marker date="1565361769627" expanded="true" signature="305:2577" ph="{...}" />
+            <marker date="1565361769627" expanded="true" signature="341:2575" ph="{...}" />
+            <marker date="1565361769627" expanded="true" signature="540:659" ph="{...}" />
+            <marker date="1565361769627" expanded="true" signature="725:2569" ph="{...}" />
+            <marker date="1565361769627" expanded="true" signature="790:2559" ph="/* Pen pen; ... */" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Properties/Resources.Designer.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-999">
+          <caret line="767" column="55" selection-start-line="767" selection-start-column="55" selection-end-line="767" selection-end-column="55" />
+          <folding>
+            <marker date="1565391359555" expanded="true" signature="0:408" ph="/* ------------------------------------------------------------------------------ ... */" />
+            <marker date="1565391359555" expanded="true" signature="437:92963" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="471:588" ph="///   Класс ресурса со строгой типизацией для поиска локализованных строк и т.д. ... " />
+            <marker date="1565391359555" expanded="true" signature="593:870" ph="/* Этот класс создан автоматически классом StronglyTypedResourceBuilder ... */" />
+            <marker date="1565391359555" expanded="true" signature="1167:92961" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="1518:1529" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="1547:1677" ph="///   Возвращает кэшированный экземпляр ResourceManager, использованный этим классом. ... " />
+            <marker date="1565391359555" expanded="true" signature="1885:2259" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="1903:2249" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="1968:2199" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="2277:2481" ph="///   Перезаписывает свойство CurrentUICulture текущего потока для всех ... " />
+            <marker date="1565391359555" expanded="true" signature="2681:2837" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="2699:2754" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="2771:2827" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="2855:2963" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="3014:3191" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="3032:3181" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="3209:3317" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="3368:3545" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="3386:3535" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="3563:3671" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="3722:3899" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="3740:3889" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="3917:4025" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="4076:4253" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="4094:4243" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="4271:4379" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="4432:4611" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="4450:4601" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="4629:4737" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="4787:4964" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="4805:4954" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="4982:5090" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="5140:5317" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="5158:5307" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="5335:5443" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="5493:5670" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="5511:5660" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="5688:5796" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="5846:6023" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="5864:6013" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="6041:6149" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="6199:6376" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="6217:6366" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="6394:6502" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="6552:6729" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="6570:6719" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="6747:6855" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="6905:7082" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="6923:7072" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="7100:7208" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="7258:7435" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="7276:7425" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="7453:7561" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="7611:7788" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="7629:7778" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="7806:7914" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="7964:8141" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="7982:8131" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="8159:8267" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="8317:8494" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="8335:8484" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="8512:8620" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="8670:8847" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="8688:8837" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="8865:8973" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="9023:9200" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="9041:9190" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="9218:9326" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="9376:9553" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="9394:9543" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="9571:9679" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="9729:9906" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="9747:9896" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="9924:10032" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="10082:10259" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="10100:10249" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="10277:10385" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="10435:10612" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="10453:10602" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="10630:10738" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="10788:10965" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="10806:10955" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="10983:11091" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="11141:11318" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="11159:11308" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="11336:11444" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="11494:11671" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="11512:11661" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="11689:11797" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="11847:12024" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="11865:12014" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="12042:12150" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="12200:12377" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="12218:12367" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="12395:12503" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="12553:12730" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="12571:12720" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="12748:12856" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="12906:13083" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="12924:13073" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="13101:13209" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="13259:13436" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="13277:13426" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="13454:13562" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="13612:13789" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="13630:13779" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="13807:13915" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="13965:14142" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="13983:14132" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="14160:14268" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="14318:14495" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="14336:14485" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="14513:14621" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="14671:14848" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="14689:14838" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="14866:14974" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="15024:15201" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="15042:15191" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="15219:15327" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="15377:15554" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="15395:15544" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="15572:15680" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="15730:15907" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="15748:15897" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="15925:16033" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="16083:16260" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="16101:16250" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="16278:16386" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="16436:16613" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="16454:16603" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="16631:16739" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="16789:16966" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="16807:16956" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="16984:17092" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="17149:17333" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="17167:17323" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="17351:17459" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="17509:17686" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="17527:17676" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="17704:17812" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="17862:18039" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="17880:18029" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="18057:18165" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="18215:18392" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="18233:18382" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="18410:18518" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="18568:18745" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="18586:18735" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="18763:18871" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="18921:19098" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="18939:19088" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="19116:19224" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="19274:19451" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="19292:19441" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="19469:19577" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="19627:19804" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="19645:19794" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="19822:19930" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="19980:20157" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="19998:20147" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="20175:20283" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="20333:20510" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="20351:20500" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="20528:20636" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="20686:20863" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="20704:20853" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="20881:20989" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="21039:21216" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="21057:21206" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="21234:21342" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="21392:21569" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="21410:21559" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="21587:21695" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="21745:21922" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="21763:21912" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="21940:22048" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="22098:22275" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="22116:22265" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="22293:22401" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="22451:22628" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="22469:22618" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="22646:22754" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="22804:22981" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="22822:22971" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="22999:23107" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="23157:23334" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="23175:23324" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="23352:23460" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="23510:23687" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="23528:23677" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="23705:23813" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="23863:24040" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="23881:24030" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="24058:24166" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="24216:24393" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="24234:24383" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="24411:24519" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="24569:24746" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="24587:24736" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="24764:24872" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="24922:25099" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="24940:25089" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="25117:25225" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="25275:25452" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="25293:25442" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="25470:25578" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="25628:25805" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="25646:25795" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="25823:25931" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="25981:26158" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="25999:26148" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="26176:26284" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="26334:26511" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="26352:26501" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="26529:26637" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="26687:26864" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="26705:26854" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="26882:26990" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="27040:27217" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="27058:27207" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="27235:27343" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="27393:27570" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="27411:27560" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="27588:27696" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="27746:27923" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="27764:27913" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="27941:28049" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="28100:28278" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="28118:28268" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="28296:28404" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="28454:28631" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="28472:28621" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="28649:28757" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="28807:28984" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="28825:28974" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="29002:29110" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="29160:29337" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="29178:29327" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="29355:29463" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="29513:29690" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="29531:29680" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="29708:29816" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="29866:30043" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="29884:30033" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="30061:30169" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="30219:30396" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="30237:30386" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="30414:30522" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="30572:30749" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="30590:30739" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="30767:30875" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="30925:31102" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="30943:31092" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="31120:31228" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="31278:31455" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="31296:31445" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="31473:31581" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="31631:31808" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="31649:31798" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="31826:31934" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="31984:32161" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="32002:32151" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="32179:32287" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="32337:32514" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="32355:32504" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="32532:32640" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="32690:32867" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="32708:32857" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="32885:32993" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="33043:33220" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="33061:33210" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="33238:33346" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="33396:33573" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="33414:33563" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="33591:33699" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="33749:33926" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="33767:33916" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="33944:34052" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="34102:34279" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="34120:34269" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="34297:34405" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="34455:34632" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="34473:34622" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="34650:34758" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="34808:34985" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="34826:34975" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="35003:35111" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="35161:35338" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="35179:35328" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="35356:35464" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="35514:35691" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="35532:35681" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="35709:35817" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="35867:36044" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="35885:36034" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="36062:36170" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="36220:36397" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="36238:36387" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="36415:36523" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="36573:36750" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="36591:36740" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="36768:36876" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="36926:37103" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="36944:37093" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="37121:37229" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="37279:37456" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="37297:37446" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="37474:37582" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="37632:37809" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="37650:37799" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="37827:37935" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="37985:38162" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="38003:38152" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="38180:38288" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="38338:38515" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="38356:38505" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="38533:38641" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="38691:38868" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="38709:38858" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="38886:38994" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="39044:39221" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="39062:39211" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="39239:39347" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="39397:39574" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="39415:39564" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="39592:39700" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="39750:39927" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="39768:39917" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="39945:40053" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="40103:40280" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="40121:40270" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="40298:40406" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="40456:40633" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="40474:40623" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="40651:40780" ph="///   Поиск локализованного ресурса типа System.Drawing.Icon, аналогичного (Значок). ... " />
+            <marker date="1565391359555" expanded="true" signature="40830:41007" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="40848:40997" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="41025:41133" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="41183:41360" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="41201:41350" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="41378:41486" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="41536:41713" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="41554:41703" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="41731:41839" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="41889:42066" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="41907:42056" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="42084:42192" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="42242:42419" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="42260:42409" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="42437:42545" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="42595:42772" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="42613:42762" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="42790:42898" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="42948:43125" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="42966:43115" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="43143:43251" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="43301:43478" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="43319:43468" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="43496:43604" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="43654:43831" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="43672:43821" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="43849:43957" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="44007:44184" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="44025:44174" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="44202:44310" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="44360:44537" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="44378:44527" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="44555:44663" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="44713:44890" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="44731:44880" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="44908:45016" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="45066:45243" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="45084:45233" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="45261:45369" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="45419:45596" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="45437:45586" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="45614:45722" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="45772:45949" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="45790:45939" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="45967:46075" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="46125:46302" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="46143:46292" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="46320:46428" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="46478:46655" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="46496:46645" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="46673:46781" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="46831:47008" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="46849:46998" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="47026:47134" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="47184:47361" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="47202:47351" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="47379:47487" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="47537:47714" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="47555:47704" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="47732:47840" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="47890:48067" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="47908:48057" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="48085:48193" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="48243:48420" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="48261:48410" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="48438:48546" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="48596:48773" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="48614:48763" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="48791:48899" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="48949:49126" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="48967:49116" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="49144:49252" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="49302:49479" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="49320:49469" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="49497:49605" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="49655:49832" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="49673:49822" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="49850:49958" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="50008:50185" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="50026:50175" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="50203:50311" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="50361:50538" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="50379:50528" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="50556:50664" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="50714:50891" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="50732:50881" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="50909:51017" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="51067:51244" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="51085:51234" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="51262:51370" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="51420:51597" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="51438:51587" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="51615:51723" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="51773:51950" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="51791:51940" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="51968:52076" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="52126:52303" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="52144:52293" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="52321:52429" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="52479:52656" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="52497:52646" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="52674:52782" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="52832:53009" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="52850:52999" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="53027:53135" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="53185:53362" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="53203:53352" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="53380:53488" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="53538:53715" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="53556:53705" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="53733:53841" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="53891:54068" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="53909:54058" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="54086:54194" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="54244:54421" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="54262:54411" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="54439:54547" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="54597:54774" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="54615:54764" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="54792:54900" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="54950:55127" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="54968:55117" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="55145:55253" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="55303:55480" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="55321:55470" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="55498:55606" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="55656:55833" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="55674:55823" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="55851:55959" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="56009:56186" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="56027:56176" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="56204:56312" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="56367:56549" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="56385:56539" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="56567:56675" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="56725:56902" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="56743:56892" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="56920:57028" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="57078:57255" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="57096:57245" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="57273:57381" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="57431:57608" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="57449:57598" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="57626:57734" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="57784:57961" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="57802:57951" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="57979:58087" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="58137:58314" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="58155:58304" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="58332:58440" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="58490:58667" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="58508:58657" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="58685:58793" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="58843:59020" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="58861:59010" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="59038:59146" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="59196:59373" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="59214:59363" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="59391:59499" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="59549:59726" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="59567:59716" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="59744:59852" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="59902:60079" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="59920:60069" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="60097:60205" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="60255:60432" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="60273:60422" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="60450:60558" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="60608:60785" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="60626:60775" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="60803:60911" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="60961:61138" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="60979:61128" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="61156:61264" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="61314:61491" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="61332:61481" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="61509:61617" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="61667:61844" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="61685:61834" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="61862:61970" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="62020:62197" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="62038:62187" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="62215:62323" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="62373:62550" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="62391:62540" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="62568:62676" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="62726:62903" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="62744:62893" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="62921:63029" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="63079:63256" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="63097:63246" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="63274:63403" ph="///   Поиск локализованного ресурса типа System.Drawing.Icon, аналогичного (Значок). ... " />
+            <marker date="1565391359555" expanded="true" signature="63456:63636" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="63474:63626" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="63654:63762" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="63812:63989" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="63830:63979" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="64007:64115" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="64165:64342" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="64183:64332" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="64360:64468" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="64518:64695" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="64536:64685" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="64713:64821" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="64871:65048" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="64889:65038" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="65066:65174" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="65224:65401" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="65242:65391" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="65419:65527" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="65577:65754" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="65595:65744" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="65772:65880" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="65930:66107" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="65948:66097" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="66125:66233" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="66283:66460" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="66301:66450" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="66478:66586" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="66636:66813" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="66654:66803" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="66831:66939" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="66989:67166" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="67007:67156" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="67184:67292" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="67342:67519" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="67360:67509" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="67537:67645" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="67695:67872" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="67713:67862" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="67890:67998" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="68048:68225" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="68066:68215" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="68243:68351" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="68401:68578" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="68419:68568" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="68596:68704" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="68754:68931" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="68772:68921" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="68949:69057" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="69107:69284" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="69125:69274" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="69302:69410" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="69460:69637" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="69478:69627" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="69655:69763" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="69813:69990" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="69831:69980" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="70008:70116" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="70166:70343" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="70184:70333" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="70361:70469" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="70519:70696" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="70537:70686" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="70714:70822" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="70872:71049" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="70890:71039" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="71067:71175" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="71225:71402" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="71243:71392" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="71420:71528" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="71578:71755" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="71596:71745" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="71773:71881" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="71931:72108" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="71949:72098" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="72126:72234" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="72285:72463" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="72303:72453" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="72481:72589" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="72639:72816" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="72657:72806" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="72834:72942" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="72992:73169" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="73010:73159" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="73187:73295" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="73345:73522" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="73363:73512" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="73540:73648" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="73698:73875" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="73716:73865" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="73893:74001" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="74057:74240" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="74075:74230" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="74258:74366" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="74416:74593" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="74434:74583" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="74611:74719" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="74769:74946" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="74787:74936" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="74964:75072" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="75122:75299" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="75140:75289" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="75317:75425" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="75475:75652" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="75493:75642" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="75670:75778" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="75828:76005" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="75846:75995" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="76023:76131" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="76181:76358" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="76199:76348" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="76376:76484" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="76534:76711" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="76552:76701" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="76729:76837" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="76887:77064" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="76905:77054" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="77082:77190" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="77240:77417" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="77258:77407" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="77435:77543" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="77593:77770" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="77611:77760" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="77788:77896" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="77946:78123" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="77964:78113" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="78141:78249" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="78299:78476" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="78317:78466" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="78494:78602" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="78652:78829" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="78670:78819" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="78847:78955" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="79005:79182" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="79023:79172" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="79200:79308" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="79358:79535" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="79376:79525" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="79553:79661" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="79711:79888" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="79729:79878" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="79906:80014" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="80064:80241" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="80082:80231" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="80259:80367" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="80417:80594" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="80435:80584" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="80612:80720" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="80770:80947" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="80788:80937" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="80965:81073" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="81123:81300" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="81141:81290" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="81318:81426" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="81476:81653" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="81494:81643" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="81671:81779" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="81829:82006" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="81847:81996" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="82024:82132" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="82182:82359" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="82200:82349" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="82377:82485" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="82535:82712" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="82553:82702" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="82730:82838" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="82888:83065" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="82906:83055" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="83083:83191" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="83241:83418" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="83259:83408" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="83436:83544" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="83594:83771" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="83612:83761" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="83789:83897" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="83947:84124" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="83965:84114" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="84142:84250" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="84300:84477" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="84318:84467" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="84495:84603" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="84653:84830" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="84671:84820" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="84848:84956" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="85006:85183" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="85024:85173" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="85201:85309" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="85359:85536" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="85377:85526" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="85554:85662" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="85712:85889" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="85730:85879" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="85907:86015" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="86065:86242" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="86083:86232" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="86260:86368" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="86418:86595" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="86436:86585" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="86613:86721" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="86771:86948" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="86789:86938" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="86966:87074" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="87124:87301" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="87142:87291" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="87319:87427" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="87477:87654" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="87495:87644" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="87672:87780" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="87830:88007" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="87848:87997" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="88025:88133" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="88183:88360" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="88201:88350" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="88378:88486" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="88536:88713" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="88554:88703" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="88731:88839" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="88889:89066" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="88907:89056" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="89084:89192" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="89242:89419" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="89260:89409" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="89437:89545" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="89595:89772" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="89613:89762" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="89790:89898" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="89948:90125" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="89966:90115" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="90143:90251" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="90304:90484" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="90322:90474" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="90502:90610" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="90660:90837" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="90678:90827" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="90855:90963" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="91013:91190" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="91031:91180" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="91208:91316" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="91366:91543" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="91384:91533" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="91561:91669" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="91719:91896" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="91737:91886" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="91914:92022" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="92072:92249" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="92090:92239" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="92267:92375" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="92425:92602" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="92443:92592" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="92620:92728" ph="///   Поиск локализованного ресурса типа System.Drawing.Bitmap. ... " />
+            <marker date="1565391359555" expanded="true" signature="92778:92955" ph="{...}" />
+            <marker date="1565391359555" expanded="true" signature="92796:92945" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Program.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+          <folding>
+            <marker date="1565449281104" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
+            <marker date="1565449281104" expanded="true" signature="210:562" ph="{...}" />
+            <marker date="1565449281104" expanded="true" signature="246:560" ph="{...}" />
+            <marker date="1565449281104" expanded="true" signature="307:554" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Ruler/RulerBackup.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="486" column="32" lean-forward="true" selection-start-line="486" selection-start-column="32" selection-end-line="486" selection-end-column="32" />
+        <state relative-caret-position="256">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
           <folding>
             <marker date="1565350417647" expanded="true" signature="0:674" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
             <marker date="1565350417647" expanded="true" signature="681:966" ph="..." />
@@ -860,55 +1744,73 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Program.cs">
+    <entry file="file://$PROJECT_DIR$/Ruler/Common/KeyboardController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="496">
+          <caret line="32" column="13" lean-forward="true" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
+          <folding>
+            <marker date="1565436609186" expanded="false" signature="6:41" ph="..." />
+            <marker date="1565436609186" expanded="true" signature="65:1268" ph="{...}" />
+            <marker date="1565436609186" expanded="true" signature="119:1266" ph="{...}" />
+            <marker date="1565436609186" expanded="true" signature="222:365" ph="{...}" />
+            <marker date="1565436609186" expanded="true" signature="446:1166" ph="{...}" />
+            <marker date="1565436609186" expanded="true" signature="631:967" ph="/* seems, not needed in the life. ... */" />
+            <marker date="1565436609186" expanded="true" signature="1045:1156" ph="{...}" />
+            <marker date="1565436609186" expanded="true" signature="1197:1260" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ruler/Common/Keyboard/KeyboardHook.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
-          <caret line="15" column="72" lean-forward="true" selection-start-line="15" selection-start-column="72" selection-end-line="15" selection-end-column="72" />
+          <caret line="41" column="12" selection-start-line="41" selection-start-column="12" selection-end-line="41" selection-end-column="12" />
           <folding>
-            <marker date="1565358309865" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
-            <marker date="1565358309865" expanded="true" signature="186:220" ph="..." />
-            <marker date="1565358309865" expanded="true" signature="237:589" ph="{...}" />
-            <marker date="1565358309865" expanded="true" signature="273:587" ph="{...}" />
-            <marker date="1565358309865" expanded="true" signature="334:581" ph="{...}" />
+            <marker date="1565436574445" expanded="false" signature="6:106" ph="..." />
+            <marker date="1565436574445" expanded="true" signature="130:8878" ph="{...}" />
+            <marker date="1565436574445" expanded="true" signature="198:671" ph="{...}" />
+            <marker date="1565436574445" expanded="true" signature="561:665" ph="{...}" />
+            <marker date="1565436574445" expanded="true" signature="731:8876" ph="{...}" />
+            <marker date="1565436574445" expanded="true" signature="854:1932" ph="{...}" />
+            <marker date="1565436574445" expanded="true" signature="1201:1464" ph="{...}" />
+            <marker date="1565436574445" expanded="true" signature="1615:1922" ph="{...}" />
+            <marker date="1565436574445" expanded="true" signature="1981:3328" ph="{...}" />
+            <marker date="1565436574445" expanded="true" signature="2018:2812" ph="{...}" />
+            <marker date="1565436574445" expanded="true" signature="2184:2798" ph="{...}" />
+            <marker date="1565436574445" expanded="true" signature="2267:2606" ph="{...}" />
+            <marker date="1565436574445" expanded="true" signature="2865:3318" ph="{...}" />
+            <marker date="1565436574445" expanded="true" signature="2972:3253" ph="{...}" />
+            <marker date="1565436574445" expanded="true" signature="3359:3407" ph="{...}" />
+            <marker date="1565436574445" expanded="true" signature="3438:3524" ph="{...}" />
+            <marker date="1565436574445" expanded="true" signature="3968:4692" ph="/// The SetWindowsHookEx function installs an application-defined hook procedure into a hook chain. ... " />
+            <marker date="1565436574445" expanded="true" signature="4860:5150" ph="/// The UnhookWindowsHookEx function removes a hook procedure installed in a hook chain by the SetWindowsHookEx f ... " />
+            <marker date="1565436574445" expanded="true" signature="5283:5913" ph="/// The CallNextHookEx function passes the hook information to the next hook procedure in the current hook chain. ... " />
+            <marker date="1565436574445" expanded="true" signature="6161:7418" ph="{...}" />
+            <marker date="1565436574445" expanded="true" signature="6184:6308" ph="/// A virtual-key code. The code must be a value in the range 1 to 254. ... " />
+            <marker date="1565436574445" expanded="true" signature="6360:6451" ph="/// A hardware scan code for the key.  ... " />
+            <marker date="1565436574445" expanded="true" signature="6508:6994" ph="/// The extended-key flag, event-injected Flags, context code, and transition-state flag. This member is specifie ... " />
+            <marker date="1565436574445" expanded="true" signature="7040:7200" ph="/// The time stamp stamp for this message, equivalent to what GetMessageTime would return for this message. ... " />
+            <marker date="1565436574445" expanded="true" signature="7250:7359" ph="/// Additional information associated with the message.  ... " />
+            <marker date="1565436574445" expanded="true" signature="7535:7676" ph="{...}" />
+            <marker date="1565436574445" expanded="true" signature="7732:7902" ph="/* const int VkLwin = 0x5b; ... */" />
+            <marker date="1565436574445" expanded="true" signature="8089:8870" ph="{...}" />
+            <marker date="1565436574445" expanded="true" signature="8259:8760" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Ruler/Sight/Aim.cs">
+    <entry file="file://$PROJECT_DIR$/Ruler/Common/Surface.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="118">
-          <caret line="9" column="5" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
+        <state relative-caret-position="160">
+          <caret line="10" column="56" lean-forward="true" selection-start-line="10" selection-start-column="56" selection-end-line="10" selection-end-column="56" />
           <folding>
-            <marker date="1565361455456" expanded="true" signature="6:101" ph="..." />
-            <marker date="1565361455456" expanded="true" signature="118:1037" ph="{...}" />
-            <marker date="1565361455456" expanded="true" signature="152:1035" ph="{...}" />
-            <marker date="1565361455456" expanded="true" signature="411:485" ph="{...}" />
-            <marker date="1565361455456" expanded="true" signature="543:589" ph="{...}" />
-            <marker date="1565361455456" expanded="true" signature="670:716" ph="{...}" />
-            <marker date="1565361455456" expanded="true" signature="782:1029" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ruler/Portal/Portal.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-752">
-          <caret line="4" column="33" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
-          <folding>
-            <marker date="1565361415090" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
-            <marker date="1565361415090" expanded="true" signature="186:339" ph="..." />
-            <marker date="1565361415090" expanded="true" signature="356:2459" ph="{...}" />
-            <marker date="1565361415090" expanded="true" signature="403:2237" ph="{...}" />
-            <marker date="1565361415090" expanded="true" signature="579:734" ph="{...}" />
-            <marker date="1565361415090" expanded="true" signature="846:1229" ph="{...}" />
-            <marker date="1565361415090" expanded="true" signature="1249:1318" ph="{...}" />
-            <marker date="1565361415090" expanded="true" signature="1369:1475" ph="{...}" />
-            <marker date="1565361415090" expanded="true" signature="1532:2057" ph="{...}" />
-            <marker date="1565361415090" expanded="true" signature="1590:1778" ph="{...}" />
-            <marker date="1565361415090" expanded="true" signature="1832:2020" ph="{...}" />
-            <marker date="1565361415090" expanded="true" signature="2114:2231" ph="{...}" />
-            <marker date="1565361415090" expanded="true" signature="2272:2457" ph="{...}" />
-            <marker date="1565361415090" expanded="true" signature="2413:2433" ph="{...}" />
+            <marker date="1565436634807" expanded="true" signature="6:38" ph="..." />
+            <marker date="1565436634807" expanded="true" signature="62:641" ph="{...}" />
+            <marker date="1565436634807" expanded="true" signature="100:639" ph="{...}" />
+            <marker date="1565436634807" expanded="true" signature="278:339" ph="{...}" />
+            <marker date="1565436634807" expanded="true" signature="367:540" ph="{...}" />
+            <marker date="1565436634807" expanded="true" signature="415:494" ph="{...}" />
+            <marker date="1565436634807" expanded="true" signature="613:633" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -918,218 +1820,20 @@
         <state relative-caret-position="64">
           <caret line="4" column="14" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
           <folding>
-            <marker date="1565361441685" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
-            <marker date="1565361441685" expanded="true" signature="186:281" ph="..." />
-            <marker date="1565361441685" expanded="true" signature="298:622" ph="{...}" />
-            <marker date="1565361441685" expanded="true" signature="352:620" ph="{...}" />
-            <marker date="1565361441685" expanded="true" signature="500:520" ph="{...}" />
-            <marker date="1565361441685" expanded="true" signature="594:614" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Starter/Starter.resx">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ruler/Common/Surface.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="10" column="44" selection-start-line="10" selection-start-column="44" selection-end-line="10" selection-end-column="44" />
-          <folding>
-            <marker date="1565353463157" expanded="true" signature="6:88" ph="..." />
-            <marker date="1565353463157" expanded="true" signature="112:715" ph="{...}" />
-            <marker date="1565353463157" expanded="true" signature="150:713" ph="{...}" />
-            <marker date="1565353463157" expanded="true" signature="328:389" ph="{...}" />
-            <marker date="1565353463157" expanded="true" signature="425:614" ph="{...}" />
-            <marker date="1565353463157" expanded="true" signature="473:568" ph="{...}" />
-            <marker date="1565353463157" expanded="true" signature="687:707" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ruler/BlackHole/BlackHole.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="4" column="14" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
-          <folding>
-            <marker date="1565361426673" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
-            <marker date="1565361426673" expanded="true" signature="186:281" ph="..." />
-            <marker date="1565361426673" expanded="true" signature="298:959" ph="{...}" />
-            <marker date="1565361426673" expanded="true" signature="338:957" ph="{...}" />
-            <marker date="1565361426673" expanded="true" signature="482:502" ph="{...}" />
-            <marker date="1565361426673" expanded="true" signature="566:633" ph="{...}" />
-            <marker date="1565361426673" expanded="true" signature="699:951" ph="{...}" />
-            <marker date="1565361426673" expanded="true" signature="722:941" ph="/* Graphics.DrawEllipse(Pens.DarkBlue, Coord.X - Radius / 2, Coord.Y - Radius / 2, Radius, Radius); ... */" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ruler/Common/Circle.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="34" column="97" selection-start-line="34" selection-start-column="97" selection-end-line="34" selection-end-column="97" />
-          <folding>
-            <marker date="1565365931858" expanded="true" signature="6:116" ph="..." />
-            <marker date="1565365931858" expanded="true" signature="140:1154" ph="{...}" />
-            <marker date="1565365931858" expanded="true" signature="185:1152" ph="{...}" />
-            <marker date="1565365931858" expanded="true" signature="412:488" ph="{...}" />
-            <marker date="1565365931858" expanded="true" signature="553:618" ph="{...}" />
-            <marker date="1565365931858" expanded="true" signature="706:885" ph="{...}" />
-            <marker date="1565365931858" expanded="true" signature="959:1146" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Common/Monitors.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="90" column="38" selection-start-line="90" selection-start-column="38" selection-end-line="90" selection-end-column="38" />
-          <folding>
-            <marker date="1565385931558" expanded="true" signature="6:135" ph="..." />
-            <marker date="1565385931558" expanded="true" signature="153:3626" ph="{...}" />
-            <marker date="1565385931558" expanded="true" signature="181:483" ph="{...}" />
-            <marker date="1565385931558" expanded="true" signature="360:477" ph="{...}" />
-            <marker date="1565385931558" expanded="true" signature="521:3618" ph="{...}" />
-            <marker date="1565385931558" expanded="true" signature="604:2044" ph="{...}" />
-            <marker date="1565385931558" expanded="true" signature="2314:2643" ph="{...}" />
-            <marker date="1565385931558" expanded="true" signature="2698:3612" ph="{...}" />
-            <marker date="1565385931558" expanded="true" signature="2905:3519" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/FodyWeavers.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="2" column="11" selection-start-line="2" selection-start-column="11" selection-end-line="2" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Properties/Resources.resx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="122" column="9" selection-start-line="122" selection-start-column="9" selection-end-line="122" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ruler/Common/IElement.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="6" column="47" selection-start-line="6" selection-start-column="47" selection-end-line="6" selection-end-column="47" />
-          <folding>
-            <marker date="1565353423824" expanded="true" signature="48:146" ph="{...}" />
-            <marker date="1565353423824" expanded="true" signature="82:144" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ruler/Common/Keyboard/KeyboardHook.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2576">
-          <caret line="28" column="20" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
-          <folding>
-            <marker date="1565358106159" expanded="false" signature="6:106" ph="..." />
-            <marker date="1565358106159" expanded="true" signature="130:8907" ph="{...}" />
-            <marker date="1565358106159" expanded="true" signature="185:658" ph="{...}" />
-            <marker date="1565358106159" expanded="true" signature="548:652" ph="{...}" />
-            <marker date="1565358106159" expanded="true" signature="750:8905" ph="{...}" />
-            <marker date="1565358106159" expanded="true" signature="873:1959" ph="{...}" />
-            <marker date="1565358106159" expanded="true" signature="1226:1487" ph="{...}" />
-            <marker date="1565358106159" expanded="true" signature="1644:1949" ph="{...}" />
-            <marker date="1565358106159" expanded="true" signature="2015:3365" ph="{...}" />
-            <marker date="1565358106159" expanded="true" signature="2052:2848" ph="{...}" />
-            <marker date="1565358106159" expanded="true" signature="2219:2834" ph="{...}" />
-            <marker date="1565358106159" expanded="true" signature="2303:2640" ph="{...}" />
-            <marker date="1565358106159" expanded="true" signature="2902:3355" ph="{...}" />
-            <marker date="1565358106159" expanded="true" signature="3010:3289" ph="{...}" />
-            <marker date="1565358106159" expanded="true" signature="3396:3444" ph="{...}" />
-            <marker date="1565358106159" expanded="true" signature="3475:3561" ph="{...}" />
-            <marker date="1565358106159" expanded="true" signature="4003:4727" ph="/// The SetWindowsHookEx function installs an application-defined hook procedure into a hook chain. ... " />
-            <marker date="1565358106159" expanded="true" signature="4891:5203" ph="/// The UnhookWindowsHookEx function removes a hook procedure installed in a hook chain by the SetWindowsHookEx f ... " />
-            <marker date="1565358106159" expanded="true" signature="5333:5963" ph="/// The CallNextHookEx function passes the hook information to the next hook procedure in the current hook chain. ... " />
-            <marker date="1565358106159" expanded="true" signature="6209:7458" ph="{...}" />
-            <marker date="1565358106159" expanded="true" signature="6232:6356" ph="/// A virtual-key code. The code must be a value in the range 1 to 254. ... " />
-            <marker date="1565358106159" expanded="true" signature="6406:6497" ph="/// A hardware scan code for the key.  ... " />
-            <marker date="1565358106159" expanded="true" signature="6552:7038" ph="/// The extended-key flag, event-injected Flags, context code, and transition-state flag. This member is specifie ... " />
-            <marker date="1565358106159" expanded="true" signature="7082:7242" ph="/// The time stamp stamp for this message, equivalent to what GetMessageTime would return for this message. ... " />
-            <marker date="1565358106159" expanded="true" signature="7290:7399" ph="/// Additional information associated with the message.  ... " />
-            <marker date="1565358106159" expanded="true" signature="7575:7716" ph="{...}" />
-            <marker date="1565358106159" expanded="true" signature="7770:7940" ph="/* const int VkLwin = 0x5b; ... */" />
-            <marker date="1565358106159" expanded="true" signature="8121:8899" ph="{...}" />
-            <marker date="1565358106159" expanded="true" signature="8288:8789" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ruler/Manager.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="560">
-          <caret line="48" column="52" selection-start-line="48" selection-start-column="52" selection-end-line="48" selection-end-column="52" />
-          <folding>
-            <marker date="1565365629364" expanded="true" signature="6:224" ph="..." />
-            <marker date="1565365629364" expanded="true" signature="241:1271" ph="{...}" />
-            <marker date="1565365629364" expanded="true" signature="270:1269" ph="{...}" />
-            <marker date="1565365629364" expanded="true" signature="485:607" ph="{...}" />
-            <marker date="1565365629364" expanded="true" signature="638:979" ph="{...}" />
-            <marker date="1565365629364" expanded="true" signature="810:969" ph="{...}" />
-            <marker date="1565365629364" expanded="true" signature="863:926" ph="{...}" />
-            <marker date="1565365629364" expanded="true" signature="1013:1263" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ruler/Common/KeyboardController.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="15" column="79" selection-start-line="15" selection-start-column="79" selection-end-line="15" selection-end-column="79" />
-          <folding>
-            <marker date="1565358204538" expanded="false" signature="6:41" ph="..." />
-            <marker date="1565358204538" expanded="true" signature="65:1272" ph="{...}" />
-            <marker date="1565358204538" expanded="true" signature="119:1270" ph="{...}" />
-            <marker date="1565358204538" expanded="true" signature="223:368" ph="{...}" />
-            <marker date="1565358204538" expanded="true" signature="449:1169" ph="{...}" />
-            <marker date="1565358204538" expanded="true" signature="634:970" ph="/* seems, not needed in the life. ... */" />
-            <marker date="1565358204538" expanded="true" signature="1048:1159" ph="{...}" />
-            <marker date="1565358204538" expanded="true" signature="1200:1264" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ruler/Sight/Sight.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="25" column="14" selection-start-line="25" selection-start-column="14" selection-end-line="25" selection-end-column="14" />
-          <folding>
-            <marker date="1565361769627" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
-            <marker date="1565361769627" expanded="true" signature="186:288" ph="..." />
-            <marker date="1565361769627" expanded="true" signature="305:2577" ph="{...}" />
-            <marker date="1565361769627" expanded="true" signature="341:2575" ph="{...}" />
-            <marker date="1565361769627" expanded="true" signature="540:659" ph="{...}" />
-            <marker date="1565361769627" expanded="true" signature="725:2569" ph="{...}" />
-            <marker date="1565361769627" expanded="true" signature="790:2559" ph="/* Pen pen; ... */" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Starter/Localization/StarterLocalization.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="14" column="30" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
-          <folding>
-            <marker date="1565367799169" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
-            <marker date="1565367799169" expanded="true" signature="186:235" ph="..." />
-            <marker date="1565367799169" expanded="true" signature="267:2270" ph="{...}" />
-            <marker date="1565367799169" expanded="true" signature="338:2268" ph="{...}" />
-            <marker date="1565367799169" expanded="true" signature="757:2135" ph="{...}" />
-            <marker date="1565367799169" expanded="true" signature="2197:2262" ph="{...}" />
+            <marker date="1565436338157" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
+            <marker date="1565436338157" expanded="true" signature="186:253" ph="..." />
+            <marker date="1565436338157" expanded="true" signature="270:594" ph="{...}" />
+            <marker date="1565436338157" expanded="true" signature="324:592" ph="{...}" />
+            <marker date="1565436338157" expanded="true" signature="472:492" ph="{...}" />
+            <marker date="1565436338157" expanded="true" signature="566:586" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Ruler/Ruler.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="86" column="9" lean-forward="true" selection-start-line="86" selection-start-column="9" selection-end-line="86" selection-end-column="9" />
+        <state relative-caret-position="96">
+          <caret line="15" column="44" lean-forward="true" selection-start-line="15" selection-start-column="44" selection-end-line="15" selection-end-column="44" />
           <folding>
             <marker date="1565391375152" expanded="true" signature="6:281" ph="..." />
             <marker date="1565391375152" expanded="true" signature="298:3582" ph="{...}" />
@@ -1140,85 +1844,188 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Starter/Starter.Designer.cs">
+    <entry file="file://$PROJECT_DIR$/Ruler/Common/Circle.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-412">
-          <caret line="141" column="56" selection-start-line="141" selection-start-column="56" selection-end-line="141" selection-end-column="56" />
+        <state relative-caret-position="452">
+          <caret line="31" column="8" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="14" />
           <folding>
-            <marker date="1565396459255" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
-            <marker date="1565396459255" expanded="false" signature="186:369" ph="..." />
-            <marker date="1565396459255" expanded="true" signature="394:10081" ph="{...}" />
-            <marker date="1565396459255" expanded="true" signature="422:10079" ph="{...}" />
-            <marker date="1565396459255" expanded="true" signature="507:583" ph="/// Required designer variable. ... " />
-            <marker date="1565396459255" expanded="true" signature="661:852" ph="/// Clean up any resources being used. ... " />
-            <marker date="1565396459255" expanded="true" signature="908:1082" ph="{...}" />
-            <marker date="1565396459255" expanded="true" signature="969:1035" ph="{...}" />
-            <marker date="1565396459255" expanded="true" signature="1092:9623" ph="Windows Form Designer generated code" />
-            <marker date="1565396459255" expanded="true" signature="1146:1309" ph="/// Required method for Designer support - do not modify ... " />
-            <marker date="1565396459255" expanded="true" signature="1352:9603" ph="{...}" />
-            <marker date="1565396459255" expanded="true" signature="2146:2194" ph="/* LanguageLabel ... */" />
-            <marker date="1565396459255" expanded="true" signature="2551:2602" ph="/* LanguageComboBox ... */" />
-            <marker date="1565396459255" expanded="true" signature="3429:3475" ph="/* ScreenLabel ... */" />
-            <marker date="1565396459255" expanded="true" signature="3820:3869" ph="/* ScreenComboBox ... */" />
-            <marker date="1565396459255" expanded="true" signature="4539:4711" ph="/* this.LanguageComboBox.SelectedIndexChanged += new System.EventHandler(this.LanguageComboBox_ChangeStarterLangu ... */" />
-            <marker date="1565396459255" expanded="true" signature="5029:5072" ph="/* KeyLabel ... */" />
-            <marker date="1565396459255" expanded="true" signature="5399:5443" ph="/* LicenceID ... */" />
-            <marker date="1565396459255" expanded="true" signature="6051:6193" ph="/* this.LicenceID.TextChanged += new System.EventHandler(this.LicenceID_TextChanged); ... */" />
-            <marker date="1565396459255" expanded="true" signature="6793:6843" ph="/* IsDisguiseRuler ... */" />
-            <marker date="1565396459255" expanded="true" signature="7292:7345" ph="/* NotDisplayCheckBox ... */" />
-            <marker date="1565396459255" expanded="true" signature="7823:7869" ph="/* StartButton ... */" />
-            <marker date="1565396459255" expanded="true" signature="8315:8357" ph="/* Starter ... */" />
+            <marker date="1565435956455" expanded="true" signature="6:88" ph="..." />
+            <marker date="1565435956455" expanded="true" signature="112:1126" ph="{...}" />
+            <marker date="1565435956455" expanded="true" signature="157:1124" ph="{...}" />
+            <marker date="1565435956455" expanded="true" signature="384:460" ph="{...}" />
+            <marker date="1565435956455" expanded="true" signature="525:590" ph="{...}" />
+            <marker date="1565435956455" expanded="true" signature="678:857" ph="{...}" />
+            <marker date="1565435956455" expanded="true" signature="931:1118" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Common/Licence.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="33" column="73" lean-forward="true" selection-start-line="33" selection-start-column="73" selection-end-line="33" selection-end-column="73" />
+          <folding>
+            <marker date="1565442683837" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
+            <marker date="1565442683837" expanded="false" signature="186:301" ph="..." />
+            <marker date="1565442683837" expanded="true" signature="319:1948" ph="{...}" />
+            <marker date="1565442683837" expanded="true" signature="348:1946" ph="{...}" />
+            <marker date="1565442683837" expanded="true" signature="839:974" ph="{...}" />
+            <marker date="1565442683837" expanded="true" signature="1033:1306" ph="{...}" />
+            <marker date="1565442683837" expanded="true" signature="1375:1437" ph="{...}" />
+            <marker date="1565442683837" expanded="true" signature="1496:1561" ph="{...}" />
+            <marker date="1565442683837" expanded="true" signature="1629:1707" ph="{...}" />
+            <marker date="1565442683837" expanded="true" signature="1756:1823" ph="{...}" />
+            <marker date="1565442683837" expanded="true" signature="1859:1940" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Common/BuildDateTime.cs" />
+    <entry file="file://$PROJECT_DIR$/BuildInfo.tt" />
+    <entry file="file://$PROJECT_DIR$/BuildInfo.cs" />
+    <entry file="file://$PROJECT_DIR$/BuildInfo/BuildInfo.tt" />
+    <entry file="file://$PROJECT_DIR$/Ruler/Rebound/ReboundWall.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="16">
+          <caret line="1" column="82" selection-start-line="1" selection-start-column="82" selection-end-line="1" selection-end-column="82" />
+          <folding>
+            <marker date="1565353371350" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
+            <marker date="1565353371350" expanded="true" signature="186:288" ph="..." />
+            <marker date="1565353371350" expanded="true" signature="305:819" ph="{...}" />
+            <marker date="1565353371350" expanded="true" signature="356:817" ph="{...}" />
+            <marker date="1565353371350" expanded="true" signature="638:710" ph="{...}" />
+            <marker date="1565353371350" expanded="true" signature="778:811" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ruler/Sight/Aim.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="10" column="15" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="15" />
+          <folding>
+            <marker date="1565436420355" expanded="true" signature="6:73" ph="..." />
+            <marker date="1565436420355" expanded="true" signature="90:1009" ph="{...}" />
+            <marker date="1565436420355" expanded="true" signature="124:1007" ph="{...}" />
+            <marker date="1565436420355" expanded="true" signature="383:457" ph="{...}" />
+            <marker date="1565436420355" expanded="true" signature="515:561" ph="{...}" />
+            <marker date="1565436420355" expanded="true" signature="642:688" ph="{...}" />
+            <marker date="1565436420355" expanded="true" signature="754:1001" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Common/Localization.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="81" column="142" selection-start-line="81" selection-start-column="142" selection-end-line="81" selection-end-column="142" />
+        <state relative-caret-position="1424">
+          <caret line="106" column="58" selection-start-line="106" selection-start-column="58" selection-end-line="106" selection-end-column="58" />
           <folding>
-            <marker date="1565388496436" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
-            <marker date="1565388496436" expanded="false" signature="186:359" ph="..." />
-            <marker date="1565388496436" expanded="true" signature="377:4913" ph="{...}" />
-            <marker date="1565388496436" expanded="true" signature="420:4911" ph="{...}" />
-            <marker date="1565388496436" expanded="true" signature="469:680" ph="{...}" />
-            <marker date="1565388496436" expanded="true" signature="809:3064" ph="{...}" />
-            <marker date="1565388496436" expanded="true" signature="982:1272" ph="{...}" />
-            <marker date="1565388496436" expanded="true" signature="1381:2828" ph="{...}" />
-            <marker date="1565388496436" expanded="true" signature="1675:1752" ph="{...}" />
-            <marker date="1565388496436" expanded="true" signature="1825:2412" ph="{...}" />
-            <marker date="1565388496436" expanded="true" signature="2027:2280" ph="{...}" />
-            <marker date="1565388496436" expanded="true" signature="2305:2394" ph="{...}" />
-            <marker date="1565388496436" expanded="true" signature="2458:2692" ph="{...}" />
-            <marker date="1565388496436" expanded="true" signature="2735:2814" ph="{...}" />
-            <marker date="1565388496436" expanded="true" signature="2883:3054" ph="{...}" />
-            <marker date="1565388496436" expanded="true" signature="3102:3354" ph="{...}" />
-            <marker date="1565388496436" expanded="true" signature="3232:3344" ph="{...}" />
-            <marker date="1565388496436" expanded="true" signature="3434:3516" ph="{...}" />
-            <marker date="1565388496436" expanded="true" signature="3576:3977" ph="{...}" />
-            <marker date="1565388496436" expanded="true" signature="4043:4540" ph="{...}" />
-            <marker date="1565388496436" expanded="true" signature="4590:4905" ph="{...}" />
+            <marker date="1565435940484" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
+            <marker date="1565435940484" expanded="false" signature="186:398" ph="..." />
+            <marker date="1565435940484" expanded="true" signature="416:4324" ph="{...}" />
+            <marker date="1565435940484" expanded="true" signature="459:4322" ph="{...}" />
+            <marker date="1565435940484" expanded="true" signature="591:2864" ph="{...}" />
+            <marker date="1565435940484" expanded="true" signature="770:1070" ph="{...}" />
+            <marker date="1565435940484" expanded="true" signature="1181:2628" ph="{...}" />
+            <marker date="1565435940484" expanded="true" signature="1475:1552" ph="{...}" />
+            <marker date="1565435940484" expanded="true" signature="1625:2212" ph="{...}" />
+            <marker date="1565435940484" expanded="true" signature="1827:2080" ph="{...}" />
+            <marker date="1565435940484" expanded="true" signature="2105:2194" ph="{...}" />
+            <marker date="1565435940484" expanded="true" signature="2258:2492" ph="{...}" />
+            <marker date="1565435940484" expanded="true" signature="2535:2614" ph="{...}" />
+            <marker date="1565435940484" expanded="true" signature="2683:2854" ph="{...}" />
+            <marker date="1565435940484" expanded="true" signature="2969:3224" ph="{...}" />
+            <marker date="1565435940484" expanded="true" signature="3102:3214" ph="{...}" />
+            <marker date="1565435940484" expanded="true" signature="3276:3368" ph="{...}" />
+            <marker date="1565435940484" expanded="true" signature="3434:3941" ph="{...}" />
+            <marker date="1565435940484" expanded="true" signature="4001:4316" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Starter/Localization/StarterLocalization.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="393">
+          <caret line="51" column="39" selection-start-line="51" selection-start-column="39" selection-end-line="51" selection-end-column="39" />
+          <folding>
+            <marker date="1565440790955" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
+            <marker date="1565440790955" expanded="true" signature="186:207" ph="..." />
+            <marker date="1565440790955" expanded="true" signature="239:2443" ph="{...}" />
+            <marker date="1565440790955" expanded="true" signature="310:2441" ph="{...}" />
+            <marker date="1565440790955" expanded="true" signature="768:2308" ph="{...}" />
+            <marker date="1565440790955" expanded="true" signature="2370:2435" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Starter/Starter.Designer.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-32">
+          <caret line="98" column="15" selection-start-line="98" selection-start-column="15" selection-end-line="98" selection-end-column="15" />
+          <folding>
+            <marker date="1565440669565" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
+            <marker date="1565440669565" expanded="false" signature="186:369" ph="..." />
+            <marker date="1565440669565" expanded="true" signature="394:10182" ph="{...}" />
+            <marker date="1565440669565" expanded="true" signature="422:10180" ph="{...}" />
+            <marker date="1565440669565" expanded="true" signature="507:583" ph="/// Required designer variable. ... " />
+            <marker date="1565440669565" expanded="true" signature="661:852" ph="/// Clean up any resources being used. ... " />
+            <marker date="1565440669565" expanded="true" signature="908:1082" ph="{...}" />
+            <marker date="1565440669565" expanded="true" signature="969:1035" ph="{...}" />
+            <marker date="1565440669565" expanded="true" signature="1092:9667" ph="Windows Form Designer generated code" />
+            <marker date="1565440669565" expanded="true" signature="1146:1309" ph="/// Required method for Designer support - do not modify ... " />
+            <marker date="1565440669565" expanded="true" signature="1352:9647" ph="{...}" />
+            <marker date="1565440669565" expanded="true" signature="2233:2281" ph="/* LanguageLabel ... */" />
+            <marker date="1565440669565" expanded="true" signature="2588:2639" ph="/* LanguageComboBox ... */" />
+            <marker date="1565440669565" expanded="true" signature="3466:3512" ph="/* ScreenLabel ... */" />
+            <marker date="1565440669565" expanded="true" signature="3810:3859" ph="/* ScreenComboBox ... */" />
+            <marker date="1565440669565" expanded="true" signature="4529:4701" ph="/* this.LanguageComboBox.SelectedIndexChanged += new System.EventHandler(this.LanguageComboBox_ChangeStarterLangu ... */" />
+            <marker date="1565440669565" expanded="true" signature="4973:5016" ph="/* KeyLabel ... */" />
+            <marker date="1565440669565" expanded="true" signature="5295:5339" ph="/* LicenceID ... */" />
+            <marker date="1565440669565" expanded="true" signature="5812:5954" ph="/* this.LicenceID.TextChanged += new System.EventHandler(this.LicenceID_TextChanged); ... */" />
+            <marker date="1565440669565" expanded="true" signature="6383:6433" ph="/* IsDisguiseRuler ... */" />
+            <marker date="1565440669565" expanded="true" signature="6820:6873" ph="/* NotDisplayCheckBox ... */" />
+            <marker date="1565440669565" expanded="true" signature="7343:7401" ph="/* NotSaveSettingsCheckBox ... */" />
+            <marker date="1565440669565" expanded="true" signature="7844:7890" ph="/* StartButton ... */" />
+            <marker date="1565440669565" expanded="true" signature="8291:8333" ph="/* Starter ... */" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Common/Settings.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="11" column="53" selection-start-line="11" selection-start-column="53" selection-end-line="11" selection-end-column="53" />
+          <folding>
+            <marker date="1565445136813" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
+            <marker date="1565445136813" expanded="true" signature="186:240" ph="..." />
+            <marker date="1565445136813" expanded="true" signature="258:361" ph="{...}" />
+            <marker date="1565445136813" expanded="true" signature="293:359" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Starter/Registry/Registry.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="34" column="64" lean-forward="true" selection-start-line="34" selection-start-column="64" selection-end-line="34" selection-end-column="64" />
+        <state relative-caret-position="68">
+          <caret line="57" column="37" lean-forward="true" selection-start-line="57" selection-start-column="37" selection-end-line="57" selection-end-column="37" />
           <folding>
-            <marker date="1565394337157" expanded="true" signature="6:73" ph="..." />
-            <marker date="1565394337157" expanded="true" signature="107:2363" ph="{...}" />
-            <marker date="1565394337157" expanded="true" signature="146:719" ph="{...}" />
-            <marker date="1565394337157" expanded="true" signature="487:713" ph="{...}" />
-            <marker date="1565394337157" expanded="true" signature="759:2361" ph="{...}" />
-            <marker date="1565394337157" expanded="true" signature="878:1625" ph="{...}" />
-            <marker date="1565394337157" expanded="true" signature="904:1444" ph="{...}" />
-            <marker date="1565394337157" expanded="true" signature="1540:1615" ph="{...}" />
-            <marker date="1565394337157" expanded="true" signature="1702:1835" ph="{...}" />
-            <marker date="1565394337157" expanded="true" signature="1924:2001" ph="{...}" />
-            <marker date="1565394337157" expanded="true" signature="2070:2355" ph="{...}" />
-            <marker date="1565394337157" expanded="true" signature="2117:2345" ph="{...}" />
+            <marker date="1565452424931" expanded="true" signature="6:148" ph="..." />
+            <marker date="1565452424931" expanded="true" signature="182:5118" ph="{...}" />
+            <marker date="1565452424931" expanded="true" signature="221:1199" ph="{...}" />
+            <marker date="1565452424931" expanded="true" signature="767:1193" ph="{...}" />
+            <marker date="1565452424931" expanded="true" signature="1239:5116" ph="{...}" />
+            <marker date="1565452424931" expanded="true" signature="1384:2725" ph="{...}" />
+            <marker date="1565452424931" expanded="true" signature="1486:2474" ph="{...}" />
+            <marker date="1565452424931" expanded="true" signature="2636:2715" ph="{...}" />
+            <marker date="1565452424931" expanded="true" signature="2805:4041" ph="{...}" />
+            <marker date="1565452424931" expanded="true" signature="2831:3783" ph="{...}" />
+            <marker date="1565452424931" expanded="true" signature="3973:4031" ph="{...}" />
+            <marker date="1565452424931" expanded="true" signature="4091:4590" ph="{...}" />
+            <marker date="1565452424931" expanded="true" signature="4117:4342" ph="{...}" />
+            <marker date="1565452424931" expanded="true" signature="4522:4580" ph="{...}" />
+            <marker date="1565452424931" expanded="true" signature="4679:4756" ph="{...}" />
+            <marker date="1565452424931" expanded="true" signature="4825:5110" ph="{...}" />
+            <marker date="1565452424931" expanded="true" signature="4872:5100" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1226,47 +2033,50 @@
     <entry file="file://$PROJECT_DIR$/Starter/Starter.cs">
       <provider editor-type-id="WinFormsEditor" />
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="40" column="118" selection-start-line="40" selection-start-column="118" selection-end-line="40" selection-end-column="118" />
+        <state relative-caret-position="114">
+          <caret line="151" column="23" lean-forward="true" selection-start-line="151" selection-start-column="23" selection-end-line="151" selection-end-column="23" />
           <folding>
-            <marker date="1565397648213" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
-            <marker date="1565397648213" expanded="true" signature="186:527" ph="..." />
-            <marker date="1565397648213" expanded="true" signature="552:5992" ph="{...}" />
-            <marker date="1565397648213" expanded="true" signature="594:5990" ph="{...}" />
-            <marker date="1565397648213" expanded="true" signature="626:740" ph="{...}" />
-            <marker date="1565397648213" expanded="true" signature="802:1890" ph="{...}" />
-            <marker date="1565397648213" expanded="true" signature="1962:2644" ph="{...}" />
-            <marker date="1565397648213" expanded="true" signature="2116:2423" ph="{...}" />
-            <marker date="1565397648213" expanded="true" signature="2440:2621" ph="{...}" />
-            <marker date="1565397648213" expanded="true" signature="2738:3341" ph="{...}" />
-            <marker date="1565397648213" expanded="true" signature="3415:3470" ph="{...}" />
-            <marker date="1565397648213" expanded="true" signature="3544:5984" ph="{...}" />
-            <marker date="1565397648213" expanded="true" signature="3608:4396" ph="{...}" />
-            <marker date="1565397648213" expanded="true" signature="4454:4601" ph="{...}" />
-            <marker date="1565397648213" expanded="true" signature="4639:5151" ph="{...}" />
-            <marker date="1565397648213" expanded="true" signature="5265:5382" ph="{...}" />
-            <marker date="1565397648213" expanded="true" signature="5399:5841" ph="{...}" />
-            <marker date="1565397648213" expanded="true" signature="5885:5974" ph="{...}" />
+            <marker date="1565452635407" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
+            <marker date="1565452635407" expanded="true" signature="186:486" ph="..." />
+            <marker date="1565452635407" expanded="true" signature="511:8007" ph="{...}" />
+            <marker date="1565452635407" expanded="true" signature="553:8005" ph="{...}" />
+            <marker date="1565452635407" expanded="true" signature="584:698" ph="{...}" />
+            <marker date="1565452635407" expanded="true" signature="760:3279" ph="{...}" />
+            <marker date="1565452635407" expanded="true" signature="2102:2607" ph="{...}" />
+            <marker date="1565452635407" expanded="true" signature="2195:2567" ph="{...}" />
+            <marker date="1565452635407" expanded="true" signature="2471:2549" ph="{...}" />
+            <marker date="1565452635407" expanded="true" signature="3351:4033" ph="{...}" />
+            <marker date="1565452635407" expanded="true" signature="3505:3812" ph="{...}" />
+            <marker date="1565452635407" expanded="true" signature="3829:4010" ph="{...}" />
+            <marker date="1565452635407" expanded="true" signature="4127:4810" ph="{...}" />
+            <marker date="1565452635407" expanded="true" signature="4884:4939" ph="{...}" />
+            <marker date="1565452635407" expanded="true" signature="5013:7999" ph="{...}" />
+            <marker date="1565452635407" expanded="true" signature="5077:5865" ph="{...}" />
+            <marker date="1565452635407" expanded="true" signature="5923:6070" ph="{...}" />
+            <marker date="1565452635407" expanded="true" signature="6108:6620" ph="{...}" />
+            <marker date="1565452635407" expanded="true" signature="6734:6851" ph="{...}" />
+            <marker date="1565452635407" expanded="true" signature="6868:7856" ph="{...}" />
+            <marker date="1565452635407" expanded="true" signature="7096:7405" ph="{...}" />
+            <marker date="1565452635407" expanded="true" signature="7426:7518" ph="{...}" />
+            <marker date="1565452635407" expanded="true" signature="7900:7989" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Common/Licence.cs">
+    <entry file="file://$PROJECT_DIR$/Common/Monitors.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="15" column="49" selection-start-line="15" selection-start-column="49" selection-end-line="15" selection-end-column="49" />
+        <state relative-caret-position="289">
+          <caret line="57" column="12" selection-start-line="57" selection-start-column="12" selection-end-line="57" selection-end-column="12" />
           <folding>
-            <marker date="1565397676586" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
-            <marker date="1565397676586" expanded="false" signature="186:301" ph="..." />
-            <marker date="1565397676586" expanded="true" signature="319:1947" ph="{...}" />
-            <marker date="1565397676586" expanded="true" signature="348:1945" ph="{...}" />
-            <marker date="1565397676586" expanded="true" signature="839:974" ph="{...}" />
-            <marker date="1565397676586" expanded="true" signature="1032:1305" ph="{...}" />
-            <marker date="1565397676586" expanded="true" signature="1374:1436" ph="{...}" />
-            <marker date="1565397676586" expanded="true" signature="1495:1560" ph="{...}" />
-            <marker date="1565397676586" expanded="true" signature="1628:1706" ph="{...}" />
-            <marker date="1565397676586" expanded="true" signature="1755:1822" ph="{...}" />
-            <marker date="1565397676586" expanded="true" signature="1858:1939" ph="{...}" />
+            <marker date="1565452738272" expanded="true" signature="6:174" ph="..." />
+            <marker date="1565452738272" expanded="true" signature="192:3882" ph="{...}" />
+            <marker date="1565452738272" expanded="true" signature="220:578" ph="{...}" />
+            <marker date="1565452738272" expanded="true" signature="434:572" ph="{...}" />
+            <marker date="1565452738272" expanded="true" signature="616:2318" ph="{...}" />
+            <marker date="1565452738272" expanded="true" signature="892:1224" ph="{...}" />
+            <marker date="1565452738272" expanded="true" signature="1279:2312" ph="{...}" />
+            <marker date="1565452738272" expanded="true" signature="1529:2149" ph="{...}" />
+            <marker date="1565452738272" expanded="true" signature="2580:3880" ph="{...}" />
           </folding>
         </state>
       </provider>

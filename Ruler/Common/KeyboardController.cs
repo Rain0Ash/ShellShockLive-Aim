@@ -5,12 +5,12 @@ namespace Ruler.Common
 {
     internal class KeyboardController : IDisposable
     {
-        private GlobalKeyboardHook _globalKeyboardHook;
+        private GlobalKeyboardHook globalKeyboardHook;
 
         public void SetupKeyboardHooks()
         {
-            _globalKeyboardHook = new GlobalKeyboardHook();
-            _globalKeyboardHook.KeyboardPressed += OnKeyPressed;
+            globalKeyboardHook = new GlobalKeyboardHook();
+            globalKeyboardHook.KeyboardPressed += OnKeyPressed;
         }
 
         private void OnKeyPressed(object sender, GlobalKeyboardHookEventArgs e)
@@ -38,7 +38,7 @@ namespace Ruler.Common
 
         public void Dispose()
         {
-            _globalKeyboardHook?.Dispose();
+            globalKeyboardHook?.Dispose();
         }
     }
 }

@@ -2,11 +2,13 @@
 // PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
 
 using System;
+using System.Reflection;
+using System.Windows;
 
 namespace Common
 {
     public static class Settings
     {
-        public static String Version = "NA 0.3 Alpha";
+        public const String Version = "NA 0.4 Alpha";
     }
 }

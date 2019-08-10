@@ -288,7 +288,6 @@
         <e p="icon.ico" t="Include" />
         <e p="monitor.png" t="Include" />
         <e p="notepad.ico" t="Include" />
-        <e p="notepad.png" t="Include" />
       </e>
       <e p="Ruler" t="Include">
         <e p="BlackHole" t="Include">

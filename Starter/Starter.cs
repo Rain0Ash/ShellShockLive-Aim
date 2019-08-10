@@ -2,25 +2,22 @@
 // PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
 
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Common;
 using Ruler.Properties;
-using Starter.Localization;
+using Ruler.Starter.Registry;
+using Settings = Common.Settings;
 
 namespace Ruler.Starter
 {
     public partial class Starter : Form
     {
-
         public Starter()
         {
             Process starter = Process.GetCurrentProcess();
@@ -29,17 +26,44 @@ namespace Ruler.Starter
         private void Starter_Load(Object sender, EventArgs e)
         {
             CenterToScreen();
-            LicenceID.Mask = $@"A{String.Concat(Enumerable.Repeat("a", Licence.MaxIDLength - 1))}";
-            LicenceKey.Mask = $@"{String.Concat(Enumerable.Repeat($@"{String.Concat(Enumerable.Repeat("A", Licence.MaxKeyCharInCell))}-", Licence.MaxKeyCells))}".TrimEnd('-');
-            LicenceID.Text = Licence.FreeID;
-            LicenceKey.Text = Licence.FreeKey;
-            LicenceID.Focus();
-            LanguageImagedComboBox.DataSource = new StarterLocalization().GetCultures()
+            LanguageImagedComboBox.DataSource = Localization.GetCultures()
                 .Select(culture => new DropDownItem(culture.CultureName) { Image = culture.CultureImage }).ToList();
             
             ScreenImagedComboBox.DataSource = Monitors.GetMonitors()
                 .Select(screen => new DropDownItem($"{(screen.Name.Length > 0 ? screen.Name[screen.Name.Length-1] : 'U')} {screen.Resolution.Width.ToString()}x{screen.Resolution.Height.ToString()} [{screen.Frequency.ToString()}]"){Image = Resources.monitor}).ToList();
+
+            LicenceID.MaxLength = Licence.MaxIDLength;
+            LicenceKey.MaxLength = Licence.MaxKeyLength;
+            LicenceID.Mask = $@"A{String.Concat(Enumerable.Repeat("a", Licence.MaxIDLength - 1))}";
+            LicenceKey.Mask = $@"{String.Concat(Enumerable.Repeat($@"{String.Concat(Enumerable.Repeat("A", Licence.MaxKeyCharInCell))}-", Licence.MaxKeyCells))}".TrimEnd('-');
             
+            RegistrySettings registrySettings = Registry.Registry.GetRegistry();
+            if (registrySettings.DontUseRegistry || !Licence.Sha256(Settings.Version).Equals(registrySettings.BuildDateTimeHash, StringComparison.OrdinalIgnoreCase))
+                registrySettings = Registry.Registry.GetRegistry(true);
+
+            Int32 getLanguageIndex()
+            {
+                for (Int32 i = 0; i < LanguageImagedComboBox.Items.Count; i++)
+                {
+                    if (String.Equals((LanguageImagedComboBox.Items[i] as DropDownItem)?.Value, 
+                        new Localization.Culture(registrySettings.LanguageCode).CultureName,
+                        StringComparison.CurrentCultureIgnoreCase))
+                    {
+                        return i;
+                    }
+                }
+                return 0;
+            }
+            
+            LicenceID.Text = registrySettings.ID;
+            LicenceKey.Text = registrySettings.Key;
+            LanguageImagedComboBox.SelectedIndex = getLanguageIndex();
+            ScreenImagedComboBox.SelectedIndex = registrySettings.MonitorID < ScreenImagedComboBox.Items.Count ? registrySettings.MonitorID : 0;
+            IsDisguiseRuler.Checked = registrySettings.IsDisguise;
+            NotSaveSettingsCheckBox.Checked = registrySettings.DontUseRegistry;
+            NotDisplayAnymoreCheckBox.Checked = registrySettings.DontShowAnymore;
+
+            LicenceID.Focus();
 
             LanguageImagedComboBox_ChangeStarterLanguage(sender, e);
         }
@@ -71,7 +95,8 @@ namespace Ruler.Starter
             IDLabel.Text = localization.IDLabel;
             KeyLabel.Text = localization.KeyLabel;
             IsDisguiseRuler.Text = localization.DisguiseCheckBox;
-            NotDisplayCheckBox.Text = localization.NotDisplayAnymoreCheckBox;
+            NotSaveSettingsCheckBox.Text = localization.NotSaveSettings;
+            NotDisplayAnymoreCheckBox.Text = localization.NotDisplayAnymoreCheckBox;
             StartButton.Text = localization.StartButton;
         }
 
@@ -129,9 +154,21 @@ namespace Ruler.Starter
 
             try
             {
+                String languageCode = CountryData.EnglishNameByIso2.FirstOrDefault(x => x.Value == LanguageImagedComboBox.Text).Key.ToLower();
+                
+                if (!NotSaveSettingsCheckBox.Checked)
+                {
+                    Registry.Registry.SetRegistry(new RegistrySettings(LicenceID.Text, LicenceKey.Text, languageCode, ScreenImagedComboBox.SelectedIndex,
+                        IsDisguiseRuler.Checked, NotSaveSettingsCheckBox.Checked, NotDisplayAnymoreCheckBox.Checked));
+                }
+                else
+                {
+                    Registry.Registry.RemoveRegistry();
+                }
+
                 Hide();
                 Form ruler = new Ruler(licence, Monitors.GetMonitors()[ScreenImagedComboBox.SelectedIndex],
-                    CountryData.EnglishNameByIso2.FirstOrDefault(x => x.Value == LanguageImagedComboBox.Text).Key.ToLower(),
+                    languageCode,
                     IsDisguiseRuler.Checked);
                 ruler.Closed += (s, args) => Close();
                 ruler.Show();

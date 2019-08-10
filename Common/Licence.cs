@@ -27,7 +27,7 @@ namespace Common
             "1bd65a8da051182d293dcc018634066cdbcf21b139ee14ce00baf56f46b3e164"
         };
 
-        private static String Sha256(String hashString)
+        internal static String Sha256(String hashString)
         {
             StringBuilder hash = new StringBuilder();
             new SHA256Managed().ComputeHash(Encoding.UTF8.GetBytes(hashString)).ToList()

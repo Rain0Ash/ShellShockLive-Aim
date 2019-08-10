@@ -3,6 +3,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Linq;
 using System.Reflection;
@@ -13,30 +14,24 @@ namespace Common
 {
     internal abstract class Localization
     {
-        public struct LettersInCultureCode
-        {
-            public const Int32 ThreeLetterWindowsLanguageName = 1;
-            public const Int32 TwoLetterISOLanguageName = 2;
-            public const Int32 ThreeLetterISOLanguageName = 3;
-        }
-        public static Int32 LettersInCultureCodeUsing = 2;
+        internal const String DefaultCulture = @"en";
         protected String LocalCulture;
 
-        public struct Culture
+        internal struct Culture
         {
-            public String CultureCode;
-            public String CultureName;
-            public Image CultureImage;
+            internal String CultureCode;
+            internal String CultureName;
+            internal Image CultureImage;
 
             private void SetDefaultCulture()
             {
-                CultureCode = "en";
+                CultureCode = DefaultCulture;
                 CountryData.EnglishNameByIso2.TryGetValue(CultureCode, out String cultureName);
                 CultureName = cultureName ?? "English";
                 CultureImage = (Image)LanguageFlags.GetFlag(CultureCode);
             }
 
-            public Culture(String cultureCode = null, String cultureName = null, Image cultureImage = null)
+            internal Culture(String cultureCode = null, String cultureName = null, Image cultureImage = null)
             {
                 cultureCode = cultureCode?.ToLower();
 
@@ -83,27 +78,21 @@ namespace Common
             }
         }
 
-        public struct CultureStrings
+        [SuppressMessage("ReSharper", "NotAccessedField.Local")]
+        internal struct CultureStrings
         {
-            public String en, ru;
+            private String en, ru;
             
-            public CultureStrings(String english, String russian = null)
+            internal CultureStrings(String english, String russian = null)
             {
                 en = english ?? "String is missing!";
                 ru = russian;
             }
         }
 
-        internal static void SetCurrentCulture(Int32 lettersInCultureCode = 2)
-        {
-            LettersInCultureCodeUsing = lettersInCultureCode;
-        }
-        
         internal static String GetCurrentCulture()
         {
-            return LettersInCultureCodeUsing == LettersInCultureCode.ThreeLetterWindowsLanguageName ? CultureInfo.CurrentCulture.ThreeLetterWindowsLanguageName:
-                LettersInCultureCodeUsing == LettersInCultureCode.ThreeLetterISOLanguageName ? CultureInfo.CurrentCulture.ThreeLetterISOLanguageName :
-                CultureInfo.CurrentCulture.TwoLetterISOLanguageName;
+            return CultureInfo.CurrentCulture.TwoLetterISOLanguageName;
         }
 
         protected String LocalizedString(CultureStrings strings)
@@ -112,10 +101,10 @@ namespace Common
             Array.ForEach(typeof(CultureStrings).GetFields(BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public),
                 field => localString.Add(field.Name, field.GetValue(strings)?.ToString()));
 
-            return LocalCulture != null && localString.ContainsKey(LocalCulture) && localString[LocalCulture] != null ? localString[LocalCulture] : localString["en"];
+            return LocalCulture != null && localString.ContainsKey(LocalCulture) && localString[LocalCulture] != null ? localString[LocalCulture] : localString[DefaultCulture];
         }
 
-        public OrderedSet<Culture> GetCultures()
+        internal static IEnumerable<Culture> GetCultures()
         {
             OrderedSet<Culture> cultures = new OrderedSet<Culture>();
             Array.ForEach(typeof(CultureStrings).GetFields(BindingFlags.Instance | BindingFlags.NonPublic | BindingFlags.Public),

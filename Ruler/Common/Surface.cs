@@ -1,6 +1,4 @@
 using System;
-using System.Drawing;
-using System.Windows.Forms;
 using SharpDX.Direct2D1;
 
 namespace Ruler.Common
@@ -15,11 +13,11 @@ namespace Ruler.Common
             RenderTarget = renderTarget;
         }
 
-        public virtual void Draw()
+        public void Draw()
         {
             if (RenderTarget == null)
             {
-                throw new ArgumentNullException("Drawer is Null");
+                throw new ArgumentNullException();
             }
             Draw(ref RenderTarget);
         }

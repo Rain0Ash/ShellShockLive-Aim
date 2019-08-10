@@ -2,7 +2,6 @@
 // PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
 
 using System;
-using System.Globalization;
 using Common;
 
 namespace Starter.Localization
@@ -14,8 +13,9 @@ namespace Starter.Localization
         public String ScreenLabel;
         public String IDLabel;
         public String KeyLabel;
-        public String NotDisplayAnymoreCheckBox;
         public String DisguiseCheckBox;
+        public String NotSaveSettings;
+        public String NotDisplayAnymoreCheckBox;
         public String StartButton;
         public String InvalidKeyID;
 
@@ -43,14 +43,18 @@ namespace Starter.Localization
                 "Enter licence key",
                 "Введите ключ"));
 
-            NotDisplayAnymoreCheckBox = LocalizedString(new CultureStrings(
-                "Don't display anymore",
-                "Далее не отображать"));
-
             DisguiseCheckBox = LocalizedString(new CultureStrings(
                 "Disguise ruler",
                 "Прятать линейку"));
 
+            NotSaveSettings = LocalizedString(new CultureStrings(
+                "Don't save settings",
+                "Не сохранять настройки"));
+
+            NotDisplayAnymoreCheckBox = LocalizedString(new CultureStrings(
+                "Don't display anymore",
+                "Далее не отображать"));
+            
             StartButton = LocalizedString(new CultureStrings(
                 "Start",
                 "Запустить"));

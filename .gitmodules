@@ -1,0 +1,4 @@
+[submodule "BuildInfo"]
+	path = BuildInfo
+	url = https://github.com/dwcullop/BuildInfo
+	branch = feature/githash

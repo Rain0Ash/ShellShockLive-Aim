@@ -50,7 +50,8 @@ namespace Ruler.Starter
             this.KeyLabel = new System.Windows.Forms.Label();
             this.LicenceKey = new System.Windows.Forms.MaskedTextBox();
             this.IsDisguiseRuler = new System.Windows.Forms.CheckBox();
-            this.NotDisplayCheckBox = new System.Windows.Forms.CheckBox();
+            this.NotSaveSettingsCheckBox = new System.Windows.Forms.CheckBox();
+            this.NotDisplayAnymoreCheckBox = new System.Windows.Forms.CheckBox();
             this.StartButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -61,7 +62,6 @@ namespace Ruler.Starter
             this.LanguageLabel.Name = "LanguageLabel";
             this.LanguageLabel.Size = new System.Drawing.Size(55, 13);
             this.LanguageLabel.TabIndex = 0;
-            this.LanguageLabel.Text = "Language";
             // 
             // LanguageComboBox
             // 
@@ -82,7 +82,6 @@ namespace Ruler.Starter
             this.ScreenLabel.Name = "LanguageLabel";
             this.ScreenLabel.Size = new System.Drawing.Size(55, 13);
             this.ScreenLabel.TabIndex = 2;
-            this.ScreenLabel.Text = "Screens";
             // 
             // ScreenComboBox
             // 
@@ -99,47 +98,39 @@ namespace Ruler.Starter
             // IDLabel
             // 
             this.IDLabel.AutoSize = true;
-            this.IDLabel.Location = new System.Drawing.Point(10, 50);
+            this.IDLabel.Location = new System.Drawing.Point(10, 45);
             this.IDLabel.Name = "IDLabel";
             this.IDLabel.Size = new System.Drawing.Size(59, 13);
             this.IDLabel.TabIndex = 4;
-            this.IDLabel.Text = "Licence ID";
             // 
             // KeyLabel
             // 
             this.KeyLabel.AutoSize = true;
-            this.KeyLabel.Location = new System.Drawing.Point(115, 50);
+            this.KeyLabel.Location = new System.Drawing.Point(115, 45);
             this.KeyLabel.Name = "KeyLabel";
             this.KeyLabel.Size = new System.Drawing.Size(66, 13);
             this.KeyLabel.TabIndex = 6;
-            this.KeyLabel.Text = "Licence Key";
             // 
             // LicenceID
             // 
-            this.LicenceID.Location = new System.Drawing.Point(10, 65);
+            this.LicenceID.Location = new System.Drawing.Point(10, 60);
             this.LicenceID.Name = "LicenceID";
             this.LicenceID.Size = new System.Drawing.Size(100, 20);
             this.LicenceID.Multiline = false;
-            this.LicenceID.MaxLength = 12;
-            this.LicenceID.Mask = "Aaaaaaaaaaaa";
             this.LicenceID.PromptChar = ' ';
             this.LicenceID.HidePromptOnLeave = true;
             this.LicenceID.TabIndex = 5;
-            this.LicenceID.Text = "FREE";
             this.LicenceID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             //this.LicenceID.TextChanged += new System.EventHandler(this.LicenceID_TextChanged);
             // 
             // LicenceKey
             // 
             this.LicenceKey.AsciiOnly = true;
-            this.LicenceKey.Location = new System.Drawing.Point(115, 65);
-            this.LicenceKey.Mask = ">AAAA-AAAA-AAAA-AAAA-AAAA";
+            this.LicenceKey.Location = new System.Drawing.Point(115, 60);
             this.LicenceKey.Name = "LicenceKey";
             this.LicenceKey.Size = new System.Drawing.Size(160, 20);
-            this.LicenceKey.MaxLength = 24;
             this.LicenceKey.Multiline = false;
             this.LicenceKey.TabIndex = 7;
-            this.LicenceKey.Text = "FREE-FREE-FREE-FREE-FREE";
             this.LicenceKey.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // IsDisguiseRuler
@@ -149,18 +140,25 @@ namespace Ruler.Starter
             this.IsDisguiseRuler.Name = "IsDisguiseRuler";
             this.IsDisguiseRuler.Size = new System.Drawing.Size(107, 17);
             this.IsDisguiseRuler.TabIndex = 8;
-            this.IsDisguiseRuler.Text = "Disguise the ruler";
             this.IsDisguiseRuler.UseVisualStyleBackColor = true;
             // 
             // NotDisplayCheckBox
             // 
-            this.NotDisplayCheckBox.AutoSize = true;
-            this.NotDisplayCheckBox.Location = new System.Drawing.Point(130, 100);
-            this.NotDisplayCheckBox.Name = "NotDisplayCheckBox";
-            this.NotDisplayCheckBox.Size = new System.Drawing.Size(136, 17);
-            this.NotDisplayCheckBox.TabIndex = 9;
-            this.NotDisplayCheckBox.Text = "Do not display anymore";
-            this.NotDisplayCheckBox.UseVisualStyleBackColor = true;
+            this.NotDisplayAnymoreCheckBox.AutoSize = true;
+            this.NotDisplayAnymoreCheckBox.Location = new System.Drawing.Point(130, 100);
+            this.NotDisplayAnymoreCheckBox.Name = "NotDisplayAnymoreCheckBox";
+            this.NotDisplayAnymoreCheckBox.Size = new System.Drawing.Size(136, 17);
+            this.NotDisplayAnymoreCheckBox.TabIndex = 9;
+            this.NotDisplayAnymoreCheckBox.UseVisualStyleBackColor = true;            
+            // 
+            // NotSaveSettingsCheckBox
+            // 
+            this.NotSaveSettingsCheckBox.AutoSize = true;
+            this.NotSaveSettingsCheckBox.Location = new System.Drawing.Point(130, 85);
+            this.NotSaveSettingsCheckBox.Name = "NotSaveSettingsCheckBox";
+            this.NotSaveSettingsCheckBox.Size = new System.Drawing.Size(136, 17);
+            this.NotSaveSettingsCheckBox.TabIndex = 9;
+            this.NotSaveSettingsCheckBox.UseVisualStyleBackColor = true;
             // 
             // StartButton
             // 
@@ -168,7 +166,6 @@ namespace Ruler.Starter
             this.StartButton.Name = "StartButton";
             this.StartButton.Size = new System.Drawing.Size(265, 35);
             this.StartButton.TabIndex = 10;
-            this.StartButton.Text = "Start";
             this.StartButton.UseVisualStyleBackColor = true;
             this.StartButton.Click += new System.EventHandler(this.StartButton_Click);
             // 
@@ -183,10 +180,11 @@ namespace Ruler.Starter
             this.Controls.Add(this.ScreenLabel);
             this.Controls.Add(this.LanguageLabel);
             this.Controls.Add(this.LicenceKey);
-            this.Controls.Add(this.NotDisplayCheckBox);
+            this.Controls.Add(this.NotDisplayAnymoreCheckBox);
             this.Controls.Add(this.LicenceID);
             this.Controls.Add(this.StartButton);
             this.Controls.Add(this.LanguageImagedComboBox);
+            this.Controls.Add(this.NotSaveSettingsCheckBox);
             this.Controls.Add(this.IsDisguiseRuler);
             this.Controls.Add(this.ScreenImagedComboBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -212,7 +210,8 @@ namespace Ruler.Starter
         private Label KeyLabel;
         private MaskedTextBox LicenceKey;
         private CheckBox IsDisguiseRuler;
-        private CheckBox NotDisplayCheckBox;
+        private CheckBox NotSaveSettingsCheckBox;
+        private CheckBox NotDisplayAnymoreCheckBox;
         private Button StartButton;
     }
 }

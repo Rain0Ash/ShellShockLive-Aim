@@ -14,6 +14,7 @@
     <FileAlignment>512</FileAlignment>
     <RootNamespace>Ruler</RootNamespace>
     <IsWebBootstrapper>false</IsWebBootstrapper>
+    <LangVersion>8</LangVersion>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -28,10 +29,9 @@
     <ApplicationVersion>1.0.0.0</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <LangVersion>8</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>x86</PlatformTarget>
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>true</Optimize>
@@ -216,7 +216,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\notepad.png" />
     <None Include="Common\Images\ad.png" />
     <None Include="Common\Images\ae.png" />
     <None Include="Common\Images\af.png" />
@@ -469,6 +468,9 @@
     <Content Include="icon.ico" />
     <None Include="Resources\monitor.png" />
     <None Include="Resources\notepad.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\Fody.5.1.1\build\Fody.targets" Condition="Exists('packages\Fody.5.1.1\build\Fody.targets')" />

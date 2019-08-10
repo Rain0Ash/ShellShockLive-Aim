@@ -3,7 +3,6 @@
 
 using System;
 using SharpDX;
-using System.Windows.Forms;
 using Ruler.Common;
 using SharpDX.Direct2D1;
 
