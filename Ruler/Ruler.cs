@@ -28,12 +28,12 @@ namespace Ruler
             TopMost = true;
             AutoScaleMode = AutoScaleMode.Font;
             Name = nameof(Ruler);
-            Text = $@"Aim Version {Settings.Version}";
+            Text = !isDisguise ? $@"Aim Version {Settings.Version}" : @"notepad.exe";
             BackColor = Color.Black;
             TransparencyKey = Color.Black;
             FormBorderStyle = FormBorderStyle.Sizable;
             WindowState = FormWindowState.Maximized;
-            Icon = Resources.icon;
+            Icon = !isDisguise ? Resources.icon : Resources.notepad;
             Rectangle resolution = monitor.Resolution;
             Location = new Point(resolution.X, resolution.Y);
             Size = new Size(resolution.Width, resolution.Height);

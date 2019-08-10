@@ -7,6 +7,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
+using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
@@ -20,7 +21,6 @@ namespace Ruler.Starter
     public partial class Starter : Form
     {
 
-
         public Starter()
         {
             Process starter = Process.GetCurrentProcess();
@@ -29,12 +29,16 @@ namespace Ruler.Starter
         private void Starter_Load(Object sender, EventArgs e)
         {
             CenterToScreen();
+            LicenceID.Mask = $@"A{String.Concat(Enumerable.Repeat("a", Licence.MaxIDLength - 1))}";
+            LicenceKey.Mask = $@"{String.Concat(Enumerable.Repeat($@"{String.Concat(Enumerable.Repeat("A", Licence.MaxKeyCharInCell))}-", Licence.MaxKeyCells))}".TrimEnd('-');
+            LicenceID.Text = Licence.FreeID;
+            LicenceKey.Text = Licence.FreeKey;
             LicenceID.Focus();
             LanguageImagedComboBox.DataSource = new StarterLocalization().GetCultures()
                 .Select(culture => new DropDownItem(culture.CultureName) { Image = culture.CultureImage }).ToList();
             
             ScreenImagedComboBox.DataSource = Monitors.GetMonitors()
-                .Select(screen => new DropDownItem($"{screen.Name[screen.Name.Length-1]} {screen.Resolution.Width.ToString()}x{screen.Resolution.Height.ToString()} [{screen.Frequency.ToString()}]"){Image = Resources.monitor}).ToList();
+                .Select(screen => new DropDownItem($"{(screen.Name.Length > 0 ? screen.Name[screen.Name.Length-1] : 'U')} {screen.Resolution.Width.ToString()}x{screen.Resolution.Height.ToString()} [{screen.Frequency.ToString()}]"){Image = Resources.monitor}).ToList();
             
 
             LanguageImagedComboBox_ChangeStarterLanguage(sender, e);

@@ -181,6 +181,7 @@
     <Compile Include="Common\Licence.cs" />
     <Compile Include="Ruler\Trajectory\Weapons\Weapon.cs" />
     <Compile Include="Starter\Localization\StarterLocalization.cs" />
+    <Compile Include="Starter\Registry\Registry.cs" />
     <Compile Include="Starter\Starter.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -215,6 +216,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\notepad.png" />
     <None Include="Common\Images\ad.png" />
     <None Include="Common\Images\ae.png" />
     <None Include="Common\Images\af.png" />

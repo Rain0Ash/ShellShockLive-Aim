@@ -288,6 +288,7 @@
         <e p="icon.ico" t="Include" />
         <e p="monitor.png" t="Include" />
         <e p="notepad.ico" t="Include" />
+        <e p="notepad.png" t="Include" />
       </e>
       <e p="Ruler" t="Include">
         <e p="BlackHole" t="Include">
@@ -335,6 +336,9 @@
       <e p="Starter" t="Include">
         <e p="Localization" t="Include">
           <e p="StarterLocalization.cs" t="Include" />
+        </e>
+        <e p="Registry" t="Include">
+          <e p="Registry.cs" t="Include" />
         </e>
         <e p="Starter.cs" t="Include" />
         <e p="Starter.Designer.cs" t="Include" />

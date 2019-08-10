@@ -120,10 +120,10 @@ namespace Ruler.Starter
             this.LicenceID.Name = "LicenceID";
             this.LicenceID.Size = new System.Drawing.Size(100, 20);
             this.LicenceID.Multiline = false;
-            LicenceID.MaxLength = Licence.MaxIDLength;
-            LicenceID.Mask = "Aaaaaaaaaaaa";
-            LicenceID.PromptChar = ' ';
-            LicenceID.HidePromptOnLeave = true;
+            this.LicenceID.MaxLength = 12;
+            this.LicenceID.Mask = "Aaaaaaaaaaaa";
+            this.LicenceID.PromptChar = ' ';
+            this.LicenceID.HidePromptOnLeave = true;
             this.LicenceID.TabIndex = 5;
             this.LicenceID.Text = "FREE";
             this.LicenceID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -136,9 +136,10 @@ namespace Ruler.Starter
             this.LicenceKey.Mask = ">AAAA-AAAA-AAAA-AAAA-AAAA";
             this.LicenceKey.Name = "LicenceKey";
             this.LicenceKey.Size = new System.Drawing.Size(160, 20);
+            this.LicenceKey.MaxLength = 24;
             this.LicenceKey.Multiline = false;
             this.LicenceKey.TabIndex = 7;
-            this.LicenceKey.Text = "FREEFREEFREEFREEFREE";
+            this.LicenceKey.Text = "FREE-FREE-FREE-FREE-FREE";
             this.LicenceKey.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // IsDisguiseRuler

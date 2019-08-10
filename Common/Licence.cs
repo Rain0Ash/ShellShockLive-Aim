@@ -11,13 +11,19 @@ namespace Common
 {
     internal class Licence
     {
-        internal static Int32 MaxIDLength = 12;
+        internal const Int32 MaxIDLength = 12;
+        internal const Int32 MaxKeyCells = 5;
+        internal const Int32 MaxKeyCharInCell = 4;
+        internal const Int32 MaxKeyLength = MaxKeyCells*MaxKeyCharInCell + MaxKeyCells - 1;
+
+        internal const String FreeID = @"FREE";
+        internal const String FreeKey = @"FREE-FREE-FREE-FREE-FREE";
 
         private readonly String licence;
 
         private static readonly HashSet<String> ValidHash= new HashSet<String>
         {
-            "e783af48571881f3d38883ffb57227b62308656d6e66b5c20ae451295bd6ef1b",
+            GetHashedKeyID(FreeID, FreeKey),
             "1bd65a8da051182d293dcc018634066cdbcf21b139ee14ce00baf56f46b3e164"
         };
 
