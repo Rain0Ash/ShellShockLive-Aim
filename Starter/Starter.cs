@@ -148,6 +148,7 @@ namespace Ruler.Starter
             Licence licence = new Licence(LicenceID.Text, LicenceKey.Text);
             if (!licence.IsValid())
             {
+                LicenceID.Focus();
                 await invalidMessage(localization.InvalidKeyID);
                 return;
             }
