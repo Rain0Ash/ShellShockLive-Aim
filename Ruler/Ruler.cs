@@ -34,6 +34,7 @@ namespace Ruler
             FormBorderStyle = FormBorderStyle.Sizable;
             WindowState = FormWindowState.Maximized;
             Icon = !isDisguise ? Resources.icon : Resources.notepad;
+            ShowInTaskbar = !IsDisguise;
             Rectangle resolution = monitor.Resolution;
             Location = new Point(resolution.X, resolution.Y);
             Size = new Size(resolution.Width, resolution.Height);

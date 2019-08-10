@@ -57,7 +57,6 @@ namespace Common
 
             if (monitors.Count == 1) monitors[0] = fullScreen;
             else monitors.Insert(0, fullScreen);
-
             return monitors.ToArray();
         }
     }

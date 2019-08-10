@@ -1,6 +1,8 @@
 My **AIM** development for ShellShock Live. The project has a purely **educational** purpose, and I urge **NOT** to use it when playing with other players.
 
-![Guide](https://github.com/Rain0Ash/ShellShockLive-Aim/blob/develop/guide.png)
+![Guide](https://github.com/Rain0Ash/ShellShockLive-Aim/blob/master/guide.png)
+
+Until the end of development of the current architecture, use the ***legacy*** branch ruler.
 
 Now setting up for 1366x768 game resolution. Other screen resolutions will be available soon (given the speed of development).
 
