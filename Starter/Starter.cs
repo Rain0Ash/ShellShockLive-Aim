@@ -20,7 +20,6 @@ namespace Ruler.Starter
     {
         public Starter()
         {
-            Process starter = Process.GetCurrentProcess();
             InitializeComponent();
         }
         private void Starter_Load(Object sender, EventArgs e)
@@ -28,7 +27,7 @@ namespace Ruler.Starter
             CenterToScreen();
             LanguageImagedComboBox.DataSource = Localization.GetCultures()
                 .Select(culture => new DropDownItem(culture.CultureName) { Image = culture.CultureImage }).ToList();
-            
+
             ScreenImagedComboBox.DataSource = Monitors.GetMonitors()
                 .Select(screen => new DropDownItem($"{(screen.Name.Length > 0 ? screen.Name[screen.Name.Length-1] : 'U')} {screen.Resolution.Width.ToString()}x{screen.Resolution.Height.ToString()} [{screen.Frequency.ToString()}]"){Image = Resources.monitor}).ToList();
 
@@ -43,18 +42,18 @@ namespace Ruler.Starter
 
             Int32 getLanguageIndex()
             {
+                String registryCultureCode = new Localization.Culture(registrySettings.LanguageCode).CultureName;
                 for (Int32 i = 0; i < LanguageImagedComboBox.Items.Count; i++)
                 {
                     if (String.Equals((LanguageImagedComboBox.Items[i] as DropDownItem)?.Value, 
-                        new Localization.Culture(registrySettings.LanguageCode).CultureName,
-                        StringComparison.CurrentCultureIgnoreCase))
+                        registryCultureCode, StringComparison.CurrentCultureIgnoreCase))
                     {
                         return i;
                     }
                 }
                 return 0;
             }
-            
+
             LicenceID.Text = registrySettings.ID;
             LicenceKey.Text = registrySettings.Key;
             LanguageImagedComboBox.SelectedIndex = getLanguageIndex();
@@ -62,6 +61,8 @@ namespace Ruler.Starter
             IsDisguiseRuler.Checked = registrySettings.IsDisguise;
             NotSaveSettingsCheckBox.Checked = registrySettings.DontUseRegistry;
             NotDisplayAnymoreCheckBox.Checked = registrySettings.DontShowAnymore;
+
+            if (NotDisplayAnymoreCheckBox.Checked) StartButton_Click(sender, e);
 
             LicenceID.Focus();
 

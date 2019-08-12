@@ -1,8 +1,6 @@
 using System;
-using System.Runtime.Remoting.Messaging;
 using System.Threading;
-using System.Timers;
-using System.Windows;
+using System.Windows.Forms.VisualStyles;
 using Ruler.Common;
 using SharpDX;
 using SharpDX.Direct2D1;
@@ -16,35 +14,56 @@ namespace Ruler
         protected RenderForm Form;
         protected RenderTarget Drawer;
         protected SwapChain SwapChain;
+        private RenderLoop looper;
+
         internal Manager(ref RenderForm form, ref RenderTarget drawer, ref SwapChain swapChain)
         {
             Form = form;
             Drawer = drawer;
             SwapChain = swapChain;
-            
         }
 
         internal void Start()
         {
-            new KeyboardController().SetupKeyboardHooks();
-
+            Manager me = this;
+            new KeyboardController(ref me).SetupKeyboardHooks();
+            
             Form.Show();
-            RenderLoop loop = new RenderLoop(Form);
+
+
+            looper = new RenderLoop(Form);
+            Boolean firstRender = false;
             while (true)
             {
-                if (!loop.NextFrame())
+                if (!looper.NextFrame())
                 {
                     break;
                 }
-                NextFrame();
+                if (!firstRender) NextFrame();
+                firstRender = true;
+                Thread.Sleep(60*60/1000);
             }
         }
 
-        private void NextFrame()
+        internal Boolean ForceNextFrame()
+        {
+            for (Int32 i = 0; i < 3; i++)
+            {
+                if (!looper.NextFrame())
+                {
+                    continue;
+                }
+                NextFrame();
+                return true;
+            }
+
+            return false;
+        }
+        internal void NextFrame()
         {
             Drawer.BeginDraw();
             Drawer.Clear(Color.Black);
-            new Portal(new SharpDX.Point(100, 100), 10, ref Drawer).Draw();
+            new Portal(new Point(100, 100), 10, ref Drawer).Draw();
             Drawer.EndDraw();
             SwapChain.Present(0, PresentFlags.None);
         }

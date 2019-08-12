@@ -149,19 +149,38 @@
     <Compile Include="Common\Settings.cs" />
     <Compile Include="Common\Localization.cs" />
     <Compile Include="Common\Types\OrderedSet.cs" />
+    <Compile Include="Common\WinStruct.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Ruler\BlackHole\BlackHole.cs" />
+    <Compile Include="Ruler\Common\Forms\ValueBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Ruler\Common\IElement.cs" />
     <Compile Include="Ruler\Common\Circle.cs" />
-    <Compile Include="Ruler\Common\KeyboardController.cs" />
     <Compile Include="Ruler\Common\Keyboard\KeyboardHook.cs" />
     <Compile Include="Ruler\Common\Parametrs.cs" />
     <Compile Include="Ruler\Common\Surface.cs" />
-    <Compile Include="Ruler\Gui\WeaponPanel.cs" />
+    <Compile Include="Ruler\Controllers\EventController.cs" />
+    <Compile Include="Ruler\Controllers\KeyboardController.cs" />
+    <Compile Include="Ruler\Gui\WeaponButton.cs">
+      <DependentUpon>WeaponsPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ruler\Gui\WeaponsPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Ruler\InitializeComponent.cs">
+      <SubType>Form</SubType>
+      <DependentUpon>Ruler.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Ruler\InitializeForm.cs">
+      <DependentUpon>Ruler.cs</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Ruler\Manager.cs" />
     <Compile Include="Ruler\Rebound\IRebound.cs" />
     <Compile Include="Ruler\Ruler.cs">
@@ -176,10 +195,12 @@
     <Compile Include="Ruler\Rebound\ReboundWall.cs" />
     <Compile Include="Ruler\Sight\Aim.cs" />
     <Compile Include="Ruler\Sight\Sight.cs" />
-    <Compile Include="Ruler\Trajectory\Guidance.cs" />
     <Compile Include="Ruler\Trajectory\Trajectory.cs" />
     <Compile Include="Common\Licence.cs" />
-    <Compile Include="Ruler\Trajectory\Weapons\Weapon.cs" />
+    <Compile Include="Ruler\Trajectory\Weapons\Common\Guidance.cs" />
+    <Compile Include="Ruler\Trajectory\Weapons\Common\Weapon.cs" />
+    <Compile Include="Ruler\Trajectory\Weapons\Common\Weapons.cs" />
+    <Compile Include="Ruler\Trajectory\Weapons\Common\WeaponsLocalization.cs" />
     <Compile Include="Starter\Localization\StarterLocalization.cs" />
     <Compile Include="Starter\Registry\Registry.cs" />
     <Compile Include="Starter\Starter.cs">
@@ -216,6 +237,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\nuclear.jpg" />
     <None Include="Common\Images\ad.png" />
     <None Include="Common\Images\ae.png" />
     <None Include="Common\Images\af.png" />

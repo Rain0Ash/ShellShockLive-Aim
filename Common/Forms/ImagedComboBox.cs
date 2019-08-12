@@ -21,7 +21,7 @@ namespace System.Windows.Forms
 
             if (e.Index >= 0 && e.Index < Items.Count)
             {
-                DropDownItem item = (DropDownItem)Items[e.Index];
+                DropDownItem item = (DropDownItem) Items[e.Index];
 
                 e.Graphics.DrawImage(item.Image, e.Bounds.Left, e.Bounds.Top);
 
@@ -45,14 +45,10 @@ namespace System.Windows.Forms
         {
             Value = val;
             Image = new Bitmap(16, 16);
-            using (Graphics g = Graphics.FromImage(Image))
-            {
-                using (Brush b = new SolidBrush(Color.FromName(val)))
-                {
-                    g.DrawRectangle(Pens.White, 0, 0, Image.Width, Image.Height);
-                    g.FillRectangle(b, 1, 1, Image.Width - 1, Image.Height - 1);
-                }
-            }
+            using Graphics g = Graphics.FromImage(Image);
+            using Brush b = new SolidBrush(Color.FromName(val));
+            g.DrawRectangle(Pens.White, 0, 0, Image.Width, Image.Height);
+            g.FillRectangle(b, 1, 1, Image.Width - 1, Image.Height - 1);
         }
 
         public override String ToString()

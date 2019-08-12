@@ -7,9 +7,10 @@ namespace Ruler
 {
     internal class Aim : Circle
     {
-        internal Int32 Angle { set; get; }
-        internal Int32 Power { set; get; }
-        
+        internal Int32 Angle;
+
+        internal Int32 Power;
+
         internal Aim(Int32 power, Int32 angle, Point coord, Single radius, ref RenderTarget renderTarget)
             : base(coord, radius, ref renderTarget)
         {

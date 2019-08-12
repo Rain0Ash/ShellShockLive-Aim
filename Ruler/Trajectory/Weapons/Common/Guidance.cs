@@ -8,21 +8,8 @@ using Ruler.Weapons;
 
 namespace Ruler
 {
-    public enum AvGuidance
+    internal static class Guidance
     {
-        Parabola,
-        Direct
-    }
-    
-    internal class Guidance
-    {
-        internal Point Coord;
-        internal Weapon Weapon;
-        internal Guidance(Point coord)
-        {
-            Coord = coord;
-        }
-
         /*
         internal Point[] Evaluate()
         {
@@ -50,6 +37,11 @@ namespace Ruler
             
         }
         */
+
+        internal static Point[] Parabola(Point coord)
+        {
+            return new Point[]{};
+        }
 
 
 

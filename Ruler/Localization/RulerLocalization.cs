@@ -8,6 +8,8 @@ namespace Ruler
 {
     internal class RulerLocalization : Localization
     {
+        internal String RulerVersion;
+        internal String MaskName;
         public String Angle;
         public String AngleValue;
         public String BlackHole;
@@ -20,11 +22,20 @@ namespace Ruler
         public String SightRadius;
         public String Wind;
         public String WindValue;
+        public String Meters;
 
         public RulerLocalization UpdateLocalization(String cultureInfo = null)
         {
             LocalCulture = cultureInfo ?? GetCurrentCulture();
 
+            RulerVersion = LocalizedString(new CultureStrings(
+                $"Ruler version {Settings.Version}",
+                $"Линейка версии {Settings.Version}"));
+
+            MaskName = LocalizedString(new CultureStrings(
+                "Notepad",
+                "Блокнот"));
+            
             Angle = LocalizedString(new CultureStrings(
                 "Angle",
                 "Угол"));
@@ -72,6 +83,10 @@ namespace Ruler
             WindValue = LocalizedString(new CultureStrings(
                 "Wind speed",
                 "Скорость ветра"));
+
+            Meters = LocalizedString(new CultureStrings(
+                "m",
+                "м"));
 
             return this;
         }

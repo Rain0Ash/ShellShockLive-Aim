@@ -1,90 +1,72 @@
 using System;
-using System.Drawing;
-using System.Globalization;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using Common;
-using Ruler.Properties;
-using SharpDX.Direct2D1;
-using SharpDX.Direct3D;
-using SharpDX.Direct3D11;
-using SharpDX.DXGI;
+using Ruler.Common.Forms;
+using SharpDX;
 using SharpDX.Windows;
-using Settings = Common.Settings;
 
 namespace Ruler
 {
-    internal sealed class Ruler : RenderForm
+    internal sealed partial class Ruler : RenderForm
     {
-        internal Licence Licence;
-        internal RulerLocalization Localization;
-        internal Boolean IsDisguise;
-
+        private readonly Licence licence;
+        private readonly Monitor monitor;
+        private readonly RulerLocalization localization;
+        private readonly Boolean isDisguise;
+        private System.Drawing.Rectangle resolution; 
+        
         internal Ruler(Licence licence, Monitor monitor, String languageCode = null, Boolean isDisguise = false)
         {
-            Licence = licence;
-            Localization = new RulerLocalization(languageCode);
-            IsDisguise = isDisguise;
+            this.licence = licence;
+            this.monitor = monitor;
+            localization = new RulerLocalization(languageCode);
+            this.isDisguise = isDisguise;
+            resolution = monitor.Resolution;
+            InitializeComponent();
+        }
 
-            TopMost = true;
-            AutoScaleMode = AutoScaleMode.Font;
-            Name = nameof(Ruler);
-            Text = !isDisguise ? $@"Aim Version {Settings.Version}" : @"notepad.exe";
-            BackColor = Color.Black;
-            TransparencyKey = Color.Black;
-            FormBorderStyle = FormBorderStyle.Sizable;
-            WindowState = FormWindowState.Maximized;
-            Icon = !isDisguise ? Resources.icon : Resources.notepad;
-            ShowInTaskbar = !IsDisguise;
-            Rectangle resolution = monitor.Resolution;
-            Location = new Point(resolution.X, resolution.Y);
-            Size = new Size(resolution.Width, resolution.Height);
+        private void valueBoxKeyDown(Object sender, KeyEventArgs e)
+        {
+            if (!e.Control || e.KeyValue != 86) { return; }
+            e.Handled = true;
+            e.SuppressKeyPress = true;
+
+        }
             
-            SwapChainDescription desc = new SwapChainDescription()
+        private static void ValueBoxOnTextChanged(ref ValueBox valueBox)
+        {
+            String text = new Regex("[^0-9]{1,3}").Replace(valueBox.Text, String.Empty);
+            Int32.TryParse(text, out Int32 value);
+
+            if (text.StartsWith("0") && text.Length > 1)
             {
-                BufferCount = 1,
-                ModeDescription = 
-                    new ModeDescription(ClientSize.Width, ClientSize.Height,
-                        new Rational(60, 1), Format.R8G8B8A8_UNorm),
-                IsWindowed = true,
-                OutputHandle = Handle,
-                SampleDescription = new SampleDescription(1, 0),
-                SwapEffect = SwapEffect.Discard,
-                Usage = Usage.RenderTargetOutput
-            };
-
-            // Create Device and SwapChain
-            SharpDX.Direct3D11.Device.CreateWithSwapChain(DriverType.Hardware, DeviceCreationFlags.BgraSupport, 
-                new[] { SharpDX.Direct3D.FeatureLevel.Level_11_1 }, desc, out SharpDX.Direct3D11.Device device, out SwapChain swapChain);
+                text = text.Substring(1);
+            }
             
-            SharpDX.Direct2D1.Factory d2dFactory = new SharpDX.Direct2D1.Factory();
-
-            Int32 width = ClientSize.Width;
-            Int32 height = ClientSize.Height;
+            if (valueBox.Name == "Angle" && value > valueBox.MaxValue)
+            {
+                valueBox.Text = (value % 360).ToString();
+                valueBox.SelectionStart = valueBox.Text.Length;
+            }
             
-            // Ignore all windows events
-            SharpDX.DXGI.Factory factory = swapChain.GetParent<SharpDX.DXGI.Factory>();
-            factory.MakeWindowAssociation(Handle, WindowAssociationFlags.IgnoreAll);
-            
-            Texture2D backBuffer = SharpDX.Direct3D11.Resource.FromSwapChain<Texture2D>(swapChain, 0);
-            RenderTargetView renderView = new RenderTargetView(device, backBuffer);
-
-            Surface surface = backBuffer.QueryInterface<Surface>();
-
-            RenderTarget d2dRenderTarget = new RenderTarget(d2dFactory, surface,
-                new RenderTargetProperties(new PixelFormat(Format.Unknown, SharpDX.Direct2D1.AlphaMode.Premultiplied)));
-
-            RenderForm thisForm = this;
-            Manager manager = new Manager(ref thisForm, ref d2dRenderTarget, ref swapChain);
-            manager.Start();
-
-            // Release all resources
-            renderView.Dispose();
-            backBuffer.Dispose();
-            device.ImmediateContext.ClearState();
-            device.ImmediateContext.Flush();
-            device.Dispose();
-            swapChain.Dispose();
-            factory.Dispose();
+            else if (value > valueBox.MaxValue)
+            {
+                Int32 selection = valueBox.SelectionStart;
+                valueBox.Text = valueBox.MaxValue.ToString();
+                valueBox.SelectionStart = selection;
+            }
+            else if (value < -100)
+            {
+                valueBox.Text = @"0";
+                valueBox.SelectionStart = 1;
+            }
+            else
+            {
+                Int32 selection = valueBox.SelectionStart;
+                valueBox.Text = text;
+                valueBox.SelectionStart = selection == 0 ? 0 : selection <= valueBox.Text.Length ? selection : valueBox.Text.Length;
+            }
         }
     }
 }
