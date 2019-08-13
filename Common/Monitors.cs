@@ -12,13 +12,17 @@ namespace Common
         public Int32 ID;
         public String Name;
         public Rectangle Resolution;
+        public Rectangle WorkingArea;
+        public Rectangle Bounds;
         public Int32 Frequency;
 
-        public Monitor(Int32 id, String name, Rectangle resolution, Int32 frequency)
+        public Monitor(Int32 id, String name, Rectangle resolution, Rectangle workingArea, Rectangle bounds, Int32 frequency)
         {
             ID = id;
             Name = name;
             Resolution = resolution;
+            WorkingArea = workingArea;
+            Bounds = bounds;
             Frequency = frequency;
         }
     }
@@ -36,7 +40,7 @@ namespace Common
             Screen screen = Screen.PrimaryScreen;
             DEVMODE dm = new DEVMODE(){dmSize = (Int16)Marshal.SizeOf(typeof(DEVMODE))};
             EnumDisplaySettings(screen.DeviceName, EnumCurrentSettings, ref dm);
-            return new Monitor(1, screen.DeviceName, screen.Bounds, dm.dmDisplayFrequency);
+            return new Monitor(1, screen.DeviceName, screen.Bounds, screen.WorkingArea, screen.Bounds, dm.dmDisplayFrequency);
         }
         
         public static Monitor[] GetMonitors()
@@ -44,19 +48,13 @@ namespace Common
             List<Monitor> monitors = new List<Monitor>();
             
             Int32 id = 0;
-            Monitor fullScreen = new Monitor(id, @"F", new Rectangle(0, 0, 0, 0), 0);
             foreach (Screen screen in Screen.AllScreens)
             {
                 DEVMODE dm = new DEVMODE {dmSize = (Int16)Marshal.SizeOf(typeof(DEVMODE))};
                 EnumDisplaySettings(screen.DeviceName, EnumCurrentSettings, ref dm);
-                fullScreen.Resolution.Width = Math.Max(fullScreen.Resolution.Width, screen.Bounds.Width);
-                fullScreen.Resolution.Height = Math.Max(fullScreen.Resolution.Height, screen.Bounds.Height);
-                fullScreen.Frequency = Math.Max(fullScreen.Frequency, dm.dmDisplayFrequency);
-                monitors.Add(new Monitor(++id, screen.DeviceName, screen.Bounds, dm.dmDisplayFrequency));
+                monitors.Add(new Monitor(id++, screen.DeviceName, screen.Bounds, screen.WorkingArea, screen.Bounds, dm.dmDisplayFrequency));
             }
-
-            if (monitors.Count == 1) monitors[0] = fullScreen;
-            else monitors.Insert(0, fullScreen);
+            
             return monitors.ToArray();
         }
     }

@@ -11,6 +11,7 @@
       <e p="Common" t="Include">
         <e p="Forms" t="Include">
           <e p="ImagedComboBox.cs" t="Include" />
+          <e p="TransparentLabel.cs" t="Include" />
         </e>
         <e p="Images" t="Include">
           <e p="ad.png" t="Include" />
@@ -314,6 +315,7 @@
         </e>
         <e p="Gui" t="Include">
           <e p="WeaponButton.cs" t="Include" />
+          <e p="WeaponContainer.cs" t="Include" />
           <e p="WeaponsPanel.cs" t="Include" />
         </e>
         <e p="InitializeComponent.cs" t="Include" />
@@ -345,6 +347,449 @@
               <e p="Weapons.cs" t="Include" />
               <e p="WeaponsLocalization.cs" t="Include" />
             </e>
+            <e p="Images" t="Include">
+              <e p="2012.png" t="Include" />
+              <e p="2x3D.png" t="Include" />
+              <e p="3d_Bomb.png" t="Include" />
+              <e p="3x3D.png" t="Include" />
+              <e p="AC_130.png" t="Include" />
+              <e p="Acid Hail.png" t="Include" />
+              <e p="Acid Rain.png" t="Include" />
+              <e p="Air Strike.png" t="Include" />
+              <e p="AK_47.png" t="Include" />
+              <e p="Apache.png" t="Include" />
+              <e p="Area Attack.png" t="Include" />
+              <e p="Area Strike.png" t="Include" />
+              <e p="Arrow.png" t="Include" />
+              <e p="Artillery.png" t="Include" />
+              <e p="ASHPD.png" t="Include" />
+              <e p="Asteroid Storm.png" t="Include" />
+              <e p="Asteroids.png" t="Include" />
+              <e p="Attractoids.png" t="Include" />
+              <e p="Baby Seagull.png" t="Include" />
+              <e p="Back_Groller.png" t="Include" />
+              <e p="Back_Roller.png" t="Include" />
+              <e p="Baffler.png" t="Include" />
+              <e p="Banana Bunch.png" t="Include" />
+              <e p="Banana Split.png" t="Include" />
+              <e p="Banana.png" t="Include" />
+              <e p="Battering Ram.png" t="Include" />
+              <e p="Beacon.png" t="Include" />
+              <e p="Beaconator.png" t="Include" />
+              <e p="Bee Hive.png" t="Include" />
+              <e p="BFG_1000.png" t="Include" />
+              <e p="BFG_9000.png" t="Include" />
+              <e p="Big Bulger.png" t="Include" />
+              <e p="Big Shot.png" t="Include" />
+              <e p="BigBoomerang.png" t="Include" />
+              <e p="BigItemSlotGlow.png" t="Include" />
+              <e p="Black Hole.png" t="Include" />
+              <e p="Black Widow.png" t="Include" />
+              <e p="Blaze.png" t="Include" />
+              <e p="Blossom.png" t="Include" />
+              <e p="Blunderbuss.png" t="Include" />
+              <e p="Bolt.png" t="Include" />
+              <e p="Boomerang.png" t="Include" />
+              <e p="Botherer.png" t="Include" />
+              <e p="Boulder.png" t="Include" />
+              <e p="Bouncy Ball.png" t="Include" />
+              <e p="Bounder.png" t="Include" />
+              <e p="Bounsplode.png" t="Include" />
+              <e p="Bounstorm.png" t="Include" />
+              <e p="Bounstream.png" t="Include" />
+              <e p="Bounstrike.png" t="Include" />
+              <e p="Bouquet.png" t="Include" />
+              <e p="Bow &amp; Arrow.png" t="Include" />
+              <e p="Bratwurst.png" t="Include" />
+              <e p="Breaker.png" t="Include" />
+              <e p="BreakerChain.png" t="Include" />
+              <e p="BreakerMadness.png" t="Include" />
+              <e p="BreakerMania.png" t="Include" />
+              <e p="Builder.png" t="Include" />
+              <e p="Bulger.png" t="Include" />
+              <e p="Bullfrog.png" t="Include" />
+              <e p="Bumper Array.png" t="Include" />
+              <e p="Bumper Assault.png" t="Include" />
+              <e p="Bumper Bombs.png" t="Include" />
+              <e p="Burnt Popcorn.png" t="Include" />
+              <e p="Burst_Fire.png" t="Include" />
+              <e p="Cactus Strike.png" t="Include" />
+              <e p="Cactus.png" t="Include" />
+              <e p="Carpet Bomb.png" t="Include" />
+              <e p="Carpet Fire.png" t="Include" />
+              <e p="Cat.png" t="Include" />
+              <e p="Cats and Dogs.png" t="Include" />
+              <e p="Chicken_Fling.png" t="Include" />
+              <e p="Chicken_Hurl.png" t="Include" />
+              <e p="Chicken_Launch.png" t="Include" />
+              <e p="Chopper.png" t="Include" />
+              <e p="Chunker.png" t="Include" />
+              <e p="Chunklet.png" t="Include" />
+              <e p="Clover.png" t="Include" />
+              <e p="Cobra.png" t="Include" />
+              <e p="Comets.png" t="Include" />
+              <e p="Concealed Blade.png" t="Include" />
+              <e p="Cosmic Rift.png" t="Include" />
+              <e p="Counter 3000.png" t="Include" />
+              <e p="Counter 4000.png" t="Include" />
+              <e p="Counter 5000.png" t="Include" />
+              <e p="Counter 6000.png" t="Include" />
+              <e p="Crackler.png" t="Include" />
+              <e p="Crazy Cluster.png" t="Include" />
+              <e p="Crazyballs.png" t="Include" />
+              <e p="Creek.png" t="Include" />
+              <e p="Daddy Longlegs.png" t="Include" />
+              <e p="Dagger.png" t="Include" />
+              <e p="Darkshadow.png" t="Include" />
+              <e p="Dead Riser.png" t="Include" />
+              <e p="Dead Weight.png" t="Include" />
+              <e p="Deathshadow.png" t="Include" />
+              <e p="Deceiver.png" t="Include" />
+              <e p="DefaultCircle.png" t="Include" />
+              <e p="DefaultGlow.png" t="Include" />
+              <e p="DefaultQuarterGlow.png" t="Include" />
+              <e p="DefaultX.png" t="Include" />
+              <e p="Deity.png" t="Include" />
+              <e p="Desert Eagle.png" t="Include" />
+              <e p="Desert.png" t="Include" />
+              <e p="Diamond Blade.png" t="Include" />
+              <e p="Digger.png" t="Include" />
+              <e p="Disco Ball.png" t="Include" />
+              <e p="Displacement Bomb.png" t="Include" />
+              <e p="Division.png" t="Include" />
+              <e p="Dolla Bills.png" t="Include" />
+              <e p="Double Bounder.png" t="Include" />
+              <e p="Double Palm.png" t="Include" />
+              <e p="Double Ram.png" t="Include" />
+              <e p="Double Ram_Squad.png" t="Include" />
+              <e p="Double Zipper.png" t="Include" />
+              <e p="Double_Bounsplode.png" t="Include" />
+              <e p="Double_Breaker.png" t="Include" />
+              <e p="Double_Splitter.png" t="Include" />
+              <e p="Driller.png" t="Include" />
+              <e p="Dual Needler.png" t="Include" />
+              <e p="Dual_Roller.png" t="Include" />
+              <e p="Early Bird.png" t="Include" />
+              <e p="Early Worm.png" t="Include" />
+              <e p="Earthquake.png" t="Include" />
+              <e p="Eleven_Ball.png" t="Include" />
+              <e p="Enlister.png" t="Include" />
+              <e p="Enroller.png" t="Include" />
+              <e p="Eruption.png" t="Include" />
+              <e p="Excavation.png" t="Include" />
+              <e p="Express.png" t="Include" />
+              <e p="Fat Stacks.png" t="Include" />
+              <e p="Fiesta.png" t="Include" />
+              <e p="Fighter Jet.png" t="Include" />
+              <e p="Fireball.png" t="Include" />
+              <e p="FireGlow.png" t="Include" />
+              <e p="FireStorm.png" t="Include" />
+              <e p="Fireworks.png" t="Include" />
+              <e p="Five_Ball.png" t="Include" />
+              <e p="Five_Bounce.png" t="Include" />
+              <e p="Flame.png" t="Include" />
+              <e p="Flaming Arrow.png" t="Include" />
+              <e p="Flasher.png" t="Include" />
+              <e p="Flattener.png" t="Include" />
+              <e p="Fleet.png" t="Include" />
+              <e p="Flintlock.png" t="Include" />
+              <e p="Flower.png" t="Include" />
+              <e p="Flurry.png" t="Include" />
+              <e p="Flying_V.png" t="Include" />
+              <e p="Fortress.png" t="Include" />
+              <e p="Fountain.png" t="Include" />
+              <e p="Four Leaf Clover.png" t="Include" />
+              <e p="Frogs.png" t="Include" />
+              <e p="Funnel.png" t="Include" />
+              <e p="Furious Birds.png" t="Include" />
+              <e p="Fury.png" t="Include" />
+              <e p="Gatling Gun.png" t="Include" />
+              <e p="Ghost Bomb.png" t="Include" />
+              <e p="Ghostlets.png" t="Include" />
+              <e p="Ghouls.png" t="Include" />
+              <e p="Glock.png" t="Include" />
+              <e p="God Rays.png" t="Include" />
+              <e p="Goldfish.png" t="Include" />
+              <e p="Grand Finale.png" t="Include" />
+              <e p="Gravies.png" t="Include" />
+              <e p="Gravits.png" t="Include" />
+              <e p="Great Beam.png" t="Include" />
+              <e p="Grenade Storm.png" t="Include" />
+              <e p="Grenade.png" t="Include" />
+              <e p="Groller.png" t="Include" />
+              <e p="Groovy Ball.png" t="Include" />
+              <e p="Guppies.png" t="Include" />
+              <e p="Hail.png" t="Include" />
+              <e p="Heavy Back_Roller.png" t="Include" />
+              <e p="Heavy Fleet.png" t="Include" />
+              <e p="Heavy Hover_Ball.png" t="Include" />
+              <e p="Heavy Jet.png" t="Include" />
+              <e p="Heavy Napalm.png" t="Include" />
+              <e p="Heavy Ringer.png" t="Include" />
+              <e p="Heavy Roller.png" t="Include" />
+              <e p="Heavy Shot.png" t="Include" />
+              <e p="Heavy Taser.png" t="Include" />
+              <e p="Helianthus.png" t="Include" />
+              <e p="Helicopter Strike.png" t="Include" />
+              <e p="Hexagon.png" t="Include" />
+              <e p="Hidden Blade.png" t="Include" />
+              <e p="Homing Missile.png" t="Include" />
+              <e p="Homing Rockets.png" t="Include" />
+              <e p="Horizon.png" t="Include" />
+              <e p="Hover_Ball.png" t="Include" />
+              <e p="HubScreen_Back.png" t="Include" />
+              <e p="HubTabGlow.png" t="Include" />
+              <e p="Imploder.png" t="Include" />
+              <e p="Incendiary Bombs.png" t="Include" />
+              <e p="Inferno.png" t="Include" />
+              <e p="Jack_o_Lantern.png" t="Include" />
+              <e p="Jack_o_Vomit.png" t="Include" />
+              <e p="Jackpot.png" t="Include" />
+              <e p="Jammer.png" t="Include" />
+              <e p="jetpack.png" t="Include" />
+              <e p="Jiver.png" t="Include" />
+              <e p="Jumper.png" t="Include" />
+              <e p="Kamikaze.png" t="Include" />
+              <e p="Kernels.png" t="Include" />
+              <e p="Kielbasa.png" t="Include" />
+              <e p="Killer Bees.png" t="Include" />
+              <e p="Kittens.png" t="Include" />
+              <e p="Klavika_Bold Atlas.png" t="Include" />
+              <e p="Klavika_Medium Atlas.png" t="Include" />
+              <e p="Klavika_Regular Atlas.png" t="Include" />
+              <e p="Kooky Cluster.png" t="Include" />
+              <e p="Laser Beam.png" t="Include" />
+              <e p="LevelUpArrow.png" t="Include" />
+              <e p="Lidar.png" t="Include" />
+              <e p="Lightning.png" t="Include" />
+              <e p="Livid Birds.png" t="Include" />
+              <e p="LoadingBack.png" t="Include" />
+              <e p="Lottery.png" t="Include" />
+              <e p="M16.png" t="Include" />
+              <e p="M4.png" t="Include" />
+              <e p="M9.png" t="Include" />
+              <e p="Mad Birds.png" t="Include" />
+              <e p="Mage.png" t="Include" />
+              <e p="Magic Shower.png" t="Include" />
+              <e p="Magnets.png" t="Include" />
+              <e p="Make_It_Rain.png" t="Include" />
+              <e p="Mama Seagull.png" t="Include" />
+              <e p="Many_Minions.png" t="Include" />
+              <e p="Massive Shot.png" t="Include" />
+              <e p="Master Beam.png" t="Include" />
+              <e p="Mega_Digger.png" t="Include" />
+              <e p="Mega_Jackpot.png" t="Include" />
+              <e p="Mega_Pixel.png" t="Include" />
+              <e p="Mega_Quake.png" t="Include" />
+              <e p="MegaBuilder.png" t="Include" />
+              <e p="MegaNuke.png" t="Include" />
+              <e p="MegaRainbow.png" t="Include" />
+              <e p="MegaTunneler.png" t="Include" />
+              <e p="Mine Layer.png" t="Include" />
+              <e p="Mini_Pinger.png" t="Include" />
+              <e p="Mini_Turret.png" t="Include" />
+              <e p="Mini_V.png" t="Include" />
+              <e p="Minions.png" t="Include" />
+              <e p="Minnows.png" t="Include" />
+              <e p="Molehill.png" t="Include" />
+              <e p="Moles.png" t="Include" />
+              <e p="Moons.png" t="Include" />
+              <e p="MP5.png" t="Include" />
+              <e p="Multi_Nade.png" t="Include" />
+              <e p="Multi_Star.png" t="Include" />
+              <e p="Napalm.png" t="Include" />
+              <e p="Needler.png" t="Include" />
+              <e p="Needles.png" t="Include" />
+              <e p="Neris_Black Atlas.png" t="Include" />
+              <e p="Neris_Light Atlas.png" t="Include" />
+              <e p="Ninja.png" t="Include" />
+              <e p="Nuke.png" t="Include" />
+              <e p="O Attack.png" t="Include" />
+              <e p="Octagon.png" t="Include" />
+              <e p="Oddball.png" t="Include" />
+              <e p="Oddbomb.png" t="Include" />
+              <e p="Olympic Ringer.png" t="Include" />
+              <e p="Olympic Skeet.png" t="Include" />
+              <e p="One_Bounce.png" t="Include" />
+              <e p="Orbitals.png" t="Include" />
+              <e p="P90.png" t="Include" />
+              <e p="Palm.png" t="Include" />
+              <e p="Partition.png" t="Include" />
+              <e p="PartUnlockSprite.png" t="Include" />
+              <e p="Payload.png" t="Include" />
+              <e p="Penetrator v2.png" t="Include" />
+              <e p="Penetrator.png" t="Include" />
+              <e p="Pentagram.png" t="Include" />
+              <e p="Pentaslam.png" t="Include" />
+              <e p="Pepper.png" t="Include" />
+              <e p="Pinata.png" t="Include" />
+              <e p="Ping Flood.png" t="Include" />
+              <e p="Pinger.png" t="Include" />
+              <e p="Pinpoint.png" t="Include" />
+              <e p="Pins and Needles.png" t="Include" />
+              <e p="Pixel.png" t="Include" />
+              <e p="Popcorn.png" t="Include" />
+              <e p="Portal Gun.png" t="Include" />
+              <e p="Punisher.png" t="Include" />
+              <e p="Puzzler.png" t="Include" />
+              <e p="Pyrotechnics.png" t="Include" />
+              <e p="Python.png" t="Include" />
+              <e p="Quicksand.png" t="Include" />
+              <e p="Radar.png" t="Include" />
+              <e p="Rage.png" t="Include" />
+              <e p="Rain.png" t="Include" />
+              <e p="Rainbow.png" t="Include" />
+              <e p="Ram_Squad.png" t="Include" />
+              <e p="Rampage.png" t="Include" />
+              <e p="RapidFire.png" t="Include" />
+              <e p="Rave.png" t="Include" />
+              <e p="Recruiter.png" t="Include" />
+              <e p="Relocator.png" t="Include" />
+              <e p="Ringer.png" t="Include" />
+              <e p="Riot.png" t="Include" />
+              <e p="Rip Saw.png" t="Include" />
+              <e p="River.png" t="Include" />
+              <e p="Rocker.png" t="Include" />
+              <e p="Rocket Cluster.png" t="Include" />
+              <e p="Rocket Fire.png" t="Include" />
+              <e p="Roller.png" t="Include" />
+              <e p="Salt and Pepper.png" t="Include" />
+              <e p="Satellite.png" t="Include" />
+              <e p="Sausage.png" t="Include" />
+              <e p="Saw Blade.png" t="Include" />
+              <e p="Scavengers.png" t="Include" />
+              <e p="ScrollerGrab.png" t="Include" />
+              <e p="Seagull.png" t="Include" />
+              <e p="Secret Blade.png" t="Include" />
+              <e p="Seven_Bounce.png" t="Include" />
+              <e p="Shadow.png" t="Include" />
+              <e p="Shank.png" t="Include" />
+              <e p="ShockShell Trio.png" t="Include" />
+              <e p="ShockShell.png" t="Include" />
+              <e p="Shockwave.png" t="Include" />
+              <e p="Shooting Star.png" t="Include" />
+              <e p="Shot.png" t="Include" />
+              <e p="Shotgun.png" t="Include" />
+              <e p="Shrapnel.png" t="Include" />
+              <e p="Shredders.png" t="Include" />
+              <e p="Sillyballs.png" t="Include" />
+              <e p="Sinkhole.png" t="Include" />
+              <e p="Skeet.png" t="Include" />
+              <e p="Skeleton.png" t="Include" />
+              <e p="skill_chassis2.png" t="Include" />
+              <e p="SkullShot.png" t="Include" />
+              <e p="Slammer.png" t="Include" />
+              <e p="SmartSnipe.png" t="Include" />
+              <e p="Snake.png" t="Include" />
+              <e p="Sniper.png" t="Include" />
+              <e p="Snowball.png" t="Include" />
+              <e p="Snowstorm.png" t="Include" />
+              <e p="Solar Flare.png" t="Include" />
+              <e p="Solid.png" t="Include" />
+              <e p="Sonar.png" t="Include" />
+              <e p="SongTilePlayBtn.png" t="Include" />
+              <e p="Sonic Pulse.png" t="Include" />
+              <e p="SourceHanSans_Bold Atlas.png" t="Include" />
+              <e p="SourceHanSans_Medium Atlas.png" t="Include" />
+              <e p="SourceHanSans_Regular Atlas.png" t="Include" />
+              <e p="Sparkler.png" t="Include" />
+              <e p="Spaz.png" t="Include" />
+              <e p="Spaztastic.png" t="Include" />
+              <e p="Spazzer.png" t="Include" />
+              <e p="Spider.png" t="Include" />
+              <e p="Spiker.png" t="Include" />
+              <e p="Splitter.png" t="Include" />
+              <e p="SplitterChain.png" t="Include" />
+              <e p="Spotter XL.png" t="Include" />
+              <e p="Spotter XXL.png" t="Include" />
+              <e p="Spotter.png" t="Include" />
+              <e p="Spreader.png" t="Include" />
+              <e p="Sprinkler.png" t="Include" />
+              <e p="Sprouter.png" t="Include" />
+              <e p="Squadron.png" t="Include" />
+              <e p="Square.png" t="Include" />
+              <e p="Squawker.png" t="Include" />
+              <e p="Star.png" t="Include" />
+              <e p="StarFire.png" t="Include" />
+              <e p="Static Chain.png" t="Include" />
+              <e p="Static Link.png" t="Include" />
+              <e p="Static.png" t="Include" />
+              <e p="Sticky Bomb.png" t="Include" />
+              <e p="Sticky Rain.png" t="Include" />
+              <e p="Sticky Trio.png" t="Include" />
+              <e p="Stone.png" t="Include" />
+              <e p="Stream.png" t="Include" />
+              <e p="Strobie.png" t="Include" />
+              <e p="Sub_Sniper.png" t="Include" />
+              <e p="Suicide Bomber.png" t="Include" />
+              <e p="Summoner.png" t="Include" />
+              <e p="SunBurst.png" t="Include" />
+              <e p="Sunflower.png" t="Include" />
+              <e p="Super Ball.png" t="Include" />
+              <e p="Super Fleet.png" t="Include" />
+              <e p="Super Spiker.png" t="Include" />
+              <e p="Super_Breaker.png" t="Include" />
+              <e p="Super_Pixel.png" t="Include" />
+              <e p="Super_Splitter.png" t="Include" />
+              <e p="Super_Synclets.png" t="Include" />
+              <e p="SuperCat.png" t="Include" />
+              <e p="Sweeper.png" t="Include" />
+              <e p="Sword.png" t="Include" />
+              <e p="Synclets.png" t="Include" />
+              <e p="Tadpoles.png" t="Include" />
+              <e p="Tangent Assault.png" t="Include" />
+              <e p="Tangent Attack.png" t="Include" />
+              <e p="Tangent Fire.png" t="Include" />
+              <e p="TankUpgradeTokenIcon.png" t="Include" />
+              <e p="Tarantula.png" t="Include" />
+              <e p="Taser.png" t="Include" />
+              <e p="Three_Ball.png" t="Include" />
+              <e p="Three_Bounce.png" t="Include" />
+              <e p="Throwing Star.png" t="Include" />
+              <e p="Tormentor.png" t="Include" />
+              <e p="Torpedoes.png" t="Include" />
+              <e p="Trail.png" t="Include" />
+              <e p="Train.png" t="Include" />
+              <e p="Travelers.png" t="Include" />
+              <e p="Tri_Nade.png" t="Include" />
+              <e p="Triple Bounder.png" t="Include" />
+              <e p="Triple Palm.png" t="Include" />
+              <e p="Triple_Bounsplode.png" t="Include" />
+              <e p="Triple_Jumper.png" t="Include" />
+              <e p="Tsunami.png" t="Include" />
+              <e p="Tunnel Strike.png" t="Include" />
+              <e p="Tunneler.png" t="Include" />
+              <e p="TurretMob.png" t="Include" />
+              <e p="Tweeter.png" t="Include" />
+              <e p="TwentyFive_Ball.png" t="Include" />
+              <e p="Twinkler.png" t="Include" />
+              <e p="UFO.png" t="Include" />
+              <e p="Ultimate Imploder.png" t="Include" />
+              <e p="Ultra Beam.png" t="Include" />
+              <e p="Ultra_Jackpot.png" t="Include" />
+              <e p="Ultra_Pixel.png" t="Include" />
+              <e p="UZI.png" t="Include" />
+              <e p="Volcano.png" t="Include" />
+              <e p="Wacky Cluster.png" t="Include" />
+              <e p="Wackyballs.png" t="Include" />
+              <e p="Wall.png" t="Include" />
+              <e p="Wasps.png" t="Include" />
+              <e p="Water Balloon.png" t="Include" />
+              <e p="Water Fight.png" t="Include" />
+              <e p="Water Trio.png" t="Include" />
+              <e p="Waterworks.png" t="Include" />
+              <e p="WepIconGridItemBack.png" t="Include" />
+              <e p="Wicked Witch.png" t="Include" />
+              <e p="Witches Broom.png" t="Include" />
+              <e p="Woofer.png" t="Include" />
+              <e p="X Attack.png" t="Include" />
+              <e p="Yin Yang Yong.png" t="Include" />
+              <e p="Yin Yang.png" t="Include" />
+              <e p="Zipper Quad.png" t="Include" />
+              <e p="Zipper.png" t="Include" />
+            </e>
+            <e p="WeaponsImg.Designer.cs" t="Include" />
+            <e p="WeaponsImg.resx" t="Include" />
           </e>
         </e>
       </e>

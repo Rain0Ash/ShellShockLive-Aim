@@ -1,23 +1,36 @@
 using System;
 using System.Drawing;
+using Ruler.Properties;
 
 namespace Ruler.Weapons
 {
+
+    public struct WeaponSpecifications
+    {
+        public readonly Byte AvailabilityLevel;
+        public readonly Byte GroupID;
+        public readonly Byte LevelInGroup;
+
+        public WeaponSpecifications(Byte availabilityLevel, Byte groupID, Byte levelInGroup)
+        {
+            AvailabilityLevel = availabilityLevel;
+            GroupID = groupID;
+            LevelInGroup = levelInGroup;
+        }
+    }
     public struct Weapon
     {
         public readonly String Name;
-        public readonly Int32 Level;
-        public readonly Point Group;
+        public readonly WeaponSpecifications WeaponSpecifications;
         public readonly Color Color;
         public readonly Image Image;
         private readonly Func<Point, Point[]> guid;
-        public Weapon(String name, Int32 level = 0, Point? group = null, Func<Point, Point[]> guidance = null, Color? color = null, Image image = null)
+        public Weapon(String name, WeaponSpecifications weaponSpecifications, Func<Point, Point[]> guidance = null, Color? color = null, Image image = null)
         {
             Name = name;
-            Level = level;
-            Group = group ?? new Point(-1, -1);
+            WeaponSpecifications = weaponSpecifications;
             Color = color ?? Color.DarkGray;
-            Image = image;
+            Image = image ?? Resources._null;
             guid = guidance;
         }
 

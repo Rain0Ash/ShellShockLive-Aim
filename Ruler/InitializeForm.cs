@@ -49,11 +49,6 @@ namespace Ruler
             RenderTarget d2dRenderTarget = new RenderTarget(d2dFactory, surface,
                 new RenderTargetProperties(new PixelFormat(Format.Unknown, SharpDX.Direct2D1.AlphaMode.Premultiplied)));
 
-            RenderForm thisForm = this;
-            Manager = new Manager(ref thisForm, ref d2dRenderTarget, ref swapChain);
-            weaponsPanel.Manager = Manager;
-            Manager.Start();
-
             // Release all resources
             renderView.Dispose();
             backBuffer.Dispose();
@@ -62,6 +57,13 @@ namespace Ruler
             device.Dispose();
             swapChain.Dispose();
             factory.Dispose();
+            
+            RenderForm thisForm = this;
+            Manager = new Manager(thisForm, d2dRenderTarget);
+            weaponsPanel.Manager = Manager;
+            Manager.Start();
+
+
         }
     }
 }

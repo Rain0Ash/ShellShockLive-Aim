@@ -11,22 +11,23 @@ namespace Ruler
 {
     internal class Manager
     {
+        private Boolean isStarted = false;
         protected RenderForm Form;
         protected RenderTarget Drawer;
-        protected SwapChain SwapChain;
         private RenderLoop looper;
 
-        internal Manager(ref RenderForm form, ref RenderTarget drawer, ref SwapChain swapChain)
+        internal Manager(RenderForm form, RenderTarget drawer)
         {
             Form = form;
             Drawer = drawer;
-            SwapChain = swapChain;
         }
 
         internal void Start()
         {
-            Manager me = this;
-            new KeyboardController(ref me).SetupKeyboardHooks();
+            if (isStarted)
+                return;
+
+            new KeyboardController().SetupKeyboardHooks();
             
             Form.Show();
 
@@ -63,9 +64,7 @@ namespace Ruler
         {
             Drawer.BeginDraw();
             Drawer.Clear(Color.Black);
-            new Portal(new Point(100, 100), 10, ref Drawer).Draw();
             Drawer.EndDraw();
-            SwapChain.Present(0, PresentFlags.None);
         }
     }
 }

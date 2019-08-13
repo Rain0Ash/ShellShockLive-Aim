@@ -6,12 +6,12 @@ namespace Ruler.Common
 {
     internal class KeyboardController : IDisposable
     {
+        private EventController eventController;
         private GlobalKeyboardHook globalKeyboardHook;
-        private Manager manager;
 
-        public KeyboardController(ref Manager manager)
+        public KeyboardController()
         {
-            this.manager = manager;
+            eventController = new EventController();
         }
         public void SetupKeyboardHooks()
         {
@@ -23,10 +23,10 @@ namespace Ruler.Common
         {
             //Debug.WriteLine(e.KeyboardData.VirtualCode);
 
-            manager.NextFrame();
-            
-            
-            
+            eventController.RecognizeAndThrowEvent(sender, e);
+
+
+
             /*if (e.KeyboardData.VirtualCode != GlobalKeyboardHook.VkSnapshot)
                 return;
             

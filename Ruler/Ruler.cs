@@ -5,6 +5,7 @@ using Common;
 using Ruler.Common.Forms;
 using SharpDX;
 using SharpDX.Windows;
+using Common_Localization = Common.Localization;
 
 namespace Ruler
 {
@@ -12,7 +13,7 @@ namespace Ruler
     {
         private readonly Licence licence;
         private readonly Monitor monitor;
-        private readonly RulerLocalization localization;
+        internal static RulerLocalization Localization = new RulerLocalization(Common_Localization.GetCurrentCulture());
         private readonly Boolean isDisguise;
         private System.Drawing.Rectangle resolution; 
         
@@ -20,7 +21,7 @@ namespace Ruler
         {
             this.licence = licence;
             this.monitor = monitor;
-            localization = new RulerLocalization(languageCode);
+            Localization = new RulerLocalization(languageCode);
             this.isDisguise = isDisguise;
             resolution = monitor.Resolution;
             InitializeComponent();
@@ -67,6 +68,11 @@ namespace Ruler
                 valueBox.Text = text;
                 valueBox.SelectionStart = selection == 0 ? 0 : selection <= valueBox.Text.Length ? selection : valueBox.Text.Length;
             }
+        }
+
+        internal static String GetLocalCultureCode()
+        {
+            return Localization.GetLocalCultureCode();
         }
     }
 }

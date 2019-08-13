@@ -10,21 +10,21 @@ namespace Ruler
     {
         internal String RulerVersion;
         internal String MaskName;
-        public String Angle;
-        public String AngleValue;
-        public String BlackHole;
-        public String BlackHoleRadius;
-        public String Portal;
-        public String PortalRadius;
-        public String Power;
-        public String PowerValue;
-        public String Sight;
-        public String SightRadius;
-        public String Wind;
-        public String WindValue;
-        public String Meters;
+        internal String Angle;
+        internal String AngleValue;
+        internal String BlackHole;
+        internal String BlackHoleRadius;
+        internal String Portal;
+        internal String PortalRadius;
+        internal String Power;
+        internal String PowerValue;
+        internal String Sight;
+        internal String SightRadius;
+        internal String Wind;
+        internal String WindValue;
+        internal String Meters;
 
-        public RulerLocalization UpdateLocalization(String cultureInfo = null)
+        internal RulerLocalization UpdateLocalization(String cultureInfo = null)
         {
             LocalCulture = cultureInfo ?? GetCurrentCulture();
 
@@ -90,7 +90,7 @@ namespace Ruler
 
             return this;
         }
-        public RulerLocalization(String cultureInfo = null)
+        internal RulerLocalization(String cultureInfo = null)
         {
             UpdateLocalization(cultureInfo);
         }
