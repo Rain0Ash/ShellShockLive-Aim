@@ -1,7 +1,7 @@
-using System;
-using System.Diagnostics;
+// This is an independent project of an individual developer. Dear PVS-Studio, please check it.
+// PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
+
 using System.Drawing;
-using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using Ruler.Common.Forms;
 using Ruler.Gui;

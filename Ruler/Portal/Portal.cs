@@ -4,7 +4,6 @@
 using System;
 using System.Collections.Generic;
 using System.Threading;
-using System.Windows.Forms;
 using Ruler.Common;
 using SharpDX;
 using SharpDX.Direct2D1;
@@ -13,8 +12,7 @@ namespace Ruler
 {
     internal sealed class Portals : IElement
     {
-        private static Int32 _counter = 0;
-        private Int32 instanceNumber = 0;
+        private static Int32 _counter;
 
         private static readonly List<Color[]> Colors = new List<Color[]>()
         {
@@ -31,9 +29,9 @@ namespace Ruler
             FirstPortal = firstPortal;
             SecondPortal = secondPortal;
             Interlocked.Increment(ref _counter);
-            instanceNumber = _counter - 1;
+            Int32 instanceNumber = _counter - 1;
             FirstPortal.Color = Colors[instanceNumber][0];
-            FirstPortal.Color = Colors[instanceNumber][1];
+            SecondPortal.Color = Colors[instanceNumber][1];
         }
 
         ~Portals()

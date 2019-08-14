@@ -1,14 +1,16 @@
+// This is an independent project of an individual developer. Dear PVS-Studio, please check it.
+// PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
+
 using System;
 using System.ComponentModel;
 using System.Drawing;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace Ruler.Common.Forms
 {
     public sealed class ValueBox : TextBox, INotifyPropertyChanged
     {
-        public Label label = new Label(){};
+        public readonly Label Label = new Label();
 
         private String endString;
         public String EndString
@@ -40,23 +42,23 @@ namespace Ruler.Common.Forms
             TextAlign = HorizontalAlignment.Center;
             BorderStyle = BorderStyle.None;
             Visible = true;
-
-            label.Click += (sender, e) =>
+            
+            Label.Click += (sender, e) =>
             {
                 Focus();
                 SelectionStart = Text.Length;
             };
-            label.Font = Font;
-            label.Margin = Margin;
-            label.Parent = this;
-            label.AutoSize = false;
-            label.RightToLeft = RightToLeft.Yes;
-            label.TextAlign = ContentAlignment.MiddleCenter;
-            label.ForeColor = ForeColor;
-            label.Visible = true;
+            Label.Font = Font;
+            Label.Margin = Margin;
+            Label.Parent = this;
+            Label.AutoSize = false;
+            Label.RightToLeft = RightToLeft.Yes;
+            Label.TextAlign = ContentAlignment.MiddleCenter;
+            Label.ForeColor = ForeColor;
+            Label.Visible = true;
             DataBindings.Add(new Binding("EndString", this, "EndString"));
             PropertyChanged += OnEndStringChanged;
-            Controls.Add(label);
+            Controls.Add(Label);
         }
 
         protected override void OnSizeChanged(EventArgs e)
@@ -83,7 +85,7 @@ namespace Ruler.Common.Forms
         protected override void OnFontChanged(EventArgs e)
         {
             base.OnFontChanged(e);
-            label.Font = Font;
+            Label.Font = Font;
         }
 
         protected override void OnTextChanged(EventArgs e)
@@ -100,12 +102,12 @@ namespace Ruler.Common.Forms
 
         private void UpdateLabelLocation()
         {
-            label.Location = new Point(Size.Width / 2 + (Int32) Math.Floor(Font.SizeInPoints * Text.Length / (Name == "Wind" ? 2.1 : 2.2)), 0);
+            Label.Location = new Point(Size.Width / 2 + (Int32) Math.Floor(Font.SizeInPoints * Text.Length / (Name == "Wind" ? 2.1 : 2.2)), 0);
         }
 
         private void UpdateLabelSize()
         {
-            label.Size = new Size((Int32)(TextRenderer.MeasureText(label.Text, label.Font, Size, TextFormatFlags.Bottom).Width * 0.65), Size.Height);
+            Label.Size = new Size((Int32)(TextRenderer.MeasureText(Label.Text, Label.Font, Size, TextFormatFlags.Bottom).Width * 0.65), Size.Height);
         }
 
         private void OnEndStringChanged(Object sender, PropertyChangedEventArgs e)
@@ -115,7 +117,7 @@ namespace Ruler.Common.Forms
                 return;
             }
 
-            label.Text = EndString;
+            Label.Text = EndString;
             UpdateLabelSize();
         }
         

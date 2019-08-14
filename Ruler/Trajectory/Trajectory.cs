@@ -1,9 +1,7 @@
 ﻿// This is an independent project of an individual developer. Dear PVS-Studio, please check it.
 // PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
 
-using System;
 using System.Drawing;
-using System.Windows.Forms;
 using Ruler.Common;
 using SharpDX.Direct2D1;
 
@@ -13,14 +11,14 @@ namespace Ruler
     {
         internal Point Coord;
         private Point[] points;
-        private static readonly SolidBrush PointPaintBrush = new SolidBrush(Color.Red);
+        //private static readonly SolidBrush PointPaintBrush = new SolidBrush(Color.Red);
         internal Trajectory(Point coord, ref RenderTarget renderTarget)
             : base(ref renderTarget)
         {
             Coord = coord;
         }
 
-        internal void Draw(ref RenderTarget renderTarget)
+        public override void Draw(ref RenderTarget renderTarget)
         {
             foreach (Point point in points)
             {

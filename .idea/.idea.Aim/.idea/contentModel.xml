@@ -268,6 +268,9 @@
         <e p="LanguageFlags.cs" t="Include" />
         <e p="Licence.cs" t="Include" />
         <e p="Localization.cs" t="Include" />
+        <e p="Logger" t="Include">
+          <e p="Logger.cs" t="Include" />
+        </e>
         <e p="Monitors.cs" t="Include" />
         <e p="Settings.cs" t="Include" />
         <e p="Types" t="Include">
@@ -282,7 +285,6 @@
       <e p="packages.config" t="Include" />
       <e p="Program.cs" t="Include" />
       <e p="Properties" t="Include">
-        <e p="AssemblyInfo.cs" t="Include" />
         <e p="Resources.Designer.cs" t="Include" />
         <e p="Resources.resx" t="Include" />
         <e p="Settings.cs" t="Include" />

@@ -1,5 +1,7 @@
+// This is an independent project of an individual developer. Dear PVS-Studio, please check it.
+// PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
+
 using System;
-using System.Diagnostics;
 using System.Drawing;
 using System.Windows.Forms;
 using Ruler.Weapons;
@@ -18,12 +20,13 @@ namespace Ruler.Gui
         {
             foreach (Weapon weapon in Weapons.Common.Weapons.WeaponList)
             {
+                // ReSharper disable once HeapView.ClosureAllocation
                 WeaponButton button = new WeaponButton(weapon)
                 {
                     FlatAppearance = {BorderSize = 0, BorderColor = BackColor},
                     Size = new Size(90, 35),
                 };
-                button.Location = new Point(50 + (button.Size.Width + 30) * weapon.WeaponSpecifications.LevelInGroup, (button.Size.Height + 5) * (weapon.WeaponSpecifications.GroupID + 1));
+                button.Location = new Point(50 + (button.Size.Width + 30) * weapon.LevelInGroup, (button.Size.Height + 5) * (weapon.GroupID + 1));
 
                 Button imageLabel = new Button()
                 {
@@ -38,11 +41,11 @@ namespace Ruler.Gui
                 imageLabel.Click += (sender, args) => button.PerformClick();
 
                 #region Label with weapon level
-                if (weapon.WeaponSpecifications.LevelInGroup == 0)
+                if (weapon.LevelInGroup == 0)
                 {
                     TransparentLabel levelLabel = new TransparentLabel
                     {
-                        Name = weapon.WeaponSpecifications.GroupID.ToString(),
+                        Name = weapon.GroupID.ToString(),
                         Font = new Font(Font.Name, Font.Size - 1, FontStyle.Bold | FontStyle.Italic),
                         TextAlign = ContentAlignment.MiddleCenter,
                         Size = new Size(25, button.Size.Height),
@@ -50,7 +53,7 @@ namespace Ruler.Gui
                             button.Location.Y),
                         Parent = Parent
                     };
-                    Byte lvl = weapon.WeaponSpecifications.AvailabilityLevel;
+                    Byte lvl = weapon.AvailabilityLevel;
                     if (lvl > 0 && lvl <= 100)
                     {
                         levelLabel.Text = lvl.ToString();

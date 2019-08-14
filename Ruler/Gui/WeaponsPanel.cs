@@ -1,13 +1,11 @@
+// This is an independent project of an individual developer. Dear PVS-Studio, please check it.
+// PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
+
 using System;
-using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
-using System.Windows.Forms.VisualStyles;
-using Common;
 using Ruler.Common;
 using Ruler.Properties;
-using Ruler.Weapons;
-using Ruler.Weapons.Common;
 using SharpDX.Windows;
 
 namespace Ruler.Gui
@@ -38,7 +36,7 @@ namespace Ruler.Gui
 
             Extender = new Button()
             {
-                TextAlign = System.Drawing.ContentAlignment.MiddleCenter,
+                TextAlign = ContentAlignment.MiddleCenter,
                 FlatStyle = FlatStyle.Flat,
                 TabStop = false,
                 BackgroundImage = Resources.nuclear,

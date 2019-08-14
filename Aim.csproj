@@ -8,13 +8,13 @@
     <ProjectGuid>{23854529-2879-4574-86B7-722D7251300F}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AssemblyName>Ruler</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
     <RootNamespace>Ruler</RootNamespace>
     <IsWebBootstrapper>false</IsWebBootstrapper>
-    <LangVersion>8</LangVersion>
+    <LangVersion>7.2</LangVersion>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -148,12 +148,12 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Common\LanguageFlags.cs" />
+    <Compile Include="Common\Logger\Logger.cs" />
     <Compile Include="Common\Monitors.cs" />
     <Compile Include="Common\Settings.cs" />
     <Compile Include="Common\Localization.cs" />
     <Compile Include="Common\Types\OrderedSet.cs" />
     <Compile Include="Common\WinStruct.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

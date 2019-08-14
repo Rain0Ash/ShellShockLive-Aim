@@ -1,6 +1,7 @@
-using System;
+// This is an independent project of an individual developer. Dear PVS-Studio, please check it.
+// PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
+
 using System.Drawing;
-using System.Windows.Forms;
 
 namespace System.Windows.Forms
 {
@@ -42,8 +43,8 @@ namespace System.Windows.Forms
 
         private void DrawText()
         {
-            using Graphics graphics = CreateGraphics();
-            using SolidBrush brush = new SolidBrush(ForeColor);
+            Graphics graphics = CreateGraphics();
+            SolidBrush brush = new SolidBrush(ForeColor);
             SizeF size = graphics.MeasureString(Text, Font);
 
             // first figure out the top
@@ -88,6 +89,8 @@ namespace System.Windows.Forms
                     break;
             }
             graphics.DrawString(Text, Font, brush, left, top);
+            graphics.Dispose();
+            brush.Dispose();
         }
         
         public override String Text

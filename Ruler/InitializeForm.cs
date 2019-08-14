@@ -1,6 +1,6 @@
-using System;
-using System.Drawing;
-using System.Drawing.Printing;
+// This is an independent project of an individual developer. Dear PVS-Studio, please check it.
+// PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
+
 using SharpDX.Direct2D1;
 using SharpDX.Direct3D;
 using SharpDX.Direct3D11;
@@ -62,8 +62,6 @@ namespace Ruler
             Manager = new Manager(thisForm, d2dRenderTarget);
             weaponsPanel.Manager = Manager;
             Manager.Start();
-
-
         }
     }
 }

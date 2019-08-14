@@ -45,10 +45,12 @@ namespace System.Windows.Forms
         {
             Value = val;
             Image = new Bitmap(16, 16);
-            using Graphics g = Graphics.FromImage(Image);
-            using Brush b = new SolidBrush(Color.FromName(val));
+            Graphics g = Graphics.FromImage(Image);
+            Brush b = new SolidBrush(Color.FromName(val));
             g.DrawRectangle(Pens.White, 0, 0, Image.Width, Image.Height);
             g.FillRectangle(b, 1, 1, Image.Width - 1, Image.Height - 1);
+            g.Dispose();
+            b.Dispose();
         }
 
         public override String ToString()

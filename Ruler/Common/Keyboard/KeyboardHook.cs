@@ -1,7 +1,12 @@
+// This is an independent project of an individual developer. Dear PVS-Studio, please check it.
+// PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
+
 using System;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Runtime.InteropServices;
+using System.Windows.Forms.VisualStyles;
+using Common.Logger;
 
 namespace Ruler.Common
 {
@@ -21,13 +26,67 @@ namespace Ruler.Common
 
     internal sealed class GlobalKeyboardHook : IDisposable
     {
-        public event EventHandler<GlobalKeyboardHookEventArgs> KeyboardPressed;
+        private delegate IntPtr HookProc(Int32 nCode, IntPtr wParam, IntPtr lParam);
 
+        [DllImport("kernel32.dll")]
+        private static extern IntPtr LoadLibrary(String lpFileName);
+
+        [DllImport("kernel32.dll", CharSet = CharSet.Auto)]
+        private static extern Boolean FreeLibrary(IntPtr hModule);
+        
+        [DllImport("USER32", SetLastError = true)]
+        static extern IntPtr SetWindowsHookEx(Int32 idHook, HookProc lpfn, IntPtr hMod, Int32 dwThreadId);
+        
+        [DllImport("USER32", SetLastError = true)]
+        public static extern Boolean UnhookWindowsHookEx(IntPtr hHook);
+        
+        [DllImport("USER32", SetLastError = true)]
+        static extern IntPtr CallNextHookEx(IntPtr hHook, Int32 code, IntPtr wParam, IntPtr lParam);
+
+        [StructLayout(LayoutKind.Sequential)]
+        public struct LowLevelKeyboardInputEvent
+        {
+            public Int32 VirtualCode;
+            
+            public Int32 HardwareScanCode;
+            
+            public Int32 Flags;
+            
+            public Int32 TimeStamp;
+            
+            public IntPtr AdditionalInformation;
+        }
+
+        public const Int32 WhKeyboardLl = 13;
+
+        public enum KeyboardState
+        {
+            KeyDown = 0x0100,
+            KeyUp = 0x0101,
+            SysKeyDown = 0x0104,
+            SysKeyUp = 0x0105
+        }
+
+        public const Int32 VkSnapshot = 0x2c;
+        //const int VkLwin = 0x5b;
+        //const int VkRwin = 0x5c;
+        //const int VkTab = 0x09;
+        //const int VkEscape = 0x18;
+        //const int VkControl = 0x11;
+        const Int32 KfAltdown = 0x2000;
+        public const Int32 LlkhfAltdown = (KfAltdown >> 8);
+        
+        public event EventHandler<GlobalKeyboardHookEventArgs> KeyboardPressed;
+        
+        private IntPtr windowsHookHandle;
+        private IntPtr user32LibraryHandle;
+        private static HookProc _hookProc;
+        
         public GlobalKeyboardHook()
         {
             windowsHookHandle = IntPtr.Zero;
             user32LibraryHandle = IntPtr.Zero;
-            hookProc = LowLevelKeyboardProc; // we must keep alive hookProc, because GC is not aware about SetWindowsHookEx behaviour.
+            _hookProc = LowLevelKeyboardProc; // we must keep alive hookProc, because GC is not aware about SetWindowsHookEx behaviour.
 
             user32LibraryHandle = LoadLibrary("User32");
             if (user32LibraryHandle == IntPtr.Zero)
@@ -35,10 +94,8 @@ namespace Ruler.Common
                 Int32 errorCode = Marshal.GetLastWin32Error();
                 throw new Win32Exception(errorCode, $"Failed to load library 'User32.dll'. Error {errorCode}: {new Win32Exception(Marshal.GetLastWin32Error()).Message}.");
             }
-
-
-
-            windowsHookHandle = SetWindowsHookEx(WhKeyboardLl, hookProc, user32LibraryHandle, 0);
+            
+            windowsHookHandle = SetWindowsHookEx(WhKeyboardLl, _hookProc, user32LibraryHandle, 0);
             if (windowsHookHandle == IntPtr.Zero)
             {
                 Int32 errorCode = Marshal.GetLastWin32Error();
@@ -61,7 +118,7 @@ namespace Ruler.Common
                     windowsHookHandle = IntPtr.Zero;
 
                     // ReSharper disable once DelegateSubtraction
-                    hookProc -= LowLevelKeyboardProc;
+                    _hookProc -= LowLevelKeyboardProc;
                 }
             }
 
@@ -87,119 +144,24 @@ namespace Ruler.Common
             GC.SuppressFinalize(this);
         }
 
-        private IntPtr windowsHookHandle;
-        private IntPtr user32LibraryHandle;
-        private HookProc hookProc;
-
-        delegate IntPtr HookProc(Int32 nCode, IntPtr wParam, IntPtr lParam);
-
-        [DllImport("kernel32.dll")]
-        private static extern IntPtr LoadLibrary(String lpFileName);
-
-        [DllImport("kernel32.dll", CharSet = CharSet.Auto)]
-        private static extern Boolean FreeLibrary(IntPtr hModule);
-
-        /// <summary>
-        /// The SetWindowsHookEx function installs an application-defined hook procedure into a hook chain.
-        /// You would install a hook procedure to monitor the system for certain types of events. These events are
-        /// associated either with a specific thread or with all threads in the same desktop as the calling thread.
-        /// </summary>
-        /// <param name="idHook">hook type</param>
-        /// <param name="lpfn">hook procedure</param>
-        /// <param name="hMod">handle to application instance</param>
-        /// <param name="dwThreadId">thread identifier</param>
-        /// <returns>If the function succeeds, the return value is the handle to the hook procedure.</returns>
-        [DllImport("USER32", SetLastError = true)]
-        static extern IntPtr SetWindowsHookEx(Int32 idHook, HookProc lpfn, IntPtr hMod, Int32 dwThreadId);
-
-        /// <summary>
-        /// The UnhookWindowsHookEx function removes a hook procedure installed in a hook chain by the SetWindowsHookEx function.
-        /// </summary>
-        /// <param name="hHook"></param>
-        /// <returns>If the function succeeds, the return value is true.</returns>
-        [DllImport("USER32", SetLastError = true)]
-        public static extern Boolean UnhookWindowsHookEx(IntPtr hHook);
-
-        /// <summary>
-        /// The CallNextHookEx function passes the hook information to the next hook procedure in the current hook chain.
-        /// A hook procedure can call this function either before or after processing the hook information.
-        /// </summary>
-        /// <param name="hHook">handle to current hook</param>
-        /// <param name="code">hook code passed to hook procedure</param>
-        /// <param name="wParam">value passed to hook procedure</param>
-        /// <param name="lParam">value passed to hook procedure</param>
-        /// <returns>If the function succeeds, the return value is true.</returns>
-        [DllImport("USER32", SetLastError = true)]
-        static extern IntPtr CallNextHookEx(IntPtr hHook, Int32 code, IntPtr wParam, IntPtr lParam);
-
-        [StructLayout(LayoutKind.Sequential)]
-        public struct LowLevelKeyboardInputEvent
-        {
-            /// <summary>
-            /// A virtual-key code. The code must be a value in the range 1 to 254.
-            /// </summary>
-            public Int32 VirtualCode;
-
-            /// <summary>
-            /// A hardware scan code for the key. 
-            /// </summary>
-            public Int32 HardwareScanCode;
-
-            /// <summary>
-            /// The extended-key flag, event-injected Flags, context code, and transition-state flag. This member is specified as follows. An application can use the following values to test the keystroke Flags. Testing LLKHF_INJECTED (bit 4) will tell you whether the event was injected. If it was, then testing LLKHF_LOWER_IL_INJECTED (bit 1) will tell you whether or not the event was injected from a process running at lower integrity level.
-            /// </summary>
-            public Int32 Flags;
-
-            /// <summary>
-            /// The time stamp stamp for this message, equivalent to what GetMessageTime would return for this message.
-            /// </summary>
-            public Int32 TimeStamp;
-
-            /// <summary>
-            /// Additional information associated with the message. 
-            /// </summary>
-            public IntPtr AdditionalInformation;
-        }
-
-        public const Int32 WhKeyboardLl = 13;
-        //const int HC_ACTION = 0;
-
-        public enum KeyboardState
-        {
-            KeyDown = 0x0100,
-            KeyUp = 0x0101,
-            SysKeyDown = 0x0104,
-            SysKeyUp = 0x0105
-        }
-
-        public const Int32 VkSnapshot = 0x2c;
-        //const int VkLwin = 0x5b;
-        //const int VkRwin = 0x5c;
-        //const int VkTab = 0x09;
-        //const int VkEscape = 0x18;
-        //const int VkControl = 0x11;
-        const Int32 KfAltdown = 0x2000;
-        public const Int32 LlkhfAltdown = (KfAltdown >> 8);
-
         public IntPtr LowLevelKeyboardProc(Int32 nCode, IntPtr wParam, IntPtr lParam)
         {
             Boolean fEatKeyStroke = false;
-
-            var wparamTyped = wParam.ToInt32();
+            Int32 wparamTyped = wParam.ToInt32();
             if (Enum.IsDefined(typeof(KeyboardState), wparamTyped))
             {
+                
                 Object o = Marshal.PtrToStructure(lParam, typeof(LowLevelKeyboardInputEvent));
-                LowLevelKeyboardInputEvent p = (LowLevelKeyboardInputEvent)o;
+                LowLevelKeyboardInputEvent p = (LowLevelKeyboardInputEvent) o;
 
-                var eventArguments = new GlobalKeyboardHookEventArgs(p, (KeyboardState)wparamTyped);
+                GlobalKeyboardHookEventArgs eventArguments = new GlobalKeyboardHookEventArgs(p, (KeyboardState)wparamTyped);
 
                 EventHandler<GlobalKeyboardHookEventArgs> handler = KeyboardPressed;
                 handler?.Invoke(this, eventArguments);
 
                 fEatKeyStroke = eventArguments.Handled;
             }
-
-            return fEatKeyStroke ? (IntPtr)1 : CallNextHookEx(IntPtr.Zero, nCode, wParam, lParam);
+            return fEatKeyStroke ? (IntPtr) 1 : CallNextHookEx(IntPtr.Zero, nCode, wParam, lParam);
         }
     }
 }

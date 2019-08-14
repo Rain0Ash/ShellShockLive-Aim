@@ -1,15 +1,16 @@
+// This is an independent project of an individual developer. Dear PVS-Studio, please check it.
+// PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
+
 using System;
 using System.Threading;
-using System.Windows.Forms.VisualStyles;
 using Ruler.Common;
 using SharpDX;
 using SharpDX.Direct2D1;
-using SharpDX.DXGI;
 using SharpDX.Windows;
 
 namespace Ruler
 {
-    internal class Manager
+    internal class Manager : IDisposable
     {
         private Boolean isStarted = false;
         protected RenderForm Form;
@@ -65,6 +66,11 @@ namespace Ruler
             Drawer.BeginDraw();
             Drawer.Clear(Color.Black);
             Drawer.EndDraw();
+        }
+
+        public void Dispose()
+        {
+            looper.Dispose();
         }
     }
 }
