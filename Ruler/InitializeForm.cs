@@ -55,13 +55,12 @@ namespace Ruler
             device.ImmediateContext.ClearState();
             device.ImmediateContext.Flush();
             device.Dispose();
-            swapChain.Dispose();
             factory.Dispose();
             
             RenderForm thisForm = this;
-            Manager = new Manager(thisForm, d2dRenderTarget);
-            weaponsPanel.Manager = Manager;
+            Manager = new Manager(ref thisForm, ref d2dRenderTarget, ref swapChain);
             Manager.Start();
+            swapChain.Dispose();
         }
     }
 }

@@ -160,21 +160,22 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Ruler\BlackHole\BlackHole.cs" />
-    <Compile Include="Ruler\Common\Forms\ValueBox.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Ruler\Common\IElement.cs" />
     <Compile Include="Ruler\Common\Circle.cs" />
     <Compile Include="Ruler\Common\Keyboard\KeyboardHook.cs" />
     <Compile Include="Ruler\Common\Parametrs.cs" />
     <Compile Include="Ruler\Common\Surface.cs" />
+    <Compile Include="Ruler\Common\Utils.cs" />
     <Compile Include="Ruler\Controllers\EventController.cs" />
     <Compile Include="Ruler\Controllers\KeyboardController.cs" />
+    <Compile Include="Ruler\Gui\Forms\ValueBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Ruler\Gui\WeaponButton.cs">
       <DependentUpon>WeaponsPanel.cs</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Ruler\Gui\WeaponContainer.cs">
+    <Compile Include="Ruler\Gui\WeaponsContainer.cs">
       <DependentUpon>WeaponsPanel.cs</DependentUpon>
       <SubType>Component</SubType>
     </Compile>

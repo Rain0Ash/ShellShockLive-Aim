@@ -11,11 +11,9 @@ namespace Ruler
         [STAThread]
         private static void Main()
         {
-            GC.TryStartNoGCRegion(1000);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Starter.Starter());
-            GC.EndNoGCRegion();
         }
     }
 }

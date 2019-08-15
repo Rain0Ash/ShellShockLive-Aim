@@ -115,7 +115,7 @@ namespace Ruler.Starter
                 StartButton.Text = message;
                 StartButton.Enabled = false;
                 LanguageImagedComboBox.Enabled = false;
-                await Task.Delay(1500);
+                await Task.Delay(1500).ConfigureAwait(true);
                 StartButton.BackColor = DefaultBackColor;
                 StartButton.ForeColor = DefaultForeColor;
                 StartButton.Font = new Font(StartButton.Font, FontStyle.Regular);
@@ -128,7 +128,7 @@ namespace Ruler.Starter
             if (LicenceID.Text.Length == 0)
             {
                 LicenceID.Focus();
-                await invalidMessage(localization.IDLabel);
+                await invalidMessage(localization.IDLabel).ConfigureAwait(true);
                 return;
             }
             if (!LicenceKey.MaskFull)
@@ -139,7 +139,7 @@ namespace Ruler.Starter
                 Int32 keyLength = key.Length - selStart;
                 LicenceKey.SelectionStart = selStart;
                 LicenceKey.SelectionLength = keyLength;
-                await invalidMessage(localization.KeyLabel);
+                await invalidMessage(localization.KeyLabel).ConfigureAwait(true);
                 return;
             }
 
@@ -148,7 +148,7 @@ namespace Ruler.Starter
             if (!licence.IsValid())
             {
                 LicenceID.Focus();
-                await invalidMessage(localization.InvalidKeyID);
+                await invalidMessage(localization.InvalidKeyID).ConfigureAwait(true);
                 return;
             }
 

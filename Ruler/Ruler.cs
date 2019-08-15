@@ -6,6 +6,7 @@ using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using Common;
 using Ruler.Common.Forms;
+using Ruler.Gui;
 using SharpDX.Windows;
 using Common_Localization = Common.Localization;
 
@@ -29,12 +30,11 @@ namespace Ruler
             InitializeComponent();
         }
 
-        private void valueBoxKeyDown(Object sender, KeyEventArgs e)
+        private static void CheckAndIgnoreKeyboardPaste(Object sender, KeyEventArgs e)
         {
             if (!e.Control || e.KeyValue != 86) { return; }
             e.Handled = true;
             e.SuppressKeyPress = true;
-
         }
             
         private static void ValueBoxOnTextChanged(ref ValueBox valueBox)
@@ -75,6 +75,13 @@ namespace Ruler
         internal static String GetLocalCultureCode()
         {
             return Localization.GetLocalCultureCode();
+        }
+
+        internal void WeaponsPanelExtenderButton_OnClick(Object sender, EventArgs e)
+        {
+            Button button = (Button)sender;
+            weaponsPanel.Visible = !weaponsPanel.Visible;
+            Controls.SetChildIndex(button, 0);
         }
     }
 }

@@ -12,7 +12,7 @@ namespace Ruler.Common
     {
         public Point Coord;
         public Single Radius;
-        public Color Color = Color.Gray;
+        public Color Color = Color.Red;
 
         protected Circle(Point coord, Single radius, ref RenderTarget renderTarget) :
             base(ref renderTarget)
@@ -34,7 +34,7 @@ namespace Ruler.Common
         
         public override void Draw(ref RenderTarget renderTarget)
         {
-            renderTarget.DrawEllipse(new Ellipse(new RawVector2(Coord.X, Coord.Y), Radius, Radius), new SolidColorBrush(renderTarget, new RawColor4(255, 0, 0, 255)));
+            renderTarget.FillEllipse(new Ellipse(new RawVector2(Coord.X, Coord.Y), Radius, Radius), new SolidColorBrush(renderTarget, new RawColor4(Color.R, Color.G, Color.B, Color.A)));
         }
     }
 }

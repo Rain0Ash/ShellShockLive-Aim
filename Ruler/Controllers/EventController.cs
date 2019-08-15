@@ -2,6 +2,7 @@
 // PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
 
 using System;
+using System.Windows.Input;
 
 namespace Ruler.Common
 {
@@ -10,18 +11,26 @@ namespace Ruler.Common
         internal static event EventHandler ChangeWeaponMenuState;
         internal static event EventHandler NeedRedraw;
 
-        internal void RecognizeAndThrowEvent(Object sender, GlobalKeyboardHookEventArgs e)
+        internal static void RecognizeInputAndThrowEvent(Object sender, GlobalKeyboardHookEventArgs e)
         {
             Boolean isNeedRedraw = false;
-            if (e.KeyboardData.VirtualCode == 0x65 && e.KeyboardState == GlobalKeyboardHook.KeyboardState.KeyDown)
+            Int32 vkCode = e.KeyboardData.VirtualCode;
+            if (vkCode == VK(Key.NumPad5) && e.KeyboardState == GlobalKeyboardHook.KeyboardState.KeyDown)
             {
                 ChangeWeaponMenuState?.Invoke(sender, e);
+                isNeedRedraw = true;
+                e.Handled = true;
             }
 
             if (isNeedRedraw)
             {
                 NeedRedraw?.Invoke(sender, e);
             }
+        }
+
+        private static Int32 VK(Key key)
+        {
+            return KeyInterop.VirtualKeyFromKey(key);
         }
     }
 }

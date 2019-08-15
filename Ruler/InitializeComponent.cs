@@ -1,8 +1,10 @@
 // This is an independent project of an individual developer. Dear PVS-Studio, please check it.
 // PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
 
+using System;
 using System.Drawing;
 using System.Windows.Forms;
+using Ruler.Common;
 using Ruler.Common.Forms;
 using Ruler.Gui;
 using Ruler.Properties;
@@ -12,16 +14,18 @@ namespace Ruler
 {
     internal sealed partial class Ruler
     {
-        private ValueBox boxPower;
-        private ValueBox boxAngle;
-        private ValueBox boxWind;
+        private ValueBox powerValueBox;
+        private ValueBox angleValueBox;
+        private ValueBox windValueBox;
         private WeaponsPanel weaponsPanel;
         
         private void InitializeComponent()
         {
             SuspendLayout();
             ClientSize = new Size(resolution.Width, resolution.Height);
-            boxPower = new ValueBox("Power")
+
+            #region Power Angle Wind valueBox defines
+            powerValueBox = new ValueBox("Power")
             {
                 BackColor = Color.FromArgb(75, 0, 0),
                 Location = new Point(1500, 960),
@@ -30,11 +34,11 @@ namespace Ruler
                 DefaultValue = 100,
                 MaxValue = 100,
             };
-            boxPower.Text = boxPower.MaxValue.ToString();
-            boxPower.TextChanged += (sender, e) => ValueBoxOnTextChanged(ref boxPower);
-            boxPower.KeyDown += valueBoxKeyDown;
+            powerValueBox.Text = powerValueBox.MaxValue.ToString();
+            powerValueBox.TextChanged += (sender, e) => ValueBoxOnTextChanged(ref powerValueBox);
+            powerValueBox.KeyDown += CheckAndIgnoreKeyboardPaste;
             
-            boxAngle = new ValueBox("Angle")
+            angleValueBox = new ValueBox("Angle")
             {
                 BackColor = Color.FromArgb(0, 75, 0),
                 Location = new Point(1500, 920),
@@ -44,10 +48,10 @@ namespace Ruler
                 DefaultValue = 90,
                 MaxValue = 359,
             };
-            boxAngle.TextChanged += (sender, e) => ValueBoxOnTextChanged(ref boxAngle);
-            boxAngle.KeyDown += valueBoxKeyDown;
+            angleValueBox.TextChanged += (sender, e) => ValueBoxOnTextChanged(ref angleValueBox);
+            angleValueBox.KeyDown += CheckAndIgnoreKeyboardPaste;
             
-            boxWind = new ValueBox("Wind")
+            windValueBox = new ValueBox("Wind")
             {
                 BackColor = Color.FromArgb(0, 0, 75),
                 Location = new Point(1605, 920),
@@ -57,11 +61,11 @@ namespace Ruler
                 DefaultValue = 0,
                 MaxValue = 100,
             };
-            boxWind.TextChanged += (sender, e) => ValueBoxOnTextChanged(ref boxWind);
-            boxWind.KeyDown += valueBoxKeyDown;
+            windValueBox.TextChanged += (sender, e) => ValueBoxOnTextChanged(ref windValueBox);
+            windValueBox.KeyDown += CheckAndIgnoreKeyboardPaste;
+            #endregion
 
-            RenderForm thisForm = this;
-            weaponsPanel = new WeaponsPanel(ref thisForm);
+            weaponsPanel = new WeaponsPanel(monitor);
 
             TopMost = true;
             ControlBox = false;
@@ -76,9 +80,9 @@ namespace Ruler
             ShowInTaskbar = !isDisguise;
             Location = new Point(resolution.X, resolution.Y);
             Size = new Size(resolution.Width, resolution.Height);
-            Controls.Add(boxPower);
-            Controls.Add(boxAngle);
-            Controls.Add(boxWind);
+            Controls.Add(powerValueBox);
+            Controls.Add(angleValueBox);
+            Controls.Add(windValueBox);
             Controls.Add(weaponsPanel);
             ResumeLayout(false);
             PerformLayout();

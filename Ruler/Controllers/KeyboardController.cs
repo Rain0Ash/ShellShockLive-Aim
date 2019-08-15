@@ -7,13 +7,8 @@ namespace Ruler.Common
 {
     internal class KeyboardController : IDisposable
     {
-        private EventController eventController;
         private GlobalKeyboardHook globalKeyboardHook;
-
-        public KeyboardController()
-        {
-            eventController = new EventController();
-        }
+        
         public void SetupKeyboardHooks()
         {
             globalKeyboardHook = new GlobalKeyboardHook();
@@ -24,7 +19,7 @@ namespace Ruler.Common
         {
             //Debug.WriteLine(e.KeyboardData.VirtualCode);
             
-            eventController.RecognizeAndThrowEvent(sender, e);
+            EventController.RecognizeInputAndThrowEvent(sender, e);
 
 
 

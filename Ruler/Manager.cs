@@ -6,21 +6,25 @@ using System.Threading;
 using Ruler.Common;
 using SharpDX;
 using SharpDX.Direct2D1;
+using SharpDX.DXGI;
+using SharpDX.Mathematics.Interop;
 using SharpDX.Windows;
 
 namespace Ruler
 {
-    internal class Manager : IDisposable
+    internal sealed class Manager : IDisposable
     {
         private Boolean isStarted = false;
-        protected RenderForm Form;
-        protected RenderTarget Drawer;
+        private RenderForm Form;
+        private RenderTarget drawer;
+        private SwapChain swapChain;
         private RenderLoop looper;
 
-        internal Manager(RenderForm form, RenderTarget drawer)
+        internal Manager(ref RenderForm form, ref RenderTarget drawer, ref SwapChain swapChain)
         {
-            Form = form;
-            Drawer = drawer;
+            this.Form = form;
+            this.drawer = drawer;
+            this.swapChain = swapChain;
         }
 
         internal void Start()
@@ -31,8 +35,9 @@ namespace Ruler
             new KeyboardController().SetupKeyboardHooks();
             
             Form.Show();
-
-
+            Form.BringToFront();
+            EventController.NeedRedraw += (sender, args) => ForceNextFrame();
+            
             looper = new RenderLoop(Form);
             Boolean firstRender = false;
             while (true)
@@ -41,9 +46,13 @@ namespace Ruler
                 {
                     break;
                 }
-                if (!firstRender) NextFrame();
-                firstRender = true;
-                Thread.Sleep(60*60/1000);
+
+                if (!firstRender)
+                {
+                    NextFrame();
+                    firstRender = true;
+                }
+                Thread.Sleep((Int32) Utils.GetUpdateTimeForFPS(60));
             }
         }
 
@@ -58,14 +67,15 @@ namespace Ruler
                 NextFrame();
                 return true;
             }
-
             return false;
         }
         internal void NextFrame()
         {
-            Drawer.BeginDraw();
-            Drawer.Clear(Color.Black);
-            Drawer.EndDraw();
+            drawer.BeginDraw();
+            drawer.Clear(Color.Black);
+            new Portal(new Point(450, 500), 100, ref drawer).Draw();
+            drawer.EndDraw();
+            swapChain.Present(0, PresentFlags.None);
         }
 
         public void Dispose()

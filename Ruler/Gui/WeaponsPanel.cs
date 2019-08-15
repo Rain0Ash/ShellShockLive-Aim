@@ -4,6 +4,7 @@
 using System;
 using System.Drawing;
 using System.Windows.Forms;
+using Common;
 using Ruler.Common;
 using Ruler.Properties;
 using SharpDX.Windows;
@@ -15,17 +16,15 @@ namespace Ruler.Gui
         internal Int32 MaxWeaponInLine { get; set; } = 10;
         internal Int32 MaxWeaponInColumn { get; set; } = 4;
         private Button Extender { get; set; }
-        private WeaponContainer WeaponButtonsContainer { get; set; }
-        
-        internal Manager Manager;
-        public WeaponsPanel(ref RenderForm renderForm)
+        private WeaponsContainer WeaponButtonsContainer { get; set; }
+        public WeaponsPanel(Monitor monitor)
         {
             BackColor = Color.Transparent;
             Font = new Font("Microsoft Sans Serif", 24f, FontStyle.Bold, GraphicsUnit.Pixel, 204);
-            Location = new Point(renderForm.Location.X, renderForm.Location.Y);
-            Size = new Size(renderForm.Size.Width * 29/112, 40*21);
+            Location = new Point(monitor.Resolution.X, monitor.Resolution.Y);
+            Size = new Size(monitor.Resolution.Width * 29/112, 40*21);
             
-            WeaponButtonsContainer = new WeaponContainer()
+            WeaponButtonsContainer = new WeaponsContainer()
             {
                 Font = Font,
                 BackColor = Color.FromArgb(50, 255, 255, 255),
@@ -53,11 +52,23 @@ namespace Ruler.Gui
             Controls.Add(WeaponButtonsContainer);
 
             EventController.ChangeWeaponMenuState += Extender_OnClick;
+            EventController.NeedRedraw += (sender, args) => OnPaint(new PaintEventArgs(CreateGraphics(), Bounds));
         }
         
         private void Extender_OnClick(Object sender, EventArgs e)
         {
             WeaponButtonsContainer.Visible = !WeaponButtonsContainer.Visible;
+            OnPaint(new PaintEventArgs(CreateGraphics(), Bounds));
+        }
+
+        protected override void OnPaint(PaintEventArgs e)
+        {
+            Bitmap behind = new Bitmap(Width, Height);
+            foreach (Control c in Parent.Controls)
+                if (c.Bounds.IntersectsWith(Bounds) & c != this)
+                    c.DrawToBitmap(behind, c.Bounds);
+            CreateGraphics().DrawImage(behind, -Left, -Top);
+            behind.Dispose();
         }
     }
 }
