@@ -11,7 +11,7 @@ namespace Ruler.Weapons.Common
     public static class Weapons
     {
         //private static Dictionary<String, Weapon> _weaponsDict = GetWeapons();
-        private static readonly WeaponsLocalization Localization = new WeaponsLocalization(Ruler.GetLocalCultureCode());
+        private static readonly WeaponsLocalization Localization = new WeaponsLocalization(MainForm.GetLocalCultureCode());
         public static readonly List<Weapon> WeaponList = new List<Weapon>
         {
             //-

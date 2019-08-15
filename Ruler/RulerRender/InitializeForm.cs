@@ -8,7 +8,7 @@ using SharpDX.DXGI;
 using SharpDX.Windows;
 namespace Ruler
 {
-    internal sealed partial class Ruler
+    internal sealed partial class RulerRender
     {
         internal Manager Manager;
         private void InitializeForm()
@@ -57,10 +57,8 @@ namespace Ruler
             device.Dispose();
             factory.Dispose();
             
-            RenderForm thisForm = this;
+            RulerRender thisForm = this;
             Manager = new Manager(ref thisForm, ref d2dRenderTarget, ref swapChain);
-            Manager.Start();
-            swapChain.Dispose();
         }
     }
 }

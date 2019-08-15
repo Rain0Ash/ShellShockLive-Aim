@@ -322,10 +322,10 @@
           <e p="WeaponsPanel.cs" t="Include" />
         </e>
         <e p="InitializeComponent.cs" t="Include" />
-        <e p="InitializeForm.cs" t="Include" />
         <e p="Localization" t="Include">
           <e p="RulerLocalization.cs" t="Include" />
         </e>
+        <e p="MainForm.cs" t="Include" />
         <e p="Manager.cs" t="Include" />
         <e p="Portal" t="Include">
           <e p="Portal.cs" t="Include" />
@@ -335,8 +335,12 @@
           <e p="ReboundCircle.cs" t="Include" />
           <e p="ReboundWall.cs" t="Include" />
         </e>
-        <e p="Ruler.cs" t="Include" />
         <e p="RulerBackup.cs" t="Include" />
+        <e p="RulerRender" t="Include">
+          <e p="InitializeComponent.cs" t="Include" />
+          <e p="InitializeForm.cs" t="Include" />
+          <e p="RenderForm.cs" t="Include" />
+        </e>
         <e p="Sight" t="Include">
           <e p="Aim.cs" t="Include" />
           <e p="Sight.cs" t="Include" />

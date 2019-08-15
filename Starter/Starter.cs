@@ -33,7 +33,7 @@ namespace Ruler.Starter
             LicenceKey.MaxLength = Licence.MaxKeyLength;
             LicenceID.Mask = $@"A{String.Concat(Enumerable.Repeat("a", Licence.MaxIDLength - 1))}";
             LicenceKey.Mask = $@"{String.Concat(Enumerable.Repeat($@"{String.Concat(Enumerable.Repeat("A", Licence.MaxKeyCharInCell))}-", Licence.MaxKeyCells))}".TrimEnd('-');
-            
+
             RegistrySettings registrySettings = Registry.Registry.GetRegistry();
             if (registrySettings.DontUseRegistry || !Licence.Sha256(Settings.Version).Equals(registrySettings.BuildDateTimeHash, StringComparison.OrdinalIgnoreCase))
                 registrySettings = Registry.Registry.GetRegistry(true);
@@ -61,6 +61,7 @@ namespace Ruler.Starter
             NotDisplayAnymoreCheckBox.Checked = registrySettings.DontShowAnymore;
 
             if (NotDisplayAnymoreCheckBox.Checked) StartButton_Click(sender, e);
+            else Show();
 
             LicenceID.Focus();
 
@@ -167,7 +168,7 @@ namespace Ruler.Starter
                 }
 
                 Hide();
-                Form ruler = new Ruler(licence, Monitors.GetMonitors()[ScreenImagedComboBox.SelectedIndex],
+                Form ruler = new MainForm(licence, Monitors.GetMonitors()[ScreenImagedComboBox.SelectedIndex],
                     languageCode,
                     IsDisguiseRuler.Checked);
                 ruler.Closed += (s, args) => Close();

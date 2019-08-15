@@ -27,7 +27,7 @@ namespace Ruler.Gui
             WeaponButtonsContainer = new WeaponsContainer()
             {
                 Font = Font,
-                BackColor = Color.FromArgb(50, 255, 255, 255),
+                BackColor = Color.FromArgb(0, 255, 255, 255),
                 Location = Location,
                 Size = Size,
                 Visible = true
@@ -58,17 +58,6 @@ namespace Ruler.Gui
         private void Extender_OnClick(Object sender, EventArgs e)
         {
             WeaponButtonsContainer.Visible = !WeaponButtonsContainer.Visible;
-            OnPaint(new PaintEventArgs(CreateGraphics(), Bounds));
-        }
-
-        protected override void OnPaint(PaintEventArgs e)
-        {
-            Bitmap behind = new Bitmap(Width, Height);
-            foreach (Control c in Parent.Controls)
-                if (c.Bounds.IntersectsWith(Bounds) & c != this)
-                    c.DrawToBitmap(behind, c.Bounds);
-            CreateGraphics().DrawImage(behind, -Left, -Top);
-            behind.Dispose();
         }
     }
 }

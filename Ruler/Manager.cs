@@ -15,14 +15,14 @@ namespace Ruler
     internal sealed class Manager : IDisposable
     {
         private Boolean isStarted = false;
-        private RenderForm Form;
+        private RulerRender Form;
         private RenderTarget drawer;
         private SwapChain swapChain;
         private RenderLoop looper;
 
-        internal Manager(ref RenderForm form, ref RenderTarget drawer, ref SwapChain swapChain)
+        internal Manager(ref RulerRender form, ref RenderTarget drawer, ref SwapChain swapChain)
         {
-            this.Form = form;
+            Form = form;
             this.drawer = drawer;
             this.swapChain = swapChain;
         }
@@ -33,9 +33,10 @@ namespace Ruler
                 return;
 
             new KeyboardController().SetupKeyboardHooks();
-            
+
             Form.Show();
-            Form.BringToFront();
+            Form.MainForm.Show();
+            Form.MainForm.BringToFront();
             EventController.NeedRedraw += (sender, args) => ForceNextFrame();
             
             looper = new RenderLoop(Form);

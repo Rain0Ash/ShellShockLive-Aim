@@ -6,30 +6,32 @@ using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using Common;
 using Ruler.Common.Forms;
-using Ruler.Gui;
-using SharpDX.Windows;
 using Common_Localization = Common.Localization;
 
 namespace Ruler
 {
-    internal sealed partial class Ruler : RenderForm
+    internal sealed partial class MainForm : Form
     {
         private readonly Licence licence;
         private readonly Monitor monitor;
-        internal static RulerLocalization Localization = new RulerLocalization(Common_Localization.GetCurrentCulture());
+        internal static RulerLocalization localization = new RulerLocalization(Common_Localization.GetCurrentCulture());
         private readonly Boolean isDisguise;
         private System.Drawing.Rectangle resolution; 
         
-        internal Ruler(Licence licence, Monitor monitor, String languageCode = null, Boolean isDisguise = false)
+        internal MainForm(Licence licence, Monitor monitor, String languageCode = null, Boolean isDisguise = false)
         {
             this.licence = licence;
             this.monitor = monitor;
-            Localization = new RulerLocalization(languageCode);
+            localization = new RulerLocalization(languageCode);
             this.isDisguise = isDisguise;
             resolution = monitor.Resolution;
             InitializeComponent();
         }
-
+        
+        internal static String GetLocalCultureCode()
+        {
+            return localization.GetLocalCultureCode();
+        }
         private static void CheckAndIgnoreKeyboardPaste(Object sender, KeyEventArgs e)
         {
             if (!e.Control || e.KeyValue != 86) { return; }
@@ -70,18 +72,6 @@ namespace Ruler
                 valueBox.Text = text;
                 valueBox.SelectionStart = selection == 0 ? 0 : selection <= valueBox.Text.Length ? selection : valueBox.Text.Length;
             }
-        }
-
-        internal static String GetLocalCultureCode()
-        {
-            return Localization.GetLocalCultureCode();
-        }
-
-        internal void WeaponsPanelExtenderButton_OnClick(Object sender, EventArgs e)
-        {
-            Button button = (Button)sender;
-            weaponsPanel.Visible = !weaponsPanel.Visible;
-            Controls.SetChildIndex(button, 0);
         }
     }
 }

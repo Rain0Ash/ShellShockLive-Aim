@@ -12,7 +12,7 @@ using SharpDX.Windows;
 
 namespace Ruler
 {
-    internal sealed partial class Ruler
+    internal sealed partial class MainForm
     {
         private ValueBox powerValueBox;
         private ValueBox angleValueBox;
@@ -56,7 +56,7 @@ namespace Ruler
                 BackColor = Color.FromArgb(0, 0, 75),
                 Location = new Point(1605, 920),
                 Size = new Size(95, 30),
-                EndString = $@"{Localization.Meters}",
+                EndString = $@"{localization.Meters}",
                 Text = @"0",
                 DefaultValue = 0,
                 MaxValue = 100,
@@ -67,11 +67,13 @@ namespace Ruler
 
             weaponsPanel = new WeaponsPanel(monitor);
 
+            MainForm thisForm = this;
+            RulerRender ruler = new RulerRender(ref thisForm);
+
             TopMost = true;
             ControlBox = false;
             AutoScaleMode = AutoScaleMode.Font;
-            Name = nameof(Ruler);
-            Text = !isDisguise ? Localization.RulerVersion : Localization.MaskName;
+            Text = !isDisguise ? localization.RulerVersion : localization.MaskName;
             BackColor = Color.Black;
             TransparencyKey = Color.Black;
             FormBorderStyle = FormBorderStyle.None;
@@ -86,7 +88,7 @@ namespace Ruler
             Controls.Add(weaponsPanel);
             ResumeLayout(false);
             PerformLayout();
-            InitializeForm();
+            ruler.Start();
         }
     }
 }
