@@ -13,16 +13,15 @@ namespace Ruler.Gui
 {
     internal sealed class WeaponsPanel : Label
     {
-        internal Int32 MaxWeaponInLine { get; set; } = 10;
-        internal Int32 MaxWeaponInColumn { get; set; } = 4;
+        private Int32 MaxWeaponInColumn { get; set; } = 21;
         private Button Extender { get; set; }
         private WeaponsContainer WeaponButtonsContainer { get; set; }
-        public WeaponsPanel(Monitor monitor)
+        public WeaponsPanel()
         {
             BackColor = Color.Transparent;
             Font = new Font("Microsoft Sans Serif", 24f, FontStyle.Bold, GraphicsUnit.Pixel, 204);
-            Location = new Point(monitor.Resolution.X, monitor.Resolution.Y);
-            Size = new Size(monitor.Resolution.Width * 29/112, 40*21);
+            Location = new Point(Globals.Monitor.Resolution.X, Globals.Monitor.Resolution.Y);
+            Size = new Size(Globals.Monitor.Resolution.Width * 29/112, 40*MaxWeaponInColumn);
 
             WeaponButtonsContainer = new WeaponsContainer()
             {

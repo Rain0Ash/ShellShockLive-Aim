@@ -160,10 +160,11 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Ruler\BlackHole\BlackHole.cs" />
+    <Compile Include="Ruler\Common\Globals.cs" />
     <Compile Include="Ruler\Common\IElement.cs" />
     <Compile Include="Ruler\Common\Circle.cs" />
     <Compile Include="Ruler\Common\Keyboard\KeyboardHook.cs" />
-    <Compile Include="Ruler\Common\Parametrs.cs" />
+    <Compile Include="Ruler\Common\Parameters.cs" />
     <Compile Include="Ruler\Common\Surface.cs" />
     <Compile Include="Ruler\Common\Utils.cs" />
     <Compile Include="Ruler\Controllers\EventController.cs" />

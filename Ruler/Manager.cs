@@ -20,7 +20,7 @@ namespace Ruler
         private RenderTarget drawer;
         private SwapChain swapChain;
         private RenderLoop looper;
-        private Parametrs parametrs;
+        private Parameters parameters;
         
         private Sight sight;
 
@@ -29,7 +29,7 @@ namespace Ruler
             Form = form;
             this.drawer = drawer;
             this.swapChain = swapChain;
-            parametrs = Params.GetParametrs($"{Form.Bounds.Width}x{Form.Bounds.Height}");
+            parameters = Parameter.GetParameters($"{Form.Bounds.Width}x{Form.Bounds.Height}");
             
             InitializeComponent();
         }
@@ -93,7 +93,7 @@ namespace Ruler
 
         private void InitializeComponent()
         {
-            sight = new Sight(new RawVector2(Form.Bounds.Width / 2f, Form.Bounds.Height / 2f), parametrs.Length, ref drawer);
+            sight = new Sight(new RawVector2(Form.Bounds.Width / 2f, Form.Bounds.Height / 2f), parameters.Length, ref drawer);
         }
     }
 }

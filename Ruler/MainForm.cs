@@ -5,6 +5,7 @@ using System;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using Common;
+using Ruler.Common;
 using Ruler.Common.Forms;
 using Common_Localization = Common.Localization;
 
@@ -13,7 +14,6 @@ namespace Ruler
     internal sealed partial class MainForm : Form
     {
         private readonly Licence licence;
-        internal readonly Monitor monitor;
         internal static RulerLocalization localization = new RulerLocalization(Common_Localization.GetCurrentCulture());
         private readonly Boolean isDisguise;
         private System.Drawing.Rectangle resolution; 
@@ -21,7 +21,7 @@ namespace Ruler
         internal MainForm(Licence licence, Monitor monitor, String languageCode = null, Boolean isDisguise = false)
         {
             this.licence = licence;
-            this.monitor = monitor;
+            Globals.Monitor = monitor;
             localization = new RulerLocalization(languageCode);
             this.isDisguise = isDisguise;
             resolution = monitor.Resolution;

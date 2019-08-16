@@ -8,7 +8,7 @@ namespace Ruler.Common
 {
     public class Surface : IElement
     {
-        protected static Parametrs Settings = Params.GetParametrs();
+        protected static Parameters Settings = Parameter.GetParameters();
         protected RenderTarget RenderTarget;
 
         protected Surface(ref RenderTarget renderTarget)

@@ -22,9 +22,7 @@ namespace Ruler
 
         private void SetPosition()
         {
-            System.Drawing.Point cursorPosition = Cursor.Position;
-            Coord.X = cursorPosition.X + 16f * cursorPosition.X / RenderTarget.Size.Width; //Magic? IDK why 16/20
-            Coord.Y = cursorPosition.Y + 20f * cursorPosition.Y / RenderTarget.Size.Height;
+            Coord = Utils.GetCursorPosition(ref RenderTarget);
         }
         
         public override void Draw(ref RenderTarget renderTarget)

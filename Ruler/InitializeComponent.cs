@@ -65,7 +65,7 @@ namespace Ruler
             windValueBox.KeyDown += CheckAndIgnoreKeyboardPaste;
             #endregion
             
-            weaponsPanel = new WeaponsPanel(monitor);
+            weaponsPanel = new WeaponsPanel();
 
             MainForm thisForm = this;
             RulerRender ruler = new RulerRender(ref thisForm);
