@@ -8,6 +8,7 @@ namespace Ruler.Common
     internal class KeyboardController : IDisposable
     {
         private GlobalKeyboardHook globalKeyboardHook;
+        private static Int64 lastKeyInput = new DateTimeOffset(DateTime.UtcNow).ToUnixTimeMilliseconds();
         
         public void SetupKeyboardHooks()
         {
@@ -18,7 +19,12 @@ namespace Ruler.Common
         private void OnKeyPressed(Object sender, GlobalKeyboardHookEventArgs e)
         {
             //Debug.WriteLine(e.KeyboardData.VirtualCode);
-            
+            Int64 now = new DateTimeOffset(DateTime.UtcNow).ToUnixTimeMilliseconds();
+            if (now - lastKeyInput < 50)
+            {
+                return;
+            }
+            lastKeyInput = now;
             EventController.RecognizeInputAndThrowEvent(sender, e);
 
 

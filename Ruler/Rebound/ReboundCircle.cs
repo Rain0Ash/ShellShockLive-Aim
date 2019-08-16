@@ -5,12 +5,13 @@ using System;
 using SharpDX;
 using Ruler.Common;
 using SharpDX.Direct2D1;
+using SharpDX.Mathematics.Interop;
 
 namespace Ruler
 {
     internal class ReboundCircle : Circle, IRebound
     {
-        internal ReboundCircle(Point coord, Single radius, ref RenderTarget renderTarget) :
+        internal ReboundCircle(RawVector2 coord, Single radius, ref RenderTarget renderTarget) :
             base(coord, radius, ref renderTarget)
         {
         }

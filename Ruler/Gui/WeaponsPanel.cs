@@ -23,14 +23,14 @@ namespace Ruler.Gui
             Font = new Font("Microsoft Sans Serif", 24f, FontStyle.Bold, GraphicsUnit.Pixel, 204);
             Location = new Point(monitor.Resolution.X, monitor.Resolution.Y);
             Size = new Size(monitor.Resolution.Width * 29/112, 40*21);
-            
+
             WeaponButtonsContainer = new WeaponsContainer()
             {
                 Font = Font,
                 BackColor = Color.FromArgb(0, 255, 255, 255),
                 Location = Location,
                 Size = Size,
-                Visible = true
+                Visible = false
             };
 
             Extender = new Button()

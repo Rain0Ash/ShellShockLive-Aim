@@ -2,52 +2,61 @@
 // PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
 
 using System;
-using SharpDX;
+using System.Windows.Forms;
 using Ruler.Common;
+using SharpDX;
 using SharpDX.Direct2D1;
-
+using SharpDX.Mathematics.Interop;
 namespace Ruler
 {
     internal class Sight : Circle
     {
-        //private readonly SolidColorBrush centerPaintBrush;
-        internal Sight(Point coord, Single radius, ref RenderTarget renderTarget)
+        private const Single CenterPointRadius = 4;
+        private readonly SolidColorBrush paintBrush;
+        internal Sight(RawVector2 coord, Single radius, ref RenderTarget renderTarget)
             : base(coord, radius, ref renderTarget)
         {
-            //centerPaintBrush = new SolidColorBrush(renderTarget, new RawColor4(15, 220, 15, 255));
+            paintBrush = new SolidColorBrush(renderTarget, Color.Gray);
+            EventController.ChangeSightPosition += (sender, args) => SetPosition();
         }
 
+        private void SetPosition()
+        {
+            System.Drawing.Point cursorPosition = Cursor.Position;
+            Coord.X = cursorPosition.X + 16f * cursorPosition.X / RenderTarget.Size.Width; //Magic? IDK why 16/20
+            Coord.Y = cursorPosition.Y + 20f * cursorPosition.Y / RenderTarget.Size.Height;
+        }
+        
         public override void Draw(ref RenderTarget renderTarget)
         {
-            //Pen pen;
-            //TODO: Do power and angle;
-            //Graphics.FillEllipse(CenterPaintBrush, Coord.X - 4, Coord.Y - 4, 8, 8);
-            //for (Int32 circleAngle = 0; circleAngle < 360; circleAngle += 45)
-            //{
-            //    if (circleAngle % 90 == 0) pen = Pens.Red;
-            //    else if (circleAngle % 60 == 0) pen = Pens.Yellow;
-            //    else if (circleAngle % 45 == 0) pen = circleAngle < 180 ? Pens.Aquamarine : Pens.Blue;
-            //    else if (circleAngle % 30 == 0) pen = Pens.GreenYellow;
-            //    else if (circleAngle % 15 == 0) pen = circleAngle < 180 ? Pens.Orange : Pens.Brown;
-            //    else pen = Pens.DarkGray;
-            //    Single sin = Radius * (Single) Math.Sin(Math.PI * circleAngle / 180d) * 1.05f;
-            //    Single cos = Radius * (Single) Math.Cos(Math.PI * circleAngle / 180d) * 1.05f;
-            //    Graphics.DrawLine(pen, Coord.X, Coord.Y, Coord.X + cos, Coord.Y - sin);
-            //}
+            paintBrush.Color = Color.Lime;
+            renderTarget.FillEllipse(new Ellipse(Coord, 
+                CenterPointRadius,CenterPointRadius), paintBrush);
             
-            //for (Int32 circleRange = 25; circleRange <= 100; circleRange += 25)
-            //{
-            //    if (circleRange % 100 == 0) pen = Pens.LightCoral;
-            //    else if (circleRange % 75 == 0) pen = Pens.LightGoldenrodYellow;
-            //    else if (circleRange % 50 == 0) pen = Pens.LightGreen;
-            //    else if (circleRange % 25 == 0) pen = Pens.LightSeaGreen;
-            //    else if (circleRange % 10 == 0) pen = Pens.DarkBlue;
-            //    else pen = Pens.DarkGray;
-            //    Single pos = Radius * circleRange / 100f;
-            //    Single range = Radius * 2f * circleRange / 100f;
-            //    Graphics.DrawEllipse(pen, Coord.X - pos, Coord.Y - pos, 
-            //        range, range);
-            //}
+            for (Int32 circleAngle = 0; circleAngle < 360; circleAngle += 45)
+            {
+                if (circleAngle % 90 == 0) paintBrush.Color = Color.Red;
+                else if (circleAngle % 60 == 0) paintBrush.Color = Color.Yellow;
+                else if (circleAngle % 45 == 0) paintBrush.Color = circleAngle < 180 ? Color.Aquamarine : Color.Blue;
+                else if (circleAngle % 30 == 0) paintBrush.Color = Color.GreenYellow;
+                else if (circleAngle % 15 == 0) paintBrush.Color = circleAngle < 180 ? Color.Orange : Color.Brown;
+                else paintBrush.Color = Color.DarkGray;
+                Single sin = Radius * (Single) Math.Sin(Math.PI * circleAngle / 180d) * 1.05f;
+                Single cos = Radius * (Single) Math.Cos(Math.PI * circleAngle / 180d) * 1.05f;
+                renderTarget.DrawLine(Coord, new RawVector2(Coord.X + cos, Coord.Y - sin), paintBrush);
+            }
+            
+            for (Int32 circleRange = 25; circleRange <= 100; circleRange += 25)
+            {
+                if (circleRange % 100 == 0) paintBrush.Color = Color.LightCoral;
+                else if (circleRange % 75 == 0) paintBrush.Color = Color.LightGoldenrodYellow;
+                else if (circleRange % 50 == 0) paintBrush.Color = Color.LightGreen;
+                else if (circleRange % 25 == 0) paintBrush.Color = Color.LightSeaGreen;
+                else if (circleRange % 10 == 0) paintBrush.Color = Color.DarkBlue;
+                else paintBrush.Color = Color.DarkGray;
+                Single range = Radius * circleRange / 100f;
+                renderTarget.DrawEllipse(new Ellipse(new RawVector2(Coord.X, Coord.Y), range, range), paintBrush);
+            }
         }
     }
 }

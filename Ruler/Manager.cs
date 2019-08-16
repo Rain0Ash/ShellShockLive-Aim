@@ -9,6 +9,7 @@ using SharpDX.Direct2D1;
 using SharpDX.DXGI;
 using SharpDX.Mathematics.Interop;
 using SharpDX.Windows;
+using Monitor = Common.Monitor;
 
 namespace Ruler
 {
@@ -19,12 +20,18 @@ namespace Ruler
         private RenderTarget drawer;
         private SwapChain swapChain;
         private RenderLoop looper;
+        private Parametrs parametrs;
+        
+        private Sight sight;
 
         internal Manager(ref RulerRender form, ref RenderTarget drawer, ref SwapChain swapChain)
         {
             Form = form;
             this.drawer = drawer;
             this.swapChain = swapChain;
+            parametrs = Params.GetParametrs($"{Form.Bounds.Width}x{Form.Bounds.Height}");
+            
+            InitializeComponent();
         }
 
         internal void Start()
@@ -74,7 +81,7 @@ namespace Ruler
         {
             drawer.BeginDraw();
             drawer.Clear(Color.Black);
-            new Portal(new Point(450, 500), 100, ref drawer).Draw();
+            sight.Draw();
             drawer.EndDraw();
             swapChain.Present(0, PresentFlags.None);
         }
@@ -82,6 +89,11 @@ namespace Ruler
         public void Dispose()
         {
             looper.Dispose();
+        }
+
+        private void InitializeComponent()
+        {
+            sight = new Sight(new RawVector2(Form.Bounds.Width / 2f, Form.Bounds.Height / 2f), parametrs.Length, ref drawer);
         }
     }
 }

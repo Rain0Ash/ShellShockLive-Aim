@@ -18,6 +18,8 @@ namespace Ruler.Gui
             Text = weapon.Name;
             BackColor = weapon.Color;
             ForeColor = Color.Azure;
+            FlatAppearance.BorderSize = 0;
+            FlatAppearance.BorderColor = BackColor;
             Font = new Font(Font.Name, Font.Size, FontStyle.Bold | FontStyle.Italic);
             FlatStyle = FlatStyle.Flat;
             TabStop = false;

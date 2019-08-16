@@ -18,6 +18,7 @@ namespace Starter.Localization
         public String NotDisplayAnymoreCheckBox;
         public String StartButton;
         public String InvalidKeyID;
+        public String OccurredError;
 
         public StarterLocalization UpdateLocalization(String cultureInfo = null)
         {
@@ -63,6 +64,10 @@ namespace Starter.Localization
                 "Invalid KeyID combination!",
                 "Неверная комбинация ID и ключа"));
 
+            OccurredError = LocalizedString(new CultureStrings(
+                "An error has occurred!",
+                "Произошла ошибка!"));
+            
             return this;
         }
         public StarterLocalization(String cultureInfo = null)

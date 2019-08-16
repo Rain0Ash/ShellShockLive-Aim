@@ -64,7 +64,7 @@ namespace Ruler
             windValueBox.TextChanged += (sender, e) => ValueBoxOnTextChanged(ref windValueBox);
             windValueBox.KeyDown += CheckAndIgnoreKeyboardPaste;
             #endregion
-
+            
             weaponsPanel = new WeaponsPanel(monitor);
 
             MainForm thisForm = this;

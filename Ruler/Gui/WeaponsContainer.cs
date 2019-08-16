@@ -24,12 +24,11 @@ namespace Ruler.Gui
                 // ReSharper disable once HeapView.ClosureAllocation
                 WeaponButton button = new WeaponButton(weapon)
                 {
-                    FlatAppearance = {BorderSize = 0, BorderColor = BackColor},
                     Size = new Size(90, 35),
                 };
                 button.Location = new Point(50 + (button.Size.Width + 30) * weapon.LevelInGroup, (button.Size.Height + 5) * (weapon.GroupID + 1));
 
-                Button imageLabel = new Button()
+                Button imageButton = new Button()
                 {
                     BackColor = button.BackColor,
                     Size = new Size(button.Height, button.Height),
@@ -39,7 +38,7 @@ namespace Ruler.Gui
                     TabStop = false,
                     Image = weapon.Image != null ? new Bitmap(weapon.Image, new Size(button.Height, button.Height)) : null
                 };
-                imageLabel.Click += (sender, args) => button.PerformClick();
+                imageButton.Click += (sender, args) => button.PerformClick();
 
                 #region Label with weapon level
                 if (weapon.LevelInGroup == 0)
@@ -47,7 +46,7 @@ namespace Ruler.Gui
                     TransparentLabel levelLabel = new TransparentLabel
                     {
                         Name = weapon.GroupID.ToString(),
-                        Font = new Font(Font.Name, Font.Size - 4, FontStyle.Bold | FontStyle.Italic),
+                        Font = new Font(Font.Name, Font.Size, FontStyle.Bold | FontStyle.Italic),
                         TextAlign = ContentAlignment.MiddleCenter,
                         Size = new Size(25, button.Size.Height),
                         Location = new Point(0,
@@ -81,7 +80,7 @@ namespace Ruler.Gui
                     Controls.Add(levelLabel);
                 }
                 #endregion
-                Controls.Add(imageLabel);
+                Controls.Add(imageButton);
                 Controls.Add(button);
             }
         }

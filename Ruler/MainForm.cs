@@ -13,7 +13,7 @@ namespace Ruler
     internal sealed partial class MainForm : Form
     {
         private readonly Licence licence;
-        private readonly Monitor monitor;
+        internal readonly Monitor monitor;
         internal static RulerLocalization localization = new RulerLocalization(Common_Localization.GetCurrentCulture());
         private readonly Boolean isDisguise;
         private System.Drawing.Rectangle resolution; 

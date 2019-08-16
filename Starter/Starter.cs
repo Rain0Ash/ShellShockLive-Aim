@@ -152,10 +152,7 @@ namespace Ruler.Starter
                 await invalidMessage(localization.InvalidKeyID).ConfigureAwait(true);
                 return;
             }
-
-            try
-            {
-                String languageCode = CountryData.EnglishNameByIso2.FirstOrDefault(x => x.Value == LanguageImagedComboBox.Text).Key.ToLower();
+            String languageCode = CountryData.EnglishNameByIso2.FirstOrDefault(x => x.Value == LanguageImagedComboBox.Text).Key.ToLower();
                 
                 if (!NotSaveSettingsCheckBox.Checked)
                 {
@@ -167,19 +164,30 @@ namespace Ruler.Starter
                     Registry.Registry.RemoveRegistry();
                 }
 
-                Hide();
-                Form ruler = new MainForm(licence, Monitors.GetMonitors()[ScreenImagedComboBox.SelectedIndex],
-                    languageCode,
-                    IsDisguiseRuler.Checked);
-                ruler.Closed += (s, args) => Close();
-                ruler.Show();
-                Dispose();
-            }
-            catch (ObjectDisposedException)
-            {
-                Close();
-                Application.Exit();
-            }
+                try
+                {
+                    Hide();
+                    MainForm ruler = new MainForm(licence, Monitors.GetMonitors()[ScreenImagedComboBox.SelectedIndex],
+                        languageCode,
+                        IsDisguiseRuler.Checked);
+                    ruler.Closed += (s, args) => Close();
+                    ruler.Show();
+                    Dispose();
+                }
+                catch (ObjectDisposedException)
+                {
+                    Close();
+                    Application.Exit();
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception(
+                        $"{localization.OccurredError}\n" +
+                        $"{ex.Source}\n" +
+                        $"{ex.Message}\n" +
+                        $"{ex.HResult}\n" +
+                        $"{ex.StackTrace}");
+                }
         }
     }
 }

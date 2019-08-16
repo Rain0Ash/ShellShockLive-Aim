@@ -275,8 +275,8 @@
         <e p="Settings.cs" t="Include" />
         <e p="Types" t="Include">
           <e p="OrderedSet.cs" t="Include" />
+          <e p="WinStruct.cs" t="Include" />
         </e>
-        <e p="WinStruct.cs" t="Include" />
       </e>
       <e p="FodyWeavers.xml" t="Include" />
       <e p="icon.ico" t="Include" />
@@ -335,12 +335,12 @@
           <e p="ReboundCircle.cs" t="Include" />
           <e p="ReboundWall.cs" t="Include" />
         </e>
-        <e p="RulerBackup.cs" t="Include" />
-        <e p="RulerRender" t="Include">
+        <e p="Render" t="Include">
           <e p="InitializeComponent.cs" t="Include" />
           <e p="InitializeForm.cs" t="Include" />
           <e p="RenderForm.cs" t="Include" />
         </e>
+        <e p="RulerBackup.cs" t="Include" />
         <e p="Sight" t="Include">
           <e p="Aim.cs" t="Include" />
           <e p="Sight.cs" t="Include" />

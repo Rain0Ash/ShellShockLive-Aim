@@ -65,14 +65,15 @@ namespace Ruler.Common
             SysKeyUp = 0x0105
         }
 
-        public const Int32 VkSnapshot = 0x2c;
+        //public const Int32 VkSnapshot = 0x2c;
         //const int VkLwin = 0x5b;
         //const int VkRwin = 0x5c;
         //const int VkTab = 0x09;
         //const int VkEscape = 0x18;
-        //const int VkControl = 0x11;
+        const Int32 VkControl = 0x11;
         const Int32 KfAltdown = 0x2000;
         public const Int32 LlkhfAltdown = (KfAltdown >> 8);
+        public const Int32 LlkhfCtrldown = (VkControl >> 8);
         
         public event EventHandler<GlobalKeyboardHookEventArgs> KeyboardPressed;
         

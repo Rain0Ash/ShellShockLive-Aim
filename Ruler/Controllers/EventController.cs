@@ -2,15 +2,20 @@
 // PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
 
 using System;
+using System.Windows;
+using System.Windows.Forms;
 using System.Windows.Input;
 
 namespace Ruler.Common
 {
     internal class EventController
     {
-        internal static event EventHandler ChangeWeaponMenuState;
         internal static event EventHandler NeedRedraw;
+        internal static event EventHandler ChangeWeaponMenuState;
 
+        internal static event EventHandler ChangeSightPosition;
+
+        private static Int64 _lastRedraw = new DateTimeOffset(DateTime.UtcNow).ToUnixTimeMilliseconds();
         internal static void RecognizeInputAndThrowEvent(Object sender, GlobalKeyboardHookEventArgs e)
         {
             Boolean isNeedRedraw = false;
@@ -18,14 +23,28 @@ namespace Ruler.Common
             if (vkCode == VK(Key.NumPad5) && e.KeyboardState == GlobalKeyboardHook.KeyboardState.KeyDown)
             {
                 ChangeWeaponMenuState?.Invoke(sender, e);
-                isNeedRedraw = true;
                 e.Handled = true;
             }
 
-            if (isNeedRedraw)
+            if (vkCode == VK(Key.E) && e.KeyboardData.Flags == GlobalKeyboardHook.LlkhfCtrldown)
             {
-                NeedRedraw?.Invoke(sender, e);
+                e.Handled = true;
+                Int64 now = new DateTimeOffset(DateTime.UtcNow).ToUnixTimeMilliseconds();
+                if (now - _lastRedraw < 25)
+                {
+                    return;
+                }
+                
+                _lastRedraw = now;
+                ChangeSightPosition?.Invoke(sender, e);
+                isNeedRedraw = true;
             }
+            
+            if (!isNeedRedraw)
+            {
+                return;
+            }
+            NeedRedraw?.Invoke(sender, e);
         }
 
         private static Int32 VK(Key key)

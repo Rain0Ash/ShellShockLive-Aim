@@ -153,7 +153,7 @@
     <Compile Include="Common\Settings.cs" />
     <Compile Include="Common\Localization.cs" />
     <Compile Include="Common\Types\OrderedSet.cs" />
-    <Compile Include="Common\WinStruct.cs" />
+    <Compile Include="Common\Types\WinStruct.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -198,15 +198,15 @@
     <Compile Include="Properties\Settings.cs" />
     <Compile Include="Ruler\Rebound\ReboundCircle.cs" />
     <Compile Include="Ruler\Rebound\ReboundWall.cs" />
-    <Compile Include="Ruler\RulerRender\InitializeForm.cs">
+    <Compile Include="Ruler\Render\InitializeForm.cs">
       <DependentUpon>RenderForm.cs</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Ruler\RulerRender\InitializeComponent.cs">
+    <Compile Include="Ruler\Render\InitializeComponent.cs">
       <DependentUpon>RenderForm.cs</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Ruler\RulerRender\RenderForm.cs">
+    <Compile Include="Ruler\Render\RenderForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Ruler\Sight\Aim.cs" />

@@ -5,6 +5,7 @@ using System;
 using SharpDX;
 using Ruler.Common;
 using SharpDX.Direct2D1;
+using SharpDX.Mathematics.Interop;
 
 namespace Ruler
 {
@@ -14,19 +15,19 @@ namespace Ruler
 
         internal Int32 Power;
 
-        internal Aim(Int32 power, Int32 angle, Point coord, Single radius, ref RenderTarget renderTarget)
+        internal Aim(Int32 power, Int32 angle, RawVector2 coord, Single radius, ref RenderTarget renderTarget)
             : base(coord, radius, ref renderTarget)
         {
             Angle = angle;
             Power = power;
         }
 
-        public override Boolean IsIntersect(Point point)
+        public override Boolean IsIntersect(RawVector2 point)
         {
             return false;
         }
 
-        public override Boolean IsIntersect(Point point, Double radiusModifier)
+        public override Boolean IsIntersect(RawVector2 point, Double radiusModifier)
         {
             return false;
         }
