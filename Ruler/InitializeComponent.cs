@@ -1,14 +1,12 @@
 // This is an independent project of an individual developer. Dear PVS-Studio, please check it.
 // PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
 
-using System;
 using System.Drawing;
 using System.Windows.Forms;
 using Ruler.Common;
 using Ruler.Common.Forms;
 using Ruler.Gui;
 using Ruler.Properties;
-using SharpDX.Windows;
 
 namespace Ruler
 {
@@ -31,10 +29,10 @@ namespace Ruler
                 Location = new Point(1500, 960),
                 Size = new Size(200, 30),
                 EndString = @"%",
-                DefaultValue = 100,
+                DefaultValue = EventsAndGlobalsController.Power,
                 MaxValue = 100,
             };
-            powerValueBox.Text = powerValueBox.MaxValue.ToString();
+            powerValueBox.Text = powerValueBox.DefaultValue.ToString();
             powerValueBox.TextChanged += (sender, e) => ValueBoxOnTextChanged(ref powerValueBox);
             powerValueBox.KeyDown += CheckAndIgnoreKeyboardPaste;
             
@@ -44,10 +42,10 @@ namespace Ruler
                 Location = new Point(1500, 920),
                 Size = new Size(95, 30),
                 EndString = @"°",
-                Text = @"90",
-                DefaultValue = 90,
+                DefaultValue = EventsAndGlobalsController.Angle,
                 MaxValue = 359,
             };
+            angleValueBox.Text = angleValueBox.DefaultValue.ToString();
             angleValueBox.TextChanged += (sender, e) => ValueBoxOnTextChanged(ref angleValueBox);
             angleValueBox.KeyDown += CheckAndIgnoreKeyboardPaste;
             
@@ -56,11 +54,11 @@ namespace Ruler
                 BackColor = Color.FromArgb(0, 0, 75),
                 Location = new Point(1605, 920),
                 Size = new Size(95, 30),
-                EndString = $@"{localization.Meters}",
-                Text = @"0",
-                DefaultValue = 0,
+                EndString = $@"{_localization.Meters}",
+                DefaultValue = EventsAndGlobalsController.Wind,
                 MaxValue = 100,
             };
+            windValueBox.Text = windValueBox.DefaultValue.ToString();
             windValueBox.TextChanged += (sender, e) => ValueBoxOnTextChanged(ref windValueBox);
             windValueBox.KeyDown += CheckAndIgnoreKeyboardPaste;
             #endregion
@@ -73,7 +71,7 @@ namespace Ruler
             TopMost = true;
             ControlBox = false;
             AutoScaleMode = AutoScaleMode.Font;
-            Text = !isDisguise ? localization.RulerVersion : localization.MaskName;
+            Text = !isDisguise ? _localization.RulerVersion : _localization.MaskName;
             BackColor = Color.Black;
             TransparencyKey = Color.Black;
             FormBorderStyle = FormBorderStyle.None;

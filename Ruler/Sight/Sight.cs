@@ -2,7 +2,6 @@
 // PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
 
 using System;
-using System.Windows.Forms;
 using Ruler.Common;
 using SharpDX;
 using SharpDX.Direct2D1;
@@ -12,17 +11,24 @@ namespace Ruler
     internal class Sight : Circle
     {
         private const Single CenterPointRadius = 4;
+        private static Aim _aim;
         private readonly SolidColorBrush paintBrush;
         internal Sight(RawVector2 coord, Single radius, ref RenderTarget renderTarget)
             : base(coord, radius, ref renderTarget)
         {
             paintBrush = new SolidColorBrush(renderTarget, Color.Gray);
-            EventController.ChangeSightPosition += (sender, args) => SetPosition();
+            _aim = new Aim(EventsAndGlobalsController.Power, EventsAndGlobalsController.Angle, coord, radius, ref renderTarget);
+            EventsAndGlobalsController.ChangedSightPosition += SetPosition;
         }
 
         private void SetPosition()
         {
             Coord = Utils.GetCursorPosition(ref RenderTarget);
+        }        
+        
+        private void SetPosition(RawVector2 newCoord)
+        {
+            Coord = newCoord;
         }
         
         public override void Draw(ref RenderTarget renderTarget)
@@ -55,6 +61,7 @@ namespace Ruler
                 Single range = Radius * circleRange / 100f;
                 renderTarget.DrawEllipse(new Ellipse(new RawVector2(Coord.X, Coord.Y), range, range), paintBrush);
             }
+            _aim.Draw();
         }
     }
 }

@@ -14,15 +14,15 @@ namespace Ruler
     internal sealed partial class MainForm : Form
     {
         private readonly Licence licence;
-        internal static RulerLocalization localization = new RulerLocalization(Common_Localization.GetCurrentCulture());
+        private static RulerLocalization _localization = new RulerLocalization(Common_Localization.GetCurrentCulture());
         private readonly Boolean isDisguise;
         private System.Drawing.Rectangle resolution; 
         
         internal MainForm(Licence licence, Monitor monitor, String languageCode = null, Boolean isDisguise = false)
         {
             this.licence = licence;
-            Globals.Monitor = monitor;
-            localization = new RulerLocalization(languageCode);
+            EventsAndGlobalsController.CurrentMonitor = monitor;
+            _localization = new RulerLocalization(languageCode);
             this.isDisguise = isDisguise;
             resolution = monitor.Resolution;
             InitializeComponent();
@@ -30,7 +30,7 @@ namespace Ruler
         
         internal static String GetLocalCultureCode()
         {
-            return localization.GetLocalCultureCode();
+            return _localization.GetLocalCultureCode();
         }
         private static void CheckAndIgnoreKeyboardPaste(Object sender, KeyEventArgs e)
         {

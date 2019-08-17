@@ -112,8 +112,7 @@ namespace Ruler.Weapons.Common
         
         private static Dictionary<String, Weapon> GetWeapons()
         {
-            Dictionary<String, Weapon> dict;
-            dict = new Dictionary<String, Weapon>();
+            Dictionary<String, Weapon> dict = new Dictionary<String, Weapon>();
             WeaponList.ForEach(weapon => dict.Add(weapon.Name, weapon));
             return dict;
         }

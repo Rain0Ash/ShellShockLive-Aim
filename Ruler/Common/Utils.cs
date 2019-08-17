@@ -1,9 +1,5 @@
 using System;
-using System.Drawing;
-using System.Runtime.InteropServices;
 using System.Windows.Forms;
-using Common;
-using SharpDX;
 using SharpDX.Direct2D1;
 using SharpDX.Mathematics.Interop;
 
@@ -27,12 +23,23 @@ namespace Ruler.Common
             return new RawVector2(cursorPosition.X, cursorPosition.Y);
         }        
         
-        public static RawVector2 GetCursorPosition(ref RenderTarget renderTarget)
+        public static RawVector2 GetCursorPosition(RawVector2 renderTargetSize)
         {
             System.Drawing.Point cursorPosition = Cursor.Position;
-            return new RawVector2(cursorPosition.X * renderTarget.Size.Width / Globals.Monitor.Resolution.Width, 
-                cursorPosition.Y * renderTarget.Size.Height / Globals.Monitor.Resolution.Height);
-        }
+            return new RawVector2(cursorPosition.X * renderTargetSize.X / EventsAndGlobalsController.CurrentMonitor.Resolution.Width, 
+                cursorPosition.Y * renderTargetSize.Y / EventsAndGlobalsController.CurrentMonitor.Resolution.Height);
+        }        
         
+        public static RawVector2 GetCursorPosition(ref RenderTarget renderTarget)
+        {
+            return GetCursorPosition(new RawVector2(renderTarget.Size.Width, renderTarget.Size.Height));
+        }
+
+        public static Double LimitToRange(Double value, Double inclusiveMinimum, Double inclusiveMaximum, Boolean reverse = false)
+        {
+            if (value < inclusiveMinimum) { return reverse ? inclusiveMaximum : inclusiveMinimum; }
+            if (value > inclusiveMaximum) { return reverse ? inclusiveMinimum : inclusiveMaximum; }
+            return value;
+        }
     }
 }

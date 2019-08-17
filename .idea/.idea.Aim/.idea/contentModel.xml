@@ -301,17 +301,14 @@
         </e>
         <e p="Common" t="Include">
           <e p="Circle.cs" t="Include" />
-          <e p="Globals.cs" t="Include" />
           <e p="IElement.cs" t="Include" />
-          <e p="Keyboard" t="Include">
-            <e p="KeyboardHook.cs" t="Include" />
-          </e>
           <e p="Parameters.cs" t="Include" />
           <e p="Surface.cs" t="Include" />
           <e p="Utils.cs" t="Include" />
         </e>
         <e p="Controllers" t="Include">
-          <e p="EventController.cs" t="Include" />
+          <e p="EventsController.cs" t="Include" />
+          <e p="GlobalsController.cs" t="Include" />
           <e p="KeyboardController.cs" t="Include" />
         </e>
         <e p="Gui" t="Include">

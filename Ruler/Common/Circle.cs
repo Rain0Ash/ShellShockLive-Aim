@@ -28,7 +28,7 @@ namespace Ruler.Common
         public virtual Boolean IsIntersect(RawVector2 point, Double radiusModifier)
         {
             return Radius > 0.1 && 
-                   (Math.Sqrt(Math.Pow(Coord.X - point.X, 2) + Math.Pow(Coord.Y - point.Y, 2)) < Radius * radiusModifier);
+                   Math.Sqrt(Math.Pow(Coord.X - point.X, 2) + Math.Pow(Coord.Y - point.Y, 2)) < Radius * radiusModifier;
         }
         
         public override void Draw(ref RenderTarget renderTarget)

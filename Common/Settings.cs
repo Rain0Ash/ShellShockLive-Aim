@@ -7,6 +7,6 @@ namespace Common
 {
     public static class Settings
     {
-        public const String Version = "NA 0.4 Alpha";
+        public const String Version = "NA 0.5 Alpha";
     }
 }

@@ -3,9 +3,12 @@
 
 using System;
 using System.Drawing;
+using System.Drawing.Drawing2D;
+using System.Runtime.CompilerServices;
 using System.Windows.Forms;
-using Common;
+using Ruler.Common;
 using Ruler.Weapons;
+using SharpDX.Direct2D1;
 
 namespace Ruler.Gui
 {
@@ -22,23 +25,13 @@ namespace Ruler.Gui
             foreach (Weapon weapon in Weapons.Common.Weapons.WeaponList)
             {
                 // ReSharper disable once HeapView.ClosureAllocation
-                WeaponButton button = new WeaponButton(weapon)
+                WeaponButton button = new WeaponButton()
                 {
-                    Size = new Size(90, 35),
+                    Weapon = weapon,
+                    Size = new Size(WeaponsPanel.ButtonWidth, WeaponsPanel.ButtonHeight),
                 };
-                button.Location = new Point(50 + (button.Size.Width + 30) * weapon.LevelInGroup, (button.Size.Height + 5) * (weapon.GroupID + 1));
-
-                Button imageButton = new Button()
-                {
-                    BackColor = button.BackColor,
-                    Size = new Size(button.Height, button.Height),
-                    Location = new Point(button.Location.X - 25, button.Location.Y),
-                    FlatAppearance = {BorderSize = 0, BorderColor = button.BackColor},
-                    FlatStyle = FlatStyle.Flat,
-                    TabStop = false,
-                    Image = weapon.Image != null ? new Bitmap(weapon.Image, new Size(button.Height, button.Height)) : null
-                };
-                imageButton.Click += (sender, args) => button.PerformClick();
+                button.Location = new Point(WeaponsPanel.LevelLabelWidth + (button.Size.Width + WeaponsPanel.DistanceBetweenButtons) * weapon.LevelInGroup,
+                    (button.Size.Height + WeaponsPanel.DistanceBetweenButtons) * (weapon.GroupID + 1));
 
                 #region Label with weapon level
                 if (weapon.LevelInGroup == 0)
@@ -48,7 +41,7 @@ namespace Ruler.Gui
                         Name = weapon.GroupID.ToString(),
                         Font = new Font(Font.Name, Font.Size, FontStyle.Bold | FontStyle.Italic),
                         TextAlign = ContentAlignment.MiddleCenter,
-                        Size = new Size(25, button.Size.Height),
+                        Size = new Size(WeaponsPanel.LevelLabelWidth, button.Size.Height),
                         Location = new Point(0,
                             button.Location.Y),
                         Parent = Parent
@@ -80,7 +73,6 @@ namespace Ruler.Gui
                     Controls.Add(levelLabel);
                 }
                 #endregion
-                Controls.Add(imageButton);
                 Controls.Add(button);
             }
         }

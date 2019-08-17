@@ -2,55 +2,42 @@
 // PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
 
 using System;
+using System.Collections.Generic;
+using System.Windows.Forms;
+using Indieteur.GlobalHooks;
 
 namespace Ruler.Common
 {
     internal class KeyboardController : IDisposable
     {
-        private GlobalKeyboardHook globalKeyboardHook;
-        private static Int64 lastKeyInput = new DateTimeOffset(DateTime.UtcNow).ToUnixTimeMilliseconds();
-        
+        private static Int64 _lastKeyInput = new DateTimeOffset(DateTime.UtcNow).ToUnixTimeMilliseconds();
+        private GlobalKeyHook globalKeyHook;
         public void SetupKeyboardHooks()
         {
-            globalKeyboardHook = new GlobalKeyboardHook();
-            globalKeyboardHook.KeyboardPressed += OnKeyPressed;
+            if (globalKeyHook != null)
+            {
+                return;
+            }
+
+            globalKeyHook = new GlobalKeyHook();
+            globalKeyHook.OnKeyDown += OnKeyPressed;
+            globalKeyHook.OnKeyPressed += OnKeyPressed;
         }
 
-        private void OnKeyPressed(Object sender, GlobalKeyboardHookEventArgs e)
+        private void OnKeyPressed(Object sender, GlobalKeyEventArgs e)
         {
-            //Debug.WriteLine(e.KeyboardData.VirtualCode);
             Int64 now = new DateTimeOffset(DateTime.UtcNow).ToUnixTimeMilliseconds();
-            if (now - lastKeyInput < 50)
+            if (now - _lastKeyInput < 25)
             {
                 return;
             }
-            lastKeyInput = now;
-            EventController.RecognizeInputAndThrowEvent(sender, e);
-
-
-
-            /*if (e.KeyboardData.VirtualCode != GlobalKeyboardHook.VkSnapshot)
-                return;
-            
-             seems, not needed in the life.
-            if (e.KeyboardState == GlobalKeyboardHook.KeyboardState.SysKeyDown &&
-                e.KeyboardData.Flags == GlobalKeyboardHook.LlkhfAltdown)
-            {
-                MessageBox.Show("Alt + Print Screen");
-                e.Handled = true;
-            }
-            //else
-
-            if (e.KeyboardState == GlobalKeyboardHook.KeyboardState.KeyDown)
-            {
-                MessageBox.Show("Print Screen");
-                e.Handled = true;
-            }*/
+            _lastKeyInput = now;
+            EventsAndGlobalsController.RecognizeInputAndThrowEvent(sender, e);
         }
 
         public void Dispose()
         {
-            globalKeyboardHook?.Dispose();
+            globalKeyHook?.Dispose();
         }
     }
 }

@@ -6,7 +6,6 @@ using System.IO;
 using System.Security;
 using Common;
 using Microsoft.Win32;
-using SharpDX;
 
 namespace Ruler.Starter.Registry
 {

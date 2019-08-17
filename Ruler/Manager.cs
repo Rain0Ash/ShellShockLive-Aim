@@ -9,7 +9,6 @@ using SharpDX.Direct2D1;
 using SharpDX.DXGI;
 using SharpDX.Mathematics.Interop;
 using SharpDX.Windows;
-using Monitor = Common.Monitor;
 
 namespace Ruler
 {
@@ -20,8 +19,7 @@ namespace Ruler
         private RenderTarget drawer;
         private SwapChain swapChain;
         private RenderLoop looper;
-        private Parameters parameters;
-        
+
         private Sight sight;
 
         internal Manager(ref RulerRender form, ref RenderTarget drawer, ref SwapChain swapChain)
@@ -29,7 +27,8 @@ namespace Ruler
             Form = form;
             this.drawer = drawer;
             this.swapChain = swapChain;
-            parameters = Parameter.GetParameters($"{Form.Bounds.Width}x{Form.Bounds.Height}");
+            EventsAndGlobalsController.RenderTargetSize = new RawVector2(drawer.Size.Width, drawer.Size.Height);
+            EventsAndGlobalsController.Parameters = Parameter.GetParameters($"{Form.Bounds.Width}x{Form.Bounds.Height}");
             
             InitializeComponent();
         }
@@ -44,7 +43,7 @@ namespace Ruler
             Form.Show();
             Form.MainForm.Show();
             Form.MainForm.BringToFront();
-            EventController.NeedRedraw += (sender, args) => ForceNextFrame();
+            EventsAndGlobalsController.NeedRedraw += () => ForceNextFrame();
             
             looper = new RenderLoop(Form);
             Boolean firstRender = false;
@@ -93,7 +92,7 @@ namespace Ruler
 
         private void InitializeComponent()
         {
-            sight = new Sight(new RawVector2(Form.Bounds.Width / 2f, Form.Bounds.Height / 2f), parameters.Length, ref drawer);
+            sight = new Sight(new RawVector2(Form.Bounds.Width / 2f, Form.Bounds.Height / 2f), EventsAndGlobalsController.Parameters.Length, ref drawer);
         }
     }
 }

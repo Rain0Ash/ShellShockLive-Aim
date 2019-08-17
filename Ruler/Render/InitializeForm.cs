@@ -5,7 +5,7 @@ using SharpDX.Direct2D1;
 using SharpDX.Direct3D;
 using SharpDX.Direct3D11;
 using SharpDX.DXGI;
-using SharpDX.Windows;
+
 namespace Ruler
 {
     internal sealed partial class RulerRender

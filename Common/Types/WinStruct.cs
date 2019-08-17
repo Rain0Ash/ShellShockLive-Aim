@@ -4,7 +4,6 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
-using SharpDX;
 
 // ReSharper disable InconsistentNaming
 // ReSharper disable UnusedMember.Local

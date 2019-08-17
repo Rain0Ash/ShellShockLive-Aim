@@ -1,6 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <!--Project was exported from assembly: C:\Users\Rain0Ash\Desktop\Arcer_1366.exe-->
   <Import Project="packages\Costura.Fody.4.0.0\build\Costura.Fody.props" Condition="Exists('packages\Costura.Fody.4.0.0\build\Costura.Fody.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -89,6 +88,10 @@
       <HintPath>packages\Costura.Fody.4.0.0\lib\net40\Costura.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Indieteur.GlobalHooks, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>packages\Indieteur.GlobalHooks.1.0.0\lib\Indieteur.GlobalHooks.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="SharpDX, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
@@ -160,14 +163,13 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Ruler\BlackHole\BlackHole.cs" />
-    <Compile Include="Ruler\Common\Globals.cs" />
     <Compile Include="Ruler\Common\IElement.cs" />
     <Compile Include="Ruler\Common\Circle.cs" />
-    <Compile Include="Ruler\Common\Keyboard\KeyboardHook.cs" />
     <Compile Include="Ruler\Common\Parameters.cs" />
     <Compile Include="Ruler\Common\Surface.cs" />
     <Compile Include="Ruler\Common\Utils.cs" />
-    <Compile Include="Ruler\Controllers\EventController.cs" />
+    <Compile Include="Ruler\Controllers\EventsController.cs" />
+    <Compile Include="Ruler\Controllers\GlobalsController.cs" />
     <Compile Include="Ruler\Controllers\KeyboardController.cs" />
     <Compile Include="Ruler\Gui\Forms\ValueBox.cs">
       <SubType>Component</SubType>

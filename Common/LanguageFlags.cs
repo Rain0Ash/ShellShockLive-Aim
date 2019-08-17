@@ -275,9 +275,21 @@ namespace Common
             {"ZW", "Zimbabwe"}
         };
 
-        public static IEnumerable<String> AllCountryIds => EnglishNameByIso2.Keys;
+        public static IEnumerable<String> AllCountryIds
+        {
+            get
+            {
+                return EnglishNameByIso2.Keys;
+            }
+        }
 
-        public static IEnumerable<CountryData> AllCountries => EnglishNameByIso2.Select(pair => new CountryData(pair.Key, pair.Value));
+        public static IEnumerable<CountryData> AllCountries
+        {
+            get
+            {
+                return EnglishNameByIso2.Select(pair => new CountryData(pair.Key, pair.Value));
+            }
+        }
 
         public static Boolean TryGetName(String iso2, out String name) => EnglishNameByIso2.TryGetValue(iso2, out name);
 

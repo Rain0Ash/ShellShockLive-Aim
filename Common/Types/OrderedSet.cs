@@ -36,7 +36,7 @@ namespace System.Collections.Generic
             get { return mDictionary.Count; }
         }
 
-        public virtual Boolean IsReadOnly
+        public Boolean IsReadOnly
         {
             get { return mDictionary.IsReadOnly; }
         }
