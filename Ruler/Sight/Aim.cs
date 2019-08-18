@@ -9,7 +9,7 @@ using SharpDX.Mathematics.Interop;
 
 namespace Ruler
 {
-    internal class Aim : Circle
+    internal class Aim : Circle, IDisposable
     {
         internal Int32 Power;
         internal Int32 Angle;
@@ -45,6 +45,11 @@ namespace Ruler
             renderTarget.DrawLine(Coord, 
                 new RawVector2(Coord.X + Radius * (Single)Math.Cos(Math.PI * Angle / 180f) * Power / 100f, 
                 Coord.Y - Radius * (Single)Math.Sin(Math.PI * Angle / 180f) * Power / 100f), paintBrush);
+        }
+
+        void IDisposable.Dispose()
+        {
+            paintBrush.Dispose();
         }
     }
 }

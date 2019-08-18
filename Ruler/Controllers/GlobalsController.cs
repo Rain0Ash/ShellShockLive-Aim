@@ -17,7 +17,7 @@ namespace Ruler.Common
         #region Delegates
 
         internal delegate void EmptyHandler();
-        internal delegate void SwitchedState(String name);
+        internal delegate void SwitchedState(Int32 id);
         internal delegate void ChangedPositionHandler(RawVector2 newCoord);
         internal delegate void ChangedParameterHandler(Int32 parameter);
         internal delegate void ChangedWeaponHandler(Weapon weapon);

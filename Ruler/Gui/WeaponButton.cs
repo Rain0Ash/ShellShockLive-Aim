@@ -29,6 +29,11 @@ namespace Ruler.Gui
             }
         }
         protected Brush Brush = Brushes.Azure;
+
+        protected Int32 ID;
+
+        private Boolean isActive;
+
         public WeaponButton()
         {
             Font = new Font(Font.Name, Font.Size, FontStyle.Bold | FontStyle.Italic);
@@ -43,24 +48,29 @@ namespace Ruler.Gui
             CurrentWeaponButton.ResetWeaponButtons += ActivateAndDeactivate;
         }
 
-        private void InitializeButton()
+        protected virtual void InitializeButton()
         {
-            Name = Weapon.Name;
+            ID = weapon.Name.GetHashCode();
             BackColor = Weapon.Color;
             FlatAppearance.BorderColor = BackColor;
         }
 
-        protected virtual void ActivateAndDeactivate(String name)
+        protected virtual void ActivateAndDeactivate(Int32 id)
         {
-            if (Name == name)
+            if (ID == id)
             {
                 Brush = Brushes.Blue;
                 BackColor = Color.LightSteelBlue;
                 FlatAppearance.BorderColor = Color.Red;
                 FlatAppearance.BorderSize = 1;
+                isActive = true;
             }
             else
             {
+                if (!isActive)
+                {
+                    return;
+                }
                 Brush = Brushes.Azure;
                 BackColor = weapon.Color;
                 FlatAppearance.BorderColor = BackColor;
@@ -70,7 +80,7 @@ namespace Ruler.Gui
         protected override void OnClick(EventArgs e)
         {
             EventsAndGlobalsController.Weapon = Weapon;
-            ClickedButtonAlert?.Invoke(Name);
+            ClickedButtonAlert?.Invoke(ID);
         }
         protected override void OnPaint(PaintEventArgs e)
         {

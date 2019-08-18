@@ -3,6 +3,7 @@
 
 using System;
 using Common;
+// ReSharper disable InconsistentNaming
 
 namespace Ruler.Weapons.Common
 {

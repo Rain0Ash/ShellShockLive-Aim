@@ -87,7 +87,7 @@ namespace Ruler.Common.Forms
                 return;
             }
 
-            if (!Char.IsControl(e.KeyChar) && e.KeyChar != '-' && Text.Replace("-", "").Length >= 3)
+            if (!Char.IsControl(e.KeyChar) && e.KeyChar != '-' && Text.Replace("-", "").Length >= 3 && SelectionLength == 0)
             {
                 e.Handled = true;
                 return;

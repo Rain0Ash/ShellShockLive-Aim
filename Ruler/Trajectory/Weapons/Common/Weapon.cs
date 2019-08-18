@@ -7,24 +7,20 @@ using Ruler.Properties;
 
 namespace Ruler.Weapons
 {
-    public struct Weapon
+    internal struct Weapon
     {
-        public readonly String Name;
-        public readonly Byte AvailabilityLevel;
-        public readonly Byte GroupID;
-        public readonly Byte LevelInGroup;
-        public readonly Color Color;
-        public readonly Image Image;
-        private readonly Func<Point, Point[]> guid;
-        public Weapon(String name, Byte availabilityLevel, Byte groupID, Byte levelInGroup, Func<Point, Point[]> guidance = null, Color? color = null, Image image = null)
+        internal readonly String Name;
+        internal readonly Byte AvailabilityLevel;
+        internal readonly Color Color;
+        internal readonly Image Image;
+        internal readonly GuidanceType guidance;
+        internal Weapon(String name, Byte availabilityLevel, GuidanceType guidanceType = GuidanceType.Parabola, Color? color = null, Image image = null)
         {
             Name = name;
             AvailabilityLevel = availabilityLevel;
-            GroupID = groupID;
-            LevelInGroup = levelInGroup;
             Color = color ?? Color.DarkGray;
             Image = image ?? Resources._null;
-            guid = guidance;
+            guidance = guidanceType;
         }
 
         public override String ToString()
@@ -32,9 +28,10 @@ namespace Ruler.Weapons
             return Name;
         }
 
-        public Point[] GetTrajectory(Point coord)
+        internal Point[] GetTrajectory(Point coord)
         {
-            return guid?.Invoke(coord) ?? Guidance.Parabola(coord);
+            //TODO:
+            return Guidance.Parabola(coord);
         }
     }
 }

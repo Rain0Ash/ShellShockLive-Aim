@@ -63,5 +63,9 @@ namespace Ruler
             }
             _aim.Draw();
         }
+        void Dispose()
+        {
+            paintBrush.Dispose();
+        }
     }
 }

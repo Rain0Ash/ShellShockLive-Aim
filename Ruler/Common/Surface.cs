@@ -6,7 +6,7 @@ using SharpDX.Direct2D1;
 
 namespace Ruler.Common
 {
-    public class Surface : IElement
+    public class Surface : IElement, IDisposable
     {
         protected static Parameters Settings = Parameter.GetParameters();
         protected RenderTarget RenderTarget;
@@ -26,6 +26,10 @@ namespace Ruler.Common
         }
         
         public virtual void Draw(ref RenderTarget renderTarget)
+        {
+        }
+
+        void IDisposable.Dispose()
         {
         }
     }

@@ -25,7 +25,7 @@ namespace Ruler.Gui
         {
             currentWeaponButton = new CurrentWeaponButton
             {
-                Weapon = Weapons.Common.Weapons.WeaponList[0],
+                Weapon = Weapons.Common.Weapons.WeaponsArray[0,0],
                 Size = new Size(ButtonWidth, ButtonHeight),
                 Location = new Point(LevelLabelWidth, 0),
             };
@@ -76,16 +76,23 @@ namespace Ruler.Gui
         internal static event EventsAndGlobalsController.SwitchedState ResetWeaponButtons;
         internal CurrentWeaponButton()
         {
+            ID = Weapons.Common.Weapons.WeaponsArray[0, 0].Name.GetHashCode();
             Brush = Brushes.Cyan;
             EventsAndGlobalsController.ChangedWeapon += weapon => Weapon = weapon;
         }
 
-        protected override void ActivateAndDeactivate(String name){}
+        protected override void ActivateAndDeactivate(Int32 id){}
+
+        protected override void InitializeButton()
+        {
+            BackColor = Weapon.Color;
+            FlatAppearance.BorderColor = BackColor;
+        }
 
         protected override void OnClick(EventArgs e)
         {
-            EventsAndGlobalsController.Weapon = Weapons.Common.Weapons.WeaponList[0];
-            ResetWeaponButtons?.Invoke(Name);
+            EventsAndGlobalsController.Weapon = Weapons.Common.Weapons.WeaponsArray[0,0];
+            ResetWeaponButtons?.Invoke(ID);
         }
     }
 }
