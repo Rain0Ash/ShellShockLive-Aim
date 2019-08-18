@@ -14,7 +14,6 @@ namespace Ruler.Gui
 {
     public sealed class WeaponsContainer : Label
     {
-        private static event EventsAndGlobalsController.SwitchedState UsePage;
         public WeaponsContainer()
         {
             InitializeWeaponsButton();
@@ -23,7 +22,7 @@ namespace Ruler.Gui
 
         private void InitializeWeaponsButton()
         {
-            for (Byte groupID = 0; groupID < Weapons.Common.Weapons.WeaponsArray.GetLength(0); groupID++)
+            for (Byte groupID = 0; groupID < Weapons.Common.Weapons.WeaponsArrayLength; groupID++)
             {
                 for (Byte levelInGroup = 0;
                     levelInGroup < Weapons.Common.Weapons.WeaponsArray.GetLength(1);

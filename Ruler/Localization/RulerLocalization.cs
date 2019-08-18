@@ -23,6 +23,7 @@ namespace Ruler
         internal String Wind;
         internal String WindValue;
         internal String Meters;
+        internal String Search;
 
         internal RulerLocalization UpdateLocalization(String cultureInfo = null)
         {
@@ -87,6 +88,10 @@ namespace Ruler
             Meters = LocalizedString(new CultureStrings(
                 "m",
                 "м"));
+            
+            Search = LocalizedString(new CultureStrings(
+                "Search",
+                "Поиск"));
 
             return this;
         }

@@ -179,15 +179,6 @@ namespace Ruler.Starter
                     Close();
                     Application.Exit();
                 }
-                catch (Exception ex)
-                {
-                    throw new Exception(
-                        $"{localization.OccurredError}\n" +
-                        $"{ex.Source}\n" +
-                        $"{ex.Message}\n" +
-                        $"{ex.HResult}\n" +
-                        $"{ex.StackTrace}");
-                }
         }
     }
 }

@@ -2,6 +2,7 @@
 // PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Windows.Input;
 using Indieteur.GlobalHooks;
 
@@ -13,8 +14,12 @@ namespace Ruler.Common
 
         private const VirtualKeycodes ChangeWeaponMenuState = VirtualKeycodes.OEM_3;
         private const VirtualKeycodes ChangeSightPosition = VirtualKeycodes.E;
+        private const VirtualKeycodes IncreaseAngleOrWind = VirtualKeycodes.LeftArrow;
+        private const VirtualKeycodes DecreaseAngleOrWind = VirtualKeycodes.RightArrow;
+        private const VirtualKeycodes IncreasePower = VirtualKeycodes.UpArrow;
+        private const VirtualKeycodes DecreasePower = VirtualKeycodes.DownArrow;
 
-            internal static void RecognizeInputAndThrowEvent(Object sender, GlobalKeyEventArgs e)
+        internal static void RecognizeInputAndThrowEvent(Object sender, GlobalKeyEventArgs e)
         {
             Boolean isNeedRedraw = false;
             if (e.Control == ModifierKeySide.None)
@@ -23,24 +28,64 @@ namespace Ruler.Common
             }
 
             e.Handled = true;
+            isNeedRedraw = true;
+            // ReSharper disable once SwitchStatementMissingSomeCases
             switch (e.KeyCode)
             {
                 case ChangeWeaponMenuState:
                     ChangedWeaponMenuState?.Invoke(sender, e);
+                    isNeedRedraw = false;
                     break;
                 case ChangeSightPosition:
-                {
                     if (!CheckLastRedrawTime(50))
                     {
                         return;
                     }
                     ChangedSightPosition?.Invoke(Utils.GetCursorPosition(RenderTargetSize));
-                    isNeedRedraw = true;
                     break;
-                }
-                
+                case IncreaseAngleOrWind:
+                    if (e.Alt == ModifierKeySide.None)
+                    {
+                        Angle += e.Shift != ModifierKeySide.None ? 10 : 1;
+                    }
+                    else
+                    {
+                        Wind -= e.Shift != ModifierKeySide.None ? 10 : 1;
+                    }
+                    break;                
+                case DecreaseAngleOrWind:
+                    if (e.Alt == ModifierKeySide.None)
+                    {
+                        Angle -= e.Shift != ModifierKeySide.None ? 10 : 1;
+                    }
+                    else
+                    {
+                        Wind += e.Shift != ModifierKeySide.None ? 10 : 1;
+                    }
+                    break;                
+                case IncreasePower:
+                    if (e.Shift != ModifierKeySide.None)
+                    {
+                        Power += 10;
+                    }
+                    else
+                    {
+                        Power += 1;
+                    }
+                    break;                
+                case DecreasePower:
+                    if (e.Shift != ModifierKeySide.None)
+                    {
+                        Power -= 10;
+                    }
+                    else
+                    {
+                        Power -= 1;
+                    }
+                    break;
                 default:
                     e.Handled = false;
+                    isNeedRedraw = false;
                     break;
             }
             

@@ -312,9 +312,12 @@
           <e p="KeyboardController.cs" t="Include" />
         </e>
         <e p="Gui" t="Include">
+          <e p="CurrentWeaponButton.cs" t="Include" />
           <e p="Forms" t="Include">
             <e p="ValueBox.cs" t="Include" />
           </e>
+          <e p="PageSwitcher.cs" t="Include" />
+          <e p="SearchTextBox.cs" t="Include" />
           <e p="WeaponButton.cs" t="Include" />
           <e p="WeaponsContainer.cs" t="Include" />
           <e p="WeaponsPanel.cs" t="Include" />
@@ -344,14 +347,10 @@
           <e p="Sight.cs" t="Include" />
         </e>
         <e p="Trajectory" t="Include">
+          <e p="Guidance.cs" t="Include" />
           <e p="Trajectory.cs" t="Include" />
           <e p="Weapons" t="Include">
-            <e p="Common" t="Include">
-              <e p="Guidance.cs" t="Include" />
-              <e p="Weapon.cs" t="Include" />
-              <e p="Weapons.cs" t="Include" />
-              <e p="WeaponsLocalization.cs" t="Include" />
-            </e>
+            <e p="Common" t="Include" />
             <e p="Images" t="Include">
               <e p="2012.png" t="Include" />
               <e p="2x3D.png" t="Include" />
@@ -793,6 +792,11 @@
               <e p="Zipper Quad.png" t="Include" />
               <e p="Zipper.png" t="Include" />
             </e>
+            <e p="Localization" t="Include">
+              <e p="WeaponsLocalization.cs" t="Include" />
+            </e>
+            <e p="Weapon.cs" t="Include" />
+            <e p="Weapons.cs" t="Include" />
             <e p="WeaponsImg.Designer.cs" t="Include" />
             <e p="WeaponsImg.resx" t="Include" />
           </e>

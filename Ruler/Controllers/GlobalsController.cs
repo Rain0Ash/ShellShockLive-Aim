@@ -7,6 +7,7 @@ using Common;
 using Ruler.Weapons;
 using SharpDX.Direct2D1;
 using SharpDX.Mathematics.Interop;
+#pragma warning disable 67
 
 namespace Ruler.Common
 {
@@ -49,6 +50,10 @@ namespace Ruler.Common
             }
             set
             {
+                if (_monitor.Equals(value))
+                {
+                    return;
+                }
                 _monitor = value;
             }
         }
@@ -63,6 +68,10 @@ namespace Ruler.Common
             }
             set
             {
+                if (_weapon.Equals(value))
+                {
+                    return;
+                }
                 _weapon = value;
                 ChangedWeapon?.Invoke(_weapon);
                 NeedRedraw?.Invoke();
@@ -78,6 +87,10 @@ namespace Ruler.Common
             }
             set
             {
+                if (value == _power)
+                {
+                    return;
+                }
                 _power = (Int32) Utils.LimitToRange(value, 0, 100);
                 ChangedPower?.Invoke(_power);
                 NeedRedraw?.Invoke();
@@ -93,7 +106,21 @@ namespace Ruler.Common
             }
             set
             {
-                _angle = value;
+                Int32 angle = value;
+                if (angle == _angle)
+                {
+                    return;
+                }
+
+                if (angle > 359)
+                {
+                    angle %= 360;
+                }
+                else if (angle < 0)
+                {
+                    angle = 360 - Math.Abs(angle % 360);
+                }
+                _angle = angle;
                 ChangedAngle?.Invoke(_angle);
                 NeedRedraw?.Invoke();
             }
@@ -108,6 +135,10 @@ namespace Ruler.Common
             }
             set
             {
+                if (value == _wind)
+                {
+                    return;
+                }
                 _wind = (Int32) Utils.LimitToRange(value, -100, 100);
                 ChangedWind?.Invoke(_wind);
                 NeedRedraw?.Invoke();

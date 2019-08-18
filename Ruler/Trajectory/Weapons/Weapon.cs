@@ -13,14 +13,14 @@ namespace Ruler.Weapons
         internal readonly Byte AvailabilityLevel;
         internal readonly Color Color;
         internal readonly Image Image;
-        internal readonly GuidanceType guidance;
+        internal readonly GuidanceType Guidance;
         internal Weapon(String name, Byte availabilityLevel, GuidanceType guidanceType = GuidanceType.Parabola, Color? color = null, Image image = null)
         {
             Name = name;
             AvailabilityLevel = availabilityLevel;
             Color = color ?? Color.DarkGray;
             Image = image ?? Resources._null;
-            guidance = guidanceType;
+            Guidance = guidanceType;
         }
 
         public override String ToString()
@@ -31,7 +31,12 @@ namespace Ruler.Weapons
         internal Point[] GetTrajectory(Point coord)
         {
             //TODO:
-            return Guidance.Parabola(coord);
+            return Ruler.Guidance.Parabola(coord);
+        }
+
+        public override Boolean Equals(Object obj)
+        {
+            return obj is Weapon secondWeapon && Name == secondWeapon.Name && AvailabilityLevel == secondWeapon.AvailabilityLevel && Guidance == secondWeapon.Guidance;
         }
     }
 }

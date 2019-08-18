@@ -28,7 +28,7 @@ namespace Ruler.Common
         public virtual void Draw(ref RenderTarget renderTarget)
         {
         }
-
+        
         void IDisposable.Dispose()
         {
         }

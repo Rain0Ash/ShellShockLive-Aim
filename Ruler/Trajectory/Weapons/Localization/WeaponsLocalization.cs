@@ -29,16 +29,16 @@ namespace Ruler.Weapons.Common
                 "Массивный выстрел"));
             ThreeBall = LocalizedString(new CultureStrings(
                 "Three-Ball",
-                "Three-Ball"));
+                "3-выстрел"));
             FiveBall = LocalizedString(new CultureStrings(
                 "Five-Ball",
-                "Five-Ball"));
+                "5-выстрел"));
             ElevenBall = LocalizedString(new CultureStrings(
                 "Eleven-Ball",
-                "Eleven-Ball"));
+                "11-выстрел"));
             TwentyFiveBall = LocalizedString(new CultureStrings(
                 "TwentyFive-Ball",
-                "TwentyFive-Ball"));
+                "25-выстрел"));
             OneBounce = LocalizedString(new CultureStrings(
                 "One-Bounce",
                 "One-Bounce"));
@@ -62,16 +62,16 @@ namespace Ruler.Weapons.Common
                 "Excavation"));
             Grenade = LocalizedString(new CultureStrings(
                 "Grenade",
-                "Grenade"));
+                "Граната"));
             TriNade = LocalizedString(new CultureStrings(
                 "Tri-Nade",
-                "Tri-Nade"));
+                "3-граната"));
             MultiNade = LocalizedString(new CultureStrings(
                 "Multi-Nade",
-                "Multi-Nade"));
+                "Мульти-граната"));
             GrenadeStorm = LocalizedString(new CultureStrings(
                 "Grenade Storm",
-                "Grenade Storm"));
+                "Буря гранат"));
             Stream = LocalizedString(new CultureStrings(
                 "Stream",
                 "Stream"));

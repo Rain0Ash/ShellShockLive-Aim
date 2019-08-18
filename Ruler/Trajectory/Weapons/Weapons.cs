@@ -4,6 +4,7 @@
 using System;
 using System.Collections.Generic;
 using System.Drawing;
+using Ruler.Gui;
 using Common_Localization = Common.Localization;
 
 namespace Ruler.Weapons.Common
@@ -13,13 +14,13 @@ namespace Ruler.Weapons.Common
         private static readonly WeaponsLocalization Localization =
             new WeaponsLocalization(MainForm.GetLocalCultureCode());
 
-        internal static readonly Weapon[,] WeaponsArray =
+        internal static readonly Weapon[,] WeaponsArray = new Weapon[155, WeaponsPanel.MaxWeaponsInLine]
         {
-                        {
+            {
                 new Weapon(Localization.Shot, 1, GuidanceType.Parabola, Color.FromArgb(128, 128, 128), WeaponsImg.Shot),
                 new Weapon(Localization.BigShot, 1, GuidanceType.Parabola, Color.FromArgb(128, 128, 128), WeaponsImg.Big_Shot),
                 new Weapon(Localization.HeavyShot, 1, GuidanceType.Parabola, Color.FromArgb(128, 128, 128), WeaponsImg.Heavy_Shot),
-                new Weapon(Localization.MassiveShot, 1, GuidanceType.Parabola, Color.FromArgb(128, 128, 128), WeaponsImg.Massive_Shot)
+                new Weapon(Localization.MassiveShot, 1, GuidanceType.Parabola, Color.FromArgb(128, 128, 128), WeaponsImg.Massive_Shot),
             },
             {
                 new Weapon(Localization.ThreeBall, 1, GuidanceType.Parabola, Color.FromArgb(128, 128, 128), WeaponsImg.Three_Ball),
@@ -946,5 +947,7 @@ namespace Ruler.Weapons.Common
                 default
             }
         };
+        
+        internal static readonly Int32 WeaponsArrayLength = WeaponsArray.GetLength(0);
     }
 }

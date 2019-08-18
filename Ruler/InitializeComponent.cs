@@ -42,7 +42,11 @@ namespace Ruler
                 MaxValue = 359,
             };
             angleValueBox.Text = angleValueBox.DefaultValue.ToString();
-            //angleValueBox.TextChanged += (sender, e) => ValueBoxOnTextChanged(ref angleValueBox);
+            EventsAndGlobalsController.ChangedAngle += angle =>
+            {
+                angleValueBox.Text = angle.ToString();
+                angleValueBox.SelectionStart = angleValueBox.Text.Length;
+            };
 
             windValueBox = new ValueBox("Wind")
             {
@@ -55,7 +59,11 @@ namespace Ruler
                 MinValue = -100
             };
             windValueBox.Text = windValueBox.DefaultValue.ToString();
-            //windValueBox.TextChanged += (sender, e) => ValueBoxOnTextChanged(ref windValueBox);
+            EventsAndGlobalsController.ChangedWind += wind =>
+            {
+                windValueBox.Text = wind.ToString();
+                windValueBox.SelectionStart = windValueBox.Text.Length;
+            };
 
             powerValueBox = new ValueBox("Power")
             {
@@ -67,7 +75,11 @@ namespace Ruler
                 MaxValue = 100,
             };
             powerValueBox.Text = powerValueBox.DefaultValue.ToString();
-            //powerValueBox.TextChanged += (sender, e) => ValueBoxOnTextChanged(ref powerValueBox);
+            EventsAndGlobalsController.ChangedPower += power =>
+            {
+                powerValueBox.Text = power.ToString();
+                powerValueBox.SelectionStart = powerValueBox.Text.Length;
+            };
 
             #endregion
             
