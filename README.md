@@ -4,7 +4,7 @@ My **AIM** development for ShellShock Live. The project has a purely **education
 
 Until the end of development of the current architecture, use the ***legacy*** branch ruler.
 
-Now setting up for 1366x768 game resolution. Other screen resolutions will be available soon (given the speed of development).
+Now setting up for ***[1920x1080 screen resolution] x [1366x768 game resolution]***. Other screen/game resolutions maybe will available someday.
 
 ***Ctrl+[Shift]+E***     Set sight to mouse position
 
@@ -21,8 +21,6 @@ Now setting up for 1366x768 game resolution. Other screen resolutions will be av
 ***Ctrl+[Shift]+Z***    Reset all
 
 ***Ctrl+[Shift]+Q***    Close
-
-
 
 ***Conceptual functions will be soon (maybe), because i have problems with creating correct math formula. If you know how to do it, please create pull request.***
 

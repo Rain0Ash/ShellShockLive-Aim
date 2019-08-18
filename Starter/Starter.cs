@@ -2,9 +2,7 @@
 // PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
 
 using System;
-using System.Diagnostics;
 using System.Drawing;
-using System.Globalization;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -20,7 +18,6 @@ namespace Ruler.Starter
     {
         public Starter()
         {
-            Process starter = Process.GetCurrentProcess();
             InitializeComponent();
         }
         private void Starter_Load(Object sender, EventArgs e)
@@ -28,7 +25,7 @@ namespace Ruler.Starter
             CenterToScreen();
             LanguageImagedComboBox.DataSource = Localization.GetCultures()
                 .Select(culture => new DropDownItem(culture.CultureName) { Image = culture.CultureImage }).ToList();
-            
+
             ScreenImagedComboBox.DataSource = Monitors.GetMonitors()
                 .Select(screen => new DropDownItem($"{(screen.Name.Length > 0 ? screen.Name[screen.Name.Length-1] : 'U')} {screen.Resolution.Width.ToString()}x{screen.Resolution.Height.ToString()} [{screen.Frequency.ToString()}]"){Image = Resources.monitor}).ToList();
 
@@ -36,25 +33,25 @@ namespace Ruler.Starter
             LicenceKey.MaxLength = Licence.MaxKeyLength;
             LicenceID.Mask = $@"A{String.Concat(Enumerable.Repeat("a", Licence.MaxIDLength - 1))}";
             LicenceKey.Mask = $@"{String.Concat(Enumerable.Repeat($@"{String.Concat(Enumerable.Repeat("A", Licence.MaxKeyCharInCell))}-", Licence.MaxKeyCells))}".TrimEnd('-');
-            
+
             RegistrySettings registrySettings = Registry.Registry.GetRegistry();
             if (registrySettings.DontUseRegistry || !Licence.Sha256(Settings.Version).Equals(registrySettings.BuildDateTimeHash, StringComparison.OrdinalIgnoreCase))
                 registrySettings = Registry.Registry.GetRegistry(true);
 
             Int32 getLanguageIndex()
             {
+                String registryCultureCode = new Localization.Culture(registrySettings.LanguageCode).CultureName;
                 for (Int32 i = 0; i < LanguageImagedComboBox.Items.Count; i++)
                 {
                     if (String.Equals((LanguageImagedComboBox.Items[i] as DropDownItem)?.Value, 
-                        new Localization.Culture(registrySettings.LanguageCode).CultureName,
-                        StringComparison.CurrentCultureIgnoreCase))
+                        registryCultureCode, StringComparison.CurrentCultureIgnoreCase))
                     {
                         return i;
                     }
                 }
                 return 0;
             }
-            
+
             LicenceID.Text = registrySettings.ID;
             LicenceKey.Text = registrySettings.Key;
             LanguageImagedComboBox.SelectedIndex = getLanguageIndex();
@@ -62,6 +59,9 @@ namespace Ruler.Starter
             IsDisguiseRuler.Checked = registrySettings.IsDisguise;
             NotSaveSettingsCheckBox.Checked = registrySettings.DontUseRegistry;
             NotDisplayAnymoreCheckBox.Checked = registrySettings.DontShowAnymore;
+
+            if (NotDisplayAnymoreCheckBox.Checked) StartButton_Click(sender, e);
+            else Show();
 
             LicenceID.Focus();
 
@@ -116,7 +116,7 @@ namespace Ruler.Starter
                 StartButton.Text = message;
                 StartButton.Enabled = false;
                 LanguageImagedComboBox.Enabled = false;
-                await Task.Delay(1500);
+                await Task.Delay(1500).ConfigureAwait(true);
                 StartButton.BackColor = DefaultBackColor;
                 StartButton.ForeColor = DefaultForeColor;
                 StartButton.Font = new Font(StartButton.Font, FontStyle.Regular);
@@ -129,7 +129,7 @@ namespace Ruler.Starter
             if (LicenceID.Text.Length == 0)
             {
                 LicenceID.Focus();
-                await invalidMessage(localization.IDLabel);
+                await invalidMessage(localization.IDLabel).ConfigureAwait(true);
                 return;
             }
             if (!LicenceKey.MaskFull)
@@ -140,7 +140,7 @@ namespace Ruler.Starter
                 Int32 keyLength = key.Length - selStart;
                 LicenceKey.SelectionStart = selStart;
                 LicenceKey.SelectionLength = keyLength;
-                await invalidMessage(localization.KeyLabel);
+                await invalidMessage(localization.KeyLabel).ConfigureAwait(true);
                 return;
             }
 
@@ -149,13 +149,10 @@ namespace Ruler.Starter
             if (!licence.IsValid())
             {
                 LicenceID.Focus();
-                await invalidMessage(localization.InvalidKeyID);
+                await invalidMessage(localization.InvalidKeyID).ConfigureAwait(true);
                 return;
             }
-
-            try
-            {
-                String languageCode = CountryData.EnglishNameByIso2.FirstOrDefault(x => x.Value == LanguageImagedComboBox.Text).Key.ToLower();
+            String languageCode = CountryData.EnglishNameByIso2.FirstOrDefault(x => x.Value == LanguageImagedComboBox.Text).Key.ToLower();
                 
                 if (!NotSaveSettingsCheckBox.Checked)
                 {
@@ -167,19 +164,30 @@ namespace Ruler.Starter
                     Registry.Registry.RemoveRegistry();
                 }
 
-                Hide();
-                Form ruler = new Ruler(licence, Monitors.GetMonitors()[ScreenImagedComboBox.SelectedIndex],
-                    languageCode,
-                    IsDisguiseRuler.Checked);
-                ruler.Closed += (s, args) => Close();
-                ruler.Show();
-                Dispose();
-            }
-            catch (ObjectDisposedException)
-            {
-                Close();
-                Application.Exit();
-            }
+                try
+                {
+                    Hide();
+                    MainForm ruler = new MainForm(licence, Monitors.GetMonitors()[ScreenImagedComboBox.SelectedIndex],
+                        languageCode,
+                        IsDisguiseRuler.Checked);
+                    ruler.Closed += (s, args) => Close();
+                    ruler.Show();
+                    Dispose();
+                }
+                catch (ObjectDisposedException)
+                {
+                    Close();
+                    Application.Exit();
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception(
+                        $"{localization.OccurredError}\n" +
+                        $"{ex.Source}\n" +
+                        $"{ex.Message}\n" +
+                        $"{ex.HResult}\n" +
+                        $"{ex.StackTrace}");
+                }
         }
     }
 }

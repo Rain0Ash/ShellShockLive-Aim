@@ -112,5 +112,10 @@ namespace Common
 
             return cultures;
         }
+
+        internal String GetLocalCultureCode()
+        {
+            return LocalCulture;
+        }
     }
 }

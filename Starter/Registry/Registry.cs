@@ -1,8 +1,9 @@
+// This is an independent project of an individual developer. Dear PVS-Studio, please check it.
+// PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
+
 using System;
-using System.Globalization;
 using System.IO;
 using System.Security;
-using System.Security.Policy;
 using Common;
 using Microsoft.Win32;
 
@@ -34,6 +35,15 @@ namespace Ruler.Starter.Registry
     
     internal static class Registry
     {
+        private const String RegKeyID = @"ID";
+        private const String RegKeyKey = @"Key";
+        private const String RegKeyLanguageCode = @"LanguageCode";
+        private const String RegKeyMonitorID = @"MonitorID";
+        private const String RegKeyIsDisguise = @"IsDisguise";
+        private const String RegKeyUseRegistry = @"UseRegistry";
+        private const String RegKeyShow = @"Show";
+        private const String RegKeyBuildDateTimeHash = @"BuildDateTimeHash";
+
         private const String SubKey = @"Software\\Ruler";
         internal static RegistrySettings GetRegistry(Boolean isStandart = false)
         {
@@ -42,16 +52,17 @@ namespace Ruler.Starter.Registry
             try
             {
                 RegistryKey currentUserKey = Microsoft.Win32.Registry.CurrentUser.OpenSubKey(SubKey) ?? throw new NullReferenceException();
-                Int32.TryParse(GetRegistryValue(ref currentUserKey, "MonitorID"), out Int32 monitorID);
+                Int32.TryParse(GetRegistryValue(ref currentUserKey, RegKeyMonitorID), out Int32 monitorID);
                 RegistrySettings registrySettings = new RegistrySettings(
-                    GetRegistryValue(ref currentUserKey, "ID"),
-                    GetRegistryValue(ref currentUserKey, "Key"),
-                    GetRegistryValue(ref currentUserKey, "LanguageCode"), 
+                    GetRegistryValue(ref currentUserKey, RegKeyID),
+                    GetRegistryValue(ref currentUserKey, RegKeyKey),
+                    GetRegistryValue(ref currentUserKey, RegKeyLanguageCode), 
                     monitorID,
-                    ToBoolean(GetRegistryValue(ref currentUserKey, "IsDisguise")),
-                    !ToBoolean(GetRegistryValue(ref currentUserKey, "UseRegistry")),
-                    !ToBoolean(GetRegistryValue(ref currentUserKey, "Show")),
-                    GetRegistryValue(ref currentUserKey, "BuildDateTimeHash"));
+                    ToBoolean(GetRegistryValue(ref currentUserKey, RegKeyIsDisguise)),
+                    !ToBoolean(GetRegistryValue(ref currentUserKey, RegKeyUseRegistry)),
+                    !ToBoolean(GetRegistryValue(ref currentUserKey, RegKeyShow)),
+                    GetRegistryValue(ref currentUserKey, RegKeyBuildDateTimeHash));
+                
                 currentUserKey.Close();
                 return registrySettings;
             }
@@ -68,14 +79,15 @@ namespace Ruler.Starter.Registry
             try
             {
                 RegistryKey currentUserKey = Microsoft.Win32.Registry.CurrentUser.CreateSubKey(SubKey) ?? throw new NullReferenceException();
-                currentUserKey.SetValue("ID", registrySettings.ID ?? Licence.FreeID);
-                currentUserKey.SetValue("Key", registrySettings.Key ?? Licence.FreeKey);
-                currentUserKey.SetValue("LanguageCode", registrySettings.LanguageCode);
-                currentUserKey.SetValue("MonitorID", registrySettings.MonitorID.ToString());
-                currentUserKey.SetValue("IsDisguise", registrySettings.IsDisguise);
-                currentUserKey.SetValue("UseRegistry", !registrySettings.DontUseRegistry);
-                currentUserKey.SetValue("Show", !registrySettings.DontShowAnymore);
-                currentUserKey.SetValue("BuildDateTimeHash", registrySettings.BuildDateTimeHash);
+                currentUserKey.SetValue(RegKeyID, registrySettings.ID ?? Licence.FreeID);
+                currentUserKey.SetValue(RegKeyKey, registrySettings.Key ?? Licence.FreeKey);
+                currentUserKey.SetValue(RegKeyLanguageCode, registrySettings.LanguageCode);
+                currentUserKey.SetValue(RegKeyMonitorID, registrySettings.MonitorID.ToString());
+                currentUserKey.SetValue(RegKeyIsDisguise, registrySettings.IsDisguise);
+                currentUserKey.SetValue(RegKeyUseRegistry, !registrySettings.DontUseRegistry);
+                currentUserKey.SetValue(RegKeyShow, !registrySettings.DontShowAnymore);
+                currentUserKey.SetValue(RegKeyBuildDateTimeHash, registrySettings.BuildDateTimeHash);
+                
                 currentUserKey.Close();
                 return true;
             }
@@ -105,7 +117,7 @@ namespace Ruler.Starter.Registry
 
         private static String GetRegistryValue(ref RegistryKey registryKey, String key)
         {
-            return registryKey.GetValue(key).ToString();
+            return registryKey.GetValue(key)?.ToString();
         }
         
         private static Boolean ToBoolean(this String value)

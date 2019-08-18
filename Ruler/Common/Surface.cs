@@ -1,11 +1,14 @@
+// This is an independent project of an individual developer. Dear PVS-Studio, please check it.
+// PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
+
 using System;
 using SharpDX.Direct2D1;
 
 namespace Ruler.Common
 {
-    public class Surface : IElement
+    public class Surface : IElement, IDisposable
     {
-        protected static Parametrs Settings = Params.GetParametrs();
+        protected static Parameters Settings = Parameter.GetParameters();
         protected RenderTarget RenderTarget;
 
         protected Surface(ref RenderTarget renderTarget)
@@ -23,6 +26,10 @@ namespace Ruler.Common
         }
         
         public virtual void Draw(ref RenderTarget renderTarget)
+        {
+        }
+
+        void IDisposable.Dispose()
         {
         }
     }

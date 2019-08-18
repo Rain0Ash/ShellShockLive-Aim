@@ -1,4 +1,7 @@
-﻿namespace System.Collections.Generic
+﻿// This is an independent project of an individual developer. Dear PVS-Studio, please check it.
+// PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
+
+namespace System.Collections.Generic
 {
     public class OrderedSet<T> : ICollection<T>
     {
@@ -33,7 +36,7 @@
             get { return mDictionary.Count; }
         }
 
-        public virtual Boolean IsReadOnly
+        public Boolean IsReadOnly
         {
             get { return mDictionary.IsReadOnly; }
         }

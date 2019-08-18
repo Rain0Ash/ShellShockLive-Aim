@@ -2,27 +2,26 @@
 // PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
 
 using System;
-using System.Drawing;
-using System.Windows.Forms;
 using Ruler.Common;
 using SharpDX.Direct2D1;
+using SharpDX.Mathematics.Interop;
 
 namespace Ruler
 {
     internal class Trajectory : Surface
     {
-        internal Point Coord;
-        private Point[] points;
-        private static readonly SolidBrush PointPaintBrush = new SolidBrush(Color.Red);
-        internal Trajectory(Point coord, ref RenderTarget renderTarget)
+        internal RawVector2 Coord;
+        private RawVector2[] points = new RawVector2[0];
+        //private static readonly SolidBrush PointPaintBrush = new SolidBrush(Color.Red);
+        internal Trajectory(RawVector2 coord, ref RenderTarget renderTarget)
             : base(ref renderTarget)
         {
             Coord = coord;
         }
 
-        internal void Draw(ref RenderTarget renderTarget)
+        public override void Draw(ref RenderTarget renderTarget)
         {
-            foreach (Point point in points)
+            for (Int32 i = 0; i < points.Length; i++)
             {
                 //Graphics.FillEllipse(PointPaintBrush, point.X, point.Y, 2f, 2f);
             }

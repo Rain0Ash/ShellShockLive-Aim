@@ -8,23 +8,34 @@ namespace Ruler
 {
     internal class RulerLocalization : Localization
     {
-        public String Angle;
-        public String AngleValue;
-        public String BlackHole;
-        public String BlackHoleRadius;
-        public String Portal;
-        public String PortalRadius;
-        public String Power;
-        public String PowerValue;
-        public String Sight;
-        public String SightRadius;
-        public String Wind;
-        public String WindValue;
+        internal String RulerVersion;
+        internal String MaskName;
+        internal String Angle;
+        internal String AngleValue;
+        internal String BlackHole;
+        internal String BlackHoleRadius;
+        internal String Portal;
+        internal String PortalRadius;
+        internal String Power;
+        internal String PowerValue;
+        internal String Sight;
+        internal String SightRadius;
+        internal String Wind;
+        internal String WindValue;
+        internal String Meters;
 
-        public RulerLocalization UpdateLocalization(String cultureInfo = null)
+        internal RulerLocalization UpdateLocalization(String cultureInfo = null)
         {
             LocalCulture = cultureInfo ?? GetCurrentCulture();
 
+            RulerVersion = LocalizedString(new CultureStrings(
+                $"Ruler version {Settings.Version}",
+                $"Линейка версии {Settings.Version}"));
+
+            MaskName = LocalizedString(new CultureStrings(
+                "Notepad",
+                "Блокнот"));
+            
             Angle = LocalizedString(new CultureStrings(
                 "Angle",
                 "Угол"));
@@ -73,9 +84,13 @@ namespace Ruler
                 "Wind speed",
                 "Скорость ветра"));
 
+            Meters = LocalizedString(new CultureStrings(
+                "m",
+                "м"));
+
             return this;
         }
-        public RulerLocalization(String cultureInfo = null)
+        internal RulerLocalization(String cultureInfo = null)
         {
             UpdateLocalization(cultureInfo);
         }

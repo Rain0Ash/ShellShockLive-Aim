@@ -2,21 +2,20 @@
 // PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
 
 using System;
-using SharpDX;
-using System.Windows.Forms;
 using Ruler.Common;
 using SharpDX.Direct2D1;
+using SharpDX.Mathematics.Interop;
 
 namespace Ruler
 {
     internal class BlackHole : Circle
     {
-        internal BlackHole(Point point, Single radius, ref RenderTarget renderTarget)
+        internal BlackHole(RawVector2 point, Single radius, ref RenderTarget renderTarget)
             : base(point, radius, ref renderTarget)
         {
         }
 
-        internal Boolean IsIntersectGravityRadius(Point point)
+        internal Boolean IsIntersectGravityRadius(RawVector2 point)
         {
             return base.IsIntersect(point, 2);
         }

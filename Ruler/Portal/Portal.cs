@@ -4,17 +4,16 @@
 using System;
 using System.Collections.Generic;
 using System.Threading;
-using System.Windows.Forms;
 using Ruler.Common;
 using SharpDX;
 using SharpDX.Direct2D1;
+using SharpDX.Mathematics.Interop;
 
 namespace Ruler
 {
     internal sealed class Portals : IElement
     {
-        private static Int32 _counter = 0;
-        private Int32 instanceNumber = 0;
+        private static Int32 _counter;
 
         private static readonly List<Color[]> Colors = new List<Color[]>()
         {
@@ -31,9 +30,7 @@ namespace Ruler
             FirstPortal = firstPortal;
             SecondPortal = secondPortal;
             Interlocked.Increment(ref _counter);
-            instanceNumber = _counter - 1;
-            FirstPortal.Color = Colors[instanceNumber][0];
-            FirstPortal.Color = Colors[instanceNumber][1];
+            Int32 instanceNumber = _counter - 1;
         }
 
         ~Portals()
@@ -41,12 +38,12 @@ namespace Ruler
             Interlocked.Decrement(ref _counter);
         }
 
-        internal Boolean IsIntersect(Point point)
+        internal Boolean IsIntersect(RawVector2 point)
         {
             return FirstPortal.IsIntersect(point) || SecondPortal.IsIntersect(point);
         }
         
-        internal Point TryTeleport(Point point)
+        internal RawVector2 TryTeleport(RawVector2 point)
         {
             if (FirstPortal.IsIntersect(point))
             {
@@ -70,11 +67,16 @@ namespace Ruler
     }
     internal class Portal : Circle
     {
-        internal Portal(Point coord, Single radius, ref RenderTarget renderTarget)
+        internal Portal(RawVector2 coord, Single radius, ref RenderTarget renderTarget)
             : base(coord, radius, ref renderTarget)
         {
         }
-        
-        
+
+        public override void Draw(ref RenderTarget renderTarget)
+        {
+            Random random = new Random();
+            renderTarget.FillEllipse(new Ellipse(Coord, Radius, Radius), new SolidColorBrush(renderTarget, new RawColor4(
+                (Single)random.NextDouble(), (Single)random.NextDouble(), (Single)random.NextDouble(), (Single)random.NextDouble())));
+        }
     }
 }
