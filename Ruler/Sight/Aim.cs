@@ -45,7 +45,6 @@ namespace Ruler
             renderTarget.DrawLine(Coord, 
                 new RawVector2(Coord.X + Radius * (Single)Math.Cos(Math.PI * Angle / 180f) * Power / 100f, 
                 Coord.Y - Radius * (Single)Math.Sin(Math.PI * Angle / 180f) * Power / 100f), paintBrush);
-            //TODO: renderTarget.DrawLine(LinePaintPen, Coord.X, Coord.Y, Coord.X + Radius * (Single)Math.Cos(Math.PI * Angle / 180f) * Power / 100f, Coord.Y - Radius * (Single)Math.Sin(Math.PI * Angle / 180f) * Power / 100f);
         }
     }
 }

@@ -14,6 +14,7 @@ namespace Ruler.Gui
 {
     public sealed class WeaponsContainer : Label
     {
+        private static event EventsAndGlobalsController.SwitchedState UsePage;
         public WeaponsContainer()
         {
             InitializeWeaponsButton();

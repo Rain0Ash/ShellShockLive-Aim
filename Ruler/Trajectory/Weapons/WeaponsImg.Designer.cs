@@ -83,9 +83,9 @@ namespace Ruler.Weapons.Common {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _3d_Bomb {
+        internal static System.Drawing.Bitmap _3D_Bomb {
             get {
-                object obj = ResourceManager.GetObject("_3d_Bomb", resourceCulture);
+                object obj = ResourceManager.GetObject("_3D_Bomb", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -573,9 +573,9 @@ namespace Ruler.Weapons.Common {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Bow___Arrow {
+        internal static System.Drawing.Bitmap Bow_And_Arrow {
             get {
-                object obj = ResourceManager.GetObject("Bow___Arrow", resourceCulture);
+                object obj = ResourceManager.GetObject("Bow_And_Arrow", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

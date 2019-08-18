@@ -20,15 +20,15 @@ namespace Ruler.Gui
         private Button Extender { get; }
         private WeaponsContainer WeaponButtonsContainer { get; }
 
-        private CurrentWeaponButton currentWeaponButton;
+        private readonly CurrentWeaponButton currentWeaponButton;
         public WeaponsPanel()
         {
-            currentWeaponButton = new CurrentWeaponButton()
+            currentWeaponButton = new CurrentWeaponButton
             {
                 Weapon = Weapons.Common.Weapons.WeaponList[0],
                 Size = new Size(ButtonWidth, ButtonHeight),
+                Location = new Point(LevelLabelWidth, 0),
             };
-            currentWeaponButton.Location = new Point(LevelLabelWidth, 0);
 
             Extender = new Button()
             {

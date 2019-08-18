@@ -39,7 +39,7 @@ namespace Ruler
             
             for (Int32 circleAngle = 0; circleAngle < 360; circleAngle += 45)
             {
-                if (circleAngle % 90 == 0) paintBrush.Color = Color.Red;
+                if (circleAngle % 90 == 0) paintBrush.Color = Color.DarkRed;
                 else if (circleAngle % 60 == 0) paintBrush.Color = Color.Yellow;
                 else if (circleAngle % 45 == 0) paintBrush.Color = circleAngle < 180 ? Color.Aquamarine : Color.Blue;
                 else if (circleAngle % 30 == 0) paintBrush.Color = Color.GreenYellow;

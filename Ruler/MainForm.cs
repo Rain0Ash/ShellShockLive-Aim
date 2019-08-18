@@ -14,6 +14,7 @@ namespace Ruler
     internal sealed partial class MainForm : Form
     {
         private readonly Licence licence;
+        private readonly Monitor monitor;
         private static RulerLocalization _localization = new RulerLocalization(Common_Localization.GetCurrentCulture());
         private readonly Boolean isDisguise;
         private System.Drawing.Rectangle resolution; 
@@ -21,6 +22,7 @@ namespace Ruler
         internal MainForm(Licence licence, Monitor monitor, String languageCode = null, Boolean isDisguise = false)
         {
             this.licence = licence;
+            this.monitor = monitor;
             EventsAndGlobalsController.CurrentMonitor = monitor;
             _localization = new RulerLocalization(languageCode);
             this.isDisguise = isDisguise;
@@ -32,23 +34,13 @@ namespace Ruler
         {
             return _localization.GetLocalCultureCode();
         }
-        private static void CheckAndIgnoreKeyboardPaste(Object sender, KeyEventArgs e)
-        {
-            if (!e.Control || e.KeyValue != 86) { return; }
-            e.Handled = true;
-            e.SuppressKeyPress = true;
-        }
+
             
         private static void ValueBoxOnTextChanged(ref ValueBox valueBox)
         {
-            String text = new Regex("[^0-9]{1,3}").Replace(valueBox.Text, String.Empty);
+            String text = new Regex("-[^0-9]{1,3}").Replace(valueBox.Text, String.Empty);
             Int32.TryParse(text, out Int32 value);
 
-            if (text.StartsWith("0") && text.Length > 1)
-            {
-                text = text.Substring(1);
-            }
-            
             if (valueBox.Name == "Angle" && value > valueBox.MaxValue)
             {
                 valueBox.Text = (value % 360).ToString();
