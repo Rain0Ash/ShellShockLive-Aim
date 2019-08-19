@@ -44,8 +44,8 @@ namespace Ruler
             angleValueBox.Text = angleValueBox.DefaultValue.ToString();
             EventsAndGlobalsController.ChangedAngle += angle =>
             {
-                angleValueBox.Text = angle.ToString();
-                angleValueBox.SelectionStart = angleValueBox.Text.Length;
+                angleValueBox.Value = angle.ToString();
+                angleValueBox.SelectionStart = angleValueBox.Value.Length;
             };
 
             windValueBox = new ValueBox("Wind")

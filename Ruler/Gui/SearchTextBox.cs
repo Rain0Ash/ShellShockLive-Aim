@@ -14,19 +14,23 @@ namespace Ruler.Gui
         private readonly RulerLocalization localization = new RulerLocalization(MainForm.GetLocalCultureCode());
         internal SearchTextBox()
         {
+            MaxLength = 15;
             OnLeave(EventArgs.Empty);
         }
 
         protected override void OnForeColorChanged(EventArgs e)
         {
             base.OnForeColorChanged(e);
+            if (ForeColor == Color.Gray)
+            {
+                return;
+            }
             color = ForeColor;
         }
 
         protected override void OnKeyPress(KeyPressEventArgs e)
         {
-            if (Char.IsControl(e.KeyChar) || Text.Length < 20 && (Char.IsDigit(e.KeyChar) || Char.IsLetter(e.KeyChar) || (e.KeyChar == ' ' && SelectionStart != 0 && Text[SelectionStart-1] != ' ') ||
-                e.KeyChar == '-'))
+            if (Char.IsControl(e.KeyChar) || Text.Length < MaxLength && (Char.IsDigit(e.KeyChar) || Char.IsLetter(e.KeyChar) || (e.KeyChar == ' ' ||  e.KeyChar == '-') && SelectionStart != 0 && Text[SelectionStart-1] != ' ' && Text[SelectionStart-1] != '-'))
             {
                 return;
             }
@@ -35,6 +39,17 @@ namespace Ruler.Gui
             base.OnKeyPress(e);
         }
 
+        protected override void OnEnter(EventArgs e)
+        {
+            base.OnEnter(e);
+            if (Text != localization.Search)
+            {
+                return;
+            }
+            ForeColor = color;
+            Text = String.Empty;
+        }
+        
         protected override void OnLeave(EventArgs e)
         {
             base.OnLeave(e);
@@ -46,18 +61,6 @@ namespace Ruler.Gui
 
             ForeColor = Color.Gray;
             Text = localization.Search;
-        }
-
-        protected override void OnEnter(EventArgs e)
-        {
-            base.OnEnter(e);
-            if (Text != localization.Search)
-            {
-                return;
-            }
-
-            ForeColor = color;
-            Text = String.Empty;
         }
     }
 }

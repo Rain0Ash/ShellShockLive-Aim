@@ -4,6 +4,7 @@
 using System;
 using System.ComponentModel;
 using System.Drawing;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace Ruler.Common.Forms
@@ -13,6 +14,7 @@ namespace Ruler.Common.Forms
         public readonly Label Label = new Label();
 
         private String endString;
+
         public String EndString
         {
             get
@@ -21,19 +23,64 @@ namespace Ruler.Common.Forms
             }
             set
             {
+                if (endString == value)
+                {
+                    return;
+                }
+
                 endString = value;
                 OnPropertyChanged("EndString");
             }
         }
 
         public Int32 MaxValue { get; set; }
-        
+
         public Int32 MinValue { get; set; }
-        public Int32 DefaultValue { get; set; }
+
+        private Int32 defaultValue;
+
+        public Int32 DefaultValue
+        {
+            get
+            {
+                return defaultValue;
+            }
+            set
+            {
+                if (defaultValue == value)
+                {
+                    return;
+                }
+
+                defaultValue = value;
+                OnPropertyChanged("DefaultValue");
+            }
+        }
+
+        private String value;
+
+        public String Value
+        {
+            get
+            {
+                return value;
+            }
+            set
+            {
+                if (this.value == value)
+                {
+                    return;
+                }
+
+                this.value = value;
+                OnPropertyChanged("Value");
+            }
+        }
 
         public ValueBox(String name)
         {
             Name = name;
+            Value = @"0";
             Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             Font = new Font("Microsoft Sans Serif", 20f, FontStyle.Bold, GraphicsUnit.Pixel, 204);
             ForeColor = Color.FromArgb(255, 255, 255);
@@ -44,7 +91,7 @@ namespace Ruler.Common.Forms
             TextAlign = HorizontalAlignment.Center;
             BorderStyle = BorderStyle.None;
             Visible = true;
-            
+
             Label.Click += (sender, e) =>
             {
                 Focus();
@@ -60,14 +107,52 @@ namespace Ruler.Common.Forms
             Label.Visible = true;
             DataBindings.Add(new Binding("EndString", this, "EndString"));
             PropertyChanged += OnEndStringChanged;
+            PropertyChanged += OnDefaultValueChanged;
+            PropertyChanged += OnValueChanged;
             Label.BringToFront();
             Controls.Add(Label);
+            AngleToQuarter();
+        }
+        protected override void OnEnter(EventArgs e)
+        {
+            base.OnEnter(e);
+            if (Text == Value)
+            {
+                return;
+            }
+
+            Text = Value;
+            SelectionStart = Value.Length;
+            Label.Visible = true;
+        }
+
+        protected override void OnLeave(EventArgs e)
+        {
+            base.OnLeave(e);
+            if (Name != "Angle")
+            {
+                return;
+            }
+            AngleToQuarter();
+            Label.Visible = false;
+        }
+
+        private void AngleToQuarter()
+        {
+            if (Name != "Angle")
+            {
+                return;
+            }
+            Int32 number = Int32.Parse(Value == "" || Value == @"-" ? "0" : Value);
+            Int32 angle = number < 0 ? 360 + number % 360 : number % 360;
+            Text = $@"{(angle <= 90 ? angle : angle <= 270 ? 180 - angle : angle - 360)}{EndString} ({(angle / 90) + 1})";
         }
 
         protected override void OnKeyDown(KeyEventArgs e)
         {
-            base.OnKeyDown(e);        
-            if (!e.Control || e.KeyValue != 86) { return; }
+            base.OnKeyDown(e);
+            if (!e.Control) { return; }
+
             e.Handled = true;
             e.SuppressKeyPress = true;
         }
@@ -87,7 +172,8 @@ namespace Ruler.Common.Forms
                 return;
             }
 
-            if (!Char.IsControl(e.KeyChar) && e.KeyChar != '-' && Text.Replace("-", "").Length >= 3 && SelectionLength == 0)
+            if (!Char.IsControl(e.KeyChar) && e.KeyChar != '-' && Text.Replace("-", "").Length >= 3 &&
+                SelectionLength == 0)
             {
                 e.Handled = true;
                 return;
@@ -171,6 +257,12 @@ namespace Ruler.Common.Forms
         {
             base.OnTextChanged(e);
             UpdateLabelLocation();
+
+            if (Regex.IsMatch(Text, "^-?\\d{1,3}.*\\(\\d\\)$"))
+            {
+                return;
+            }
+
             if (Text.StartsWith("0") && Text.Length > 1)
             {
                 Text = Text.Substring(1);
@@ -179,9 +271,10 @@ namespace Ruler.Common.Forms
             {
                 Text = Text.Substring(1);
             }
-            
+
             Int32 number = Int32.Parse(Text == "" || Text == @"-" ? "0" : Text);
 
+            Value = number.ToString();
             switch (Name)
             {
                 case "Power":
@@ -206,12 +299,18 @@ namespace Ruler.Common.Forms
 
         private void UpdateLabelLocation()
         {
-            Label.Location = new Point(Size.Width / 2 + (Int32) Math.Floor(Font.SizeInPoints * Text.Length / (Name == "Wind" ? 2 : 2.1)), 0);
+            Label.Location =
+                new Point(
+                    Size.Width / 2 + (Int32)Math.Floor(Font.SizeInPoints * Text.Length / (Name == "Wind" ? 2 : 2.1)),
+                    0);
         }
 
         private void UpdateLabelSize()
         {
-            Label.Size = new Size((Int32)(TextRenderer.MeasureText(Label.Text, Label.Font, Size, TextFormatFlags.Bottom).Width * 0.65), Size.Height);
+            Label.Size =
+                new Size(
+                    (Int32)(TextRenderer.MeasureText(Label.Text, Label.Font, Size, TextFormatFlags.Bottom).Width *
+                            0.65), Size.Height);
         }
 
         private void OnEndStringChanged(Object sender, PropertyChangedEventArgs e)
@@ -224,8 +323,40 @@ namespace Ruler.Common.Forms
             Label.Text = EndString;
             UpdateLabelSize();
         }
-        
-        
+
+        private void OnDefaultValueChanged(Object sender, PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName != "DefaultValue")
+            {
+                return;
+            }
+
+            if (!Focused)
+            {
+                OnLeave(EventArgs.Empty);
+            }
+            else
+            {
+                Value = DefaultValue.ToString();
+            }
+        }
+
+        private void OnValueChanged(Object sender, PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName != "Value")
+            {
+                return;
+            }
+            if (Name == "Angle" && !Focused)
+            {
+                AngleToQuarter();
+            }
+            else
+            {
+                Text = Value;
+            }
+        }
+
         #region INotifyPropertyChanged Members
         
         public event PropertyChangedEventHandler PropertyChanged;
