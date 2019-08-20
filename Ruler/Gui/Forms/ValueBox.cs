@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace Ruler.Common.Forms
 {
-    public sealed class ValueBox : TextBox, INotifyPropertyChanged
+    public class ValueBox : TextBox, INotifyPropertyChanged
     {
-        public readonly Label Label = new Label();
+        protected readonly Label Label = new Label();
 
         private String endString;
 
@@ -77,9 +77,8 @@ namespace Ruler.Common.Forms
             }
         }
 
-        public ValueBox(String name)
+        public ValueBox()
         {
-            Name = name;
             Value = @"0";
             Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             Font = new Font("Microsoft Sans Serif", 20f, FontStyle.Bold, GraphicsUnit.Pixel, 204);
@@ -105,13 +104,11 @@ namespace Ruler.Common.Forms
             Label.TextAlign = ContentAlignment.MiddleCenter;
             Label.ForeColor = ForeColor;
             Label.Visible = true;
-            DataBindings.Add(new Binding("EndString", this, "EndString"));
             PropertyChanged += OnEndStringChanged;
             PropertyChanged += OnDefaultValueChanged;
             PropertyChanged += OnValueChanged;
             Label.BringToFront();
             Controls.Add(Label);
-            AngleToQuarter();
         }
         protected override void OnEnter(EventArgs e)
         {
@@ -124,24 +121,6 @@ namespace Ruler.Common.Forms
             Text = Value;
             SelectionStart = Value.Length;
             Label.Visible = true;
-        }
-
-        protected override void OnLeave(EventArgs e)
-        {
-            base.OnLeave(e);
-            if (Name != "Angle")
-            {
-                return;
-            }
-            AngleToQuarter();
-            Label.Visible = false;
-        }
-
-        private void AngleToQuarter()
-        {
-            Int32 number = Int32.Parse(Value == "" || Value == @"-" ? "0" : Value);
-            Int32 angle = number < 0 ? 360 + number % 360 : number % 360;
-            Text = $@"{(angle <= 90 ? angle : angle <= 270 ? 180 - angle : angle - 360)}{EndString} ({(angle / 90) + 1})";
         }
 
         protected override void OnKeyDown(KeyEventArgs e)
@@ -254,11 +233,6 @@ namespace Ruler.Common.Forms
             base.OnTextChanged(e);
             UpdateLabelLocation();
 
-            if (Regex.IsMatch(Text, "^-?\\d{1,3}.*\\(\\d\\)$"))
-            {
-                return;
-            }
-
             if (Text.StartsWith("0") && Text.Length > 1)
             {
                 Text = Text.Substring(1);
@@ -271,20 +245,11 @@ namespace Ruler.Common.Forms
             Int32 number = Int32.Parse(Text == "" || Text == @"-" ? "0" : Text);
 
             Value = number.ToString();
-            switch (Name)
-            {
-                case "Power":
-                    EventsAndGlobalsController.Power = number;
-                    break;
-                case "Angle":
-                    EventsAndGlobalsController.Angle = number;
-                    break;
-                case "Wind":
-                    EventsAndGlobalsController.Wind = number;
-                    break;
-                default:
-                    break;
-            }
+            SetValue(number);
+        }
+
+        protected virtual void SetValue(Int32 value)
+        {
         }
 
         protected override void OnLocationChanged(EventArgs e)
@@ -337,20 +302,13 @@ namespace Ruler.Common.Forms
             }
         }
 
-        private void OnValueChanged(Object sender, PropertyChangedEventArgs e)
+        protected virtual void OnValueChanged(Object sender, PropertyChangedEventArgs e)
         {
             if (e.PropertyName != "Value")
             {
                 return;
             }
-            if (Name == "Angle" && !Focused)
-            {
-                AngleToQuarter();
-            }
-            else
-            {
-                Text = Value;
-            }
+            Text = Value;
         }
 
         #region INotifyPropertyChanged Members

@@ -16,10 +16,10 @@ namespace Ruler
         private const Int32 DistanceBetweenValueBox = 5;
         private const Int32 ValueBoxWidth = 100;
         private const Int32 ValueBoxHeight = 30;
-        
-        private ValueBox powerValueBox;
-        private ValueBox angleValueBox;
-        private ValueBox windValueBox;
+
+        private AngleBox angleValueBox;
+        private WindBox windValueBox;
+        private PowerBox powerValueBox;
         private WeaponsPanel weaponsPanel;
         
         private void InitializeComponent()
@@ -32,7 +32,7 @@ namespace Ruler
             
             #region Power Angle Wind valueBox defines
             
-            angleValueBox = new ValueBox("Angle")
+            angleValueBox = new AngleBox()
             {
                 BackColor = Color.FromArgb(0, 75, 0),
                 Location = new Point(valueBoxWidthPosition, valueBoxHeightPosition),
@@ -48,7 +48,7 @@ namespace Ruler
                 angleValueBox.SelectionStart = angleValueBox.Value.Length;
             };
 
-            windValueBox = new ValueBox("Wind")
+            windValueBox = new WindBox()
             {
                 BackColor = Color.FromArgb(0, 0, 75),
                 Location = new Point(ValueBoxWidth + valueBoxWidthPosition + DistanceBetweenValueBox, valueBoxHeightPosition),
@@ -65,7 +65,7 @@ namespace Ruler
                 windValueBox.SelectionStart = windValueBox.Text.Length;
             };
 
-            powerValueBox = new ValueBox("Power")
+            powerValueBox = new PowerBox()
             {
                 BackColor = Color.FromArgb(75, 0, 0),
                 Location = new Point(valueBoxWidthPosition, ValueBoxHeight + valueBoxHeightPosition),
