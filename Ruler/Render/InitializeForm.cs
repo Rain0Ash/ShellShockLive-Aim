@@ -10,7 +10,7 @@ namespace Ruler
 {
     internal sealed partial class RulerRender
     {
-        internal Manager Manager;
+        internal RenderManager RenderManager;
         private void InitializeForm()
         {
             ModeDescription modeDescription = new ModeDescription()
@@ -58,7 +58,7 @@ namespace Ruler
             factory.Dispose();
             
             RulerRender thisForm = this;
-            Manager = new Manager(ref thisForm, ref d2dRenderTarget, ref swapChain);
+            RenderManager = new RenderManager(ref thisForm, ref d2dRenderTarget, ref swapChain);
         }
     }
 }

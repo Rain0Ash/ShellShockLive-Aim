@@ -4,10 +4,11 @@
 using System;
 using System.Drawing;
 using Ruler.Properties;
+using SharpDX.Mathematics.Interop;
 
 namespace Ruler.Weapons
 {
-    internal enum WeaponShellOptionBitFlag : Byte
+    internal enum WeaponShellOptionBitFlag
     {
         Common = 0,
         IgnoreWind = 1,
@@ -18,12 +19,12 @@ namespace Ruler.Weapons
     internal struct Weapon
     {
         internal readonly String Name;
-        internal readonly Byte AvailabilityLevel;
+        internal readonly Int32 AvailabilityLevel;
         internal readonly Color Color;
         internal readonly Image Image;
         internal readonly GuidanceType Guidance;
         internal readonly WeaponShellOptionBitFlag ShellOption;
-        internal Weapon(String name, Byte availabilityLevel, GuidanceType guidanceType = GuidanceType.Parabola, Color? color = null, Image image = null, WeaponShellOptionBitFlag shellOption = WeaponShellOptionBitFlag.Common)
+        internal Weapon(String name, Int32 availabilityLevel, GuidanceType guidanceType = GuidanceType.Parabola, Color? color = null, Image image = null, WeaponShellOptionBitFlag shellOption = WeaponShellOptionBitFlag.Common)
         {
             Name = name;
             AvailabilityLevel = availabilityLevel;
@@ -36,11 +37,6 @@ namespace Ruler.Weapons
         public override String ToString()
         {
             return Name;
-        }
-
-        internal Point[] GetTrajectory()
-        {
-            return Ruler.Guidance.Parabola(Guidance, ShellOption);
         }
 
         public override Boolean Equals(Object obj)

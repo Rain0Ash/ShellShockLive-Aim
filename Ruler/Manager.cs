@@ -2,97 +2,42 @@
 // PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
 
 using System;
-using System.Threading;
+using System.Windows.Forms;
 using Ruler.Common;
-using SharpDX;
 using SharpDX.Direct2D1;
-using SharpDX.DXGI;
 using SharpDX.Mathematics.Interop;
-using SharpDX.Windows;
 
 namespace Ruler
 {
-    internal sealed class Manager : IDisposable
+    public class Manager : IDisposable
     {
-        private Boolean isStarted = false;
-        private RulerRender Form;
         private RenderTarget drawer;
-        private SwapChain swapChain;
-        private RenderLoop looper;
-
         private Sight sight;
+        private Trajectory trajectory;
 
-        internal Manager(ref RulerRender form, ref RenderTarget drawer, ref SwapChain swapChain)
+        public Manager(ref RenderTarget renderTarget)
         {
-            Form = form;
-            this.drawer = drawer;
-            this.swapChain = swapChain;
-            EventsAndGlobalsController.RenderTargetSize = new RawVector2(drawer.Size.Width, drawer.Size.Height);
-            EventsAndGlobalsController.Parameters = Parameter.GetParameters($"{Form.Bounds.Width}x{Form.Bounds.Height}");
+            drawer = renderTarget;
             
             InitializeComponent();
         }
-
-        internal void Start()
+        
+        private void InitializeComponent()
         {
-            if (isStarted)
-                return;
-
-            new KeyboardController().SetupKeyboardHooks();
-
-            Form.Show();
-            Form.MainForm.Show();
-            Form.MainForm.BringToFront();
-            EventsAndGlobalsController.NeedRedraw += () => ForceNextFrame();
+            RawVector2 initializeCoord = new RawVector2(drawer.Size.Width / 2f, drawer.Size.Height / 2f);
             
-            looper = new RenderLoop(Form);
-            Boolean firstRender = false;
-            while (true)
-            {
-                if (!looper.NextFrame())
-                {
-                    break;
-                }
-
-                if (!firstRender)
-                {
-                    NextFrame();
-                    firstRender = true;
-                }
-                Thread.Sleep((Int32) Utils.GetUpdateTimeForFPS(60));
-            }
+            sight = new Sight(initializeCoord, EventsAndGlobalsController.Parameters.Length, ref drawer);
+            trajectory = new Trajectory(initializeCoord, ref drawer);
         }
 
-        internal Boolean ForceNextFrame()
+        public void PrepareNextFrame()
         {
-            for (Int32 i = 0; i < 3; i++)
-            {
-                if (!looper.NextFrame())
-                {
-                    continue;
-                }
-                NextFrame();
-                return true;
-            }
-            return false;
-        }
-        internal void NextFrame()
-        {
-            drawer.BeginDraw();
-            drawer.Clear(Color.Black);
             sight.Draw();
-            drawer.EndDraw();
-            swapChain.Present(0, PresentFlags.None);
+            trajectory.Draw();
         }
 
         public void Dispose()
         {
-            looper.Dispose();
-        }
-
-        private void InitializeComponent()
-        {
-            sight = new Sight(new RawVector2(Form.Bounds.Width / 2f, Form.Bounds.Height / 2f), EventsAndGlobalsController.Parameters.Length, ref drawer);
         }
     }
 }

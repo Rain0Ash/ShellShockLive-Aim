@@ -21,11 +21,6 @@ namespace Ruler
             EventsAndGlobalsController.ChangedSightPosition += SetPosition;
         }
 
-        private void SetPosition()
-        {
-            Coord = Utils.GetCursorPosition(ref RenderTarget);
-        }        
-        
         private void SetPosition(RawVector2 newCoord)
         {
             Coord = newCoord;

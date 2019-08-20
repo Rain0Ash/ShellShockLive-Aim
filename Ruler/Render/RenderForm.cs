@@ -20,7 +20,7 @@ namespace Ruler
 
         internal void Start()
         {
-            Manager.Start();
+            RenderManager.Start();
         }
 
         protected override CreateParams CreateParams

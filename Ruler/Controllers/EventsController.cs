@@ -22,12 +22,6 @@ namespace Ruler.Common
         internal static void RecognizeInputAndThrowEvent(Object sender, GlobalKeyEventArgs e)
         {
             Boolean isNeedRedraw = false;
-            if (e.Control == ModifierKeySide.None)
-            {
-                return;
-            }
-
-            e.Handled = true;
             isNeedRedraw = true;
             // ReSharper disable once SwitchStatementMissingSomeCases
             switch (e.KeyCode)
@@ -37,7 +31,7 @@ namespace Ruler.Common
                     isNeedRedraw = false;
                     break;
                 case ChangeSightPosition:
-                    if (!CheckLastRedrawTime(50))
+                    if (!CheckLastRedrawTime(25))
                     {
                         return;
                     }

@@ -343,6 +343,7 @@
           <e p="InitializeComponent.cs" t="Include" />
           <e p="InitializeForm.cs" t="Include" />
           <e p="RenderForm.cs" t="Include" />
+          <e p="RenderManager.cs" t="Include" />
         </e>
         <e p="RulerBackup.cs" t="Include" />
         <e p="Sight" t="Include">

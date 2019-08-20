@@ -5,12 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="17241591-2831-47bf-832a-6ed66df19717" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Ruler/Render/RenderManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Aim/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Aim/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Aim/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Aim/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ruler/Gui/Forms/AngleBox.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Ruler/Gui/Forms/AngleBox.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ruler/Gui/Forms/PowerBox.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Ruler/Gui/Forms/PowerBox.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aim.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Aim.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ruler/Controllers/EventsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Ruler/Controllers/EventsController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ruler/Controllers/KeyboardController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Ruler/Controllers/KeyboardController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Ruler/Gui/Forms/ValueBox.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Ruler/Gui/Forms/ValueBox.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ruler/Gui/Forms/WindBox.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Ruler/Gui/Forms/WindBox.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ruler/Gui/WeaponsContainer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Ruler/Gui/WeaponsContainer.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Ruler/InitializeComponent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Ruler/InitializeComponent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ruler/Manager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Ruler/Manager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ruler/Render/InitializeForm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Ruler/Render/InitializeForm.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ruler/Render/RenderForm.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Ruler/Render/RenderForm.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ruler/Sight/Sight.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Ruler/Sight/Sight.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ruler/Trajectory/Guidance.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Ruler/Trajectory/Guidance.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ruler/Trajectory/Trajectory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Ruler/Trajectory/Trajectory.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ruler/Trajectory/Weapons/Weapon.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Ruler/Trajectory/Weapons/Weapon.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,383 +31,220 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Ruler/InitializeComponent.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="21" column="39" lean-forward="true" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
-              <folding>
-                <marker date="1566296634690" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
-                <marker date="1566296634690" expanded="true" signature="186:330" ph="..." />
-                <marker date="1566296634690" expanded="true" signature="347:4472" ph="{...}" />
-                <marker date="1566296634690" expanded="true" signature="392:4470" ph="{...}" />
-                <marker date="1566296634690" expanded="true" signature="767:4464" ph="{...}" />
-                <marker date="1566296634690" expanded="true" signature="1111:3423" ph="Power Angle Wind valueBox defines" />
-                <marker date="1566296634690" expanded="true" signature="1221:1570" ph="{...}" />
-                <marker date="1566296634690" expanded="true" signature="1720:1866" ph="{...}" />
-                <marker date="1566296634690" expanded="true" signature="1922:2366" ph="{...}" />
-                <marker date="1566296634690" expanded="true" signature="2512:2652" ph="{...}" />
-                <marker date="1566296634690" expanded="true" signature="2710:3104" ph="{...}" />
-                <marker date="1566296634690" expanded="true" signature="3254:3398" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Ruler/Trajectory/Weapons/Weapon.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="388">
-              <caret line="42" column="66" lean-forward="true" selection-start-line="42" selection-start-column="66" selection-end-line="42" selection-end-column="66" />
-              <folding>
-                <marker date="1566287209390" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
-                <marker date="1566287209390" expanded="false" signature="186:239" ph="..." />
-                <marker date="1566287209390" expanded="true" signature="264:1730" ph="{...}" />
-                <marker date="1566287209390" expanded="true" signature="316:464" ph="{...}" />
-                <marker date="1566287209390" expanded="true" signature="491:1728" ph="{...}" />
-                <marker date="1566287209390" expanded="true" signature="1002:1265" ph="{...}" />
-                <marker date="1566287209390" expanded="true" signature="1308:1353" ph="{...}" />
-                <marker date="1566287209390" expanded="true" signature="1395:1482" ph="{...}" />
-                <marker date="1566287209390" expanded="true" signature="1534:1722" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Ruler/Trajectory/Guidance.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="633">
-              <caret line="46" column="33" lean-forward="true" selection-start-line="46" selection-start-column="33" selection-end-line="46" selection-end-column="33" />
+            <state relative-caret-position="592">
+              <caret line="45" selection-start-line="45" selection-end-line="45" />
               <folding>
-                <marker date="1566287226248" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
-                <marker date="1566287226248" expanded="true" signature="186:236" ph="..." />
-                <marker date="1566287226248" expanded="true" signature="253:1605" ph="{...}" />
-                <marker date="1566287226248" expanded="true" signature="293:338" ph="{...}" />
-                <marker date="1566287226248" expanded="true" signature="373:1603" ph="{...}" />
-                <marker date="1566287226248" expanded="true" signature="388:1433" ph="/* internal Point[] Evaluate() ... */" />
-                <marker date="1566287226248" expanded="true" signature="1540:1594" ph="{...}" />
+                <marker date="1566309258451" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
+                <marker date="1566309258451" expanded="true" signature="186:323" ph="..." />
+                <marker date="1566309258451" expanded="true" signature="340:2539" ph="{...}" />
+                <marker date="1566309258451" expanded="true" signature="373:418" ph="{...}" />
+                <marker date="1566309258451" expanded="true" signature="458:2537" ph="{...}" />
+                <marker date="1566309258451" expanded="true" signature="775:2371" ph="{...}" />
+                <marker date="1566309258451" expanded="true" signature="1404:2333" ph="{...}" />
+                <marker date="1566309258451" expanded="true" signature="2119:2319" ph="{...}" />
+                <marker date="1566309258451" expanded="true" signature="2472:2531" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Ruler/Gui/Forms/ValueBox.cs">
+        <entry file="file://$PROJECT_DIR$/Ruler/Controllers/GlobalsController.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="185">
-              <caret line="122" column="33" lean-forward="true" selection-start-line="122" selection-start-column="33" selection-end-line="122" selection-end-column="33" />
+            <state relative-caret-position="704">
+              <caret line="60" column="38" selection-start-line="60" selection-start-column="38" selection-end-line="60" selection-end-column="38" />
               <folding>
-                <marker date="1566296781105" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
-                <marker date="1566296781105" expanded="false" signature="186:310" ph="..." />
-                <marker date="1566296781105" expanded="true" signature="340:8959" ph="{...}" />
-                <marker date="1566296781105" expanded="true" signature="402:8957" ph="{...}" />
-                <marker date="1566296781105" expanded="true" signature="530:860" ph="{...}" />
-                <marker date="1566296781105" expanded="true" signature="556:618" ph="{...}" />
-                <marker date="1566296781105" expanded="true" signature="634:850" ph="{...}" />
-                <marker date="1566296781105" expanded="true" signature="688:752" ph="{...}" />
-                <marker date="1566296781105" expanded="true" signature="1022:1364" ph="{...}" />
-                <marker date="1566296781105" expanded="true" signature="1048:1113" ph="{...}" />
-                <marker date="1566296781105" expanded="true" signature="1129:1354" ph="{...}" />
-                <marker date="1566296781105" expanded="true" signature="1186:1250" ph="{...}" />
-                <marker date="1566296781105" expanded="true" signature="1424:1748" ph="{...}" />
-                <marker date="1566296781105" expanded="true" signature="1450:1508" ph="{...}" />
-                <marker date="1566296781105" expanded="true" signature="1524:1738" ph="{...}" />
-                <marker date="1566296781105" expanded="true" signature="1579:1643" ph="{...}" />
-                <marker date="1566296781105" expanded="true" signature="1775:2992" ph="{...}" />
-                <marker date="1566296781105" expanded="true" signature="2356:2442" ph="{...}" />
-                <marker date="1566296781105" expanded="true" signature="3045:3281" ph="{...}" />
-                <marker date="1566296781105" expanded="true" signature="3115:3167" ph="{...}" />
-                <marker date="1566296781105" expanded="true" signature="3340:3501" ph="{...}" />
-                <marker date="1566296781105" expanded="true" signature="3566:5716" ph="{...}" />
-                <marker date="1566296781105" expanded="true" signature="3704:3790" ph="{...}" />
-                <marker date="1566296781105" expanded="true" signature="3874:3960" ph="{...}" />
-                <marker date="1566296781105" expanded="true" signature="4102:4188" ph="{...}" />
-                <marker date="1566296781105" expanded="true" signature="4250:4336" ph="{...}" />
-                <marker date="1566296781105" expanded="true" signature="4350:5114" ph="/* if (Char.IsNumber(e.KeyChar)) ... */" />
-                <marker date="1566296781105" expanded="true" signature="5157:5706" ph="{...}" />
-                <marker date="1566296781105" expanded="true" signature="5211:5692" ph="{...}" />
-                <marker date="1566296781105" expanded="true" signature="5776:5862" ph="{...}" />
-                <marker date="1566296781105" expanded="true" signature="5919:6013" ph="{...}" />
-                <marker date="1566296781105" expanded="true" signature="6071:6215" ph="{...}" />
-                <marker date="1566296781105" expanded="true" signature="6148:6205" ph="{...}" />
-                <marker date="1566296781105" expanded="true" signature="6275:6361" ph="{...}" />
-                <marker date="1566296781105" expanded="true" signature="6421:6968" ph="{...}" />
-                <marker date="1566296781105" expanded="true" signature="6559:6629" ph="{...}" />
-                <marker date="1566296781105" expanded="true" signature="6736:6806" ph="{...}" />
-                <marker date="1566296781105" expanded="true" signature="7022:7042" ph="{...}" />
-                <marker date="1566296781105" expanded="true" signature="7106:7200" ph="{...}" />
-                <marker date="1566296781105" expanded="true" signature="7244:7462" ph="{...}" />
-                <marker date="1566296781105" expanded="true" signature="7502:7737" ph="{...}" />
-                <marker date="1566296781105" expanded="true" signature="7821:8008" ph="{...}" />
-                <marker date="1566296781105" expanded="true" signature="7878:7930" ph="{...}" />
-                <marker date="1566296781105" expanded="true" signature="8095:8408" ph="{...}" />
-                <marker date="1566296781105" expanded="true" signature="8155:8207" ph="{...}" />
-                <marker date="1566296781105" expanded="true" signature="8234:8304" ph="{...}" />
-                <marker date="1566296781105" expanded="true" signature="8321:8398" ph="{...}" />
-                <marker date="1566296781105" expanded="true" signature="8498:8639" ph="{...}" />
-                <marker date="1566296781105" expanded="true" signature="8551:8603" ph="{...}" />
-                <marker date="1566296781105" expanded="false" signature="8649:8951" ph="INotifyPropertyChanged Members" />
-                <marker date="1566296781105" expanded="true" signature="8824:8931" ph="{...}" />
+                <marker date="1566309307965" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
+                <marker date="1566309307965" expanded="true" signature="186:316" ph="..." />
+                <marker date="1566309307965" expanded="true" signature="367:4035" ph="{...}" />
+                <marker date="1566309307965" expanded="true" signature="430:4033" ph="{...}" />
+                <marker date="1566309307965" expanded="true" signature="445:1393" ph="Events And Delegates" />
+                <marker date="1566309307965" expanded="true" signature="491:848" ph="Delegates" />
+                <marker date="1566309307965" expanded="true" signature="866:1365" ph="Events" />
+                <marker date="1566309307965" expanded="true" signature="1403:4027" ph="Globals" />
+                <marker date="1566309307965" expanded="false" signature="1616:1899" ph="{...}" />
+                <marker date="1566309307965" expanded="true" signature="1642:1703" ph="{...}" />
+                <marker date="1566309307965" expanded="true" signature="1719:1889" ph="{...}" />
+                <marker date="1566309307965" expanded="true" signature="1777:1841" ph="{...}" />
+                <marker date="1566309307965" expanded="true" signature="1978:2344" ph="{...}" />
+                <marker date="1566309307965" expanded="true" signature="2004:2064" ph="{...}" />
+                <marker date="1566309307965" expanded="true" signature="2080:2334" ph="{...}" />
+                <marker date="1566309307965" expanded="true" signature="2137:2201" ph="{...}" />
+                <marker date="1566309307965" expanded="true" signature="2432:2824" ph="{...}" />
+                <marker date="1566309307965" expanded="true" signature="2458:2517" ph="{...}" />
+                <marker date="1566309307965" expanded="true" signature="2533:2814" ph="{...}" />
+                <marker date="1566309307965" expanded="true" signature="2584:2648" ph="{...}" />
+                <marker date="1566309307965" expanded="true" signature="2903:3529" ph="{...}" />
+                <marker date="1566309307965" expanded="true" signature="2929:2988" ph="{...}" />
+                <marker date="1566309307965" expanded="true" signature="3004:3519" ph="{...}" />
+                <marker date="1566309307965" expanded="true" signature="3092:3156" ph="{...}" />
+                <marker date="1566309307965" expanded="true" signature="3190:3260" ph="{...}" />
+                <marker date="1566309307965" expanded="true" signature="3296:3389" ph="{...}" />
+                <marker date="1566309307965" expanded="true" signature="3617:4007" ph="{...}" />
+                <marker date="1566309307965" expanded="true" signature="3643:3701" ph="{...}" />
+                <marker date="1566309307965" expanded="true" signature="3717:3997" ph="{...}" />
+                <marker date="1566309307965" expanded="true" signature="3767:3831" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Ruler/Gui/Forms/PowerBox.cs">
+        <entry file="file://$PROJECT_DIR$/Ruler/Trajectory/Trajectory.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="128">
-              <caret line="8" column="5" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+            <state relative-caret-position="912">
+              <caret line="68" column="37" selection-start-line="68" selection-start-column="37" selection-end-line="68" selection-end-column="37" />
               <folding>
-                <marker date="1566296531272" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
-                <marker date="1566296531272" expanded="true" signature="223:450" ph="{...}" />
-                <marker date="1566296531272" expanded="true" signature="262:448" ph="{...}" />
-                <marker date="1566296531272" expanded="true" signature="322:442" ph="{...}" />
+                <marker date="1566309505658" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
+                <marker date="1566309505658" expanded="true" signature="186:309" ph="..." />
+                <marker date="1566309505658" expanded="true" signature="326:2554" ph="{...}" />
+                <marker date="1566309505658" expanded="true" signature="381:2552" ph="{...}" />
+                <marker date="1566309505658" expanded="true" signature="677:1310" ph="{...}" />
+                <marker date="1566309505658" expanded="true" signature="875:968" ph="{...}" />
+                <marker date="1566309505658" expanded="true" signature="1365:1415" ph="{...}" />
+                <marker date="1566309505658" expanded="true" signature="1468:1710" ph="{...}" />
+                <marker date="1566309505658" expanded="true" signature="1580:1632" ph="{...}" />
+                <marker date="1566309505658" expanded="true" signature="1754:2108" ph="{...}" />
+                <marker date="1566309505658" expanded="true" signature="1801:2098" ph="{...}" />
+                <marker date="1566309505658" expanded="true" signature="2174:2456" ph="{...}" />
+                <marker date="1566309505658" expanded="true" signature="2220:2287" ph="{...}" />
+                <marker date="1566309505658" expanded="true" signature="2336:2446" ph="{...}" />
+                <marker date="1566309505658" expanded="true" signature="2492:2546" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Ruler/Manager.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="144">
+              <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+              <folding>
+                <marker date="1566308817616" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
+                <marker date="1566308817616" expanded="true" signature="186:301" ph="..." />
+                <marker date="1566308817616" expanded="true" signature="318:1171" ph="{...}" />
+                <marker date="1566308817616" expanded="true" signature="359:1169" ph="{...}" />
+                <marker date="1566308817616" expanded="true" signature="525:628" ph="{...}" />
+                <marker date="1566308817616" expanded="true" signature="680:995" ph="{...}" />
+                <marker date="1566308817616" expanded="true" signature="1035:1112" ph="{...}" />
+                <marker date="1566308817616" expanded="true" signature="1143:1163" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Ruler/Sight/Sight.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="320">
+              <caret line="28" column="30" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="30" />
+              <folding>
+                <marker date="1566304235603" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
+                <marker date="1566304235603" expanded="false" signature="186:288" ph="..." />
+                <marker date="1566304235603" expanded="true" signature="304:3049" ph="{...}" />
+                <marker date="1566304235603" expanded="true" signature="340:3047" ph="{...}" />
+                <marker date="1566304235603" expanded="true" signature="623:920" ph="{...}" />
+                <marker date="1566304235603" expanded="true" signature="975:1025" ph="{...}" />
+                <marker date="1566304235603" expanded="true" signature="1099:3041" ph="{...}" />
+                <marker date="1566304235603" expanded="true" signature="1367:2222" ph="{...}" />
+                <marker date="1566304235603" expanded="true" signature="2315:3006" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Ruler/Gui/Forms/AngleBox.cs">
+        <entry file="file://$PROJECT_DIR$/Ruler/Render/RenderManager.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
+            <state relative-caret-position="361">
+              <caret line="56" column="65" selection-start-line="56" selection-start-column="65" selection-end-line="56" selection-end-column="65" />
               <folding>
-                <marker date="1566296887474" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
-                <marker date="1566296887474" expanded="true" signature="186:260" ph="..." />
-                <marker date="1566296887474" expanded="true" signature="290:1717" ph="{...}" />
-                <marker date="1566296887474" expanded="true" signature="329:1715" ph="{...}" />
-                <marker date="1566296887474" expanded="true" signature="361:411" ph="{...}" />
-                <marker date="1566296887474" expanded="true" signature="473:587" ph="{...}" />
-                <marker date="1566296887474" expanded="true" signature="634:935" ph="{...}" />
-                <marker date="1566296887474" expanded="true" signature="1026:1304" ph="{...}" />
-                <marker date="1566296887474" expanded="true" signature="1079:1131" ph="{...}" />
-                <marker date="1566296887474" expanded="true" signature="1157:1219" ph="{...}" />
-                <marker date="1566296887474" expanded="true" signature="1236:1294" ph="{...}" />
-                <marker date="1566296887474" expanded="true" signature="1358:1478" ph="{...}" />
-                <marker date="1566296887474" expanded="true" signature="1538:1709" ph="{...}" />
-                <marker date="1566296887474" expanded="true" signature="1612:1664" ph="{...}" />
+                <marker date="1566314685688" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
+                <marker date="1566314685688" expanded="false" signature="186:355" ph="..." />
+                <marker date="1566314685688" expanded="true" signature="372:2349" ph="{...}" />
+                <marker date="1566314685688" expanded="true" signature="428:2347" ph="{...}" />
+                <marker date="1566314685688" expanded="true" signature="802:1221" ph="{...}" />
+                <marker date="1566314685688" expanded="true" signature="1252:1857" ph="{...}" />
+                <marker date="1566314685688" expanded="true" signature="1645:1847" ph="{...}" />
+                <marker date="1566314685688" expanded="true" signature="1700:1763" ph="{...}" />
+                <marker date="1566314685688" expanded="true" signature="1892:2260" ph="{...}" />
+                <marker date="1566314685688" expanded="true" signature="1939:1991" ph="{...}" />
+                <marker date="1566314685688" expanded="true" signature="2291:2341" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Ruler/Gui/Forms/WindBox.cs">
+        <entry file="file://$PROJECT_DIR$/Ruler/Controllers/KeyboardController.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="12" column="43" selection-start-line="12" selection-start-column="43" selection-end-line="12" selection-end-column="43" />
+            <state relative-caret-position="464">
+              <caret line="34" column="45" selection-start-line="34" selection-start-column="45" selection-end-line="34" selection-end-column="45" />
               <folding>
-                <marker date="1566296372306" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
-                <marker date="1566296372306" expanded="true" signature="223:448" ph="{...}" />
-                <marker date="1566296372306" expanded="true" signature="261:446" ph="{...}" />
-                <marker date="1566296372306" expanded="true" signature="321:440" ph="{...}" />
+                <marker date="1566313961068" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
+                <marker date="1566313961068" expanded="true" signature="186:247" ph="..." />
+                <marker date="1566313961068" expanded="true" signature="271:1440" ph="{...}" />
+                <marker date="1566313961068" expanded="true" signature="325:1438" ph="{...}" />
+                <marker date="1566313961068" expanded="true" signature="524:794" ph="{...}" />
+                <marker date="1566313961068" expanded="true" signature="573:625" ph="{...}" />
+                <marker date="1566313961068" expanded="true" signature="866:1343" ph="{...}" />
+                <marker date="1566313961068" expanded="true" signature="927:979" ph="{...}" />
+                <marker date="1566313961068" expanded="true" signature="1168:1220" ph="{...}" />
+                <marker date="1566313961068" expanded="true" signature="1374:1432" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Ruler/Trajectory/Weapons/Weapons.cs">
+        <entry file="file://$PROJECT_DIR$/Ruler/Render/RenderForm.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
-              <caret line="22" column="23" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
+            <state relative-caret-position="96">
+              <caret line="9" column="34" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
               <folding>
-                <marker date="1566257197681" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
-                <marker date="1566257197681" expanded="false" signature="186:315" ph="..." />
-                <marker date="1566257197681" expanded="true" signature="347:64049" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="381:64047" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="638:63944" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="652:968" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="982:1514" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="1528:2080" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="2094:2638" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="2652:3077" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="3091:3614" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="3628:4132" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="4146:4549" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="4563:4978" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="4992:5440" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="5454:6010" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="6024:6564" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="6578:6998" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="7012:7429" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="7443:7762" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="7776:8093" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="8107:8531" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="8545:9083" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="9097:9638" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="9652:9970" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="9984:10515" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="10529:10841" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="10855:11271" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="11285:11614" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="11628:12058" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="12072:12470" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="12484:12914" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="12928:13386" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="13400:13815" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="13829:14153" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="14167:14708" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="14722:15046" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="15060:15491" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="15505:15819" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="15833:16395" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="16409:16750" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="16764:17201" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="17215:17535" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="17549:17867" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="17881:18308" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="18322:18735" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="18749:19160" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="19174:19486" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="19500:19827" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="19841:20169" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="20183:20517" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="20531:20945" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="20959:21269" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="21283:21614" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="21628:22062" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="22076:22516" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="22530:22850" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="22864:23298" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="23312:23628" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="23642:23964" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="23978:24299" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="24313:24730" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="24744:25056" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="25070:25393" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="25407:25856" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="25870:26269" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="26283:26823" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="26837:27363" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="27377:27681" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="27695:28130" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="28144:28572" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="28586:29022" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="29036:29361" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="29375:29710" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="29724:30049" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="30063:30498" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="30512:30834" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="30848:31296" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="31310:31751" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="31765:32091" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="32105:32436" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="32450:32859" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="32873:33195" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="33209:33537" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="33551:33876" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="33890:34443" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="34457:34895" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="34909:35433" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="35447:35757" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="35771:36171" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="36185:36519" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="36533:36949" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="36963:37289" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="37303:37729" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="37743:38069" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="38083:38516" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="38530:38859" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="38873:39294" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="39308:39629" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="39643:39969" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="39983:40301" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="40315:40625" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="40639:40962" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="40976:41303" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="41317:41629" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="41643:41975" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="41989:42437" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="42451:42787" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="42801:43139" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="43153:43569" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="43583:44024" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="44038:44360" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="44374:44776" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="44790:45322" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="45336:45759" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="45773:46091" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="46105:46431" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="46445:46764" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="46778:47204" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="47218:47756" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="47770:48096" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="48110:48541" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="48555:48857" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="48871:49208" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="49222:49561" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="49575:49999" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="50013:50543" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="50557:50888" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="50902:51322" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="51336:51652" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="51666:52090" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="52104:52557" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="52571:52885" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="52899:53321" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="53335:53670" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="53684:54116" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="54130:54650" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="54664:55117" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="55131:55566" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="55580:55914" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="55928:56257" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="56271:56597" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="56611:57048" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="57062:57376" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="57390:57716" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="57730:58058" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="58072:58516" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="58530:58967" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="58981:59296" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="59310:59769" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="59783:60102" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="60116:60434" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="60448:60886" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="60900:61225" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="61239:61696" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="61710:62024" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="62038:62366" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="62380:62718" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="62732:63161" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="63175:63489" ph="{...}" />
-                <marker date="1566257197681" expanded="true" signature="63503:63934" ph="{...}" />
+                <marker date="1566303061876" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
+                <marker date="1566303061876" expanded="false" signature="186:244" ph="..." />
+                <marker date="1566303061876" expanded="true" signature="261:1354" ph="{...}" />
+                <marker date="1566303061876" expanded="true" signature="322:1352" ph="{...}" />
+                <marker date="1566303061876" expanded="true" signature="425:571" ph="{...}" />
+                <marker date="1566303061876" expanded="true" signature="611:666" ph="{...}" />
+                <marker date="1566303061876" expanded="true" signature="720:954" ph="{...}" />
+                <marker date="1566303061876" expanded="true" signature="746:944" ph="{...}" />
+                <marker date="1566303061876" expanded="true" signature="1019:1227" ph="{...}" />
+                <marker date="1566303061876" expanded="true" signature="1072:1184" ph="{...}" />
+                <marker date="1566303061876" expanded="true" signature="1293:1346" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Ruler/RulerBackup.cs">
+        <entry file="file://$PROJECT_DIR$/Ruler/Controllers/EventsController.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="48">
-              <caret line="3" selection-start-line="3" selection-end-line="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Ruler/Gui/WeaponsContainer.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="752">
-              <caret line="69" column="38" selection-start-line="69" selection-start-column="38" selection-end-line="69" selection-end-column="38" />
+            <state relative-caret-position="672">
+              <caret line="47" column="21" selection-start-line="47" selection-start-column="21" selection-end-line="47" selection-end-column="21" />
               <folding>
-                <marker date="1566219791087" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
-                <marker date="1566219791087" expanded="false" signature="186:380" ph="..." />
-                <marker date="1566219791087" expanded="true" signature="401:3959" ph="{...}" />
-                <marker date="1566219791087" expanded="true" signature="452:3957" ph="{...}" />
-                <marker date="1566219791087" expanded="true" signature="492:551" ph="{...}" />
-                <marker date="1566219791087" expanded="true" signature="600:3951" ph="{...}" />
-                <marker date="1566219791087" expanded="true" signature="709:3941" ph="{...}" />
-                <marker date="1566219791087" expanded="true" signature="888:3927" ph="{...}" />
-                <marker date="1566219791087" expanded="true" signature="1223:1357" ph="{...}" />
-                <marker date="1566219791087" expanded="true" signature="1659:3866" ph="Label with weapon level" />
-                <marker date="1566219791087" expanded="true" signature="1734:3834" ph="{...}" />
-                <marker date="1566219791087" expanded="true" signature="1856:2354" ph="{...}" />
-                <marker date="1566219791087" expanded="true" signature="2414:3761" ph="{...}" />
+                <marker date="1566310435025" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
+                <marker date="1566310435025" expanded="false" signature="186:289" ph="..." />
+                <marker date="1566310435025" expanded="true" signature="313:3913" ph="{...}" />
+                <marker date="1566310435025" expanded="true" signature="376:3911" ph="{...}" />
+                <marker date="1566310435025" expanded="true" signature="1082:3465" ph="{...}" />
+                <marker date="1566310435025" expanded="true" signature="1268:3325" ph="{...}" />
+                <marker date="1566310435025" expanded="true" signature="1550:1626" ph="{...}" />
+                <marker date="1566310435025" expanded="true" signature="1843:1962" ph="{...}" />
+                <marker date="1566310435025" expanded="true" signature="1987:2105" ph="{...}" />
+                <marker date="1566310435025" expanded="true" signature="2245:2364" ph="{...}" />
+                <marker date="1566310435025" expanded="true" signature="2389:2507" ph="{...}" />
+                <marker date="1566310435025" expanded="true" signature="2643:2724" ph="{...}" />
+                <marker date="1566310435025" expanded="true" signature="2749:2829" ph="{...}" />
+                <marker date="1566310435025" expanded="true" signature="2965:3046" ph="{...}" />
+                <marker date="1566310435025" expanded="true" signature="3071:3151" ph="{...}" />
+                <marker date="1566310435025" expanded="true" signature="3369:3421" ph="{...}" />
+                <marker date="1566310435025" expanded="true" signature="3548:3781" ph="{...}" />
+                <marker date="1566310435025" expanded="true" signature="3831:3905" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -410,9 +257,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Blue</find>
-      <find>Red</find>
-      <find>0,</find>
       <find>Spl</find>
       <find>new</find>
       <find>\d\)</find>
@@ -440,6 +284,9 @@
       <find>Back</find>
       <find>WeaponsArray.GetLe</find>
       <find>Parabo</find>
+      <find>EventsAndGlobalsController.Weapon</find>
+      <find>Byte</find>
+      <find>Height</find>
     </findStrings>
     <replaceStrings>
       <replace>WeaponSpecification</replace>
@@ -490,6 +337,7 @@
     <setting file="file://$PROJECT_DIR$/Ruler/Trajectory/Weapons/Localization/WeaponsLocalization.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Ruler/Trajectory/Weapons/Weapons.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Ruler/Controllers/EventsController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Ruler/Manager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/Source/03761.00/Source/ndp/fx/src/winforms/Managed/System/WinForms/TextBoxBase.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/Source/03761.00/Source/ndp/fx/src/winforms/Managed/System/WinForms/TextBox.cs" root0="SKIP_HIGHLIGHTING" />
@@ -506,7 +354,7 @@
     <setting file="file://$PROJECT_DIR$/Ruler/Controllers/GlobalsController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Common/Forms/TransparentLabel.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5A268815-2CE6-43AD-A3DC-4E91EFA0F623/fe/e471b365/AnchorStyles.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Ruler/Manager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Ruler/Render/RenderManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Ruler/Common/IElement.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Common/Types/WinStruct.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Ruler/Trajectory/Weapons/Weapon.cs" root0="FORCE_HIGHLIGHTING" />
@@ -519,6 +367,7 @@
     <setting file="file://$PROJECT_DIR$/Ruler/Portal/Portal.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/73E5DBCB-02A6-4FF9-B52B-85D3C6E7DAC5/ea/7f0626d9/Key.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Ruler/Gui/Forms/PowerBox.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/EF3C88DE-A637-481F-AE3F-39E9828BEFCA/33/765765e9/GlobalKeyHook.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Ruler/Common/Utils.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Ruler/Localization/RulerLocalization.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Common/Localization.cs" root0="FORCE_HIGHLIGHTING" />
@@ -544,11 +393,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Ruler/Common/Parameters.cs" />
-        <option value="$PROJECT_DIR$/Common/Localization.cs" />
         <option value="$PROJECT_DIR$/Properties/Resources.resx" />
         <option value="$PROJECT_DIR$/Common/LanguageFlags.cs" />
-        <option value="$PROJECT_DIR$/Ruler/Common/Circle.cs" />
         <option value="$PROJECT_DIR$/Ruler/Common/Globals.cs" />
         <option value="$PROJECT_DIR$/Starter/Registry/Registry.cs" />
         <option value="$PROJECT_DIR$/Aim.csproj" />
@@ -557,20 +403,14 @@
         <option value="$PROJECT_DIR$/Ruler/Controllers/EventsAndGlobalsController.cs" />
         <option value="$PROJECT_DIR$/Ruler/Controllers/EventController.cs" />
         <option value="$PROJECT_DIR$/Ruler/Common/Keyboard/KeyboardHook.cs" />
-        <option value="$PROJECT_DIR$/Ruler/Controllers/KeyboardController.cs" />
         <option value="$PROJECT_DIR$/Ruler/Gui/RainBow.cs" />
-        <option value="$PROJECT_DIR$/Ruler/Sight/Aim.cs" />
         <option value="$PROJECT_DIR$/Ruler/Gui/WeaponButton.cs" />
-        <option value="$PROJECT_DIR$/Ruler/Trajectory/Trajectory.cs" />
         <option value="$PROJECT_DIR$/Common/Monitors.cs" />
         <option value="$PROJECT_DIR$/Ruler/Common/Guid.cs" />
         <option value="$PROJECT_DIR$/Common/Types/OrderedSet.cs" />
         <option value="$PROJECT_DIR$/Ruler/Trajectory/Weapons/Common/WeaponsLocalization.cs" />
         <option value="$PROJECT_DIR$/Ruler/Trajectory/Weapons/Common/Guidance.cs" />
         <option value="$PROJECT_DIR$/Ruler/Trajectory/Weapons/Common/Weapon.cs" />
-        <option value="$PROJECT_DIR$/Ruler/Gui/CurrentWeaponButton.cs" />
-        <option value="$PROJECT_DIR$/Ruler/Manager.cs" />
-        <option value="$PROJECT_DIR$/Ruler/Common/Surface.cs" />
         <option value="$PROJECT_DIR$/Ruler/Trajectory/Weapons/Common/Weapons.cs" />
         <option value="$PROJECT_DIR$/Ruler/Gui/PageSwitcher.cs" />
         <option value="$PROJECT_DIR$/Ruler/Gui/WeaponsPanel.cs" />
@@ -578,23 +418,32 @@
         <option value="$PROJECT_DIR$/Common/Settings.cs" />
         <option value="$PROJECT_DIR$/Starter/Starter.cs" />
         <option value="$PROJECT_DIR$/Ruler/MainForm.cs" />
-        <option value="$PROJECT_DIR$/Ruler/Controllers/EventsController.cs" />
-        <option value="$PROJECT_DIR$/Ruler/Controllers/GlobalsController.cs" />
-        <option value="$PROJECT_DIR$/Ruler/Sight/Sight.cs" />
         <option value="$PROJECT_DIR$/Ruler/Gui/SearchTextBox.cs" />
-        <option value="$PROJECT_DIR$/Ruler/Gui/WeaponsContainer.cs" />
         <option value="$PROJECT_DIR$/Ruler/Trajectory/Weapons/Localization/WeaponsLocalization.cs" />
         <option value="$PROJECT_DIR$/Ruler/Trajectory/Weapons/WeaponsImg.resx" />
         <option value="$PROJECT_DIR$/Ruler/Trajectory/Weapons/WeaponsImg.Designer.cs" />
         <option value="$PROJECT_DIR$/Ruler/Trajectory/Weapons/Weapons.cs" />
         <option value="$PROJECT_DIR$/Ruler/RulerBackup.cs" />
-        <option value="$PROJECT_DIR$/Ruler/Trajectory/Weapons/Weapon.cs" />
-        <option value="$PROJECT_DIR$/Ruler/Trajectory/Guidance.cs" />
         <option value="$PROJECT_DIR$/Ruler/Gui/Forms/WindBox.cs" />
         <option value="$PROJECT_DIR$/Ruler/Gui/Forms/PowerBox.cs" />
-        <option value="$PROJECT_DIR$/Ruler/InitializeComponent.cs" />
-        <option value="$PROJECT_DIR$/Ruler/Gui/Forms/ValueBox.cs" />
         <option value="$PROJECT_DIR$/Ruler/Gui/Forms/AngleBox.cs" />
+        <option value="$PROJECT_DIR$/Ruler/InitializeComponent.cs" />
+        <option value="$PROJECT_DIR$/Ruler/RenderManager.cs" />
+        <option value="$PROJECT_DIR$/Ruler/Common/Surface.cs" />
+        <option value="$PROJECT_DIR$/Ruler/Common/Circle.cs" />
+        <option value="$PROJECT_DIR$/Ruler/Sight/Sight.cs" />
+        <option value="$PROJECT_DIR$/Ruler/Sight/Aim.cs" />
+        <option value="$PROJECT_DIR$/Ruler/Gui/CurrentWeaponButton.cs" />
+        <option value="$PROJECT_DIR$/Ruler/Gui/WeaponsContainer.cs" />
+        <option value="$PROJECT_DIR$/Ruler/Trajectory/Weapons/Weapon.cs" />
+        <option value="$PROJECT_DIR$/Ruler/Gui/Forms/ValueBox.cs" />
+        <option value="$PROJECT_DIR$/Ruler/Manager.cs" />
+        <option value="$PROJECT_DIR$/Ruler/Trajectory/Guidance.cs" />
+        <option value="$PROJECT_DIR$/Ruler/Controllers/GlobalsController.cs" />
+        <option value="$PROJECT_DIR$/Ruler/Trajectory/Trajectory.cs" />
+        <option value="$PROJECT_DIR$/Ruler/Controllers/EventsController.cs" />
+        <option value="$PROJECT_DIR$/Ruler/Controllers/KeyboardController.cs" />
+        <option value="$PROJECT_DIR$/Ruler/Render/RenderManager.cs" />
       </list>
     </option>
   </component>
@@ -616,46 +465,11 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="FileSystemExplorer" />
+      <pane id="AssemblyExplorer" />
       <pane id="SolutionExplorer">
-        <subPane>
-          <expand>
-            <path>
-              <item name="" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="Aim" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="Aim" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Aim" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="Aim" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Aim" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Ruler" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="Aim" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Aim" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Ruler" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Gui" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="Aim" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Aim" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Ruler" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Gui" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Forms" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
         <option name="show-all-files" value="false" />
       </pane>
-      <pane id="AssemblyExplorer" />
-      <pane id="FileSystemExplorer" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -754,7 +568,8 @@
       <workItem from="1566120409286" duration="6243000" />
       <workItem from="1566131140826" duration="23812000" />
       <workItem from="1566207301627" duration="16482000" />
-      <workItem from="1566286825821" duration="3268000" />
+      <workItem from="1566286825821" duration="15864000" />
+      <workItem from="1566314799304" duration="4000" />
     </task>
     <task id="LOCAL-00001" summary="Update">
       <created>1565097028546</created>
@@ -833,11 +648,18 @@
       <option name="project" value="LOCAL" />
       <updated>1566288158744</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Refactored ValueBox">
+      <created>1566297131348</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1566297131348</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="409900000" />
+    <option name="totallyTimeSpent" value="422500000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -856,7 +678,7 @@
       <window_info id="Favorites" order="1" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32977587" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49920085" visible="true" weight="0.32657418" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49920085" weight="0.32657418" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -876,7 +698,7 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.24986681" />
-      <window_info anchor="right" content_ui="combo" id="Project" order="3" sideWeight="0.48665956" weight="0.17368141" />
+      <window_info anchor="right" content_ui="combo" id="Project" order="3" sideWeight="0.48665956" visible="true" weight="0.1752797" />
       <window_info anchor="right" id="Database" order="4" />
       <window_info anchor="right" id="Unit Tests Coverage" order="5" />
       <window_info anchor="right" id="Designer Toolbox" order="6" sideWeight="0.5133405" side_tool="true" visible="true" weight="0.1752797" />
@@ -926,108 +748,10 @@
     <MESSAGE value="Fix sight changing position" />
     <MESSAGE value="Added angle textbox switches between 360angle and 90angle/quarter." />
     <MESSAGE value="And parabola and direct buttons" />
-    <option name="LAST_COMMIT_MESSAGE" value="And parabola and direct buttons" />
+    <MESSAGE value="Refactored ValueBox" />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactored ValueBox" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Ruler/Rebound/ReboundCircle.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="13" column="41" selection-start-line="13" selection-start-column="41" selection-end-line="13" selection-end-column="41" />
-          <folding>
-            <marker date="1565998447074" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
-            <marker date="1565998447074" expanded="false" signature="186:273" ph="..." />
-            <marker date="1565998447074" expanded="true" signature="290:619" ph="{...}" />
-            <marker date="1565998447074" expanded="true" signature="344:617" ph="{...}" />
-            <marker date="1565998447074" expanded="true" signature="497:517" ph="{...}" />
-            <marker date="1565998447074" expanded="true" signature="591:611" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ruler/Common/Parameters.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="423">
-          <caret line="51" column="1" lean-forward="true" selection-start-line="51" selection-start-column="1" selection-end-line="51" selection-end-column="1" />
-          <folding>
-            <marker date="1565980218569" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
-            <marker date="1565980218569" expanded="false" signature="186:227" ph="..." />
-            <marker date="1565980218569" expanded="true" signature="251:2093" ph="{...}" />
-            <marker date="1565980218569" expanded="true" signature="282:1041" ph="{...}" />
-            <marker date="1565980218569" expanded="true" signature="739:1035" ph="{...}" />
-            <marker date="1565980218569" expanded="true" signature="1082:2091" ph="{...}" />
-            <marker date="1565980218569" expanded="true" signature="1212:1824" ph="{...}" />
-            <marker date="1565980218569" expanded="true" signature="1905:2076" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Starter/Starter.Designer.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
-          <caret line="194" selection-start-line="194" selection-end-line="194" selection-end-column="33" />
-          <folding>
-            <marker date="1565899712842" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
-            <marker date="1565899712842" expanded="false" signature="186:369" ph="..." />
-            <marker date="1565899712842" expanded="true" signature="422:10181" ph="{...}" />
-            <marker date="1565899712842" expanded="true" signature="507:583" ph="/// Required designer variable. ... " />
-            <marker date="1565899712842" expanded="true" signature="661:852" ph="/// Clean up any resources being used. ... " />
-            <marker date="1565899712842" expanded="true" signature="908:1082" ph="{...}" />
-            <marker date="1565899712842" expanded="true" signature="969:1035" ph="{...}" />
-            <marker date="1565899712842" expanded="true" signature="1092:9668" ph="Windows Form Designer generated code" />
-            <marker date="1565899712842" expanded="true" signature="1146:1309" ph="/// Required method for Designer support - do not modify ... " />
-            <marker date="1565899712842" expanded="true" signature="1352:9648" ph="{...}" />
-            <marker date="1565899712842" expanded="true" signature="2233:2281" ph="/* LanguageLabel ... */" />
-            <marker date="1565899712842" expanded="true" signature="2588:2639" ph="/* LanguageComboBox ... */" />
-            <marker date="1565899712842" expanded="true" signature="3466:3512" ph="/* ScreenLabel ... */" />
-            <marker date="1565899712842" expanded="true" signature="3810:3859" ph="/* ScreenComboBox ... */" />
-            <marker date="1565899712842" expanded="true" signature="4529:4701" ph="/* this.LanguageComboBox.SelectedIndexChanged += new System.EventHandler(this.LanguageComboBox_ChangeStarterLangu ... */" />
-            <marker date="1565899712842" expanded="true" signature="4973:5016" ph="/* KeyLabel ... */" />
-            <marker date="1565899712842" expanded="true" signature="5295:5339" ph="/* LicenceID ... */" />
-            <marker date="1565899712842" expanded="true" signature="5812:5954" ph="/* this.LicenceID.TextChanged += new System.EventHandler(this.LicenceID_TextChanged); ... */" />
-            <marker date="1565899712842" expanded="true" signature="6383:6433" ph="/* IsDisguiseRuler ... */" />
-            <marker date="1565899712842" expanded="true" signature="6820:6873" ph="/* NotDisplayCheckBox ... */" />
-            <marker date="1565899712842" expanded="true" signature="7343:7401" ph="/* NotSaveSettingsCheckBox ... */" />
-            <marker date="1565899712842" expanded="true" signature="7844:7890" ph="/* StartButton ... */" />
-            <marker date="1565899712842" expanded="true" signature="8291:8333" ph="/* Starter ... */" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Common/Licence.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
-          <folding>
-            <marker date="1565442683837" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
-            <marker date="1565442683837" expanded="false" signature="186:301" ph="..." />
-            <marker date="1565442683837" expanded="true" signature="319:1948" ph="{...}" />
-            <marker date="1565442683837" expanded="true" signature="348:1946" ph="{...}" />
-            <marker date="1565442683837" expanded="true" signature="839:974" ph="{...}" />
-            <marker date="1565442683837" expanded="true" signature="1033:1306" ph="{...}" />
-            <marker date="1565442683837" expanded="true" signature="1375:1437" ph="{...}" />
-            <marker date="1565442683837" expanded="true" signature="1496:1561" ph="{...}" />
-            <marker date="1565442683837" expanded="true" signature="1629:1707" ph="{...}" />
-            <marker date="1565442683837" expanded="true" signature="1756:1823" ph="{...}" />
-            <marker date="1565442683837" expanded="true" signature="1859:1940" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Starter/Localization/StarterLocalization.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="68" column="38" lean-forward="true" selection-start-line="68" selection-start-column="38" selection-end-line="68" selection-end-column="38" />
-          <folding>
-            <marker date="1565903493199" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
-            <marker date="1565903493199" expanded="false" signature="186:207" ph="..." />
-            <marker date="1565903493199" expanded="true" signature="239:2638" ph="{...}" />
-            <marker date="1565903493199" expanded="true" signature="310:2636" ph="{...}" />
-            <marker date="1565903493199" expanded="true" signature="805:2503" ph="{...}" />
-            <marker date="1565903493199" expanded="true" signature="2565:2630" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Properties/Resources.resx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="491">
@@ -1101,43 +825,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Ruler/Common/Globals.cs" />
     <entry file="file://$PROJECT_DIR$/Ruler/Common/Keyboard/KeyboardHook.cs" />
-    <entry file="file://$PROJECT_DIR$/Ruler/Controllers/KeyboardController.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="29" column="12" selection-start-line="29" selection-start-column="12" selection-end-line="29" selection-end-column="12" />
-          <folding>
-            <marker date="1566046905840" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
-            <marker date="1566046905840" expanded="true" signature="186:284" ph="..." />
-            <marker date="1566046905840" expanded="true" signature="308:1312" ph="{...}" />
-            <marker date="1566046905840" expanded="true" signature="362:1310" ph="{...}" />
-            <marker date="1566046905840" expanded="true" signature="561:831" ph="{...}" />
-            <marker date="1566046905840" expanded="true" signature="610:662" ph="{...}" />
-            <marker date="1566046905840" expanded="true" signature="903:1215" ph="{...}" />
-            <marker date="1566046905840" expanded="true" signature="1041:1093" ph="{...}" />
-            <marker date="1566046905840" expanded="true" signature="1246:1304" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Ruler/Gui/RainBow.cs" />
-    <entry file="file://$PROJECT_DIR$/Ruler/Sight/Aim.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="19" column="68" selection-start-line="19" selection-start-column="68" selection-end-line="19" selection-end-column="68" />
-          <folding>
-            <marker date="1566079362815" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
-            <marker date="1566079362815" expanded="false" signature="186:288" ph="..." />
-            <marker date="1566079362815" expanded="true" signature="305:1720" ph="{...}" />
-            <marker date="1566079362815" expanded="true" signature="339:1718" ph="{...}" />
-            <marker date="1566079362815" expanded="true" signature="621:1016" ph="{...}" />
-            <marker date="1566079362815" expanded="true" signature="1071:1121" ph="{...}" />
-            <marker date="1566079362815" expanded="true" signature="1192:1238" ph="{...}" />
-            <marker date="1566079362815" expanded="true" signature="1324:1370" ph="{...}" />
-            <marker date="1566079362815" expanded="true" signature="1436:1712" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Common/Localization.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="158">
@@ -1167,33 +855,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Ruler/Gui/WeaponButton.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="624">
-          <caret line="47" column="67" selection-start-line="47" selection-start-column="67" selection-end-line="47" selection-end-column="67" />
-          <folding>
-            <marker date="1566090992102" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
-            <marker date="1566090992102" expanded="true" signature="186:322" ph="..." />
-            <marker date="1566090992102" expanded="true" signature="384:3738" ph="{...}" />
-            <marker date="1566090992102" expanded="true" signature="636:848" ph="{...}" />
-            <marker date="1566090992102" expanded="true" signature="662:721" ph="{...}" />
-            <marker date="1566090992102" expanded="true" signature="737:838" ph="{...}" />
-            <marker date="1566090992102" expanded="true" signature="990:1476" ph="{...}" />
-            <marker date="1566090992102" expanded="true" signature="1527:1681" ph="{...}" />
-            <marker date="1566090992102" expanded="true" signature="1745:2367" ph="{...}" />
-            <marker date="1566090992102" expanded="true" signature="1781:2033" ph="{...}" />
-            <marker date="1566090992102" expanded="true" signature="2050:2357" ph="{...}" />
-            <marker date="1566090992102" expanded="true" signature="2095:2159" ph="{...}" />
-            <marker date="1566090992102" expanded="true" signature="2420:2540" ph="{...}" />
-            <marker date="1566090992102" expanded="true" signature="2598:2710" ph="{...}" />
-            <marker date="1566090992102" expanded="true" signature="2765:2855" ph="{...}" />
-            <marker date="1566090992102" expanded="true" signature="2910:3578" ph="{...}" />
-            <marker date="1566090992102" expanded="true" signature="3133:3463" ph="{...}" />
-            <marker date="1566090992102" expanded="true" signature="3646:3732" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Common/Monitors.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-304">
@@ -1208,22 +869,6 @@
             <marker date="1565737665378" expanded="true" signature="1213:1580" ph="{...}" />
             <marker date="1565737665378" expanded="true" signature="1635:2207" ph="{...}" />
             <marker date="1565737665378" expanded="true" signature="1799:2145" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ruler/Trajectory/Trajectory.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="23" column="12" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="12" />
-          <folding>
-            <marker date="1566091411459" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
-            <marker date="1566091411459" expanded="true" signature="186:273" ph="..." />
-            <marker date="1566091411459" expanded="true" signature="290:940" ph="{...}" />
-            <marker date="1566091411459" expanded="true" signature="332:938" ph="{...}" />
-            <marker date="1566091411459" expanded="true" signature="634:681" ph="{...}" />
-            <marker date="1566091411459" expanded="true" signature="747:932" ph="{...}" />
-            <marker date="1566091411459" expanded="true" signature="811:922" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1255,100 +900,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Ruler/Common/Guid.cs" />
-    <entry file="file://$PROJECT_DIR$/Ruler/Common/Utils.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="22" column="52" lean-forward="true" selection-start-line="22" selection-start-column="52" selection-end-line="22" selection-end-column="52" />
-          <folding>
-            <marker date="1566143108748" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
-            <marker date="1566143108748" expanded="false" signature="186:281" ph="..." />
-            <marker date="1566143108748" expanded="true" signature="305:1888" ph="{...}" />
-            <marker date="1566143108748" expanded="true" signature="337:1886" ph="{...}" />
-            <marker date="1566143108748" expanded="true" signature="403:461" ph="{...}" />
-            <marker date="1566143108748" expanded="true" signature="535:629" ph="{...}" />
-            <marker date="1566143108748" expanded="true" signature="683:841" ph="{...}" />
-            <marker date="1566143108748" expanded="true" signature="938:1278" ph="{...}" />
-            <marker date="1566143108748" expanded="true" signature="1377:1502" ph="{...}" />
-            <marker date="1566143108748" expanded="true" signature="1634:1880" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ruler/Common/Surface.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="423">
-          <caret line="31" column="8" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="8" />
-          <folding>
-            <marker date="1566160131508" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
-            <marker date="1566160131508" expanded="false" signature="186:218" ph="..." />
-            <marker date="1566160131508" expanded="true" signature="242:903" ph="{...}" />
-            <marker date="1566160131508" expanded="true" signature="293:901" ph="{...}" />
-            <marker date="1566160131508" expanded="true" signature="476:537" ph="{...}" />
-            <marker date="1566160131508" expanded="true" signature="565:738" ph="{...}" />
-            <marker date="1566160131508" expanded="true" signature="613:692" ph="{...}" />
-            <marker date="1566160131508" expanded="true" signature="811:831" ph="{...}" />
-            <marker date="1566160131508" expanded="true" signature="875:895" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ruler/Common/Circle.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="10" column="37" selection-start-line="10" selection-start-column="37" selection-end-line="10" selection-end-column="37" />
-          <folding>
-            <marker date="1565996829637" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
-            <marker date="1565996829637" expanded="false" signature="186:268" ph="..." />
-            <marker date="1565996829637" expanded="true" signature="292:1228" ph="{...}" />
-            <marker date="1565996829637" expanded="true" signature="337:1226" ph="{...}" />
-            <marker date="1565996829637" expanded="true" signature="533:609" ph="{...}" />
-            <marker date="1565996829637" expanded="true" signature="671:736" ph="{...}" />
-            <marker date="1565996829637" expanded="true" signature="829:1006" ph="{...}" />
-            <marker date="1565996829637" expanded="true" signature="1080:1220" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ruler/Manager.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="89" column="29" selection-start-line="89" selection-start-column="29" selection-end-line="89" selection-end-column="29" />
-          <folding>
-            <marker date="1566160104104" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
-            <marker date="1566160104104" expanded="false" signature="186:355" ph="..." />
-            <marker date="1566160104104" expanded="true" signature="372:2817" ph="{...}" />
-            <marker date="1566160104104" expanded="true" signature="422:2815" ph="{...}" />
-            <marker date="1566160104104" expanded="true" signature="742:1144" ph="{...}" />
-            <marker date="1566160104104" expanded="true" signature="1175:1952" ph="{...}" />
-            <marker date="1566160104104" expanded="true" signature="1597:1942" ph="{...}" />
-            <marker date="1566160104104" expanded="true" signature="1652:1715" ph="{...}" />
-            <marker date="1566160104104" expanded="true" signature="1750:1859" ph="{...}" />
-            <marker date="1566160104104" expanded="true" signature="1995:2276" ph="{...}" />
-            <marker date="1566160104104" expanded="true" signature="2047:2240" ph="{...}" />
-            <marker date="1566160104104" expanded="true" signature="2102:2168" ph="{...}" />
-            <marker date="1566160104104" expanded="true" signature="2310:2510" ph="{...}" />
-            <marker date="1566160104104" expanded="true" signature="2541:2591" ph="{...}" />
-            <marker date="1566160104104" expanded="true" signature="2635:2809" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ruler/Gui/CurrentWeaponButton.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
-          <folding>
-            <marker date="1566158538602" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
-            <marker date="1566158538602" expanded="true" signature="186:235" ph="..." />
-            <marker date="1566158538602" expanded="true" signature="256:1116" ph="{...}" />
-            <marker date="1566158538602" expanded="true" signature="319:1114" ph="{...}" />
-            <marker date="1566158538602" expanded="true" signature="455:671" ph="{...}" />
-            <marker date="1566158538602" expanded="true" signature="790:900" ph="{...}" />
-            <marker date="1566158538602" expanded="true" signature="954:1108" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Ruler/Localization/RulerLocalization.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="400">
@@ -1421,111 +972,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Ruler/MainForm.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="407">
-          <caret line="35" column="9" selection-start-line="35" selection-start-column="9" selection-end-line="35" selection-end-column="9" />
-          <folding>
-            <marker date="1566169279398" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
-            <marker date="1566169279398" expanded="true" signature="186:368" ph="..." />
-            <marker date="1566169279398" expanded="true" signature="385:1362" ph="{...}" />
-            <marker date="1566169279398" expanded="true" signature="437:1360" ph="{...}" />
-            <marker date="1566169279398" expanded="true" signature="872:1216" ph="{...}" />
-            <marker date="1566169279398" expanded="true" signature="1278:1354" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2A131ECD-A997-4C61-BD4E-B8637DFB803F/8a/b9eef217/Math.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="194">
           <caret line="475" column="22" selection-start-line="475" selection-start-column="22" selection-end-line="475" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ruler/Sight/Sight.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="18" column="69" selection-start-line="18" selection-start-column="69" selection-end-line="18" selection-end-column="69" />
-          <folding>
-            <marker date="1566160372109" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
-            <marker date="1566160372109" expanded="false" signature="186:288" ph="..." />
-            <marker date="1566160372109" expanded="true" signature="304:3184" ph="{...}" />
-            <marker date="1566160372109" expanded="true" signature="340:3182" ph="{...}" />
-            <marker date="1566160372109" expanded="true" signature="623:920" ph="{...}" />
-            <marker date="1566160372109" expanded="true" signature="956:1039" ph="{...}" />
-            <marker date="1566160372109" expanded="true" signature="1110:1160" ph="{...}" />
-            <marker date="1566160372109" expanded="true" signature="1234:3176" ph="{...}" />
-            <marker date="1566160372109" expanded="true" signature="1502:2357" ph="{...}" />
-            <marker date="1566160372109" expanded="true" signature="2450:3141" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ruler/Controllers/EventsController.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-512">
-          <caret line="10" column="41" selection-start-line="10" selection-start-column="41" selection-end-line="10" selection-end-column="41" />
-          <folding>
-            <marker date="1566171468079" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
-            <marker date="1566171468079" expanded="false" signature="186:289" ph="..." />
-            <marker date="1566171468079" expanded="true" signature="313:4047" ph="{...}" />
-            <marker date="1566171468079" expanded="true" signature="376:4045" ph="{...}" />
-            <marker date="1566171468079" expanded="true" signature="1082:3599" ph="{...}" />
-            <marker date="1566171468079" expanded="true" signature="1185:1237" ph="{...}" />
-            <marker date="1566171468079" expanded="true" signature="1402:3459" ph="{...}" />
-            <marker date="1566171468079" expanded="true" signature="1684:1760" ph="{...}" />
-            <marker date="1566171468079" expanded="true" signature="1977:2096" ph="{...}" />
-            <marker date="1566171468079" expanded="true" signature="2121:2239" ph="{...}" />
-            <marker date="1566171468079" expanded="true" signature="2379:2498" ph="{...}" />
-            <marker date="1566171468079" expanded="true" signature="2523:2641" ph="{...}" />
-            <marker date="1566171468079" expanded="true" signature="2777:2858" ph="{...}" />
-            <marker date="1566171468079" expanded="true" signature="2883:2963" ph="{...}" />
-            <marker date="1566171468079" expanded="true" signature="3099:3180" ph="{...}" />
-            <marker date="1566171468079" expanded="true" signature="3205:3285" ph="{...}" />
-            <marker date="1566171468079" expanded="true" signature="3503:3555" ph="{...}" />
-            <marker date="1566171468079" expanded="true" signature="3682:3915" ph="{...}" />
-            <marker date="1566171468079" expanded="true" signature="3965:4039" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ruler/Controllers/GlobalsController.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="94" column="25" selection-start-line="94" selection-start-column="25" selection-end-line="94" selection-end-column="25" />
-          <folding>
-            <marker date="1566171911715" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
-            <marker date="1566171911715" expanded="true" signature="186:316" ph="..." />
-            <marker date="1566171911715" expanded="true" signature="367:4035" ph="{...}" />
-            <marker date="1566171911715" expanded="true" signature="430:4033" ph="{...}" />
-            <marker date="1566171911715" expanded="true" signature="445:1393" ph="Events And Delegates" />
-            <marker date="1566171911715" expanded="true" signature="491:848" ph="Delegates" />
-            <marker date="1566171911715" expanded="true" signature="866:1365" ph="Events" />
-            <marker date="1566171911715" expanded="true" signature="1403:4027" ph="Globals" />
-            <marker date="1566171911715" expanded="false" signature="1616:1899" ph="{...}" />
-            <marker date="1566171911715" expanded="true" signature="1642:1703" ph="{...}" />
-            <marker date="1566171911715" expanded="true" signature="1719:1889" ph="{...}" />
-            <marker date="1566171911715" expanded="true" signature="1777:1841" ph="{...}" />
-            <marker date="1566171911715" expanded="false" signature="1978:2344" ph="{...}" />
-            <marker date="1566171911715" expanded="true" signature="2004:2064" ph="{...}" />
-            <marker date="1566171911715" expanded="true" signature="2080:2334" ph="{...}" />
-            <marker date="1566171911715" expanded="true" signature="2137:2201" ph="{...}" />
-            <marker date="1566171911715" expanded="true" signature="2432:2824" ph="{...}" />
-            <marker date="1566171911715" expanded="true" signature="2458:2517" ph="{...}" />
-            <marker date="1566171911715" expanded="true" signature="2533:2814" ph="{...}" />
-            <marker date="1566171911715" expanded="true" signature="2584:2648" ph="{...}" />
-            <marker date="1566171911715" expanded="true" signature="2903:3529" ph="{...}" />
-            <marker date="1566171911715" expanded="true" signature="2929:2988" ph="{...}" />
-            <marker date="1566171911715" expanded="true" signature="3004:3519" ph="{...}" />
-            <marker date="1566171911715" expanded="true" signature="3092:3156" ph="{...}" />
-            <marker date="1566171911715" expanded="true" signature="3190:3260" ph="{...}" />
-            <marker date="1566171911715" expanded="true" signature="3296:3389" ph="{...}" />
-            <marker date="1566171911715" expanded="true" signature="3617:4007" ph="{...}" />
-            <marker date="1566171911715" expanded="true" signature="3643:3701" ph="{...}" />
-            <marker date="1566171911715" expanded="true" signature="3717:3997" ph="{...}" />
-            <marker date="1566171911715" expanded="true" signature="3767:3831" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2900,26 +2350,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Ruler/Gui/WeaponsPanel.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="21" column="38" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
-          <folding>
-            <marker date="1566164525661" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
-            <marker date="1566164525661" expanded="false" signature="186:287" ph="..." />
-            <marker date="1566164525661" expanded="true" signature="308:4562" ph="{...}" />
-            <marker date="1566164525661" expanded="true" signature="357:4560" ph="{...}" />
-            <marker date="1566164525661" expanded="true" signature="1103:4195" ph="{...}" />
-            <marker date="1566164525661" expanded="true" signature="1172:1457" ph="{...}" />
-            <marker date="1566164525661" expanded="true" signature="1607:2126" ph="{...}" />
-            <marker date="1566164525661" expanded="true" signature="2199:2399" ph="{...}" />
-            <marker date="1566164525661" expanded="true" signature="2456:2995" ph="{...}" />
-            <marker date="1566164525661" expanded="true" signature="3671:3875" ph="{...}" />
-            <marker date="1566164525661" expanded="true" signature="4275:4554" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Ruler/Trajectory/Weapons/Localization/WeaponsLocalization.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="304">
@@ -2971,28 +2401,6 @@
             <marker date="1566167980786" expanded="true" signature="7510:7602" ph="{...}" />
             <marker date="1566167980786" expanded="true" signature="7623:8017" ph="{...}" />
             <marker date="1566167980786" expanded="true" signature="8065:8170" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ruler/Gui/WeaponsContainer.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="752">
-          <caret line="69" column="38" selection-start-line="69" selection-start-column="38" selection-end-line="69" selection-end-column="38" />
-          <folding>
-            <marker date="1566219791087" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
-            <marker date="1566219791087" expanded="false" signature="186:380" ph="..." />
-            <marker date="1566219791087" expanded="true" signature="401:3959" ph="{...}" />
-            <marker date="1566219791087" expanded="true" signature="452:3957" ph="{...}" />
-            <marker date="1566219791087" expanded="true" signature="492:551" ph="{...}" />
-            <marker date="1566219791087" expanded="true" signature="600:3951" ph="{...}" />
-            <marker date="1566219791087" expanded="true" signature="709:3941" ph="{...}" />
-            <marker date="1566219791087" expanded="true" signature="888:3927" ph="{...}" />
-            <marker date="1566219791087" expanded="true" signature="1223:1357" ph="{...}" />
-            <marker date="1566219791087" expanded="true" signature="1659:3866" ph="Label with weapon level" />
-            <marker date="1566219791087" expanded="true" signature="1734:3834" ph="{...}" />
-            <marker date="1566219791087" expanded="true" signature="1856:2354" ph="{...}" />
-            <marker date="1566219791087" expanded="true" signature="2414:3761" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -3167,47 +2575,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Ruler/RulerBackup.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ruler/Trajectory/Weapons/Weapon.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="388">
-          <caret line="42" column="66" lean-forward="true" selection-start-line="42" selection-start-column="66" selection-end-line="42" selection-end-column="66" />
-          <folding>
-            <marker date="1566287209390" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
-            <marker date="1566287209390" expanded="false" signature="186:239" ph="..." />
-            <marker date="1566287209390" expanded="true" signature="264:1730" ph="{...}" />
-            <marker date="1566287209390" expanded="true" signature="316:464" ph="{...}" />
-            <marker date="1566287209390" expanded="true" signature="491:1728" ph="{...}" />
-            <marker date="1566287209390" expanded="true" signature="1002:1265" ph="{...}" />
-            <marker date="1566287209390" expanded="true" signature="1308:1353" ph="{...}" />
-            <marker date="1566287209390" expanded="true" signature="1395:1482" ph="{...}" />
-            <marker date="1566287209390" expanded="true" signature="1534:1722" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ruler/Trajectory/Guidance.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="633">
-          <caret line="46" column="33" lean-forward="true" selection-start-line="46" selection-start-column="33" selection-end-line="46" selection-end-column="33" />
-          <folding>
-            <marker date="1566287226248" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
-            <marker date="1566287226248" expanded="true" signature="186:236" ph="..." />
-            <marker date="1566287226248" expanded="true" signature="253:1605" ph="{...}" />
-            <marker date="1566287226248" expanded="true" signature="293:338" ph="{...}" />
-            <marker date="1566287226248" expanded="true" signature="373:1603" ph="{...}" />
-            <marker date="1566287226248" expanded="true" signature="388:1433" ph="/* internal Point[] Evaluate() ... */" />
-            <marker date="1566287226248" expanded="true" signature="1540:1594" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Ruler/Gui/Forms/WindBox.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="192">
@@ -3234,91 +2601,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Ruler/Gui/Forms/ValueBox.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="122" column="33" lean-forward="true" selection-start-line="122" selection-start-column="33" selection-end-line="122" selection-end-column="33" />
-          <folding>
-            <marker date="1566296781105" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
-            <marker date="1566296781105" expanded="false" signature="186:310" ph="..." />
-            <marker date="1566296781105" expanded="true" signature="340:8959" ph="{...}" />
-            <marker date="1566296781105" expanded="true" signature="402:8957" ph="{...}" />
-            <marker date="1566296781105" expanded="true" signature="530:860" ph="{...}" />
-            <marker date="1566296781105" expanded="true" signature="556:618" ph="{...}" />
-            <marker date="1566296781105" expanded="true" signature="634:850" ph="{...}" />
-            <marker date="1566296781105" expanded="true" signature="688:752" ph="{...}" />
-            <marker date="1566296781105" expanded="true" signature="1022:1364" ph="{...}" />
-            <marker date="1566296781105" expanded="true" signature="1048:1113" ph="{...}" />
-            <marker date="1566296781105" expanded="true" signature="1129:1354" ph="{...}" />
-            <marker date="1566296781105" expanded="true" signature="1186:1250" ph="{...}" />
-            <marker date="1566296781105" expanded="true" signature="1424:1748" ph="{...}" />
-            <marker date="1566296781105" expanded="true" signature="1450:1508" ph="{...}" />
-            <marker date="1566296781105" expanded="true" signature="1524:1738" ph="{...}" />
-            <marker date="1566296781105" expanded="true" signature="1579:1643" ph="{...}" />
-            <marker date="1566296781105" expanded="true" signature="1775:2992" ph="{...}" />
-            <marker date="1566296781105" expanded="true" signature="2356:2442" ph="{...}" />
-            <marker date="1566296781105" expanded="true" signature="3045:3281" ph="{...}" />
-            <marker date="1566296781105" expanded="true" signature="3115:3167" ph="{...}" />
-            <marker date="1566296781105" expanded="true" signature="3340:3501" ph="{...}" />
-            <marker date="1566296781105" expanded="true" signature="3566:5716" ph="{...}" />
-            <marker date="1566296781105" expanded="true" signature="3704:3790" ph="{...}" />
-            <marker date="1566296781105" expanded="true" signature="3874:3960" ph="{...}" />
-            <marker date="1566296781105" expanded="true" signature="4102:4188" ph="{...}" />
-            <marker date="1566296781105" expanded="true" signature="4250:4336" ph="{...}" />
-            <marker date="1566296781105" expanded="true" signature="4350:5114" ph="/* if (Char.IsNumber(e.KeyChar)) ... */" />
-            <marker date="1566296781105" expanded="true" signature="5157:5706" ph="{...}" />
-            <marker date="1566296781105" expanded="true" signature="5211:5692" ph="{...}" />
-            <marker date="1566296781105" expanded="true" signature="5776:5862" ph="{...}" />
-            <marker date="1566296781105" expanded="true" signature="5919:6013" ph="{...}" />
-            <marker date="1566296781105" expanded="true" signature="6071:6215" ph="{...}" />
-            <marker date="1566296781105" expanded="true" signature="6148:6205" ph="{...}" />
-            <marker date="1566296781105" expanded="true" signature="6275:6361" ph="{...}" />
-            <marker date="1566296781105" expanded="true" signature="6421:6968" ph="{...}" />
-            <marker date="1566296781105" expanded="true" signature="6559:6629" ph="{...}" />
-            <marker date="1566296781105" expanded="true" signature="6736:6806" ph="{...}" />
-            <marker date="1566296781105" expanded="true" signature="7022:7042" ph="{...}" />
-            <marker date="1566296781105" expanded="true" signature="7106:7200" ph="{...}" />
-            <marker date="1566296781105" expanded="true" signature="7244:7462" ph="{...}" />
-            <marker date="1566296781105" expanded="true" signature="7502:7737" ph="{...}" />
-            <marker date="1566296781105" expanded="true" signature="7821:8008" ph="{...}" />
-            <marker date="1566296781105" expanded="true" signature="7878:7930" ph="{...}" />
-            <marker date="1566296781105" expanded="true" signature="8095:8408" ph="{...}" />
-            <marker date="1566296781105" expanded="true" signature="8155:8207" ph="{...}" />
-            <marker date="1566296781105" expanded="true" signature="8234:8304" ph="{...}" />
-            <marker date="1566296781105" expanded="true" signature="8321:8398" ph="{...}" />
-            <marker date="1566296781105" expanded="true" signature="8498:8639" ph="{...}" />
-            <marker date="1566296781105" expanded="true" signature="8551:8603" ph="{...}" />
-            <marker date="1566296781105" expanded="false" signature="8649:8951" ph="INotifyPropertyChanged Members" />
-            <marker date="1566296781105" expanded="true" signature="8824:8931" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ruler/InitializeComponent.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="21" column="39" lean-forward="true" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
-          <folding>
-            <marker date="1566296634690" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
-            <marker date="1566296634690" expanded="true" signature="186:330" ph="..." />
-            <marker date="1566296634690" expanded="true" signature="347:4472" ph="{...}" />
-            <marker date="1566296634690" expanded="true" signature="392:4470" ph="{...}" />
-            <marker date="1566296634690" expanded="true" signature="767:4464" ph="{...}" />
-            <marker date="1566296634690" expanded="true" signature="1111:3423" ph="Power Angle Wind valueBox defines" />
-            <marker date="1566296634690" expanded="true" signature="1221:1570" ph="{...}" />
-            <marker date="1566296634690" expanded="true" signature="1720:1866" ph="{...}" />
-            <marker date="1566296634690" expanded="true" signature="1922:2366" ph="{...}" />
-            <marker date="1566296634690" expanded="true" signature="2512:2652" ph="{...}" />
-            <marker date="1566296634690" expanded="true" signature="2710:3104" ph="{...}" />
-            <marker date="1566296634690" expanded="true" signature="3254:3398" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Ruler/Gui/Forms/AngleBox.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
+        <state relative-caret-position="64">
+          <caret line="4" column="28" lean-forward="true" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
           <folding>
             <marker date="1566296887474" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
             <marker date="1566296887474" expanded="true" signature="186:260" ph="..." />
@@ -3334,6 +2620,526 @@
             <marker date="1566296887474" expanded="true" signature="1358:1478" ph="{...}" />
             <marker date="1566296887474" expanded="true" signature="1538:1709" ph="{...}" />
             <marker date="1566296887474" expanded="true" signature="1612:1664" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ruler/InitializeComponent.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="75" column="28" selection-start-line="75" selection-start-column="28" selection-end-line="75" selection-end-column="28" />
+          <folding>
+            <marker date="1566302714200" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
+            <marker date="1566302714200" expanded="true" signature="186:330" ph="..." />
+            <marker date="1566302714200" expanded="true" signature="347:4501" ph="{...}" />
+            <marker date="1566302714200" expanded="true" signature="392:4499" ph="{...}" />
+            <marker date="1566302714200" expanded="true" signature="767:4493" ph="{...}" />
+            <marker date="1566302714200" expanded="true" signature="1111:3452" ph="Power Angle Wind valueBox defines" />
+            <marker date="1566302714200" expanded="true" signature="1221:1570" ph="{...}" />
+            <marker date="1566302714200" expanded="true" signature="1720:1866" ph="{...}" />
+            <marker date="1566302714200" expanded="true" signature="1922:2366" ph="{...}" />
+            <marker date="1566302714200" expanded="true" signature="2512:2652" ph="{...}" />
+            <marker date="1566302714200" expanded="true" signature="2710:3133" ph="{...}" />
+            <marker date="1566302714200" expanded="true" signature="3283:3427" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ruler/Common/IElement.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="10" column="5" lean-forward="true" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
+          <folding>
+            <marker date="1565737675789" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
+            <marker date="1565737675789" expanded="true" signature="228:326" ph="{...}" />
+            <marker date="1565737675789" expanded="true" signature="262:324" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ruler/Common/Surface.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="366">
+          <caret line="27" column="8" lean-forward="true" selection-start-line="27" selection-start-column="8" selection-end-line="27" selection-end-column="14" />
+          <folding>
+            <marker date="1566304225703" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
+            <marker date="1566304225703" expanded="false" signature="186:218" ph="..." />
+            <marker date="1566304225703" expanded="true" signature="242:903" ph="{...}" />
+            <marker date="1566304225703" expanded="true" signature="293:901" ph="{...}" />
+            <marker date="1566304225703" expanded="true" signature="476:537" ph="{...}" />
+            <marker date="1566304225703" expanded="true" signature="565:738" ph="{...}" />
+            <marker date="1566304225703" expanded="true" signature="613:692" ph="{...}" />
+            <marker date="1566304225703" expanded="true" signature="811:831" ph="{...}" />
+            <marker date="1566304225703" expanded="true" signature="875:895" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ruler/Common/Circle.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="398">
+          <caret line="33" column="8" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="14" />
+          <folding>
+            <marker date="1566304228612" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
+            <marker date="1566304228612" expanded="false" signature="186:268" ph="..." />
+            <marker date="1566304228612" expanded="true" signature="292:1228" ph="{...}" />
+            <marker date="1566304228612" expanded="true" signature="337:1226" ph="{...}" />
+            <marker date="1566304228612" expanded="true" signature="533:609" ph="{...}" />
+            <marker date="1566304228612" expanded="true" signature="671:736" ph="{...}" />
+            <marker date="1566304228612" expanded="true" signature="829:1006" ph="{...}" />
+            <marker date="1566304228612" expanded="true" signature="1080:1220" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ruler/Sight/Aim.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="42" column="14" selection-start-line="42" selection-start-column="9" selection-end-line="42" selection-end-column="14" />
+          <folding>
+            <marker date="1566304241943" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
+            <marker date="1566304241943" expanded="false" signature="186:288" ph="..." />
+            <marker date="1566304241943" expanded="true" signature="305:1823" ph="{...}" />
+            <marker date="1566304241943" expanded="true" signature="352:1821" ph="{...}" />
+            <marker date="1566304241943" expanded="true" signature="634:1029" ph="{...}" />
+            <marker date="1566304241943" expanded="true" signature="1084:1134" ph="{...}" />
+            <marker date="1566304241943" expanded="true" signature="1205:1251" ph="{...}" />
+            <marker date="1566304241943" expanded="true" signature="1337:1383" ph="{...}" />
+            <marker date="1566304241943" expanded="true" signature="1449:1725" ph="{...}" />
+            <marker date="1566304241943" expanded="true" signature="1761:1815" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ruler/Gui/WeaponButton.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="74">
+          <caret line="81" column="12" selection-start-line="81" selection-start-column="12" selection-end-line="81" selection-end-column="12" />
+          <folding>
+            <marker date="1566090992102" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
+            <marker date="1566090992102" expanded="true" signature="186:322" ph="..." />
+            <marker date="1566090992102" expanded="true" signature="343:3740" ph="{...}" />
+            <marker date="1566090992102" expanded="true" signature="384:3738" ph="{...}" />
+            <marker date="1566090992102" expanded="true" signature="636:848" ph="{...}" />
+            <marker date="1566090992102" expanded="true" signature="662:721" ph="{...}" />
+            <marker date="1566090992102" expanded="true" signature="737:838" ph="{...}" />
+            <marker date="1566090992102" expanded="true" signature="990:1476" ph="{...}" />
+            <marker date="1566090992102" expanded="true" signature="1527:1681" ph="{...}" />
+            <marker date="1566090992102" expanded="true" signature="1745:2367" ph="{...}" />
+            <marker date="1566090992102" expanded="true" signature="1781:2033" ph="{...}" />
+            <marker date="1566090992102" expanded="true" signature="2050:2357" ph="{...}" />
+            <marker date="1566090992102" expanded="true" signature="2095:2159" ph="{...}" />
+            <marker date="1566090992102" expanded="true" signature="2420:2540" ph="{...}" />
+            <marker date="1566090992102" expanded="true" signature="2598:2710" ph="{...}" />
+            <marker date="1566090992102" expanded="true" signature="2765:2855" ph="{...}" />
+            <marker date="1566090992102" expanded="true" signature="2910:3578" ph="{...}" />
+            <marker date="1566090992102" expanded="true" signature="3133:3463" ph="{...}" />
+            <marker date="1566090992102" expanded="true" signature="3646:3732" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ruler/Gui/WeaponsPanel.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-736">
+          <caret line="23" column="54" selection-start-line="23" selection-start-column="54" selection-end-line="23" selection-end-column="54" />
+          <folding>
+            <marker date="1566164525661" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
+            <marker date="1566164525661" expanded="false" signature="186:287" ph="..." />
+            <marker date="1566164525661" expanded="true" signature="308:4562" ph="{...}" />
+            <marker date="1566164525661" expanded="true" signature="357:4560" ph="{...}" />
+            <marker date="1566164525661" expanded="true" signature="1103:4195" ph="{...}" />
+            <marker date="1566164525661" expanded="true" signature="1172:1457" ph="{...}" />
+            <marker date="1566164525661" expanded="true" signature="1607:2126" ph="{...}" />
+            <marker date="1566164525661" expanded="true" signature="2199:2399" ph="{...}" />
+            <marker date="1566164525661" expanded="true" signature="2456:2995" ph="{...}" />
+            <marker date="1566164525661" expanded="true" signature="3671:3875" ph="{...}" />
+            <marker date="1566164525661" expanded="true" signature="4275:4554" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ruler/Gui/CurrentWeaponButton.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="327">
+          <caret line="29" column="89" lean-forward="true" selection-start-line="29" selection-start-column="89" selection-end-line="29" selection-end-column="89" />
+          <folding>
+            <marker date="1566305126907" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
+            <marker date="1566305126907" expanded="true" signature="186:235" ph="..." />
+            <marker date="1566305126907" expanded="true" signature="256:1116" ph="{...}" />
+            <marker date="1566305126907" expanded="true" signature="319:1114" ph="{...}" />
+            <marker date="1566305126907" expanded="true" signature="455:671" ph="{...}" />
+            <marker date="1566305126907" expanded="true" signature="790:900" ph="{...}" />
+            <marker date="1566305126907" expanded="true" signature="954:1108" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ruler/Gui/WeaponsContainer.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="28" column="26" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
+          <folding>
+            <marker date="1566306421691" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
+            <marker date="1566306421691" expanded="false" signature="186:380" ph="..." />
+            <marker date="1566306421691" expanded="true" signature="401:3962" ph="{...}" />
+            <marker date="1566306421691" expanded="true" signature="452:3960" ph="{...}" />
+            <marker date="1566306421691" expanded="true" signature="492:551" ph="{...}" />
+            <marker date="1566306421691" expanded="true" signature="600:3954" ph="{...}" />
+            <marker date="1566306421691" expanded="true" signature="710:3944" ph="{...}" />
+            <marker date="1566306421691" expanded="true" signature="890:3930" ph="{...}" />
+            <marker date="1566306421691" expanded="true" signature="1225:1359" ph="{...}" />
+            <marker date="1566306421691" expanded="true" signature="1661:3869" ph="Label with weapon level" />
+            <marker date="1566306421691" expanded="true" signature="1736:3837" ph="{...}" />
+            <marker date="1566306421691" expanded="true" signature="1858:2356" ph="{...}" />
+            <marker date="1566306421691" expanded="true" signature="2416:3764" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ruler/MainForm.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="28" column="20" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
+          <folding>
+            <marker date="1566169279398" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
+            <marker date="1566169279398" expanded="true" signature="186:368" ph="..." />
+            <marker date="1566169279398" expanded="true" signature="385:1362" ph="{...}" />
+            <marker date="1566169279398" expanded="true" signature="437:1360" ph="{...}" />
+            <marker date="1566169279398" expanded="true" signature="872:1216" ph="{...}" />
+            <marker date="1566169279398" expanded="true" signature="1278:1354" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ruler/Common/Parameters.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-265">
+          <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
+          <folding>
+            <marker date="1565980218569" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
+            <marker date="1565980218569" expanded="false" signature="186:227" ph="..." />
+            <marker date="1565980218569" expanded="true" signature="251:2093" ph="{...}" />
+            <marker date="1565980218569" expanded="true" signature="282:1041" ph="{...}" />
+            <marker date="1565980218569" expanded="true" signature="739:1035" ph="{...}" />
+            <marker date="1565980218569" expanded="true" signature="1082:2091" ph="{...}" />
+            <marker date="1565980218569" expanded="true" signature="1212:1824" ph="{...}" />
+            <marker date="1565980218569" expanded="true" signature="1905:2076" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ruler/RulerBackup.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="143" column="29" lean-forward="true" selection-start-line="143" selection-start-column="29" selection-end-line="143" selection-end-column="29" />
+          <folding>
+            <element signature="e#180#471#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ruler/Trajectory/Weapons/Weapon.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="39" column="9" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
+          <folding>
+            <marker date="1566308128165" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
+            <marker date="1566308128165" expanded="true" signature="186:274" ph="..." />
+            <marker date="1566308128165" expanded="true" signature="299:1631" ph="{...}" />
+            <marker date="1566308128165" expanded="true" signature="344:492" ph="{...}" />
+            <marker date="1566308128165" expanded="true" signature="519:1629" ph="{...}" />
+            <marker date="1566308128165" expanded="true" signature="1032:1295" ph="{...}" />
+            <marker date="1566308128165" expanded="true" signature="1338:1383" ph="{...}" />
+            <marker date="1566308128165" expanded="true" signature="1435:1623" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ruler/Gui/Forms/ValueBox.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="137" column="52" selection-start-line="137" selection-start-column="52" selection-end-line="137" selection-end-column="52" />
+          <folding>
+            <marker date="1566308700093" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
+            <marker date="1566308700093" expanded="false" signature="186:310" ph="..." />
+            <marker date="1566308700093" expanded="true" signature="340:8958" ph="{...}" />
+            <marker date="1566308700093" expanded="true" signature="402:8956" ph="{...}" />
+            <marker date="1566308700093" expanded="true" signature="530:860" ph="{...}" />
+            <marker date="1566308700093" expanded="true" signature="556:618" ph="{...}" />
+            <marker date="1566308700093" expanded="true" signature="634:850" ph="{...}" />
+            <marker date="1566308700093" expanded="true" signature="688:752" ph="{...}" />
+            <marker date="1566308700093" expanded="true" signature="1022:1364" ph="{...}" />
+            <marker date="1566308700093" expanded="true" signature="1048:1113" ph="{...}" />
+            <marker date="1566308700093" expanded="true" signature="1129:1354" ph="{...}" />
+            <marker date="1566308700093" expanded="true" signature="1186:1250" ph="{...}" />
+            <marker date="1566308700093" expanded="true" signature="1424:1748" ph="{...}" />
+            <marker date="1566308700093" expanded="true" signature="1450:1508" ph="{...}" />
+            <marker date="1566308700093" expanded="true" signature="1524:1738" ph="{...}" />
+            <marker date="1566308700093" expanded="true" signature="1579:1643" ph="{...}" />
+            <marker date="1566308700093" expanded="true" signature="1775:2992" ph="{...}" />
+            <marker date="1566308700093" expanded="true" signature="2356:2442" ph="{...}" />
+            <marker date="1566308700093" expanded="true" signature="3045:3281" ph="{...}" />
+            <marker date="1566308700093" expanded="true" signature="3115:3167" ph="{...}" />
+            <marker date="1566308700093" expanded="true" signature="3340:3501" ph="{...}" />
+            <marker date="1566308700093" expanded="true" signature="3566:5715" ph="{...}" />
+            <marker date="1566308700093" expanded="true" signature="3703:3789" ph="{...}" />
+            <marker date="1566308700093" expanded="true" signature="3873:3959" ph="{...}" />
+            <marker date="1566308700093" expanded="true" signature="4101:4187" ph="{...}" />
+            <marker date="1566308700093" expanded="true" signature="4249:4335" ph="{...}" />
+            <marker date="1566308700093" expanded="true" signature="4349:5113" ph="/* if (Char.IsNumber(e.KeyChar)) ... */" />
+            <marker date="1566308700093" expanded="true" signature="5156:5705" ph="{...}" />
+            <marker date="1566308700093" expanded="true" signature="5210:5691" ph="{...}" />
+            <marker date="1566308700093" expanded="true" signature="5775:5861" ph="{...}" />
+            <marker date="1566308700093" expanded="true" signature="5918:6012" ph="{...}" />
+            <marker date="1566308700093" expanded="true" signature="6070:6214" ph="{...}" />
+            <marker date="1566308700093" expanded="true" signature="6147:6204" ph="{...}" />
+            <marker date="1566308700093" expanded="true" signature="6274:6360" ph="{...}" />
+            <marker date="1566308700093" expanded="true" signature="6420:6967" ph="{...}" />
+            <marker date="1566308700093" expanded="true" signature="6558:6628" ph="{...}" />
+            <marker date="1566308700093" expanded="true" signature="6735:6805" ph="{...}" />
+            <marker date="1566308700093" expanded="true" signature="7021:7041" ph="{...}" />
+            <marker date="1566308700093" expanded="true" signature="7105:7199" ph="{...}" />
+            <marker date="1566308700093" expanded="true" signature="7243:7461" ph="{...}" />
+            <marker date="1566308700093" expanded="true" signature="7501:7736" ph="{...}" />
+            <marker date="1566308700093" expanded="true" signature="7820:8007" ph="{...}" />
+            <marker date="1566308700093" expanded="true" signature="7877:7929" ph="{...}" />
+            <marker date="1566308700093" expanded="true" signature="8094:8407" ph="{...}" />
+            <marker date="1566308700093" expanded="true" signature="8154:8206" ph="{...}" />
+            <marker date="1566308700093" expanded="true" signature="8233:8303" ph="{...}" />
+            <marker date="1566308700093" expanded="true" signature="8320:8397" ph="{...}" />
+            <marker date="1566308700093" expanded="true" signature="8497:8638" ph="{...}" />
+            <marker date="1566308700093" expanded="true" signature="8550:8602" ph="{...}" />
+            <marker date="1566308700093" expanded="false" signature="8648:8950" ph="INotifyPropertyChanged Members" />
+            <marker date="1566308700093" expanded="true" signature="8823:8930" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/EF3C88DE-A637-481F-AE3F-39E9828BEFCA/33/765765e9/GlobalKeyHook.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="134" column="24" lean-forward="true" selection-start-line="134" selection-start-column="24" selection-end-line="134" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ruler/Common/Utils.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="42">
+          <caret line="12" column="29" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
+          <folding>
+            <marker date="1566143108748" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
+            <marker date="1566143108748" expanded="false" signature="186:281" ph="..." />
+            <marker date="1566143108748" expanded="true" signature="305:1888" ph="{...}" />
+            <marker date="1566143108748" expanded="true" signature="337:1886" ph="{...}" />
+            <marker date="1566143108748" expanded="true" signature="403:461" ph="{...}" />
+            <marker date="1566143108748" expanded="true" signature="535:629" ph="{...}" />
+            <marker date="1566143108748" expanded="true" signature="683:841" ph="{...}" />
+            <marker date="1566143108748" expanded="true" signature="938:1278" ph="{...}" />
+            <marker date="1566143108748" expanded="true" signature="1377:1502" ph="{...}" />
+            <marker date="1566143108748" expanded="true" signature="1634:1880" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ruler/Trajectory/Guidance.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="592">
+          <caret line="45" selection-start-line="45" selection-end-line="45" />
+          <folding>
+            <marker date="1566309258451" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
+            <marker date="1566309258451" expanded="true" signature="186:323" ph="..." />
+            <marker date="1566309258451" expanded="true" signature="340:2539" ph="{...}" />
+            <marker date="1566309258451" expanded="true" signature="373:418" ph="{...}" />
+            <marker date="1566309258451" expanded="true" signature="458:2537" ph="{...}" />
+            <marker date="1566309258451" expanded="true" signature="775:2371" ph="{...}" />
+            <marker date="1566309258451" expanded="true" signature="1404:2333" ph="{...}" />
+            <marker date="1566309258451" expanded="true" signature="2119:2319" ph="{...}" />
+            <marker date="1566309258451" expanded="true" signature="2472:2531" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ruler/Controllers/GlobalsController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="704">
+          <caret line="60" column="38" selection-start-line="60" selection-start-column="38" selection-end-line="60" selection-end-column="38" />
+          <folding>
+            <marker date="1566309307965" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
+            <marker date="1566309307965" expanded="true" signature="186:316" ph="..." />
+            <marker date="1566309307965" expanded="true" signature="367:4035" ph="{...}" />
+            <marker date="1566309307965" expanded="true" signature="430:4033" ph="{...}" />
+            <marker date="1566309307965" expanded="true" signature="445:1393" ph="Events And Delegates" />
+            <marker date="1566309307965" expanded="true" signature="491:848" ph="Delegates" />
+            <marker date="1566309307965" expanded="true" signature="866:1365" ph="Events" />
+            <marker date="1566309307965" expanded="true" signature="1403:4027" ph="Globals" />
+            <marker date="1566309307965" expanded="false" signature="1616:1899" ph="{...}" />
+            <marker date="1566309307965" expanded="true" signature="1642:1703" ph="{...}" />
+            <marker date="1566309307965" expanded="true" signature="1719:1889" ph="{...}" />
+            <marker date="1566309307965" expanded="true" signature="1777:1841" ph="{...}" />
+            <marker date="1566309307965" expanded="true" signature="1978:2344" ph="{...}" />
+            <marker date="1566309307965" expanded="true" signature="2004:2064" ph="{...}" />
+            <marker date="1566309307965" expanded="true" signature="2080:2334" ph="{...}" />
+            <marker date="1566309307965" expanded="true" signature="2137:2201" ph="{...}" />
+            <marker date="1566309307965" expanded="true" signature="2432:2824" ph="{...}" />
+            <marker date="1566309307965" expanded="true" signature="2458:2517" ph="{...}" />
+            <marker date="1566309307965" expanded="true" signature="2533:2814" ph="{...}" />
+            <marker date="1566309307965" expanded="true" signature="2584:2648" ph="{...}" />
+            <marker date="1566309307965" expanded="true" signature="2903:3529" ph="{...}" />
+            <marker date="1566309307965" expanded="true" signature="2929:2988" ph="{...}" />
+            <marker date="1566309307965" expanded="true" signature="3004:3519" ph="{...}" />
+            <marker date="1566309307965" expanded="true" signature="3092:3156" ph="{...}" />
+            <marker date="1566309307965" expanded="true" signature="3190:3260" ph="{...}" />
+            <marker date="1566309307965" expanded="true" signature="3296:3389" ph="{...}" />
+            <marker date="1566309307965" expanded="true" signature="3617:4007" ph="{...}" />
+            <marker date="1566309307965" expanded="true" signature="3643:3701" ph="{...}" />
+            <marker date="1566309307965" expanded="true" signature="3717:3997" ph="{...}" />
+            <marker date="1566309307965" expanded="true" signature="3767:3831" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ruler/Trajectory/Trajectory.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="912">
+          <caret line="68" column="37" selection-start-line="68" selection-start-column="37" selection-end-line="68" selection-end-column="37" />
+          <folding>
+            <marker date="1566309505658" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
+            <marker date="1566309505658" expanded="true" signature="186:309" ph="..." />
+            <marker date="1566309505658" expanded="true" signature="326:2554" ph="{...}" />
+            <marker date="1566309505658" expanded="true" signature="381:2552" ph="{...}" />
+            <marker date="1566309505658" expanded="true" signature="677:1310" ph="{...}" />
+            <marker date="1566309505658" expanded="true" signature="875:968" ph="{...}" />
+            <marker date="1566309505658" expanded="true" signature="1365:1415" ph="{...}" />
+            <marker date="1566309505658" expanded="true" signature="1468:1710" ph="{...}" />
+            <marker date="1566309505658" expanded="true" signature="1580:1632" ph="{...}" />
+            <marker date="1566309505658" expanded="true" signature="1754:2108" ph="{...}" />
+            <marker date="1566309505658" expanded="true" signature="1801:2098" ph="{...}" />
+            <marker date="1566309505658" expanded="true" signature="2174:2456" ph="{...}" />
+            <marker date="1566309505658" expanded="true" signature="2220:2287" ph="{...}" />
+            <marker date="1566309505658" expanded="true" signature="2336:2446" ph="{...}" />
+            <marker date="1566309505658" expanded="true" signature="2492:2546" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ruler/Manager.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+          <folding>
+            <marker date="1566308817616" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
+            <marker date="1566308817616" expanded="true" signature="186:301" ph="..." />
+            <marker date="1566308817616" expanded="true" signature="318:1171" ph="{...}" />
+            <marker date="1566308817616" expanded="true" signature="359:1169" ph="{...}" />
+            <marker date="1566308817616" expanded="true" signature="525:628" ph="{...}" />
+            <marker date="1566308817616" expanded="true" signature="680:995" ph="{...}" />
+            <marker date="1566308817616" expanded="true" signature="1035:1112" ph="{...}" />
+            <marker date="1566308817616" expanded="true" signature="1143:1163" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ruler/Sight/Sight.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="28" column="30" selection-start-line="28" selection-start-column="30" selection-end-line="28" selection-end-column="30" />
+          <folding>
+            <marker date="1566304235603" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
+            <marker date="1566304235603" expanded="false" signature="186:288" ph="..." />
+            <marker date="1566304235603" expanded="true" signature="304:3049" ph="{...}" />
+            <marker date="1566304235603" expanded="true" signature="340:3047" ph="{...}" />
+            <marker date="1566304235603" expanded="true" signature="623:920" ph="{...}" />
+            <marker date="1566304235603" expanded="true" signature="975:1025" ph="{...}" />
+            <marker date="1566304235603" expanded="true" signature="1099:3041" ph="{...}" />
+            <marker date="1566304235603" expanded="true" signature="1367:2222" ph="{...}" />
+            <marker date="1566304235603" expanded="true" signature="2315:3006" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ruler/Controllers/KeyboardController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="464">
+          <caret line="34" column="45" selection-start-line="34" selection-start-column="45" selection-end-line="34" selection-end-column="45" />
+          <folding>
+            <marker date="1566313961068" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
+            <marker date="1566313961068" expanded="true" signature="186:247" ph="..." />
+            <marker date="1566313961068" expanded="true" signature="271:1440" ph="{...}" />
+            <marker date="1566313961068" expanded="true" signature="325:1438" ph="{...}" />
+            <marker date="1566313961068" expanded="true" signature="524:794" ph="{...}" />
+            <marker date="1566313961068" expanded="true" signature="573:625" ph="{...}" />
+            <marker date="1566313961068" expanded="true" signature="866:1343" ph="{...}" />
+            <marker date="1566313961068" expanded="true" signature="927:979" ph="{...}" />
+            <marker date="1566313961068" expanded="true" signature="1168:1220" ph="{...}" />
+            <marker date="1566313961068" expanded="true" signature="1374:1432" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ruler/Render/RenderForm.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="9" column="34" selection-start-line="9" selection-start-column="34" selection-end-line="9" selection-end-column="34" />
+          <folding>
+            <marker date="1566303061876" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
+            <marker date="1566303061876" expanded="false" signature="186:244" ph="..." />
+            <marker date="1566303061876" expanded="true" signature="261:1354" ph="{...}" />
+            <marker date="1566303061876" expanded="true" signature="322:1352" ph="{...}" />
+            <marker date="1566303061876" expanded="true" signature="425:571" ph="{...}" />
+            <marker date="1566303061876" expanded="true" signature="611:666" ph="{...}" />
+            <marker date="1566303061876" expanded="true" signature="720:954" ph="{...}" />
+            <marker date="1566303061876" expanded="true" signature="746:944" ph="{...}" />
+            <marker date="1566303061876" expanded="true" signature="1019:1227" ph="{...}" />
+            <marker date="1566303061876" expanded="true" signature="1072:1184" ph="{...}" />
+            <marker date="1566303061876" expanded="true" signature="1293:1346" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ruler/Controllers/EventsController.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="672">
+          <caret line="47" column="21" selection-start-line="47" selection-start-column="21" selection-end-line="47" selection-end-column="21" />
+          <folding>
+            <marker date="1566310435025" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
+            <marker date="1566310435025" expanded="false" signature="186:289" ph="..." />
+            <marker date="1566310435025" expanded="true" signature="313:3913" ph="{...}" />
+            <marker date="1566310435025" expanded="true" signature="376:3911" ph="{...}" />
+            <marker date="1566310435025" expanded="true" signature="1082:3465" ph="{...}" />
+            <marker date="1566310435025" expanded="true" signature="1268:3325" ph="{...}" />
+            <marker date="1566310435025" expanded="true" signature="1550:1626" ph="{...}" />
+            <marker date="1566310435025" expanded="true" signature="1843:1962" ph="{...}" />
+            <marker date="1566310435025" expanded="true" signature="1987:2105" ph="{...}" />
+            <marker date="1566310435025" expanded="true" signature="2245:2364" ph="{...}" />
+            <marker date="1566310435025" expanded="true" signature="2389:2507" ph="{...}" />
+            <marker date="1566310435025" expanded="true" signature="2643:2724" ph="{...}" />
+            <marker date="1566310435025" expanded="true" signature="2749:2829" ph="{...}" />
+            <marker date="1566310435025" expanded="true" signature="2965:3046" ph="{...}" />
+            <marker date="1566310435025" expanded="true" signature="3071:3151" ph="{...}" />
+            <marker date="1566310435025" expanded="true" signature="3369:3421" ph="{...}" />
+            <marker date="1566310435025" expanded="true" signature="3548:3781" ph="{...}" />
+            <marker date="1566310435025" expanded="true" signature="3831:3905" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ruler/Render/RenderManager.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="56" column="65" selection-start-line="56" selection-start-column="65" selection-end-line="56" selection-end-column="65" />
+          <folding>
+            <marker date="1566314685688" expanded="true" signature="0:178" ph="/* This is an independent project of an individual developer. Dear PVS-Studio, please check it. ... */" />
+            <marker date="1566314685688" expanded="false" signature="186:355" ph="..." />
+            <marker date="1566314685688" expanded="true" signature="372:2349" ph="{...}" />
+            <marker date="1566314685688" expanded="true" signature="428:2347" ph="{...}" />
+            <marker date="1566314685688" expanded="true" signature="802:1221" ph="{...}" />
+            <marker date="1566314685688" expanded="true" signature="1252:1857" ph="{...}" />
+            <marker date="1566314685688" expanded="true" signature="1645:1847" ph="{...}" />
+            <marker date="1566314685688" expanded="true" signature="1700:1763" ph="{...}" />
+            <marker date="1566314685688" expanded="true" signature="1892:2260" ph="{...}" />
+            <marker date="1566314685688" expanded="true" signature="1939:1991" ph="{...}" />
+            <marker date="1566314685688" expanded="true" signature="2291:2341" ph="{...}" />
           </folding>
         </state>
       </provider>

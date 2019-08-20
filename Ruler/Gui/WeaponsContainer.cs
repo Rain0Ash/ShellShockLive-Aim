@@ -22,9 +22,9 @@ namespace Ruler.Gui
 
         private void InitializeWeaponsButton()
         {
-            for (Byte groupID = 0; groupID < Weapons.Common.Weapons.WeaponsArrayLength; groupID++)
+            for (Int32 groupID = 0; groupID < Weapons.Common.Weapons.WeaponsArrayLength; groupID++)
             {
-                for (Byte levelInGroup = 0;
+                for (Int32 levelInGroup = 0;
                     levelInGroup < Weapons.Common.Weapons.WeaponsArray.GetLength(1);
                     levelInGroup++)
                 {
@@ -60,7 +60,7 @@ namespace Ruler.Gui
                                 levelLabel.Text = @"G";
                                 levelLabel.ForeColor = Color.CornflowerBlue;
                                 break;
-                            case Byte lvl when lvl <= 100:
+                            case Int32 lvl when lvl <= 100:
                                 levelLabel.Text = lvl.ToString();
                                 levelLabel.ForeColor = lvl == 100 ? Color.Orange : weapon.Color;
                                 break;

@@ -2,9 +2,8 @@
 // PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
 
 using System;
-using System.Collections.Generic;
-using System.Windows.Forms;
 using Indieteur.GlobalHooks;
+using SharpDX.Direct2D1;
 
 namespace Ruler.Common
 {
@@ -26,11 +25,18 @@ namespace Ruler.Common
 
         private void OnKeyPressed(Object sender, GlobalKeyEventArgs e)
         {
-            Int64 now = new DateTimeOffset(DateTime.UtcNow).ToUnixTimeMilliseconds();
-            if (now - _lastKeyInput < 25)
+            if (e.Control == ModifierKeySide.None)
             {
                 return;
             }
+
+            e.Handled = true;
+            Int64 now = new DateTimeOffset(DateTime.UtcNow).ToUnixTimeMilliseconds();
+            if (now - _lastKeyInput < 25 && !RenderManager.CanDoRedraw)
+            {
+                return;
+            }
+
             _lastKeyInput = now;
             EventsAndGlobalsController.RecognizeInputAndThrowEvent(sender, e);
         }

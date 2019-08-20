@@ -73,6 +73,7 @@ namespace Ruler
                 EndString = @"%",
                 DefaultValue = EventsAndGlobalsController.Power,
                 MaxValue = 100,
+                MinValue = 0
             };
             powerValueBox.Text = powerValueBox.DefaultValue.ToString();
             EventsAndGlobalsController.ChangedPower += power =>

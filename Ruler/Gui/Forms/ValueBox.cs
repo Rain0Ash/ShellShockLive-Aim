@@ -135,7 +135,7 @@ namespace Ruler.Common.Forms
         protected override void OnKeyPress(KeyPressEventArgs e)
         {
             if (!Char.IsControl(e.KeyChar) && !Char.IsDigit(e.KeyChar) &&
-                (e.KeyChar != '-' || Name != "Wind"))
+                (e.KeyChar != '-' || MinValue >= 0))
             {
                 e.Handled = true;
                 return;
