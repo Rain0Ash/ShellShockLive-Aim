@@ -314,7 +314,10 @@
         <e p="Gui" t="Include">
           <e p="CurrentWeaponButton.cs" t="Include" />
           <e p="Forms" t="Include">
+            <e p="AngleBox.cs" t="Include" />
+            <e p="PowerBox.cs" t="Include" />
             <e p="ValueBox.cs" t="Include" />
+            <e p="WindBox.cs" t="Include" />
           </e>
           <e p="PageSwitcher.cs" t="Include" />
           <e p="SearchTextBox.cs" t="Include" />

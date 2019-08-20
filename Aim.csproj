@@ -175,9 +175,12 @@
       <SubType>Component</SubType>
       <DependentUpon>WeaponsPanel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Ruler\Gui\Forms\AngleBox.cs" />
+    <Compile Include="Ruler\Gui\Forms\PowerBox.cs" />
     <Compile Include="Ruler\Gui\Forms\ValueBox.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Ruler\Gui\Forms\WindBox.cs" />
     <Compile Include="Ruler\Gui\PageSwitcher.cs">
       <SubType>Component</SubType>
       <DependentUpon>WeaponsPanel.cs</DependentUpon>

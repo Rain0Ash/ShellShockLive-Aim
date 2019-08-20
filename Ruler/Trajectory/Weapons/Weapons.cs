@@ -14,8 +14,14 @@ namespace Ruler.Weapons.Common
         private static readonly WeaponsLocalization Localization =
             new WeaponsLocalization(MainForm.GetLocalCultureCode());
 
-        internal static readonly Weapon[,] WeaponsArray = new Weapon[155, WeaponsPanel.MaxWeaponsInLine]
+        internal static readonly Weapon[,] WeaponsArray = new Weapon[156, WeaponsPanel.MaxWeaponsInLine]
         {
+            {
+                new Weapon(Localization.Parabola, 0, GuidanceType.Parabola, Color.FromArgb(128, 128, 128), WeaponsImg.Parabola),
+                new Weapon(Localization.Direct, 0, GuidanceType.Direct, Color.FromArgb(128, 128, 128), WeaponsImg.Direct),
+                default,
+                default
+            },
             {
                 new Weapon(Localization.Shot, 1, GuidanceType.Parabola, Color.FromArgb(128, 128, 128), WeaponsImg.Shot),
                 new Weapon(Localization.BigShot, 1, GuidanceType.Parabola, Color.FromArgb(128, 128, 128), WeaponsImg.Big_Shot),

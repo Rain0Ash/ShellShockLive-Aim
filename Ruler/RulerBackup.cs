@@ -1,8 +1,6 @@
 ﻿// This is an independent project of an individual developer. Dear PVS-Studio, please check it.
 // PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
 
-// TODO: Do portals, black holes and rebound walls. Do GUI for control this objects by mouse. Do auto set value of wind, auto setup objects and user tank position.
-// TODO: Дописать порталы и черные дыры. Добавить предустановленные режимы экрана. Сделать дебаг-мод. Сделать стены. Сделать графический интерфейс. Переделать с рисования на рендеринг с фпс. [Maybe] Сделать автоопределение ветра, автонаводку, автоопределение позиции танка, автоустановку объектов, поиск оптимального пути снаряда.
 using Microsoft.VisualBasic;
 using System;
 using System.Collections.Generic;

@@ -3,6 +3,7 @@
 
 using System;
 using System.Drawing;
+using Ruler.Weapons;
 
 namespace Ruler
 {
@@ -41,7 +42,7 @@ namespace Ruler
         }
         */
 
-        internal static Point[] Parabola(Point coord)
+        internal static Point[] Parabola(GuidanceType guidanceType, WeaponShellOptionBitFlag shellOption)
         {
             return new Point[]{};
         }

@@ -139,10 +139,6 @@ namespace Ruler.Common.Forms
 
         private void AngleToQuarter()
         {
-            if (Name != "Angle")
-            {
-                return;
-            }
             Int32 number = Int32.Parse(Value == "" || Value == @"-" ? "0" : Value);
             Int32 angle = number < 0 ? 360 + number % 360 : number % 360;
             Text = $@"{(angle <= 90 ? angle : angle <= 270 ? 180 - angle : angle - 360)}{EndString} ({(angle / 90) + 1})";

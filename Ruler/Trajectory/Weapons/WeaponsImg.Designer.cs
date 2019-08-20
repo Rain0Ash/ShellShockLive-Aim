@@ -1123,6 +1123,16 @@ namespace Ruler.Weapons.Common {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Direct {
+            get {
+                object obj = ResourceManager.GetObject("Direct", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Disco_Ball {
             get {
                 object obj = ResourceManager.GetObject("Disco_Ball", resourceCulture);
@@ -2716,6 +2726,16 @@ namespace Ruler.Weapons.Common {
         internal static System.Drawing.Bitmap Palm {
             get {
                 object obj = ResourceManager.GetObject("Palm", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Parabola {
+            get {
+                object obj = ResourceManager.GetObject("Parabola", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

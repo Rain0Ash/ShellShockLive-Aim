@@ -56,7 +56,11 @@ namespace Ruler.Gui
 
                         switch (weapon.AvailabilityLevel)
                         {
-                            case Byte lvl when lvl > 0 && lvl <= 100:
+                            case 0:
+                                levelLabel.Text = @"G";
+                                levelLabel.ForeColor = Color.CornflowerBlue;
+                                break;
+                            case Byte lvl when lvl <= 100:
                                 levelLabel.Text = lvl.ToString();
                                 levelLabel.ForeColor = lvl == 100 ? Color.Orange : weapon.Color;
                                 break;
