@@ -26,11 +26,22 @@ namespace Ruler
                 SetPosition(newCoord);
                 CalculateTrajectory();
             };
+            EventsAndGlobalsController.OffsetSightPosition += offsetCoord =>
+            {
+                OffsetPosition(offsetCoord);
+                CalculateTrajectory();
+            };
             EventsAndGlobalsController.ChangedAngle += _ => CalculateTrajectory();
             EventsAndGlobalsController.ChangedWind += _ => CalculateTrajectory();
             EventsAndGlobalsController.ChangedPower += _ => CalculateTrajectory();
             EventsAndGlobalsController.ChangedWeapon += ChangeWeapon;
             
+        }
+        
+        private void OffsetPosition(RawVector2 offsetCoord)
+        {
+            Coord.X += offsetCoord.X;
+            Coord.Y += offsetCoord.Y;
         }
 
         private void SetPosition(RawVector2 newCoord)

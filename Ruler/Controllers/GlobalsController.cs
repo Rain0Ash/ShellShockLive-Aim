@@ -20,6 +20,7 @@ namespace Ruler.Common
         internal delegate void EmptyHandler();
         internal delegate void SwitchedState(Int32 id);
         internal delegate void ChangedPositionHandler(RawVector2 newCoord);
+        internal delegate void OffsetPositionHandler(RawVector2 offsetCoord);
         internal delegate void ChangedParameterHandler(Int32 parameter);
         internal delegate void ChangedWeaponHandler(Weapon weapon);
         #endregion
@@ -28,6 +29,7 @@ namespace Ruler.Common
         internal static event EmptyHandler NeedRedraw;
         internal static event EventHandler ChangedWeaponMenuState;
         internal static event ChangedPositionHandler ChangedSightPosition;
+        internal static event OffsetPositionHandler OffsetSightPosition;
         internal static event ChangedWeaponHandler ChangedWeapon;
         internal static event ChangedParameterHandler ChangedPower;
         internal static event ChangedParameterHandler ChangedAngle;

@@ -3,9 +3,12 @@
 
 using System;
 using System.Threading;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 using Ruler.Common;
 using SharpDX;
 using SharpDX.Direct2D1;
+using SharpDX.Direct3D11;
 using SharpDX.DXGI;
 using SharpDX.Mathematics.Interop;
 using SharpDX.Windows;
@@ -39,12 +42,11 @@ namespace Ruler
                 return;
 
             new KeyboardController().SetupKeyboardHooks();
-
             Form.Show();
             Form.MainForm.Show();
             Form.MainForm.BringToFront();
             EventsAndGlobalsController.NeedRedraw += NextFrame;
-            
+            ManualResetEvent manualResetEvent = new ManualResetEvent(false);
             looper = new RenderLoop(Form);
             NextFrame();
             while (true)
@@ -54,7 +56,7 @@ namespace Ruler
                     break;
                 }
 
-                Thread.Sleep((Int32) Utils.GetUpdateTimeForFPS(60));
+                manualResetEvent.WaitOne((Int32)Utils.GetUpdateTimeForFPS(60));
             }
         }
 

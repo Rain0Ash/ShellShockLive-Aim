@@ -19,8 +19,14 @@ namespace Ruler
             paintBrush = new SolidColorBrush(renderTarget, Color.Gray);
             _aim = new Aim(EventsAndGlobalsController.Power, EventsAndGlobalsController.Angle, coord, radius, ref renderTarget);
             EventsAndGlobalsController.ChangedSightPosition += SetPosition;
+            EventsAndGlobalsController.OffsetSightPosition += OffsetPosition;
         }
 
+        private void OffsetPosition(RawVector2 offsetCoord)
+        {
+            Coord.X += offsetCoord.X;
+            Coord.Y += offsetCoord.Y;
+        }
         private void SetPosition(RawVector2 newCoord)
         {
             Coord = newCoord;

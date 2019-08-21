@@ -21,10 +21,17 @@ namespace Ruler
             Angle = angle;
             Power = power;
             EventsAndGlobalsController.ChangedSightPosition += SetPosition;
+            EventsAndGlobalsController.OffsetSightPosition += OffsetPosition;
             EventsAndGlobalsController.ChangedPower += parameter => Power = parameter;
             EventsAndGlobalsController.ChangedAngle += parameter => Angle = parameter;
         }
 
+        private void OffsetPosition(RawVector2 offsetCoord)
+        {
+            Coord.X += offsetCoord.X;
+            Coord.Y += offsetCoord.Y;
+        }
+        
         private void SetPosition(RawVector2 newCoord)
         {
             Coord = newCoord;

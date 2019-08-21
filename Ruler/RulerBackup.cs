@@ -77,7 +77,7 @@ namespace Ruler
                 return createParams;
             }
         }
-        internal RulerB(Licence licence, String languageCode = null, Boolean isDisguise = false)
+        internal RulerB(Licence licence, Monitor monitor, String languageCode = null, Boolean isDisguise = false)
         {
             IsDisguise = isDisguise;
             this.licence = licence;

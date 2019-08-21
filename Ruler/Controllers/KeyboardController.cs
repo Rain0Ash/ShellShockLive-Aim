@@ -2,8 +2,10 @@
 // PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
 
 using System;
+using System.Collections.Generic;
+using System.Threading;
+using System.Windows.Forms;
 using Indieteur.GlobalHooks;
-using SharpDX.Direct2D1;
 
 namespace Ruler.Common
 {
@@ -22,17 +24,17 @@ namespace Ruler.Common
             globalKeyHook.OnKeyDown += OnKeyPressed;
             globalKeyHook.OnKeyPressed += OnKeyPressed;
         }
-
+        
         private void OnKeyPressed(Object sender, GlobalKeyEventArgs e)
         {
             if (e.Control == ModifierKeySide.None)
             {
                 return;
             }
-
+            
             e.Handled = true;
             Int64 now = new DateTimeOffset(DateTime.UtcNow).ToUnixTimeMilliseconds();
-            if (now - _lastKeyInput < 25 && !RenderManager.CanDoRedraw)
+            if (now - _lastKeyInput <= 50)
             {
                 return;
             }

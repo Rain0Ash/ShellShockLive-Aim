@@ -5,6 +5,8 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
 using Indieteur.GlobalHooks;
+using SharpDX;
+using SharpDX.Mathematics.Interop;
 
 namespace Ruler.Common
 {
@@ -14,11 +16,18 @@ namespace Ruler.Common
 
         private const VirtualKeycodes ChangeWeaponMenuState = VirtualKeycodes.OEM_3;
         private const VirtualKeycodes ChangeSightPosition = VirtualKeycodes.E;
+        private const VirtualKeycodes UpOffsetSightPosition = VirtualKeycodes.W;
+        private const VirtualKeycodes LeftOffsetSightPosition = VirtualKeycodes.A;
+        private const VirtualKeycodes DownOffsetSightPosition = VirtualKeycodes.S;
+        private const VirtualKeycodes RightOffsetSightPosition = VirtualKeycodes.D;
         private const VirtualKeycodes IncreaseAngleOrWind = VirtualKeycodes.LeftArrow;
         private const VirtualKeycodes DecreaseAngleOrWind = VirtualKeycodes.RightArrow;
         private const VirtualKeycodes IncreasePower = VirtualKeycodes.UpArrow;
         private const VirtualKeycodes DecreasePower = VirtualKeycodes.DownArrow;
 
+        private const Int32 OffsetPixelsByStep = 1;
+        private const Int32 OffsetPixelsByStepWithShiftKey = 10;
+        
         internal static void RecognizeInputAndThrowEvent(Object sender, GlobalKeyEventArgs e)
         {
             Boolean isNeedRedraw = false;
@@ -36,6 +45,18 @@ namespace Ruler.Common
                         return;
                     }
                     ChangedSightPosition?.Invoke(Utils.GetCursorPosition(RenderTargetSize));
+                    break;
+                case UpOffsetSightPosition:
+                    OffsetSightPosition?.Invoke(new RawVector2(0, e.Shift != ModifierKeySide.None ? -OffsetPixelsByStepWithShiftKey : -OffsetPixelsByStep));
+                    break;
+                case LeftOffsetSightPosition:
+                    OffsetSightPosition?.Invoke(new RawVector2(e.Shift != ModifierKeySide.None ? -OffsetPixelsByStepWithShiftKey : -OffsetPixelsByStep, 0));
+                    break;
+                case DownOffsetSightPosition:
+                    OffsetSightPosition?.Invoke(new RawVector2(0, e.Shift != ModifierKeySide.None ? OffsetPixelsByStepWithShiftKey : OffsetPixelsByStep));
+                    break;
+                case RightOffsetSightPosition:
+                    OffsetSightPosition?.Invoke(new RawVector2(e.Shift != ModifierKeySide.None ? OffsetPixelsByStepWithShiftKey : OffsetPixelsByStep, 0));
                     break;
                 case IncreaseAngleOrWind:
                     if (e.Alt == ModifierKeySide.None)
@@ -58,24 +79,10 @@ namespace Ruler.Common
                     }
                     break;                
                 case IncreasePower:
-                    if (e.Shift != ModifierKeySide.None)
-                    {
-                        Power += 10;
-                    }
-                    else
-                    {
-                        Power += 1;
-                    }
+                    Power += e.Shift != ModifierKeySide.None ? 10 : 1;
                     break;                
                 case DecreasePower:
-                    if (e.Shift != ModifierKeySide.None)
-                    {
-                        Power -= 10;
-                    }
-                    else
-                    {
-                        Power -= 1;
-                    }
+                    Power -= e.Shift != ModifierKeySide.None ? 10 : 1;
                     break;
                 default:
                     e.Handled = false;
