@@ -15,17 +15,19 @@ namespace Ruler.Starter.Registry
         internal String Key;
         internal String LanguageCode;
         internal Int32 MonitorID;
+        internal Int32 GameResolutionID;
         internal Boolean IsDisguise;
         internal Boolean DontUseRegistry;
         internal Boolean DontShowAnymore;
         internal String BuildDateTimeHash;
 
-        internal RegistrySettings(String id = null, String key = null, String languageCode = null, Int32 monitorID = 0, Boolean isDisguise = false, Boolean dontUseRegistry = true, Boolean dontShowAnymore = false, String buildDateTimeHash = null)
+        internal RegistrySettings(String id = null, String key = null, String languageCode = null, Int32 monitorID = 0, Int32 gameResolutionID = 0, Boolean isDisguise = false, Boolean dontUseRegistry = true, Boolean dontShowAnymore = false, String buildDateTimeHash = null)
         {
             ID = id ?? Licence.FreeID;
             Key = key ?? Licence.FreeKey;
             LanguageCode = languageCode ?? Localization.DefaultCulture;
             MonitorID = monitorID;
+            GameResolutionID = gameResolutionID;
             IsDisguise = isDisguise;
             DontUseRegistry = dontUseRegistry;
             DontShowAnymore = dontShowAnymore;
@@ -39,6 +41,7 @@ namespace Ruler.Starter.Registry
         private const String RegKeyKey = @"Key";
         private const String RegKeyLanguageCode = @"LanguageCode";
         private const String RegKeyMonitorID = @"MonitorID";
+        private const String RegKeyGameResolutionID = @"GameResolutionID";
         private const String RegKeyIsDisguise = @"IsDisguise";
         private const String RegKeyUseRegistry = @"UseRegistry";
         private const String RegKeyShow = @"Show";
@@ -53,11 +56,13 @@ namespace Ruler.Starter.Registry
             {
                 RegistryKey currentUserKey = Microsoft.Win32.Registry.CurrentUser.OpenSubKey(SubKey) ?? throw new NullReferenceException();
                 Int32.TryParse(GetRegistryValue(ref currentUserKey, RegKeyMonitorID), out Int32 monitorID);
+                Int32.TryParse(GetRegistryValue(ref currentUserKey, RegKeyGameResolutionID), out Int32 gameResolutionID);
                 RegistrySettings registrySettings = new RegistrySettings(
                     GetRegistryValue(ref currentUserKey, RegKeyID),
                     GetRegistryValue(ref currentUserKey, RegKeyKey),
                     GetRegistryValue(ref currentUserKey, RegKeyLanguageCode), 
                     monitorID,
+                    gameResolutionID,
                     ToBoolean(GetRegistryValue(ref currentUserKey, RegKeyIsDisguise)),
                     !ToBoolean(GetRegistryValue(ref currentUserKey, RegKeyUseRegistry)),
                     !ToBoolean(GetRegistryValue(ref currentUserKey, RegKeyShow)),
@@ -83,6 +88,7 @@ namespace Ruler.Starter.Registry
                 currentUserKey.SetValue(RegKeyKey, registrySettings.Key ?? Licence.FreeKey);
                 currentUserKey.SetValue(RegKeyLanguageCode, registrySettings.LanguageCode);
                 currentUserKey.SetValue(RegKeyMonitorID, registrySettings.MonitorID.ToString());
+                currentUserKey.SetValue(RegKeyGameResolutionID, registrySettings.GameResolutionID.ToString());
                 currentUserKey.SetValue(RegKeyIsDisguise, registrySettings.IsDisguise);
                 currentUserKey.SetValue(RegKeyUseRegistry, !registrySettings.DontUseRegistry);
                 currentUserKey.SetValue(RegKeyShow, !registrySettings.DontShowAnymore);

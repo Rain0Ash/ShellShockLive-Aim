@@ -2,112 +2,187 @@
 // PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
 
 using System;
-using System.Runtime.CompilerServices;
-using System.Windows.Input;
-using Indieteur.GlobalHooks;
-using SharpDX;
-using SharpDX.Mathematics.Interop;
+using System.Drawing;
+using System.Runtime.InteropServices;
+using System.Windows.Forms;
 
 namespace Ruler.Common
 {
     internal static partial class EventsAndGlobalsController
     {
-        private static Int64 _lastRedraw = new DateTimeOffset(DateTime.UtcNow).ToUnixTimeMilliseconds();
+        [Flags]
+        private enum KeyModifier
+        {
+            None = 0,
+            Alt = 1,
+            Ctrl = 2,
+            Shift = 4,
+            WinKey = 8
+        }
+        private struct Action
+        {
+            internal readonly Char Key;
+            internal readonly KeyModifier KeyModifier;
+            internal Action(Keys key, KeyModifier keyModifier)
+            {
+                Key = (Char)key;
+                KeyModifier = keyModifier;
+            }
+        }
 
-        private const VirtualKeycodes ChangeWeaponMenuState = VirtualKeycodes.OEM_3;
-        private const VirtualKeycodes ChangeSightPosition = VirtualKeycodes.E;
-        private const VirtualKeycodes UpOffsetSightPosition = VirtualKeycodes.W;
-        private const VirtualKeycodes LeftOffsetSightPosition = VirtualKeycodes.A;
-        private const VirtualKeycodes DownOffsetSightPosition = VirtualKeycodes.S;
-        private const VirtualKeycodes RightOffsetSightPosition = VirtualKeycodes.D;
-        private const VirtualKeycodes IncreaseAngleOrWind = VirtualKeycodes.LeftArrow;
-        private const VirtualKeycodes DecreaseAngleOrWind = VirtualKeycodes.RightArrow;
-        private const VirtualKeycodes IncreasePower = VirtualKeycodes.UpArrow;
-        private const VirtualKeycodes DecreasePower = VirtualKeycodes.DownArrow;
+        private enum ActionsEnum
+        {
+            ChangeWeaponMenuState,
+            ChangeWeaponMenuStateShift,
+            ChangeSightPosition,
+            ChangeSightPositionShift,
+            UpOffsetSightPosition,
+            UpOffsetSightPositionShift,
+            LeftOffsetSightPosition,
+            LeftOffsetSightPositionShift,
+            DownOffsetSightPosition,
+            DownOffsetSightPositionShift,
+            RightOffsetSightPosition,
+            RightOffsetSightPositionShift,
+            IncreaseAngle,
+            IncreaseAngleShift,
+            DecreaseAngle,
+            DecreaseAngleShift,
+            IncreaseWind,
+            IncreaseWindShift,
+            DecreaseWind,
+            DecreaseWindShift,
+            IncreasePower,
+            IncreasePowerShift,
+            DecreasePower,
+            DecreasePowerShift
+        }
+
+        private static readonly Action[] Actions = new[]
+        {
+            new Action(Keys.Oem3, KeyModifier.Ctrl),
+            new Action(Keys.Oem3, KeyModifier.Ctrl | KeyModifier.Shift),
+            new Action(Keys.E, KeyModifier.Ctrl),
+            new Action(Keys.E, KeyModifier.Ctrl | KeyModifier.Shift),
+            new Action(Keys.W, KeyModifier.Ctrl),
+            new Action(Keys.W, KeyModifier.Ctrl | KeyModifier.Shift),
+            new Action(Keys.A, KeyModifier.Ctrl),
+            new Action(Keys.A, KeyModifier.Ctrl | KeyModifier.Shift),
+            new Action(Keys.S, KeyModifier.Ctrl),
+            new Action(Keys.S, KeyModifier.Ctrl | KeyModifier.Shift),
+            new Action(Keys.D, KeyModifier.Ctrl),
+            new Action(Keys.D, KeyModifier.Ctrl | KeyModifier.Shift),
+            new Action(Keys.Right, KeyModifier.Ctrl),
+            new Action(Keys.Right, KeyModifier.Ctrl | KeyModifier.Shift),
+            new Action(Keys.Left, KeyModifier.Ctrl),
+            new Action(Keys.Left, KeyModifier.Ctrl | KeyModifier.Shift),
+            new Action(Keys.Right, KeyModifier.Ctrl | KeyModifier.Alt),
+            new Action(Keys.Right, KeyModifier.Ctrl | KeyModifier.Alt | KeyModifier.Shift),
+            new Action(Keys.Left, KeyModifier.Ctrl | KeyModifier.Alt),
+            new Action(Keys.Left, KeyModifier.Ctrl | KeyModifier.Alt | KeyModifier.Shift),
+            new Action(Keys.Up, KeyModifier.Ctrl),
+            new Action(Keys.Up, KeyModifier.Ctrl | KeyModifier.Shift),
+            new Action(Keys.Down, KeyModifier.Ctrl),
+            new Action(Keys.Down, KeyModifier.Ctrl | KeyModifier.Shift),
+        };
 
         private const Int32 OffsetPixelsByStep = 1;
         private const Int32 OffsetPixelsByStepWithShiftKey = 10;
+        private const Int32 OffsetValueByStep = 1;
+        private const Int32 OffsetValueByStepWithShiftKey = 10;
+
+        [DllImport("user32.dll")]
+        private static extern Boolean RegisterHotKey(IntPtr hWnd, Int32 id, Int32 fsModifiers, Int32 vlc);
         
-        internal static void RecognizeInputAndThrowEvent(Object sender, GlobalKeyEventArgs e)
+        internal static void RegisterHotKeys(IntPtr handle)
         {
-            Boolean isNeedRedraw = false;
-            isNeedRedraw = true;
+            for (Int32 actionID = 0; actionID < Actions.Length; actionID++)
+            {
+                Action action = Actions[actionID];
+                RegisterHotKey(handle, actionID, (Int32)action.KeyModifier, action.Key);
+            }
+        }
+        
+        internal static Boolean RecognizeInputAndThrowEvent(ref Message m)
+        {
+            ActionsEnum action = (ActionsEnum) m.WParam.ToInt32();
+            Boolean isNeedRedraw = true;
             // ReSharper disable once SwitchStatementMissingSomeCases
-            switch (e.KeyCode)
+            switch (action)
             {
-                case ChangeWeaponMenuState:
-                    ChangedWeaponMenuState?.Invoke(sender, e);
+                case ActionsEnum.ChangeWeaponMenuState:
+                case ActionsEnum.ChangeWeaponMenuStateShift:
+                    ChangedWeaponMenuState?.Invoke();
                     isNeedRedraw = false;
                     break;
-                case ChangeSightPosition:
-                    if (!CheckLastRedrawTime(25))
-                    {
-                        return;
-                    }
-                    ChangedSightPosition?.Invoke(Utils.GetCursorPosition(RenderTargetSize));
+                case ActionsEnum.ChangeSightPosition:
+                case ActionsEnum.ChangeSightPositionShift:
+                    ChangedSightPosition?.Invoke(Utils.GetCursorPosition());
                     break;
-                case UpOffsetSightPosition:
-                    OffsetSightPosition?.Invoke(new RawVector2(0, e.Shift != ModifierKeySide.None ? -OffsetPixelsByStepWithShiftKey : -OffsetPixelsByStep));
+                case ActionsEnum.UpOffsetSightPosition:
+                    OffsetSightPosition?.Invoke(new Point(0, -OffsetPixelsByStep));
                     break;
-                case LeftOffsetSightPosition:
-                    OffsetSightPosition?.Invoke(new RawVector2(e.Shift != ModifierKeySide.None ? -OffsetPixelsByStepWithShiftKey : -OffsetPixelsByStep, 0));
+                case ActionsEnum.UpOffsetSightPositionShift:
+                    OffsetSightPosition?.Invoke(new Point(0, -OffsetPixelsByStepWithShiftKey));
                     break;
-                case DownOffsetSightPosition:
-                    OffsetSightPosition?.Invoke(new RawVector2(0, e.Shift != ModifierKeySide.None ? OffsetPixelsByStepWithShiftKey : OffsetPixelsByStep));
+                case ActionsEnum.LeftOffsetSightPosition:
+                    OffsetSightPosition?.Invoke(new Point(-OffsetPixelsByStep, 0));
                     break;
-                case RightOffsetSightPosition:
-                    OffsetSightPosition?.Invoke(new RawVector2(e.Shift != ModifierKeySide.None ? OffsetPixelsByStepWithShiftKey : OffsetPixelsByStep, 0));
+                case ActionsEnum.LeftOffsetSightPositionShift:
+                    OffsetSightPosition?.Invoke(new Point(-OffsetPixelsByStepWithShiftKey, 0));
                     break;
-                case IncreaseAngleOrWind:
-                    if (e.Alt == ModifierKeySide.None)
-                    {
-                        Angle += e.Shift != ModifierKeySide.None ? 10 : 1;
-                    }
-                    else
-                    {
-                        Wind -= e.Shift != ModifierKeySide.None ? 10 : 1;
-                    }
+                case ActionsEnum.DownOffsetSightPosition:
+                    OffsetSightPosition?.Invoke(new Point(0, OffsetPixelsByStep));
+                    break;
+                case ActionsEnum.DownOffsetSightPositionShift:
+                    OffsetSightPosition?.Invoke(new Point(0, OffsetPixelsByStepWithShiftKey));
+                    break;
+                case ActionsEnum.RightOffsetSightPosition:
+                    OffsetSightPosition?.Invoke(new Point(OffsetPixelsByStep, 0));
+                    break;
+                case ActionsEnum.RightOffsetSightPositionShift:
+                    OffsetSightPosition?.Invoke(new Point(OffsetPixelsByStepWithShiftKey, 0));
+                    break;
+                case ActionsEnum.IncreaseAngle:
+                    Angle -= OffsetValueByStep;
+                    break;
+                case ActionsEnum.IncreaseAngleShift:
+                    Angle -= OffsetValueByStepWithShiftKey;
+                    break;
+                case ActionsEnum.DecreaseAngle:
+                    Angle += OffsetValueByStep;
                     break;                
-                case DecreaseAngleOrWind:
-                    if (e.Alt == ModifierKeySide.None)
-                    {
-                        Angle -= e.Shift != ModifierKeySide.None ? 10 : 1;
-                    }
-                    else
-                    {
-                        Wind += e.Shift != ModifierKeySide.None ? 10 : 1;
-                    }
-                    break;                
-                case IncreasePower:
-                    Power += e.Shift != ModifierKeySide.None ? 10 : 1;
-                    break;                
-                case DecreasePower:
-                    Power -= e.Shift != ModifierKeySide.None ? 10 : 1;
+                case ActionsEnum.DecreaseAngleShift:
+                    Angle += OffsetValueByStepWithShiftKey;
                     break;
-                default:
-                    e.Handled = false;
-                    isNeedRedraw = false;
+                case ActionsEnum.IncreaseWind:
+                    Wind += OffsetValueByStep;
+                    break;
+                case ActionsEnum.IncreaseWindShift:
+                    Wind += OffsetValueByStepWithShiftKey;
+                    break;
+                case ActionsEnum.DecreaseWind:
+                    Wind -= OffsetValueByStep;
+                    break;                
+                case ActionsEnum.DecreaseWindShift:
+                    Wind -= OffsetValueByStepWithShiftKey;
+                    break;
+                case ActionsEnum.IncreasePower:
+                    Power += OffsetValueByStep;
+                    break;
+                case ActionsEnum.IncreasePowerShift:
+                    Power += OffsetValueByStepWithShiftKey;
+                    break;
+                case ActionsEnum.DecreasePower:
+                    Power -= OffsetValueByStep;
+                    break;                
+                case ActionsEnum.DecreasePowerShift:
+                    Power -= OffsetValueByStepWithShiftKey;
                     break;
             }
-            
-            if (!isNeedRedraw)
-            {
-                return;
-            }
-            NeedRedraw?.Invoke();
+
+            return isNeedRedraw;
         }
         
-        private static Boolean CheckLastRedrawTime(Int32 checkTime = 100)
-        {
-            Int64 now = new DateTimeOffset(DateTime.UtcNow).ToUnixTimeMilliseconds();
-            Boolean check = checkTime < now - _lastRedraw;
-            if (check) _lastRedraw = now;
-            return check;
-        }
-        
-        private static Int32 VK(Key key)
-        {
-            return KeyInterop.VirtualKeyFromKey(key);
-        }
     }
 }

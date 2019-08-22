@@ -3,7 +3,6 @@
 
 using System;
 using System.Drawing;
-using System.Threading;
 using System.Windows.Forms;
 using Ruler.Common;
 using Ruler.Common.Forms;
@@ -22,14 +21,16 @@ namespace Ruler
         private WindBox windValueBox;
         private PowerBox powerValueBox;
         private WeaponsPanel weaponsPanel;
+
+        private Manager manager;
         
         private void InitializeComponent()
         {
             SuspendLayout();
-            ClientSize = new Size(resolution.Width, resolution.Height);
+            ClientSize = new Size(monitor.Resolution.Width, monitor.Resolution.Height);
 
             Int32 valueBoxWidthPosition = (Int32) (0.75 * monitor.Resolution.Width);
-            Int32 valueBoxHeightPosition = (Int32) (0.85 * EventsAndGlobalsController.CurrentMonitor.Resolution.Height);
+            Int32 valueBoxHeightPosition = (Int32) (0.85 * monitor.Resolution.Height);
             
             #region Power Angle Wind valueBox defines
             
@@ -86,29 +87,28 @@ namespace Ruler
             #endregion
             
             weaponsPanel = new WeaponsPanel();
+            
+            manager = new Manager();
 
-            MainForm thisForm = this;
-            RulerRender ruler = new RulerRender(ref thisForm);
-
-            TopMost = true;
             ControlBox = false;
+            DoubleBuffered = true;
             AutoScaleMode = AutoScaleMode.Font;
-            Text = !isDisguise ? _localization.RulerVersion : _localization.MaskName;
             BackColor = Color.Black;
-            TransparencyKey = Color.Black;
-            FormBorderStyle = FormBorderStyle.None;
-            WindowState = FormWindowState.Maximized;
             Icon = !isDisguise ? Resources.icon : Resources.notepad;
             ShowInTaskbar = !isDisguise;
-            Location = new Point(resolution.X, resolution.Y);
-            Size = new Size(resolution.Width, resolution.Height);
+            Location = new Point(monitor.Resolution.X, monitor.Resolution.Y);
+            FormBorderStyle = FormBorderStyle.None;
+            Size = new Size(monitor.Resolution.Width, 1080);
+            TopMost = true;
+            Text = !isDisguise ? _localization.RulerVersion : _localization.MaskName;
+            TransparencyKey = Color.Black;
+            WindowState = FormWindowState.Maximized;
             Controls.Add(powerValueBox);
             Controls.Add(angleValueBox);
             Controls.Add(windValueBox);
             Controls.Add(weaponsPanel);
+            EventsAndGlobalsController.NeedRedraw += Invalidate;
             ResumeLayout(false);
-            PerformLayout();
-            ruler.Start();
         }
     }
 }

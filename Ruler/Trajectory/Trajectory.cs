@@ -2,25 +2,21 @@
 // PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
 
 using System;
+using System.Collections.Generic;
+using System.Drawing;
 using Ruler.Common;
 using Ruler.Weapons;
-using SharpDX;
-using SharpDX.Direct2D1;
-using SharpDX.Mathematics.Interop;
 
 namespace Ruler
 {
     internal class Trajectory : Surface, IDisposable
     {
-        internal RawVector2 Coord;
-        private RawVector2[] points = new RawVector2[0];
-        private readonly SolidColorBrush paintBrush;
+        internal Point Coord;
+        private List<Point> points = new List<Point>();
         private Weapon weapon;
-        internal Trajectory(RawVector2 coord, ref RenderTarget renderTarget)
-            : base(ref renderTarget)
+        internal Trajectory(Point coord)
         {
             Coord = coord;
-            paintBrush = new SolidColorBrush(renderTarget, Color.Azure);
             EventsAndGlobalsController.ChangedSightPosition += newCoord =>
             {
                 SetPosition(newCoord);
@@ -38,13 +34,13 @@ namespace Ruler
             
         }
         
-        private void OffsetPosition(RawVector2 offsetCoord)
+        private void OffsetPosition(Point offsetCoord)
         {
             Coord.X += offsetCoord.X;
             Coord.Y += offsetCoord.Y;
         }
 
-        private void SetPosition(RawVector2 newCoord)
+        private void SetPosition(Point newCoord)
         {
             Coord = newCoord;
         }
@@ -73,21 +69,21 @@ namespace Ruler
             }
         }
 
-        public override void Draw(ref RenderTarget renderTarget)
+        public override void Draw(ref Graphics graphics)
         {
-            if (points.Length == 0)
+            if (points.Count == 0)
             {
                 CalculateTrajectory();
             }
-            foreach (RawVector2 point in points)
+            foreach (Point point in points)
             {
-                renderTarget.FillEllipse(new Ellipse(point, 1f, 1f), paintBrush);
+                graphics.FillEllipse(Brushes.Azure, point.X - 1, point.Y - 1, 2, 2);
+                //renderTarget.FillEllipse(new Ellipse(point, 1f, 1f), paintBrush);
             }
         }
 
         void IDisposable.Dispose()
         {
-            paintBrush.Dispose();
         }
     }
 }

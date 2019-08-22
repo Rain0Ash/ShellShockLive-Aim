@@ -3,12 +3,8 @@
 
 using System;
 using System.Drawing;
-using System.Drawing.Drawing2D;
-using System.Runtime.CompilerServices;
 using System.Windows.Forms;
-using Ruler.Common;
 using Ruler.Weapons;
-using SharpDX.Direct2D1;
 
 namespace Ruler.Gui
 {

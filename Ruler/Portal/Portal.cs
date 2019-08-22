@@ -3,11 +3,9 @@
 
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Threading;
 using Ruler.Common;
-using SharpDX;
-using SharpDX.Direct2D1;
-using SharpDX.Mathematics.Interop;
 
 namespace Ruler
 {
@@ -38,12 +36,12 @@ namespace Ruler
             Interlocked.Decrement(ref _counter);
         }
 
-        internal Boolean IsIntersect(RawVector2 point)
+        internal Boolean IsIntersect(Point point)
         {
             return FirstPortal.IsIntersect(point) || SecondPortal.IsIntersect(point);
         }
         
-        internal RawVector2 TryTeleport(RawVector2 point)
+        internal Point TryTeleport(Point point)
         {
             if (FirstPortal.IsIntersect(point))
             {
@@ -59,24 +57,21 @@ namespace Ruler
             return point;
         }
 
-        public void Draw(ref RenderTarget renderTarget)
+        public void Draw(ref Graphics graphics)
         {
-            FirstPortal.Draw(ref renderTarget);
-            SecondPortal.Draw(ref renderTarget);
+            FirstPortal.Draw(ref graphics);
+            SecondPortal.Draw(ref graphics);
         }
     }
     internal class Portal : Circle
     {
-        internal Portal(RawVector2 coord, Single radius, ref RenderTarget renderTarget)
-            : base(coord, radius, ref renderTarget)
+        internal Portal(Point coord, Single radius)
+            : base(coord, radius)
         {
         }
 
-        public override void Draw(ref RenderTarget renderTarget)
+        public override void Draw(ref Graphics graphics)
         {
-            Random random = new Random();
-            renderTarget.FillEllipse(new Ellipse(Coord, Radius, Radius), new SolidColorBrush(renderTarget, new RawColor4(
-                (Single)random.NextDouble(), (Single)random.NextDouble(), (Single)random.NextDouble(), (Single)random.NextDouble())));
         }
     }
 }

@@ -4,7 +4,6 @@
 using System;
 using System.Drawing;
 using Ruler.Properties;
-using SharpDX.Mathematics.Interop;
 
 namespace Ruler.Weapons
 {

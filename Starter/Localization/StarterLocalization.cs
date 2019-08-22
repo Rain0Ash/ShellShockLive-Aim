@@ -11,6 +11,7 @@ namespace Starter.Localization
         public String StarterTitle;
         public String LanguageLabel;
         public String ScreenLabel;
+        public String GameResolutionLabel;
         public String IDLabel;
         public String KeyLabel;
         public String DisguiseCheckBox;
@@ -19,6 +20,8 @@ namespace Starter.Localization
         public String StartButton;
         public String InvalidKeyID;
         public String OccurredError;
+        public String AboutProgram;
+        public String AboutProgramText;
 
         public StarterLocalization UpdateLocalization(String cultureInfo = null)
         {
@@ -34,7 +37,11 @@ namespace Starter.Localization
             
             ScreenLabel = LocalizedString(new CultureStrings(
                 "Screen",
-                "Экран"));
+                "Экран"));            
+            
+            GameResolutionLabel = LocalizedString(new CultureStrings(
+                "Game resolution",
+                "Разрешение игры"));
 
             IDLabel = LocalizedString(new CultureStrings(
                 "Enter licence ID",
@@ -66,7 +73,15 @@ namespace Starter.Localization
 
             OccurredError = LocalizedString(new CultureStrings(
                 "An error has occurred!",
-                "Произошла ошибка!"));
+                "Произошла ошибка!"));            
+            
+            AboutProgram = LocalizedString(new CultureStrings(
+                "About program",
+                "О программе"));            
+            
+            AboutProgramText = LocalizedString(new CultureStrings(
+                $"ShellShock Live Ruler\n\nVersion {Settings.Version}\n\nCreator Rain0Ash",
+                $"ShellShock Live Линейка\n\nВерсия {Settings.Version}\n\nСоздатель Rain0Ash"));
             
             return this;
         }

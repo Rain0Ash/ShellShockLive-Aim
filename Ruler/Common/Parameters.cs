@@ -3,6 +3,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Ruler.Common
 {
@@ -47,6 +48,14 @@ namespace Ruler.Common
         {
             return gameResolution != null && ParametersDict.ContainsKey(gameResolution) ? ParametersDict[gameResolution] : ParametersDict["1366x768"];
         }
-        
+
+        internal static List<String> GetAvailableParameters()
+        {
+            List<String> availableParametersList = ParametersDict.Keys.ToList();
+            availableParametersList.Sort();
+            availableParametersList.Remove("1366x768");
+            availableParametersList.Insert(0,"1366x768");
+            return availableParametersList;
+        }
     }
 }

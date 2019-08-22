@@ -26,7 +26,7 @@ namespace Ruler.Gui
         private Int32 currentPage = 0;
         public WeaponsPanel()
         {
-            pageSwitcher = new PageSwitcher()
+            pageSwitcher = new PageSwitcher
             {
                 Location = new Point(LevelLabelWidth + ButtonWidth + DistanceBetweenButtons, 0),
                 Size = new Size(ButtonWidth, ButtonHeight),
@@ -36,7 +36,7 @@ namespace Ruler.Gui
             };
             pageSwitcher.CurrentPageChanged += page => currentPage = page;
             
-            searchTextBox = new SearchTextBox()
+            searchTextBox = new SearchTextBox
             {
                 ForeColor = Color.Azure,
                 BackColor = Color.DarkBlue,
@@ -56,7 +56,7 @@ namespace Ruler.Gui
                 Location = new Point(LevelLabelWidth, 0),
             };
 
-            extenderButton = new Button()
+            extenderButton = new Button
             {
                 TextAlign = ContentAlignment.MiddleCenter,
                 FlatStyle = FlatStyle.Flat,
@@ -76,7 +76,7 @@ namespace Ruler.Gui
             Size = new Size(extenderButton.Size.Width + DistanceBetweenButtons + (MaxWeaponsInLine+1)*(ButtonWidth+DistanceBetweenButtons),
                 MaxWeaponsInColumn*(extenderButton.Size.Height+DistanceBetweenButtons));
             
-            weaponButtonsContainer = new WeaponsContainer()
+            weaponButtonsContainer = new WeaponsContainer
             {
                 Font = Font,
                 BackColor = Color.FromArgb(0, 255, 255, 255),
@@ -90,7 +90,7 @@ namespace Ruler.Gui
             Controls.Add(weaponButtonsContainer);
             Controls.Add(currentWeaponButton);
             Controls.Add(pageSwitcher);
-            EventsAndGlobalsController.ChangedWeaponMenuState += ExtenderButtonOnClick;
+            EventsAndGlobalsController.ChangedWeaponMenuState += () => ExtenderButtonOnClick(new Object(), EventArgs.Empty);
         }
         
         private void ExtenderButtonOnClick(Object sender, EventArgs e)

@@ -2,11 +2,9 @@
 // PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
 
 using System;
-using System.Windows.Input;
+using System.Drawing;
 using Common;
 using Ruler.Weapons;
-using SharpDX.Direct2D1;
-using SharpDX.Mathematics.Interop;
 #pragma warning disable 67
 
 namespace Ruler.Common
@@ -19,15 +17,15 @@ namespace Ruler.Common
 
         internal delegate void EmptyHandler();
         internal delegate void SwitchedState(Int32 id);
-        internal delegate void ChangedPositionHandler(RawVector2 newCoord);
-        internal delegate void OffsetPositionHandler(RawVector2 offsetCoord);
+        internal delegate void ChangedPositionHandler(Point newCoord);
+        internal delegate void OffsetPositionHandler(Point offsetCoord);
         internal delegate void ChangedParameterHandler(Int32 parameter);
         internal delegate void ChangedWeaponHandler(Weapon weapon);
         #endregion
         
         #region Events
         internal static event EmptyHandler NeedRedraw;
-        internal static event EventHandler ChangedWeaponMenuState;
+        internal static event EmptyHandler ChangedWeaponMenuState;
         internal static event ChangedPositionHandler ChangedSightPosition;
         internal static event OffsetPositionHandler OffsetSightPosition;
         internal static event ChangedWeaponHandler ChangedWeapon;
@@ -41,8 +39,7 @@ namespace Ruler.Common
         #region Globals
 
         internal static Parameters Parameters;
-        internal static RawVector2 RenderTargetSize;
-        
+
         private static Monitor _monitor;
         internal static Monitor CurrentMonitor
         {
@@ -99,7 +96,7 @@ namespace Ruler.Common
             }
         }
 
-        private static Int32 _angle = 90;
+        private static Int32 _angle = 85;
         internal static Int32 Angle
         {
             get

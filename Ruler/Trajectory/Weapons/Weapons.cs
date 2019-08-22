@@ -2,10 +2,11 @@
 // PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
 
 using System;
-using System.Collections.Generic;
 using System.Drawing;
 using Ruler.Gui;
+using Ruler.Properties;
 using Common_Localization = Common.Localization;
+// ReSharper disable RedundantExplicitArraySize
 
 namespace Ruler.Weapons.Common
 {
@@ -13,7 +14,7 @@ namespace Ruler.Weapons.Common
     {
         private static readonly WeaponsLocalization Localization =
             new WeaponsLocalization(MainForm.GetLocalCultureCode());
-
+        
         internal static readonly Weapon[,] WeaponsArray = new Weapon[156, WeaponsPanel.MaxWeaponsInLine]
         {
             {

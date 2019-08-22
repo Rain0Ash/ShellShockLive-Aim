@@ -2,38 +2,33 @@
 // PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
 
 using System;
-using System.Windows.Forms;
+using System.Drawing;
 using Ruler.Common;
-using SharpDX.Direct2D1;
-using SharpDX.Mathematics.Interop;
 
 namespace Ruler
 {
     public class Manager : IDisposable
     {
-        private RenderTarget drawer;
         private Sight sight;
         private Trajectory trajectory;
 
-        public Manager(ref RenderTarget renderTarget)
+        public Manager()
         {
-            drawer = renderTarget;
-            
             InitializeComponent();
         }
         
         private void InitializeComponent()
         {
-            RawVector2 initializeCoord = new RawVector2(drawer.Size.Width / 2f, drawer.Size.Height / 2f);
+            Point initializeCoord = new Point(EventsAndGlobalsController.CurrentMonitor.Resolution.Width / 2, EventsAndGlobalsController.CurrentMonitor.Resolution.Height / 2);
             
-            sight = new Sight(initializeCoord, EventsAndGlobalsController.Parameters.Length, ref drawer);
-            trajectory = new Trajectory(initializeCoord, ref drawer);
+            sight = new Sight(initializeCoord, EventsAndGlobalsController.Parameters.Length);
+            trajectory = new Trajectory(initializeCoord);
         }
 
-        public void PrepareNextFrame()
+        public void NextFrame(Graphics graphics)
         {
-            sight.Draw();
-            trajectory.Draw();
+            sight.Draw(ref graphics);
+            trajectory.Draw(ref graphics);
         }
 
         public void Dispose()

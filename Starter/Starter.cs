@@ -8,8 +8,9 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Common;
-using Ruler.Properties;
+using Ruler.Common;
 using Ruler.Starter.Registry;
+using Ruler.Properties;
 using Settings = Common.Settings;
 
 namespace Ruler.Starter
@@ -23,12 +24,15 @@ namespace Ruler.Starter
         private void Starter_Load(Object sender, EventArgs e)
         {
             CenterToScreen();
+
             LanguageImagedComboBox.DataSource = Localization.GetCultures()
                 .Select(culture => new DropDownItem(culture.CultureName) { Image = culture.CultureImage }).ToList();
 
             ScreenImagedComboBox.DataSource = Monitors.GetMonitors()
                 .Select(screen => new DropDownItem($"{(screen.Name.Length > 0 ? screen.Name[screen.Name.Length-1] : 'U')} {screen.Resolution.Width.ToString()}x{screen.Resolution.Height.ToString()} [{screen.Frequency.ToString()}]"){Image = Resources.monitor}).ToList();
 
+            GameResolutionImagedComboBox.DataSource = Parameter.GetAvailableParameters().Select(gameResolution => new DropDownItem($"{gameResolution}"){Image = Resources.monitor}).ToList();
+            
             LicenceID.MaxLength = Licence.MaxIDLength;
             LicenceKey.MaxLength = Licence.MaxKeyLength;
             LicenceID.Mask = $@"A{String.Concat(Enumerable.Repeat("a", Licence.MaxIDLength - 1))}";
@@ -36,7 +40,9 @@ namespace Ruler.Starter
 
             RegistrySettings registrySettings = Registry.Registry.GetRegistry();
             if (registrySettings.DontUseRegistry || !Licence.Sha256(Settings.Version).Equals(registrySettings.BuildDateTimeHash, StringComparison.OrdinalIgnoreCase))
+            {
                 registrySettings = Registry.Registry.GetRegistry(true);
+            }
 
             Int32 getLanguageIndex()
             {
@@ -56,12 +62,19 @@ namespace Ruler.Starter
             LicenceKey.Text = registrySettings.Key;
             LanguageImagedComboBox.SelectedIndex = getLanguageIndex();
             ScreenImagedComboBox.SelectedIndex = registrySettings.MonitorID < ScreenImagedComboBox.Items.Count ? registrySettings.MonitorID : 0;
+            GameResolutionImagedComboBox.SelectedIndex = registrySettings.GameResolutionID < GameResolutionImagedComboBox.Items.Count ? registrySettings.GameResolutionID : 0;
             IsDisguiseRuler.Checked = registrySettings.IsDisguise;
             NotSaveSettingsCheckBox.Checked = registrySettings.DontUseRegistry;
             NotDisplayAnymoreCheckBox.Checked = registrySettings.DontShowAnymore;
 
-            if (NotDisplayAnymoreCheckBox.Checked) StartButton_Click(sender, e);
-            else Show();
+            if (NotDisplayAnymoreCheckBox.Checked)
+            {
+                StartButton_Click(sender, e);
+            }
+            else
+            {
+                Show();
+            }
 
             LicenceID.Focus();
 
@@ -86,12 +99,19 @@ namespace Ruler.Starter
             }
             
         }
+
+        private void AboutButton_Click(Object sender, EventArgs e)
+        {
+            MessageBox.Show(localization.AboutProgramText, localization.AboutProgram, MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+        
         private void LanguageImagedComboBox_ChangeStarterLanguage(Object sender, EventArgs e)
         {
             localization.UpdateLocalization(new Localization.Culture(null, LanguageImagedComboBox.Text).CultureCode);
             Text = localization.StarterTitle;
             LanguageLabel.Text = localization.LanguageLabel;
             ScreenLabel.Text = localization.ScreenLabel;
+            GameResolutionLabel.Text = localization.GameResolutionLabel;
             IDLabel.Text = localization.IDLabel;
             KeyLabel.Text = localization.KeyLabel;
             IsDisguiseRuler.Text = localization.DisguiseCheckBox;
@@ -154,31 +174,23 @@ namespace Ruler.Starter
             }
             String languageCode = CountryData.EnglishNameByIso2.FirstOrDefault(x => x.Value == LanguageImagedComboBox.Text).Key.ToLower();
                 
-                if (!NotSaveSettingsCheckBox.Checked)
-                {
-                    Registry.Registry.SetRegistry(new RegistrySettings(LicenceID.Text, LicenceKey.Text, languageCode, ScreenImagedComboBox.SelectedIndex,
-                        IsDisguiseRuler.Checked, NotSaveSettingsCheckBox.Checked, NotDisplayAnymoreCheckBox.Checked));
-                }
-                else
-                {
-                    Registry.Registry.RemoveRegistry();
-                }
-
-                try
-                {
-                    Hide();
-                    MainForm ruler = new MainForm(licence, Monitors.GetMonitors()[ScreenImagedComboBox.SelectedIndex],
-                        languageCode,
-                        IsDisguiseRuler.Checked);
-                    ruler.Closed += (s, args) => Close();
-                    ruler.Show();
-                    Dispose();
-                }
-                catch (ObjectDisposedException)
-                {
-                    Close();
-                    Application.Exit();
-                }
+            if (!NotSaveSettingsCheckBox.Checked)
+            {
+                Registry.Registry.SetRegistry(new RegistrySettings(LicenceID.Text, LicenceKey.Text, languageCode, ScreenImagedComboBox.SelectedIndex, GameResolutionImagedComboBox.SelectedIndex,
+                    IsDisguiseRuler.Checked, NotSaveSettingsCheckBox.Checked, NotDisplayAnymoreCheckBox.Checked));
+            }
+            else
+            {
+                Registry.Registry.RemoveRegistry();
+            }
+            
+            Hide();
+            MainForm ruler = new MainForm(licence, Monitors.GetMonitors()[ScreenImagedComboBox.SelectedIndex], GameResolutionImagedComboBox.Text,
+                languageCode,
+                IsDisguiseRuler.Checked);
+            ruler.Closed += (s, args) => Close();
+            ruler.ShowDialog();
+            Close();
         }
     }
 }

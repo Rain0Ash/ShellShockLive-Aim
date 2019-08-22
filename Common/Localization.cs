@@ -74,7 +74,7 @@ namespace Common
 
             private void SetImage(String cultureCode)
             {
-                CultureImage = (Image)Resources.ResourceManager.GetObject(cultureCode) ?? (Image)Resources.ResourceManager.GetObject(@"null");
+                CultureImage = (Image)Resources.ResourceManager.GetObject(cultureCode) ?? Resources._null;
             }
         }
 

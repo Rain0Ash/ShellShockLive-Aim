@@ -3,7 +3,6 @@
 
 using System.Drawing;
 using Ruler.Common;
-using SharpDX.Direct2D1;
 
 namespace Ruler
 {
@@ -13,14 +12,12 @@ namespace Ruler
         //private static readonly Pen ReboundWallPaintPen = Pens.Fuchsia;
 
         public Point FirstCoord, SecondCoord;
-        public ReboundWall(Rectangle rectangle, ref RenderTarget renderTarget)
-            : base(ref renderTarget)
+        public ReboundWall(Rectangle rectangle)
         {
             wallRectangle = rectangle;
-            
         }
         
-        public override void Draw(ref RenderTarget drawer)
+        public override void Draw(ref Graphics graphics)
         {
             
         }
