@@ -1,0 +1,197 @@
+﻿<windows:PrimaryWindow x:Class="AirLandSea.AirLandSeaWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:windows="clr-namespace:NetExtender.UserInterface.WindowsPresentation.Windows;assembly=NetExtender.UserInterface.WindowsPresentation"
+        xmlns:viewModels="clr-namespace:AirLandSea.ViewModels"
+        mc:Ignorable="d"
+        DataContext="{Binding RelativeSource={RelativeSource Self}}"
+        Icon="Files/BackPlayerCard.png"
+        Title="По всем фронтам" MinHeight="800" MinWidth="1400">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Files/GameTable.png"/>
+        </Grid.Background>
+        
+        <Grid>
+            <Grid.Resources>
+                <viewModels:GameCard x:Key="GameCard"/>
+            </Grid.Resources>
+            
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.33*"/>
+                <RowDefinition Height="250"/>
+                <RowDefinition Height="0.33*"/>
+            </Grid.RowDefinitions>
+        
+            <Grid Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.33*"/>
+                    <ColumnDefinition MinWidth="220" Width="250"/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition MinWidth="220" Width="250"/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition MinWidth="220" Width="250"/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition MinWidth="220" Width="250"/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition MinWidth="220" Width="250"/>
+                    <ColumnDefinition Width="0.33*"/>
+                </Grid.ColumnDefinitions>
+            
+                <Image Grid.Column="3" Name="FirstBattleField" Source="{Binding Battlefield.Fields[0].Image}"></Image>
+                <Image Grid.Column="5" Name="SecondBattleField" Source="{Binding Battlefield.Fields[1].Image}"></Image>
+                <Image Grid.Column="7" Name="ThirdBattleField" Source="{Binding Battlefield.Fields[2].Image}"></Image>
+                <Image Grid.Column="9" Name="GameCardsDeck" Source="{Binding Source={StaticResource GameCard}, Path=Secret.Image}"></Image>
+            </Grid>
+            
+            <Grid Grid.Row="0" Grid.RowSpan="3" HorizontalAlignment="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="0.5*"/>
+                    <RowDefinition Height="0.5*"/>
+                </Grid.RowDefinitions>
+                
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.33*"/>
+                    <ColumnDefinition MinWidth="220" Width="250"/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition MinWidth="220" Width="250"/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition MinWidth="220" Width="250"/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition MinWidth="220" Width="250"/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition MinWidth="220" Width="250"/>
+                    <ColumnDefinition Width="0.33*"/>
+                </Grid.ColumnDefinitions>
+                
+                <Image Grid.Row="0" Grid.Column="1" Name="FirstPlayerCard"
+                       Width="{Binding ActualWidth, ElementName=GameCardsDeck}"
+                       Height="{Binding ActualHeight, ElementName=GameCardsDeck}"
+                       Source="{Binding Battlefield.Player1.Number.Image}"></Image>
+                <Image Grid.Row="1" Grid.Column="1" Name="SecondPlayerCard"
+                       Width="{Binding ActualWidth, ElementName=GameCardsDeck}"
+                       Height="{Binding ActualHeight, ElementName=GameCardsDeck}"
+                       Source="{Binding Battlefield.Player2.Number.Image}"></Image>
+                
+                <Grid Grid.Row="0" Grid.RowSpan="2" Grid.Column="9">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.5*"/>
+                        <RowDefinition Height="0.5*"/>
+                        <RowDefinition Height="0.5*"/>
+                    </Grid.RowDefinitions>
+                    
+                    <Grid Grid.Row="0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="0.1*"></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition Height="0.1*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.2*"></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition Width="5"></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition Width="5"></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition Width="0.2*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        
+                        <Image Grid.Row="1" Grid.Column="1" Source="{Binding Battlefield.Player1.PointCards[0].Image}"></Image>
+                        <Image Grid.Row="1" Grid.Column="3" Source="{Binding Battlefield.Player1.PointCards[1].Image}"></Image>
+                        <Image Grid.Row="1" Grid.Column="5" Source="{Binding Battlefield.Player1.PointCards[2].Image}"></Image>
+                        <Image Grid.Row="2" Grid.Column="1" Source="{Binding Battlefield.Player1.PointCards[3].Image}"></Image>
+                        <Image Grid.Row="2" Grid.Column="3" Source="{Binding Battlefield.Player1.PointCards[4].Image}"></Image>
+                        <Image Grid.Row="2" Grid.Column="5" Source="{Binding Battlefield.Player1.PointCards[5].Image}"></Image>
+                        <Image Grid.Row="3" Grid.Column="1" Source="{Binding Battlefield.Player1.PointCards[6].Image}"></Image>
+                        <Image Grid.Row="3" Grid.Column="3" Source="{Binding Battlefield.Player1.PointCards[7].Image}"></Image>
+                        <Image Grid.Row="3" Grid.Column="5" Source="{Binding Battlefield.Player1.PointCards[8].Image}"></Image>
+                    </Grid>
+                    
+                    <Grid Grid.Row="2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="0.1*"></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition Height="0.1*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="0.2*"></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition Width="5"></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition Width="5"></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition Width="0.2*"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        
+                        <Image Grid.Row="2" Grid.Column="1" Source="{Binding Battlefield.Player2.PointCards[0].Image}"></Image>
+                        <Image Grid.Row="2" Grid.Column="3" Source="{Binding Battlefield.Player2.PointCards[1].Image}"></Image>
+                        <Image Grid.Row="2" Grid.Column="5" Source="{Binding Battlefield.Player2.PointCards[2].Image}"></Image>
+                        <Image Grid.Row="3" Grid.Column="1" Source="{Binding Battlefield.Player2.PointCards[3].Image}"></Image>
+                        <Image Grid.Row="3" Grid.Column="3" Source="{Binding Battlefield.Player2.PointCards[4].Image}"></Image>
+                        <Image Grid.Row="3" Grid.Column="5" Source="{Binding Battlefield.Player2.PointCards[5].Image}"></Image>
+                        <Image Grid.Row="4" Grid.Column="1" Source="{Binding Battlefield.Player2.PointCards[6].Image}"></Image>
+                        <Image Grid.Row="4" Grid.Column="3" Source="{Binding Battlefield.Player2.PointCards[7].Image}"></Image>
+                        <Image Grid.Row="4" Grid.Column="5" Source="{Binding Battlefield.Player2.PointCards[8].Image}"></Image>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Grid>
+        
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.33*"/>
+                <RowDefinition Height="250"/>
+                <RowDefinition Height="0.33*"/>
+            </Grid.RowDefinitions>
+                
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.33*"/>
+                <ColumnDefinition MinWidth="220" Width="250"/>
+                <ColumnDefinition MinWidth="680" Width="770"/>
+                <ColumnDefinition MinWidth="220" Width="250"/>
+                <ColumnDefinition Width="0.33*"/>
+            </Grid.ColumnDefinitions>
+            
+            <Grid Grid.Row="0" Grid.Column="2" Background="Red">
+                
+            </Grid>
+            
+            <Grid Grid.Row="2" Grid.Column="2" Background="Aqua">
+                
+            </Grid>
+        </Grid>
+        
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.97*"/>
+                <RowDefinition Height="0.03*"/>
+            </Grid.RowDefinitions>
+            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.15*"/>
+                <ColumnDefinition Width="0.85*"/>
+            </Grid.ColumnDefinitions>
+            
+            <Button Grid.Row="1" Grid.Column="0" Name="SurrendButton" Content="Сдаться" Click="SurrendButtonOnClick">
+                <Button.Background>
+                    <LinearGradientBrush>
+                        <GradientStop Color="IndianRed" Offset="0.0" />
+                        <GradientStop Color="Red" Offset="0.3" />
+                        <GradientStop Color="Red" Offset="0.7" />
+                        <GradientStop Color="IndianRed" Offset="1.00" />
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+        </Grid>
+    </Grid>
+</windows:PrimaryWindow>
