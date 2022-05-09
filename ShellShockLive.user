@@ -1,0 +1,16 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=H_003A_005CGitHub_005CNetExtender_005CNetExtender_002EConfiguration_002EJson_005Cbin_005CRelease_005Cnet6_002E0_005CNetExtender_002EConfiguration_002EJson_002Edll/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=H_003A_005CGitHub_005CNetExtender_005CNetExtender_002ELocalization_002EFlags_005Cbin_005CRelease_005Cnet6_002E0_002Dwindows_005CNetExtender_002ELocalization_002EFlags_002Edll/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=H_003A_005CGitHub_005CNetExtender_005CNetExtender_002ELocalization_002EFlags_005Cbin_005CRelease_005Cnet6_002E0_005CNetExtender_002ELocalization_002EFlags_002Edll/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=H_003A_005CGitHub_005CNetExtender_005CNetExtender_002ENAudio_002EWindows_005Cbin_005CRelease_005Cnet6_002E0_002Dwindows_005CNetExtender_002ENAudio_002EWindows_002Edll/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=H_003A_005CGitHub_005CNetExtender_005CNetExtender_002ENAudio_005Cbin_005CRelease_005Cnet6_002E0_005CNetExtender_002ENAudio_002Edll/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=H_003A_005CGitHub_005CNetExtender_005CNetExtender_002EReactiveUI_005Cbin_005CRelease_005Cnet6_002E0_005CNetExtender_002EReactiveUI_002Edll/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=H_003A_005CGitHub_005CNetExtender_005CNetExtender_002EWindowsPresentation_002EActiveBinding_005Cbin_005CRelease_005Cnet6_002E0_002Dwindows_005CNetExtender_002EWindowsPresentation_002EActiveBinding_002Edll/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/AddReferences/RecentPaths/=H_003A_005CGitHub_005CNetExtender_005CNetExtender_002EWindowsPresentation_002ELocalization_005Cbin_005CRelease_005Cnet6_002E0_002Dwindows_005CNetExtender_002EWindowsPresentation_002ELocalization_002Edll/@EntryIndexedValue">True</s:Boolean>
+	<s:String x:Key="/Default/Environment/AssemblyExplorer/XmlDocument/@EntryValue">&lt;AssemblyExplorer&gt;&#xD;
+  &lt;Assembly Path="H:\GitHub\NetExtender\NetExtender.UserInterface.WindowsPresentation\bin\Release\net6.0-windows\NetExtender.UserInterface.WindowsPresentation.dll" /&gt;&#xD;
+  &lt;Assembly Path="C:\Program Files\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\6.0.5\ref\net6.0\PresentationFramework.dll" /&gt;&#xD;
+  &lt;Assembly Path="C:\Program Files\dotnet\packs\Microsoft.WindowsDesktop.App.Ref\6.0.5\ref\net6.0\PresentationCore.dll" /&gt;&#xD;
+  &lt;Assembly Path="H:\GitHub\NetExtender\NetExtender.WindowsPresentation\bin\Release\net6.0-windows\NetExtender.WindowsPresentation.dll" /&gt;&#xD;
+&lt;/AssemblyExplorer&gt;</s:String>
+	</wpf:ResourceDictionary>

@@ -1,0 +1,55 @@
+﻿<UserControl x:Class="ShellShockLive.View.WeaponPanel.WeaponPanelStack"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:ShellShockLive.View.WeaponPanel"
+             Background="Transparent"
+             x:Name="This"
+             mc:Ignorable="d"
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid x:Name="Grid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="30" />
+            <ColumnDefinition Width="0.25*" />
+            <ColumnDefinition Width="0.25*" />
+            <ColumnDefinition Width="0.25*" />
+            <ColumnDefinition Width="0.25*" />
+        </Grid.ColumnDefinitions>
+        
+        <Label Grid.Column="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+            <Label.Style>
+                <Style TargetType="Label">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Stack.Level, ElementName=This, FallbackValue={x:Null}}" Value="{x:Null}">
+                            <Setter Property="Content" Value="{x:Null}" />
+                            <Setter Property="Foreground" Value="Transparent" />
+                            <Setter Property="Background" Value="Transparent" />
+                        </DataTrigger>
+                        
+                        <DataTrigger Binding="{Binding Stack, ElementName=This, FallbackValue={x:Null}}" Value="{x:Null}">
+                            <Setter Property="Content" Value="{x:Null}" />
+                            <Setter Property="Foreground" Value="Transparent" />
+                            <Setter Property="Background" Value="Transparent" />
+                        </DataTrigger>
+                        
+                        <DataTrigger Binding="{Binding Stack.Count, ElementName=This, FallbackValue=0}" Value="0">
+                            <Setter Property="Content" Value="{x:Null}" />
+                            <Setter Property="Foreground" Value="Transparent" />
+                            <Setter Property="Background" Value="Transparent" />
+                        </DataTrigger>
+                    </Style.Triggers>
+                    
+                    <Setter Property="Content" Value="{Binding Stack.Level, ElementName=This, FallbackValue={x:Null}}" />
+                    <Setter Property="Foreground" Value="{Binding Brush, ElementName=This}" />
+                    <Setter Property="Background" Value="#80000000" />
+                </Style>
+            </Label.Style>
+        </Label>
+        
+        <local:WeaponButton Grid.Column="1" Weapon="{Binding Stack[0], ElementName=This, FallbackValue={x:Null}}" Click="WeaponButtonClick" />
+        <local:WeaponButton Grid.Column="2" Weapon="{Binding Stack[1], ElementName=This, FallbackValue={x:Null}}" Click="WeaponButtonClick" />
+        <local:WeaponButton Grid.Column="3" Weapon="{Binding Stack[2], ElementName=This, FallbackValue={x:Null}}" Click="WeaponButtonClick" />
+        <local:WeaponButton Grid.Column="4" Weapon="{Binding Stack[3], ElementName=This, FallbackValue={x:Null}}" Click="WeaponButtonClick" />
+    </Grid>
+</UserControl>

@@ -1,0 +1,118 @@
+﻿<Windows:LocalizationWindow x:Class="ShellShockLive.View.SettingsWindow"
+                      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                      xmlns:Windows="clr-namespace:NetExtender.UserInterface.WindowsPresentation.Windows;assembly=NetExtender.UserInterface.WindowsPresentation.Localization"
+                      xmlns:CalcBinding="clr-namespace:CalcBinding;assembly=CalcBinding"
+                      xmlns:Converters="clr-namespace:NetExtender.WindowsPresentation.Types.Converters;assembly=NetExtender.WindowsPresentation"
+                      xmlns:ShellShockLive="clr-namespace:ShellShockLive"
+                      mc:Ignorable="d"
+                      DataContext="{Binding RelativeSource={RelativeSource Self}}"
+                      ResizeMode="CanMinimize"
+                      Icon="/Files/Icons/Application.ico"
+                      KeyDown="KeyboardClick"
+                      Title="{Binding Localization.Title.Current}" Width="400" Height="200">
+    <Window.Resources>
+        <Converters:StringFormatConverter x:Key="FormatConverter"/>
+    </Window.Resources>
+    <Grid ShowGridLines="{Binding Model.ShowGrid}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.45*" />
+            <RowDefinition Height="0.45*" />
+            <RowDefinition Height="0.1*" MinHeight="20" />
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.5*" />
+            <ColumnDefinition Width="0.1*" />
+            <ColumnDefinition Width="0.4*" />
+        </Grid.ColumnDefinitions>
+        
+        <StackPanel Grid.Row="0" Grid.Column="0">
+            <TextBlock Text="{Binding Localization.Language.Current}" HorizontalAlignment="Center"></TextBlock>
+            <ComboBox ItemsSource="{Binding Path=Model.Languages}" SelectedValuePath="Identifier" SelectedValue="{Binding Path=Model.Identifier}" MaxDropDownHeight="80">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="{Binding Image}" Stretch="None" />
+                            <TextBlock>
+                                <Run Text="{Binding Name, StringFormat={} {0}, Mode=OneWay}" />
+                            </TextBlock>
+                        </StackPanel>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+            
+            <TextBlock HorizontalAlignment="Center">
+                <TextBlock.Style>
+                    <Style TargetType="TextBlock">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Model.Settings.Scanning.Value}" Value="400">
+                                <Setter Property="Text" Value="{Binding Localization.WithoutScanning.Current}"></Setter>
+                            </DataTrigger>
+                        </Style.Triggers>
+                        
+                        <Setter Property="Text">
+                            <Setter.Value>
+                                <MultiBinding Converter="{StaticResource FormatConverter}">
+                                    <Binding Path="Localization.Scanning.Current"/>
+                                    <Binding Path="Model.Settings.Scanning.Value"/>
+                                </MultiBinding>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </TextBlock.Style>
+            </TextBlock>
+            
+            <Slider x:Name="ScanningSlider" IsSnapToTickEnabled="True" TickPlacement="BottomRight" Delay="1"
+                    Minimum="{Binding (ShellShockLive:Settings+Constants.Scanning).Minimum, Mode=OneTime}"
+                    Maximum="{Binding (ShellShockLive:Settings+Constants.Scanning).Maximum, Mode=OneTime}"
+                    Interval="100" TickFrequency="100" Value="{Binding Model.Settings.Scanning.Value, Mode=TwoWay}" />
+
+        </StackPanel>
+
+        <StackPanel Grid.Row="0" Grid.Column="2">
+            <TextBlock HorizontalAlignment="Center">
+                <Run Text="{Binding Localization.Volume.Current, Mode=OneWay}" />
+                <Run Text="{Binding Model.Settings.Volume.Value, StringFormat={}: {0}%, Mode=OneWay}" />
+            </TextBlock>
+            
+            <Slider IsSnapToTickEnabled="True"
+                    Minimum="{Binding (ShellShockLive:Settings+Constants.Volume).Minimum, Mode=OneTime}"
+                    Maximum="{Binding (ShellShockLive:Settings+Constants.Volume).Maximum, Mode=OneTime}"
+                    Delay="1" Interval="1" TickFrequency="1" Value="{Binding Model.Settings.Volume.Value, Mode=TwoWay}"></Slider>
+            
+            <TextBlock HorizontalAlignment="Center">
+                <Run Text="{Binding Localization.Transparent.Current, Mode=OneWay}" />
+                <Run Text="{Binding Model.Settings.Transparent.Value, StringFormat={}: {0}, Mode=OneWay}" />
+            </TextBlock>
+            
+            <Slider IsSnapToTickEnabled="True"
+                    Minimum="{Binding (ShellShockLive:Settings+Constants.Transparent).Minimum, Mode=OneTime}"
+                    Maximum="{Binding (ShellShockLive:Settings+Constants.Transparent).Maximum, Mode=OneTime}"
+                    Delay="1" Interval="1" TickFrequency="1" Value="{Binding Model.Settings.Transparent.Value, Mode=TwoWay}" />
+            
+        </StackPanel>
+        
+        <StackPanel Grid.Row="1" Grid.Column="2">
+            <CheckBox FlowDirection="RightToLeft" HorizontalAlignment="Center" VerticalContentAlignment="Center" IsChecked="{Binding Model.Settings.DebugAnalysis.Value, Mode=TwoWay}">
+                <TextBlock FlowDirection="LeftToRight" Text="{Binding Localization.DebugAnalysis.Current}" />
+            </CheckBox>
+            <CheckBox FlowDirection="RightToLeft" HorizontalAlignment="Center" VerticalContentAlignment="Center" IsChecked="{Binding Model.ShowGrid, Mode=TwoWay}">
+                <TextBlock FlowDirection="LeftToRight" Text="{Binding Localization.ShowGrid.Current}" />
+            </CheckBox>
+        </StackPanel>
+        
+        <Grid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            
+            <Button Grid.Column="0" Grid.ColumnSpan="2" Content="{Binding Localization.Save.Current}" Click="SaveButtonClick"></Button>
+            <Button Grid.Column="2" Content="{Binding Localization.Reset.Current}" Click="ResetButtonClick"></Button>
+        </Grid>
+    </Grid>
+</Windows:LocalizationWindow>

@@ -1,0 +1,91 @@
+﻿<UserControl x:Class="ShellShockLive.View.WeaponPanel.WeaponPanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:ShellShockLive.View.WeaponPanel"
+             xmlns:Grids="clr-namespace:NetExtender.UserInterface.WindowsPresentation.Types.Grids;assembly=NetExtender.UserInterface.WindowsPresentation"
+             xmlns:Converters="clr-namespace:NetExtender.WindowsPresentation.Types.Converters;assembly=NetExtender.WindowsPresentation"
+             x:Name="This"
+             mc:Ignorable="d"
+             d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <Converters:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"></Converters:BooleanToVisibilityConverter>
+        
+        <Style x:Key="SwitcherButtonStyle" TargetType="Button">
+            <Setter Property="Foreground" Value="Azure" />
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="BorderBrush" Value="Transparent" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="30"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Row="0" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+                <ColumnDefinition Width="*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+
+            <local:CurrentWeaponButton Grid.Row="0" Grid.Column="0" Visibility="Visible" Weapon="{Binding Weapon, ElementName=This}" Click="CurrentWeaponButtonClick" />
+
+            <Grid Grid.Row="0" Grid.Column="1" Opacity="0.7" Background="#FF0000"
+                  Visibility="{Binding ShowPanel, ElementName=This, Converter={StaticResource BooleanToVisibilityConverter}, Mode=TwoWay}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.1*"></ColumnDefinition>
+                    <ColumnDefinition Width="0.5*"></ColumnDefinition>
+                    <ColumnDefinition Width="0.2*"></ColumnDefinition>
+                    <ColumnDefinition Width="0.2*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Row="0" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Azure">
+                    <Run Text="{Binding CurrentPage, ElementName=This}" />
+                    <Run Text="/" />
+                    <Run Text="{Binding TotalPages, ElementName=This}" />
+                </TextBlock>
+                <Button Grid.Row="0" Grid.Column="2" Style="{StaticResource SwitcherButtonStyle}" Content="←" Click="PreviousButtonClick"></Button>
+                <Button Grid.Row="0" Grid.Column="3" Style="{StaticResource SwitcherButtonStyle}" Content="→" Click="NextButtonClick"></Button>
+            </Grid>
+
+            <TextBox Grid.Row="0" Grid.Column="2" x:Name="SearchBox" Opacity="0.7" Background="#0000FF" Foreground="Azure" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+                     Visibility="{Binding ShowPanel, ElementName=This, Converter={StaticResource BooleanToVisibilityConverter}, Mode=TwoWay}"
+                     TextChanged="SearchBoxTextChanged"></TextBox>
+        </Grid>
+
+        <Grids:MultiGrid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" x:Name="WeaponGrid" Rows="20"
+                         Visibility="{Binding ShowPanel, ElementName=This, Converter={StaticResource BooleanToVisibilityConverter}, Mode=TwoWay}">
+            <local:WeaponPanelStack Grid.Row="0" Stack="{Binding Stacks[0], ElementName=This}" />
+            <local:WeaponPanelStack Grid.Row="1" Stack="{Binding Stacks[1], ElementName=This}" />
+            <local:WeaponPanelStack Grid.Row="2" Stack="{Binding Stacks[2], ElementName=This}" />
+            <local:WeaponPanelStack Grid.Row="3" Stack="{Binding Stacks[3], ElementName=This}" />
+            <local:WeaponPanelStack Grid.Row="4" Stack="{Binding Stacks[4], ElementName=This}" />
+            <local:WeaponPanelStack Grid.Row="5" Stack="{Binding Stacks[5], ElementName=This}" />
+            <local:WeaponPanelStack Grid.Row="6" Stack="{Binding Stacks[6], ElementName=This}" />
+            <local:WeaponPanelStack Grid.Row="7" Stack="{Binding Stacks[7], ElementName=This}" />
+            <local:WeaponPanelStack Grid.Row="8" Stack="{Binding Stacks[8], ElementName=This}" />
+            <local:WeaponPanelStack Grid.Row="9" Stack="{Binding Stacks[9], ElementName=This}" />
+            <local:WeaponPanelStack Grid.Row="10" Stack="{Binding Stacks[10], ElementName=This}" />
+            <local:WeaponPanelStack Grid.Row="11" Stack="{Binding Stacks[11], ElementName=This}" />
+            <local:WeaponPanelStack Grid.Row="12" Stack="{Binding Stacks[12], ElementName=This}" />
+            <local:WeaponPanelStack Grid.Row="13" Stack="{Binding Stacks[13], ElementName=This}" />
+            <local:WeaponPanelStack Grid.Row="14" Stack="{Binding Stacks[14], ElementName=This}" />
+            <local:WeaponPanelStack Grid.Row="15" Stack="{Binding Stacks[15], ElementName=This}" />
+            <local:WeaponPanelStack Grid.Row="16" Stack="{Binding Stacks[16], ElementName=This}" />
+            <local:WeaponPanelStack Grid.Row="17" Stack="{Binding Stacks[17], ElementName=This}" />
+            <local:WeaponPanelStack Grid.Row="18" Stack="{Binding Stacks[18], ElementName=This}" />
+            <local:WeaponPanelStack Grid.Row="19" Stack="{Binding Stacks[19], ElementName=This}" />
+        </Grids:MultiGrid>
+    </Grid>
+</UserControl>

@@ -1,0 +1,431 @@
+<Project>
+  <PropertyGroup>
+    <AssemblyName>ShellShockLive</AssemblyName>
+    <IntermediateOutputPath>obj\Debug\</IntermediateOutputPath>
+    <BaseIntermediateOutputPath>obj\</BaseIntermediateOutputPath>
+    <MSBuildProjectExtensionsPath>H:\GitHub\ShellShockLive\ShellShockLive\obj\</MSBuildProjectExtensionsPath>
+    <_TargetAssemblyProjectName>ShellShockLive</_TargetAssemblyProjectName>
+  </PropertyGroup>
+  <Import Project="Sdk.props" Sdk="Microsoft.NET.Sdk" />
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWindowsForms>true</UseWindowsForms>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>Files\Icons\Application.ico</ApplicationIcon>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="CalcBinding" Version="2.5.2" />
+    <PackageReference Include="DynamicData" Version="7.12.11" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.10" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="6.0.10" />
+    <PackageReference Include="Microsoft.Extensions.Primitives" Version="6.0.0" />
+    <PackageReference Include="NAudio" Version="2.1.0" />
+    <PackageReference Include="NAudio.Core" Version="2.1.0" />
+    <PackageReference Include="NAudio.Wasapi" Version="2.1.0" />
+    <PackageReference Include="NAudio.WinMM" Version="2.1.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="OpenCvSharp4" Version="4.6.0.20220608" />
+    <PackageReference Include="OpenCvSharp4.Extensions" Version="4.6.0.20220608" />
+    <PackageReference Include="OpenCvSharp4.Windows" Version="4.6.0.20220608" />
+    <PackageReference Include="OpenCvSharp4.WpfExtensions" Version="4.6.0.20220608" />
+    <PackageReference Include="ReactiveUI" Version="18.3.1" />
+    <PackageReference Include="ReactiveUI.Fody" Version="18.3.1" />
+    <PackageReference Include="ReactiveUI.WPF" Version="18.3.1" />
+    <PackageReference Include="System.Drawing.Common" Version="6.0.0" />
+    <PackageReference Include="System.Management" Version="6.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="View\SettingsLocalization.cs">
+      <DependentUpon>SettingsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="ShellShockLiveLocalization.cs">
+      <DependentUpon>ShellShockLiveWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="ViewModels\Battlefield\Elements\BattlefieldFieldsState.cs">
+      <DependentUpon>BattlefieldFields.cs</DependentUpon>
+    </Compile>
+    <Compile Update="ShellShockLiveLocalization.cs">
+      <DependentUpon>ShellShockLiveWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="AngleViewConverter.cs">
+      <DependentUpon>ShellShockLiveWindow.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\Weapons\Internal\AirStrike" />
+    <Folder Include="Models\Weapons\Internal\BackRoller" />
+    <Folder Include="Models\Weapons\Internal\Banana" />
+    <Folder Include="Models\Weapons\Internal\Bolt" />
+    <Folder Include="Models\Weapons\Internal\Bounsplode" />
+    <Folder Include="Models\Weapons\Internal\Breaker" />
+    <Folder Include="Models\Weapons\Internal\Builder" />
+    <Folder Include="Models\Weapons\Internal\Bulger" />
+    <Folder Include="Models\Weapons\Internal\Cactus" />
+    <Folder Include="Models\Weapons\Internal\DeadWeight" />
+    <Folder Include="Models\Weapons\Internal\Digger" />
+    <Folder Include="Models\Weapons\Internal\Earthquake" />
+    <Folder Include="Models\Weapons\Internal\Flame" />
+    <Folder Include="Models\Weapons\Internal\Flower" />
+    <Folder Include="Models\Weapons\Internal\Glock" />
+    <Folder Include="Models\Weapons\Internal\Grenade" />
+    <Folder Include="Models\Weapons\Internal\Guppies" />
+    <Folder Include="Models\Weapons\Internal\Horizon" />
+    <Folder Include="Models\Weapons\Internal\HoverBall" />
+    <Folder Include="Models\Weapons\Internal\Molehill" />
+    <Folder Include="Models\Weapons\Internal\Moons" />
+    <Folder Include="Models\Weapons\Internal\Pixel" />
+    <Folder Include="Models\Weapons\Internal\Rainbow" />
+    <Folder Include="Models\Weapons\Internal\RapidFire" />
+    <Folder Include="Models\Weapons\Internal\Ringer" />
+    <Folder Include="Models\Weapons\Internal\Roller" />
+    <Folder Include="Models\Weapons\Internal\Shank" />
+    <Folder Include="Models\Weapons\Internal\Sinkhole" />
+    <Folder Include="Models\Weapons\Internal\Snake" />
+    <Folder Include="Models\Weapons\Internal\Sniper" />
+    <Folder Include="Models\Weapons\Internal\Splitter" />
+    <Folder Include="Models\Weapons\Internal\Static" />
+    <Folder Include="Models\Weapons\Internal\Stream" />
+    <Folder Include="Models\Weapons\Internal\Tunneler" />
+    <Folder Include="Models\Weapons\Internal\Twinkler" />
+    <Folder Include="Models\Weapons\Internal\Zipper" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Files\Icons\Application.ico" />
+    <Content Include="Files\Icons\Application.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Files\Icons\Application.png" />
+    <None Remove="Files\Menu\about.png" />
+    <Content Include="Files\Menu\about.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Files\Menu\logout.png" />
+    <Content Include="Files\Menu\logout.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Files\Menu\rule.png" />
+    <Content Include="Files\Menu\rule.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Files\Menu\settings.png" />
+    <Content Include="Files\Menu\settings.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Files\Menu\table.png" />
+    <None Remove="Files\Sounds\CardFlip1.mp3" />
+    <Content Include="Files\Sounds\CardFlip1.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Files\Sounds\CardPlace1.mp3" />
+    <Content Include="Files\Sounds\CardPlace1.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Files\Sounds\CardPut1.mp3" />
+    <Content Include="Files\Sounds\CardPut1.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Files\Sounds\CardTouch1.mp3" />
+    <Content Include="Files\Sounds\CardTouch1.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Remove="Files\Menu\nuclear.png" />
+    <Content Include="Files\Menu\nuclear.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.windowsdesktop.app.ref\6.0.11\ref\net6.0\Accessibility.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\calcbinding\2.5.2\lib\netcoreapp3.0\CalcBinding.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\dynamicdata\7.12.11\lib\net6.0\DynamicData.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\dynamicexpresso.core\2.3.1\lib\netstandard2.0\DynamicExpresso.Core.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\Microsoft.CSharp.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.data.sqlite.core\6.0.10\lib\net6.0\Microsoft.Data.Sqlite.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.entityframeworkcore.abstractions\6.0.10\lib\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.entityframeworkcore\6.0.10\lib\net6.0\Microsoft.EntityFrameworkCore.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.entityframeworkcore.relational\6.0.10\lib\net6.0\Microsoft.EntityFrameworkCore.Relational.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.entityframeworkcore.sqlite.core\6.0.10\lib\net6.0\Microsoft.EntityFrameworkCore.Sqlite.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.extensions.caching.abstractions\6.0.0\lib\netstandard2.0\Microsoft.Extensions.Caching.Abstractions.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.extensions.caching.memory\6.0.1\lib\netstandard2.0\Microsoft.Extensions.Caching.Memory.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.extensions.configuration.abstractions\6.0.0\lib\netstandard2.0\Microsoft.Extensions.Configuration.Abstractions.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.extensions.dependencyinjection.abstractions\6.0.0\lib\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.extensions.dependencyinjection\6.0.1\lib\net6.0\Microsoft.Extensions.DependencyInjection.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.extensions.dependencymodel\6.0.0\lib\netstandard2.0\Microsoft.Extensions.DependencyModel.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.extensions.logging.abstractions\6.0.0\lib\net6.0\Microsoft.Extensions.Logging.Abstractions.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.extensions.logging\6.0.0\lib\netstandard2.1\Microsoft.Extensions.Logging.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.extensions.options\6.0.0\lib\netstandard2.1\Microsoft.Extensions.Options.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.extensions.primitives\6.0.0\lib\net6.0\Microsoft.Extensions.Primitives.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\Microsoft.VisualBasic.Core.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.windowsdesktop.app.ref\6.0.11\ref\net6.0\Microsoft.VisualBasic.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.windowsdesktop.app.ref\6.0.11\ref\net6.0\Microsoft.VisualBasic.Forms.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\Microsoft.Win32.Primitives.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.windowsdesktop.app.ref\6.0.11\ref\net6.0\Microsoft.Win32.Registry.AccessControl.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\Microsoft.Win32.Registry.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.windowsdesktop.app.ref\6.0.11\ref\net6.0\Microsoft.Win32.SystemEvents.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\mscorlib.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\naudio.asio\2.1.0\lib\netstandard2.0\NAudio.Asio.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\naudio.core\2.1.0\lib\netstandard2.0\NAudio.Core.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\naudio\2.1.0\lib\net6.0-windows7.0\NAudio.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\naudio.midi\2.1.0\lib\netstandard2.0\NAudio.Midi.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\naudio.wasapi\2.1.0\lib\netstandard2.0\NAudio.Wasapi.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\naudio.winforms\2.1.0\lib\netcoreapp3.1\NAudio.WinForms.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\naudio.winmm\2.1.0\lib\netstandard2.0\NAudio.WinMM.dll" />
+    <ReferencePath Include="H:\GitHub\NetExtender\NetExtender.Configuration\bin\Release\net6.0\NetExtender.Configuration.dll" />
+    <ReferencePath Include="H:\GitHub\NetExtender\NetExtender.Configuration.File\bin\Release\net6.0\NetExtender.Configuration.File.dll" />
+    <ReferencePath Include="H:\GitHub\NetExtender\NetExtender.Configuration.Ini\bin\Release\net6.0\NetExtender.Configuration.Ini.dll" />
+    <ReferencePath Include="H:\GitHub\NetExtender\NetExtender.Configuration.Json\bin\Release\net6.0\NetExtender.Configuration.Json.dll" />
+    <ReferencePath Include="H:\GitHub\NetExtender\NetExtender.Configuration.Property\bin\Release\net6.0\NetExtender.Configuration.Property.dll" />
+    <ReferencePath Include="H:\GitHub\NetExtender\NetExtender.Core\bin\Release\net6.0\NetExtender.Core.dll" />
+    <ReferencePath Include="H:\GitHub\NetExtender\NetExtender.Domain\bin\Release\net6.0\NetExtender.Domain.dll" />
+    <ReferencePath Include="H:\GitHub\NetExtender\NetExtender.Domain.WindowsPresentation\bin\Release\net6.0-windows\NetExtender.Domain.WindowsPresentation.dll" />
+    <ReferencePath Include="H:\GitHub\NetExtender\NetExtender.Initializer\bin\Release\net6.0\NetExtender.Initializer.dll" />
+    <ReferencePath Include="H:\GitHub\NetExtender\NetExtender.Localization\bin\Release\net6.0\NetExtender.Localization.dll" />
+    <ReferencePath Include="H:\GitHub\NetExtender\NetExtender.Localization.Flags\bin\Release\net6.0-windows\NetExtender.Localization.Flags.dll" />
+    <ReferencePath Include="H:\GitHub\NetExtender\NetExtender.Localization.Property\bin\Release\net6.0\NetExtender.Localization.Property.dll" />
+    <ReferencePath Include="H:\GitHub\NetExtender\NetExtender.Logging\bin\Release\net6.0\NetExtender.Logging.dll" />
+    <ReferencePath Include="H:\GitHub\NetExtender\NetExtender.Memento\bin\Release\net6.0\NetExtender.Memento.dll" />
+    <ReferencePath Include="H:\GitHub\NetExtender\NetExtender.NAudio\bin\Release\net6.0\NetExtender.NAudio.dll" />
+    <ReferencePath Include="H:\GitHub\NetExtender\NetExtender.NAudio.Windows\bin\Release\net6.0-windows\NetExtender.NAudio.Windows.dll" />
+    <ReferencePath Include="H:\GitHub\NetExtender\NetExtender.ReactiveUI\bin\Release\net6.0\NetExtender.ReactiveUI.dll" />
+    <ReferencePath Include="H:\GitHub\NetExtender\NetExtender.Registry\bin\Release\net6.0-windows\NetExtender.Registry.dll" />
+    <ReferencePath Include="H:\GitHub\NetExtender\NetExtender.Serialization.Ini\bin\Release\net6.0\NetExtender.Serialization.Ini.dll" />
+    <ReferencePath Include="H:\GitHub\NetExtender\NetExtender.UserInterface\bin\Release\net6.0\NetExtender.UserInterface.dll" />
+    <ReferencePath Include="H:\GitHub\NetExtender\NetExtender.UserInterface.Windows\bin\Release\net6.0-windows\NetExtender.UserInterface.Windows.dll" />
+    <ReferencePath Include="H:\GitHub\NetExtender\NetExtender.UserInterface.WindowsPresentation\bin\Release\net6.0-windows\NetExtender.UserInterface.WindowsPresentation.dll" />
+    <ReferencePath Include="H:\GitHub\NetExtender\NetExtender.UserInterface.WindowsPresentation.Localization\bin\Release\net6.0-windows\NetExtender.UserInterface.WindowsPresentation.Localization.dll" />
+    <ReferencePath Include="H:\GitHub\NetExtender\NetExtender.Windows\bin\Release\net6.0-windows\NetExtender.Windows.dll" />
+    <ReferencePath Include="H:\GitHub\NetExtender\NetExtender.WindowsPresentation.ActiveBinding\bin\Release\net6.0-windows\NetExtender.WindowsPresentation.ActiveBinding.dll" />
+    <ReferencePath Include="H:\GitHub\NetExtender\NetExtender.WindowsPresentation\bin\Release\net6.0-windows\NetExtender.WindowsPresentation.dll" />
+    <ReferencePath Include="H:\GitHub\NetExtender\NetExtender.WindowsPresentation.Drawing\bin\Release\net6.0-windows\NetExtender.WindowsPresentation.Drawing.dll" />
+    <ReferencePath Include="H:\GitHub\NetExtender\NetExtender.WindowsPresentation.Localization\bin\Release\net6.0-windows\NetExtender.WindowsPresentation.Localization.dll" />
+    <ReferencePath Include="H:\GitHub\NetExtender\NetExtender.WindowsPresentation.Localization.ReactiveUI\bin\Release\net6.0-windows\NetExtender.WindowsPresentation.Localization.ReactiveUI.dll" />
+    <ReferencePath Include="H:\GitHub\NetExtender\NetExtender.WindowsPresentation.ReactiveUI\bin\Release\net6.0-windows\NetExtender.WindowsPresentation.ReactiveUI.dll" />
+    <ReferencePath Include="H:\GitHub\NetExtender\NetExtender.WinForms\bin\Release\net6.0-windows\NetExtender.WinForms.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\netstandard.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\newtonsoft.json\13.0.1\lib\netstandard2.0\Newtonsoft.Json.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\opencvsharp4\4.6.0.20220608\lib\net6.0\OpenCvSharp.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\opencvsharp4.extensions\4.6.0.20220608\lib\net6.0\OpenCvSharp.Extensions.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\opencvsharp4.wpfextensions\4.6.0.20220608\lib\netcoreapp3.1\OpenCvSharp.WpfExtensions.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.windowsdesktop.app.ref\6.0.11\ref\net6.0\PresentationCore.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.windowsdesktop.app.ref\6.0.11\ref\net6.0\PresentationFramework.Aero.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.windowsdesktop.app.ref\6.0.11\ref\net6.0\PresentationFramework.Aero2.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.windowsdesktop.app.ref\6.0.11\ref\net6.0\PresentationFramework.AeroLite.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.windowsdesktop.app.ref\6.0.11\ref\net6.0\PresentationFramework.Classic.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.windowsdesktop.app.ref\6.0.11\ref\net6.0\PresentationFramework.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.windowsdesktop.app.ref\6.0.11\ref\net6.0\PresentationFramework.Luna.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.windowsdesktop.app.ref\6.0.11\ref\net6.0\PresentationFramework.Royale.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.windowsdesktop.app.ref\6.0.11\ref\net6.0\PresentationUI.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.windowsdesktop.app.ref\6.0.11\ref\net6.0\ReachFramework.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\reactiveui\18.3.1\lib\net6.0\ReactiveUI.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\reactiveui.fody\18.3.1\lib\net6.0\ReactiveUI.Fody.Helpers.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\reactiveui.wpf\18.3.1\lib\net6.0-windows7.0\ReactiveUI.Wpf.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\splat\14.4.1\lib\net6.0\Splat.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\sqlitepclraw.bundle_e_sqlite3\2.0.6\lib\netstandard2.0\SQLitePCLRaw.batteries_v2.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\sqlitepclraw.core\2.0.6\lib\netstandard2.0\SQLitePCLRaw.core.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\sqlitepclraw.provider.e_sqlite3\2.0.6\lib\net5.0\SQLitePCLRaw.provider.e_sqlite3.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.AppContext.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Buffers.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.windowsdesktop.app.ref\6.0.11\ref\net6.0\System.CodeDom.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Collections.Concurrent.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Collections.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Collections.Immutable.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Collections.NonGeneric.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Collections.Specialized.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.ComponentModel.Annotations.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.ComponentModel.DataAnnotations.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.ComponentModel.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.ComponentModel.EventBasedAsync.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.ComponentModel.Primitives.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.ComponentModel.TypeConverter.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.windowsdesktop.app.ref\6.0.11\ref\net6.0\System.Configuration.ConfigurationManager.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Configuration.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Console.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Core.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Data.Common.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Data.DataSetExtensions.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Data.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.windowsdesktop.app.ref\6.0.11\ref\net6.0\System.Design.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Diagnostics.Contracts.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Diagnostics.Debug.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Diagnostics.DiagnosticSource.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.windowsdesktop.app.ref\6.0.11\ref\net6.0\System.Diagnostics.EventLog.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Diagnostics.FileVersionInfo.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.windowsdesktop.app.ref\6.0.11\ref\net6.0\System.Diagnostics.PerformanceCounter.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Diagnostics.Process.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Diagnostics.StackTrace.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Diagnostics.TextWriterTraceListener.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Diagnostics.Tools.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Diagnostics.TraceSource.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Diagnostics.Tracing.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.windowsdesktop.app.ref\6.0.11\ref\net6.0\System.DirectoryServices.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.windowsdesktop.app.ref\6.0.11\ref\net6.0\System.Drawing.Common.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.windowsdesktop.app.ref\6.0.11\ref\net6.0\System.Drawing.Design.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.windowsdesktop.app.ref\6.0.11\ref\net6.0\System.Drawing.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Drawing.Primitives.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Dynamic.Runtime.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Formats.Asn1.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Globalization.Calendars.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Globalization.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Globalization.Extensions.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.IO.Compression.Brotli.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.IO.Compression.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.IO.Compression.FileSystem.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.IO.Compression.ZipFile.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.IO.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.IO.FileSystem.AccessControl.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.IO.FileSystem.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.IO.FileSystem.DriveInfo.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.IO.FileSystem.Primitives.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.IO.FileSystem.Watcher.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.IO.IsolatedStorage.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.IO.MemoryMappedFiles.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.windowsdesktop.app.ref\6.0.11\ref\net6.0\System.IO.Packaging.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.IO.Pipes.AccessControl.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.IO.Pipes.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.IO.UnmanagedMemoryStream.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Linq.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Linq.Expressions.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Linq.Parallel.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Linq.Queryable.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\system.management\6.0.0\lib\net6.0\System.Management.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Memory.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Net.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Net.Http.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Net.Http.Json.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Net.HttpListener.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Net.Mail.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Net.NameResolution.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Net.NetworkInformation.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Net.Ping.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Net.Primitives.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Net.Requests.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Net.Security.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Net.ServicePoint.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Net.Sockets.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Net.WebClient.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Net.WebHeaderCollection.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Net.WebProxy.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Net.WebSockets.Client.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Net.WebSockets.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Numerics.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Numerics.Vectors.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.ObjectModel.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.windowsdesktop.app.ref\6.0.11\ref\net6.0\System.Printing.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\system.reactive\5.0.0\lib\net5.0\System.Reactive.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Reflection.DispatchProxy.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Reflection.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Reflection.Emit.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Reflection.Emit.ILGeneration.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Reflection.Emit.Lightweight.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Reflection.Extensions.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Reflection.Metadata.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Reflection.Primitives.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Reflection.TypeExtensions.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.windowsdesktop.app.ref\6.0.11\ref\net6.0\System.Resources.Extensions.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Resources.Reader.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Resources.ResourceManager.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Resources.Writer.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Runtime.CompilerServices.Unsafe.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Runtime.CompilerServices.VisualC.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Runtime.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Runtime.Extensions.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Runtime.Handles.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Runtime.InteropServices.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Runtime.InteropServices.RuntimeInformation.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Runtime.Intrinsics.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Runtime.Loader.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Runtime.Numerics.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Runtime.Serialization.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Runtime.Serialization.Formatters.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Runtime.Serialization.Json.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Runtime.Serialization.Primitives.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Runtime.Serialization.Xml.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Security.AccessControl.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Security.Claims.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Security.Cryptography.Algorithms.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Security.Cryptography.Cng.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Security.Cryptography.Csp.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Security.Cryptography.Encoding.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Security.Cryptography.OpenSsl.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.windowsdesktop.app.ref\6.0.11\ref\net6.0\System.Security.Cryptography.Pkcs.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Security.Cryptography.Primitives.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.windowsdesktop.app.ref\6.0.11\ref\net6.0\System.Security.Cryptography.ProtectedData.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Security.Cryptography.X509Certificates.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.windowsdesktop.app.ref\6.0.11\ref\net6.0\System.Security.Cryptography.Xml.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Security.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.windowsdesktop.app.ref\6.0.11\ref\net6.0\System.Security.Permissions.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Security.Principal.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Security.Principal.Windows.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Security.SecureString.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.ServiceModel.Web.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.ServiceProcess.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Text.Encoding.CodePages.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Text.Encoding.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Text.Encoding.Extensions.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Text.Encodings.Web.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Text.Json.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Text.RegularExpressions.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.windowsdesktop.app.ref\6.0.11\ref\net6.0\System.Threading.AccessControl.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Threading.Channels.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Threading.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Threading.Overlapped.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Threading.Tasks.Dataflow.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Threading.Tasks.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Threading.Tasks.Extensions.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Threading.Tasks.Parallel.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Threading.Thread.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Threading.ThreadPool.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Threading.Timer.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Transactions.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Transactions.Local.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.ValueTuple.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Web.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Web.HttpUtility.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.windowsdesktop.app.ref\6.0.11\ref\net6.0\System.Windows.Controls.Ribbon.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Windows.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.windowsdesktop.app.ref\6.0.11\ref\net6.0\System.Windows.Extensions.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.windowsdesktop.app.ref\6.0.11\ref\net6.0\System.Windows.Forms.Design.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.windowsdesktop.app.ref\6.0.11\ref\net6.0\System.Windows.Forms.Design.Editors.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.windowsdesktop.app.ref\6.0.11\ref\net6.0\System.Windows.Forms.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.windowsdesktop.app.ref\6.0.11\ref\net6.0\System.Windows.Forms.Primitives.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.windowsdesktop.app.ref\6.0.11\ref\net6.0\System.Windows.Input.Manipulations.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.windowsdesktop.app.ref\6.0.11\ref\net6.0\System.Windows.Presentation.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.windowsdesktop.app.ref\6.0.11\ref\net6.0\System.Xaml.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Xml.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Xml.Linq.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Xml.ReaderWriter.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Xml.Serialization.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Xml.XDocument.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Xml.XmlDocument.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Xml.XmlSerializer.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Xml.XPath.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\ref\net6.0\System.Xml.XPath.XDocument.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.windowsdesktop.app.ref\6.0.11\ref\net6.0\UIAutomationClient.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.windowsdesktop.app.ref\6.0.11\ref\net6.0\UIAutomationClientSideProviders.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.windowsdesktop.app.ref\6.0.11\ref\net6.0\UIAutomationProvider.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.windowsdesktop.app.ref\6.0.11\ref\net6.0\UIAutomationTypes.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.windowsdesktop.app.ref\6.0.11\ref\net6.0\WindowsBase.dll" />
+    <ReferencePath Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.windowsdesktop.app.ref\6.0.11\ref\net6.0\WindowsFormsIntegration.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="H:\GitHub\ShellShockLive\ShellShockLive\obj\Debug\net6.0-windows\ShellShockLiveWindow.g.cs" />
+    <Compile Include="H:\GitHub\ShellShockLive\ShellShockLive\obj\Debug\net6.0-windows\View\SettingsWindow.g.cs" />
+    <Compile Include="H:\GitHub\ShellShockLive\ShellShockLive\obj\Debug\net6.0-windows\ShellShockLive_Content.g.cs" />
+    <Compile Include="H:\GitHub\ShellShockLive\ShellShockLive\obj\Debug\net6.0-windows\GeneratedInternalTypeHelper.g.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Analyzer Include="C:\Program Files\dotnet\sdk\7.0.100\Sdks\Microsoft.NET.Sdk\targets\..\analyzers\Microsoft.CodeAnalysis.CSharp.NetAnalyzers.dll" />
+    <Analyzer Include="C:\Program Files\dotnet\sdk\7.0.100\Sdks\Microsoft.NET.Sdk\targets\..\analyzers\Microsoft.CodeAnalysis.NetAnalyzers.dll" />
+    <Analyzer Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.entityframeworkcore.analyzers\6.0.10\analyzers\dotnet\cs\Microsoft.EntityFrameworkCore.Analyzers.dll" />
+    <Analyzer Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.extensions.logging.abstractions\6.0.0\analyzers\dotnet\roslyn4.0\cs\Microsoft.Extensions.Logging.Generators.dll" />
+    <Analyzer Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.netcore.app.ref\6.0.11\analyzers/dotnet/cs/System.Text.Json.SourceGeneration.dll" />
+    <Analyzer Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.windowsdesktop.app.ref\6.0.11\analyzers/dotnet/System.Windows.Forms.Analyzers.dll" />
+    <Analyzer Include="C:\Users\Rain0Ash\.nuget\packages\microsoft.windowsdesktop.app.ref\6.0.11\analyzers/dotnet/cs/System.Windows.Forms.Analyzers.CSharp.dll" />
+  </ItemGroup>
+  <Import Project="Sdk.targets" Sdk="Microsoft.NET.Sdk" />
+</Project>

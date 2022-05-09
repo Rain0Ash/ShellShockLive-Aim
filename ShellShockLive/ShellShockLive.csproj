@@ -1,0 +1,1186 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net6.0-windows</TargetFramework>
+        <Nullable>enable</Nullable>
+        <UseWindowsForms>true</UseWindowsForms>
+        <UseWPF>true</UseWPF>
+        <ApplicationIcon>Files\Icons\Application.ico</ApplicationIcon>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="CalcBinding" Version="2.5.2" />
+        <PackageReference Include="DynamicData" Version="7.14.2" />
+        <PackageReference Include="Microsoft.Extensions.Primitives" Version="6.0.0" />
+        <PackageReference Include="NAudio" Version="2.2.1" />
+        <PackageReference Include="NAudio.Core" Version="2.2.1" />
+        <PackageReference Include="NAudio.Wasapi" Version="2.2.1" />
+        <PackageReference Include="NAudio.WinMM" Version="2.2.1" />
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+        <PackageReference Include="ReactiveUI" Version="19.4.1" />
+        <PackageReference Include="ReactiveUI.Fody" Version="19.4.1" />
+        <PackageReference Include="ReactiveUI.WPF" Version="19.4.1" />
+        <PackageReference Include="System.Drawing.Common" Version="6.0.0" />
+        <PackageReference Include="System.Management" Version="6.0.2" />
+        <PackageReference Include="Tesseract" Version="5.2.0" />
+        <PackageReference Include="Tesseract.Drawing" Version="5.2.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <Reference Include="NetExtender.Configuration">
+            <HintPath>..\..\..\..\GitHub\NetExtender\NetExtender.Configuration\bin\Release\net6.0\NetExtender.Configuration.dll</HintPath>
+        </Reference>
+        <Reference Include="NetExtender.Configuration.File">
+            <HintPath>..\..\..\..\GitHub\NetExtender\NetExtender.Configuration.File\bin\Release\net6.0\NetExtender.Configuration.File.dll</HintPath>
+        </Reference>
+        <Reference Include="NetExtender.Configuration.Json">
+            <HintPath>..\..\..\..\GitHub\NetExtender\NetExtender.Configuration.Json\bin\Release\net6.0\NetExtender.Configuration.Json.dll</HintPath>
+        </Reference>
+        <Reference Include="NetExtender.Configuration.Json">
+            <HintPath>..\..\..\..\GitHub\NetExtender\NetExtender.Configuration.Ini\bin\Release\net6.0\NetExtender.Configuration.Ini.dll</HintPath>
+        </Reference>
+        <Reference Include="NetExtender.Configuration.Json">
+            <HintPath>..\..\..\..\GitHub\NetExtender\NetExtender.Serialization.Ini\bin\Release\net6.0\NetExtender.Serialization.Ini.dll</HintPath>
+        </Reference>
+        <Reference Include="NetExtender.Logging">
+            <HintPath>..\..\..\..\GitHub\NetExtender\NetExtender.Logging\bin\Release\net6.0\NetExtender.Logging.dll</HintPath>
+        </Reference>
+        <Reference Include="NetExtender.Core">
+            <HintPath>..\..\..\..\GitHub\NetExtender\NetExtender.Core\bin\Release\net6.0\NetExtender.Core.dll</HintPath>
+        </Reference>
+        <Reference Include="NetExtender.Memento">
+            <HintPath>..\..\..\..\GitHub\NetExtender\NetExtender.Memento\bin\Release\net6.0\NetExtender.Memento.dll</HintPath>
+        </Reference>
+        <Reference Include="NetExtender.Domain">
+            <HintPath>..\..\..\..\GitHub\NetExtender\NetExtender.Domain\bin\Release\net6.0\NetExtender.Domain.dll</HintPath>
+        </Reference>
+        <Reference Include="NetExtender.Domain.WindowsPresentation">
+            <HintPath>..\..\..\..\GitHub\NetExtender\NetExtender.Domain.WindowsPresentation\bin\Release\net6.0-windows\NetExtender.Domain.WindowsPresentation.dll</HintPath>
+        </Reference>
+        <Reference Include="NetExtender.Initializer">
+            <HintPath>..\..\..\..\GitHub\NetExtender\NetExtender.Initializer\bin\Release\net6.0\NetExtender.Initializer.dll</HintPath>
+        </Reference>
+        <Reference Include="NetExtender.Localization.Flags">
+            <HintPath>..\..\..\..\GitHub\NetExtender\NetExtender.Localization.Flags\bin\Release\net6.0-windows\NetExtender.Localization.Flags.dll</HintPath>
+        </Reference>
+        <Reference Include="NetExtender.NAudio">
+            <HintPath>..\..\..\..\GitHub\NetExtender\NetExtender.NAudio\bin\Release\net6.0\NetExtender.NAudio.dll</HintPath>
+        </Reference>
+        <Reference Include="NetExtender.NAudio.Windows">
+            <HintPath>..\..\..\..\GitHub\NetExtender\NetExtender.NAudio.Windows\bin\Release\net6.0-windows\NetExtender.NAudio.Windows.dll</HintPath>
+        </Reference>
+        <Reference Include="NetExtender.ReactiveUI">
+            <HintPath>..\..\..\..\GitHub\NetExtender\NetExtender.ReactiveUI\bin\Release\net6.0\NetExtender.ReactiveUI.dll</HintPath>
+        </Reference>
+        <Reference Include="NetExtender.Registry">
+            <HintPath>..\..\..\..\GitHub\NetExtender\NetExtender.Registry\bin\Release\net6.0-windows\NetExtender.Registry.dll</HintPath>
+        </Reference>
+        <Reference Include="NetExtender.UserInterface">
+            <HintPath>..\..\..\..\GitHub\NetExtender\NetExtender.UserInterface\bin\Release\net6.0\NetExtender.UserInterface.dll</HintPath>
+        </Reference>
+        <Reference Include="NetExtender.UserInterface.Windows">
+            <HintPath>..\..\..\..\GitHub\NetExtender\NetExtender.UserInterface.Windows\bin\Release\net6.0-windows\NetExtender.UserInterface.Windows.dll</HintPath>
+        </Reference>
+        <Reference Include="NetExtender.UserInterface.WindowsPresentation">
+            <HintPath>..\..\..\..\GitHub\NetExtender\NetExtender.UserInterface.WindowsPresentation\bin\Release\net6.0-windows\NetExtender.UserInterface.WindowsPresentation.dll</HintPath>
+        </Reference>
+        <Reference Include="NetExtender.Windows">
+            <HintPath>..\..\..\..\GitHub\NetExtender\NetExtender.Windows\bin\Release\net6.0-windows\NetExtender.Windows.dll</HintPath>
+        </Reference>
+        <Reference Include="NetExtender.WindowsPresentation">
+            <HintPath>..\..\..\..\GitHub\NetExtender\NetExtender.WindowsPresentation\bin\Release\net6.0-windows\NetExtender.WindowsPresentation.dll</HintPath>
+        </Reference>
+        <Reference Include="NetExtender.WindowsPresentation">
+            <HintPath>..\..\..\..\GitHub\NetExtender\NetExtender.WindowsPresentation.Drawing\bin\Release\net6.0-windows\NetExtender.WindowsPresentation.Drawing.dll</HintPath>
+        </Reference>
+        <Reference Include="NetExtender.WindowsPresentation">
+            <HintPath>..\..\..\..\GitHub\NetExtender\NetExtender.WindowsPresentation.ReactiveUI\bin\Release\net6.0-windows\NetExtender.WindowsPresentation.ReactiveUI.dll</HintPath>
+        </Reference>
+        <Reference Include="NetExtender.Configuration">
+            <HintPath>..\..\..\..\GitHub\NetExtender\NetExtender.Configuration\bin\Release\net6.0\NetExtender.Configuration.dll</HintPath>
+        </Reference>
+        <Reference Include="NetExtender.Configuration.Property">
+            <HintPath>..\..\..\..\GitHub\NetExtender\NetExtender.Configuration.Property\bin\Release\net6.0\NetExtender.Configuration.Property.dll</HintPath>
+        </Reference>
+        <Reference Include="NetExtender.Configuration">
+            <HintPath>..\..\..\..\GitHub\NetExtender\NetExtender.Localization\bin\Release\net6.0\NetExtender.Localization.dll</HintPath>
+        </Reference>
+        <Reference Include="NetExtender.Configuration.Property">
+            <HintPath>..\..\..\..\GitHub\NetExtender\NetExtender.Localization.Property\bin\Release\net6.0\NetExtender.Localization.Property.dll</HintPath>
+        </Reference>
+        <Reference Include="NetExtender.WindowsPresentation.ActiveBinding">
+            <HintPath>..\..\..\..\GitHub\NetExtender\NetExtender.WindowsPresentation.ActiveBinding\bin\Release\net6.0-windows\NetExtender.WindowsPresentation.ActiveBinding.dll</HintPath>
+        </Reference>
+        <Reference Include="NetExtender.WindowsPresentation.Localization">
+            <HintPath>..\..\..\..\GitHub\NetExtender\NetExtender.WindowsPresentation.Localization\bin\Release\net6.0-windows\NetExtender.WindowsPresentation.Localization.dll</HintPath>
+        </Reference>
+        <Reference Include="NetExtender.WindowsPresentation.Localization">
+            <HintPath>..\..\..\..\GitHub\NetExtender\NetExtender.WindowsPresentation.Localization.ReactiveUI\bin\Release\net6.0-windows\NetExtender.WindowsPresentation.Localization.ReactiveUI.dll</HintPath>
+        </Reference>
+        <Reference Include="NetExtender.UserInterface.WindowsPresentation.Localization">
+            <HintPath>..\..\..\..\GitHub\NetExtender\NetExtender.UserInterface.WindowsPresentation.Localization\bin\Release\net6.0-windows\NetExtender.UserInterface.WindowsPresentation.Localization.dll</HintPath>
+        </Reference>
+        <Reference Include="NetExtender.UserInterface.WindowsPresentation.Localization">
+            <HintPath>..\..\..\..\GitHub\NetExtender\NetExtender.WinForms\bin\Release\net6.0-windows\NetExtender.WinForms.dll</HintPath>
+        </Reference>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Compile Update="View\SettingsLocalization.cs">
+            <DependentUpon>SettingsWindow.xaml</DependentUpon>
+        </Compile>
+        <Compile Update="ShellShockLiveLocalization.cs">
+            <DependentUpon>ShellShockLiveWindow.xaml</DependentUpon>
+        </Compile>
+        <Compile Update="ViewModels\Battlefield\Elements\BattlefieldFieldsState.cs">
+            <DependentUpon>BattlefieldFields.cs</DependentUpon>
+        </Compile>
+        <Compile Update="ShellShockLiveLocalization.cs">
+            <DependentUpon>ShellShockLiveWindow.xaml</DependentUpon>
+        </Compile>
+        <Compile Update="AngleViewConverter.cs">
+            <DependentUpon>ShellShockLiveWindow.xaml</DependentUpon>
+        </Compile>
+        <Compile Update="ViewModels\Storage\WeaponImages.cs">
+            <DependentUpon>ImageStorage.cs</DependentUpon>
+        </Compile>
+        <Compile Update="ViewModels\Weapons\WeaponsLocalizationProperties.cs">
+            <DependentUpon>WeaponsLocalization.cs</DependentUpon>
+        </Compile>
+        <Compile Update="WindViewConverter.cs">
+            <DependentUpon>ShellShockLiveWindow.xaml</DependentUpon>
+        </Compile>
+        <Compile Update="PowerViewConverter.cs">
+            <DependentUpon>ShellShockLiveWindow.xaml</DependentUpon>
+        </Compile>
+        <Compile Update="QuarterViewConverter.cs">
+            <DependentUpon>ShellShockLiveWindow.xaml</DependentUpon>
+        </Compile>
+    </ItemGroup>
+
+    <ItemGroup>
+        <Folder Include="Files\Weapons" />
+        <Folder Include="Models\Weapons\Internal\AirStrike" />
+        <Folder Include="Models\Weapons\Internal\BackRoller" />
+        <Folder Include="Models\Weapons\Internal\Banana" />
+        <Folder Include="Models\Weapons\Internal\Bolt" />
+        <Folder Include="Models\Weapons\Internal\Bounsplode" />
+        <Folder Include="Models\Weapons\Internal\Breaker" />
+        <Folder Include="Models\Weapons\Internal\Bulger" />
+        <Folder Include="Models\Weapons\Internal\Cactus" />
+        <Folder Include="Models\Weapons\Internal\DeadWeight" />
+        <Folder Include="Models\Weapons\Internal\Digger" />
+        <Folder Include="Models\Weapons\Internal\Earthquake" />
+        <Folder Include="Models\Weapons\Internal\Flame" />
+        <Folder Include="Models\Weapons\Internal\Flower" />
+        <Folder Include="Models\Weapons\Internal\Grenade" />
+        <Folder Include="Models\Weapons\Internal\Guppies" />
+        <Folder Include="Models\Weapons\Internal\Horizon" />
+        <Folder Include="Models\Weapons\Internal\HoverBall" />
+        <Folder Include="Models\Weapons\Internal\Molehill" />
+        <Folder Include="Models\Weapons\Internal\Moons" />
+        <Folder Include="Models\Weapons\Internal\Pixel" />
+        <Folder Include="Models\Weapons\Internal\Rainbow" />
+        <Folder Include="Models\Weapons\Internal\RapidFire" />
+        <Folder Include="Models\Weapons\Internal\Ringer" />
+        <Folder Include="Models\Weapons\Internal\Roller" />
+        <Folder Include="Models\Weapons\Internal\Sinkhole" />
+        <Folder Include="Models\Weapons\Internal\Snake" />
+        <Folder Include="Models\Weapons\Internal\Sniper" />
+        <Folder Include="Models\Weapons\Internal\Splitter" />
+        <Folder Include="Models\Weapons\Internal\Static" />
+        <Folder Include="Models\Weapons\Internal\Stream" />
+        <Folder Include="Models\Weapons\Internal\Tunneler" />
+        <Folder Include="Models\Weapons\Internal\Twinkler" />
+        <Folder Include="Models\Weapons\Internal\Zipper" />
+        <Folder Include="Utilities\ViewModels" />
+        <Folder Include="ViewModels\WeaponPanel" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Remove="Files\Icons\Application.ico" />
+        <Content Include="Files\Icons\Application.ico">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+        <None Remove="Files\Icons\Application.png" />
+        <None Remove="Files\Menu\about.png" />
+        <Content Include="Files\Menu\about.png">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+        <None Remove="Files\Menu\logout.png" />
+        <Content Include="Files\Menu\logout.png">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+        <None Remove="Files\Menu\rule.png" />
+        <Content Include="Files\Menu\rule.png">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+        <None Remove="Files\Menu\settings.png" />
+        <Content Include="Files\Menu\settings.png">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+        <None Remove="Files\Menu\table.png" />
+        <None Remove="Files\Sounds\CardFlip1.mp3" />
+        <Content Include="Files\Sounds\CardFlip1.mp3">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+        <None Remove="Files\Sounds\CardPlace1.mp3" />
+        <Content Include="Files\Sounds\CardPlace1.mp3">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+        <None Remove="Files\Sounds\CardPut1.mp3" />
+        <Content Include="Files\Sounds\CardPut1.mp3">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+        <None Remove="Files\Sounds\CardTouch1.mp3" />
+        <Content Include="Files\Sounds\CardTouch1.mp3">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+        <None Remove="Files\Menu\nuclear.png" />
+        <Content Include="Files\Menu\nuclear.png">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+        <None Remove="Files\Tesseract\eng.traineddata" />
+        <Content Include="Files\Tesseract\eng.traineddata">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+        <None Remove="Files\Tesseract\pdf.ttf" />
+        <Content Include="Files\Tesseract\pdf.ttf">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+        <None Remove="Files\OpenCV\Player.png" />
+        <None Remove="Files\OpenCV\Template.png" />
+        <None Remove="Files\OpenCV\Wind.png" />
+        <None Remove="Files\OpenCV\Wind2.png" />
+        <None Remove="Files\Tesseract\rus.traineddata" />
+        <Content Include="Files\Tesseract\rus.traineddata">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+        <None Remove="Files\Menu\sight.png" />
+        <Content Include="Files\Menu\sight.png">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+        <None Remove="Files\Menu\sightoff.png" />
+        <Content Include="Files\Menu\sightoff.png">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+        <None Remove="Files\Menu\invisible.png" />
+        <Content Include="Files\Menu\invisible.png">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+        <None Remove="Files\Menu\screenshot.png" />
+        <Content Include="Files\Menu\screenshot.png">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+        <None Remove="Files\Menu\visible.png" />
+        <Content Include="Files\Menu\visible.png">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+        <None Remove="Files\Sounds\Screenshot1.mp3" />
+        <Content Include="Files\Sounds\Screenshot1.mp3">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Remove="Files\Weapons\Images\2x3D.png" />
+        <Resource Include="Files\Weapons\Images\2x3D.png" />
+        <None Remove="Files\Weapons\Images\3DBomb.png" />
+        <Resource Include="Files\Weapons\Images\3DBomb.png" />
+        <None Remove="Files\Weapons\Images\3x3D.png" />
+        <Resource Include="Files\Weapons\Images\3x3D.png" />
+        <None Remove="Files\Weapons\Images\2012.png" />
+        <Resource Include="Files\Weapons\Images\2012.png" />
+        <None Remove="Files\Weapons\Images\AC130.png" />
+        <Resource Include="Files\Weapons\Images\AC130.png" />
+        <None Remove="Files\Weapons\Images\AcidHail.png" />
+        <Resource Include="Files\Weapons\Images\AcidHail.png" />
+        <None Remove="Files\Weapons\Images\AcidRain.png" />
+        <Resource Include="Files\Weapons\Images\AcidRain.png" />
+        <None Remove="Files\Weapons\Images\AirStrike.png" />
+        <Resource Include="Files\Weapons\Images\AirStrike.png" />
+        <None Remove="Files\Weapons\Images\AK47.png" />
+        <Resource Include="Files\Weapons\Images\AK47.png" />
+        <None Remove="Files\Weapons\Images\Apache.png" />
+        <Resource Include="Files\Weapons\Images\Apache.png" />
+        <None Remove="Files\Weapons\Images\AreaAttack.png" />
+        <Resource Include="Files\Weapons\Images\AreaAttack.png" />
+        <None Remove="Files\Weapons\Images\AreaStrike.png" />
+        <Resource Include="Files\Weapons\Images\AreaStrike.png" />
+        <None Remove="Files\Weapons\Images\Arrow.png" />
+        <Resource Include="Files\Weapons\Images\Arrow.png" />
+        <None Remove="Files\Weapons\Images\Artillery.png" />
+        <Resource Include="Files\Weapons\Images\Artillery.png" />
+        <None Remove="Files\Weapons\Images\ASHPD.png" />
+        <Resource Include="Files\Weapons\Images\ASHPD.png" />
+        <None Remove="Files\Weapons\Images\Asteroids.png" />
+        <Resource Include="Files\Weapons\Images\Asteroids.png" />
+        <None Remove="Files\Weapons\Images\AsteroidStorm.png" />
+        <Resource Include="Files\Weapons\Images\AsteroidStorm.png" />
+        <None Remove="Files\Weapons\Images\Attractoids.png" />
+        <Resource Include="Files\Weapons\Images\Attractoids.png" />
+        <None Remove="Files\Weapons\Images\BabySeagull.png" />
+        <Resource Include="Files\Weapons\Images\BabySeagull.png" />
+        <None Remove="Files\Weapons\Images\BackGroller.png" />
+        <Resource Include="Files\Weapons\Images\BackGroller.png" />
+        <None Remove="Files\Weapons\Images\BackRoller.png" />
+        <Resource Include="Files\Weapons\Images\BackRoller.png" />
+        <None Remove="Files\Weapons\Images\Baffler.png" />
+        <Resource Include="Files\Weapons\Images\Baffler.png" />
+        <None Remove="Files\Weapons\Images\Banana.png" />
+        <Resource Include="Files\Weapons\Images\Banana.png" />
+        <None Remove="Files\Weapons\Images\BananaBunch.png" />
+        <Resource Include="Files\Weapons\Images\BananaBunch.png" />
+        <None Remove="Files\Weapons\Images\BananaSplit.png" />
+        <Resource Include="Files\Weapons\Images\BananaSplit.png" />
+        <None Remove="Files\Weapons\Images\BatteringRam.png" />
+        <Resource Include="Files\Weapons\Images\BatteringRam.png" />
+        <None Remove="Files\Weapons\Images\Beacon.png" />
+        <Resource Include="Files\Weapons\Images\Beacon.png" />
+        <None Remove="Files\Weapons\Images\Beaconator.png" />
+        <Resource Include="Files\Weapons\Images\Beaconator.png" />
+        <None Remove="Files\Weapons\Images\BeeHive.png" />
+        <Resource Include="Files\Weapons\Images\BeeHive.png" />
+        <None Remove="Files\Weapons\Images\BFG1000.png" />
+        <Resource Include="Files\Weapons\Images\BFG1000.png" />
+        <None Remove="Files\Weapons\Images\BFG9000.png" />
+        <Resource Include="Files\Weapons\Images\BFG9000.png" />
+        <None Remove="Files\Weapons\Images\BigBoomerang.png" />
+        <Resource Include="Files\Weapons\Images\BigBoomerang.png" />
+        <None Remove="Files\Weapons\Images\BigBulger.png" />
+        <Resource Include="Files\Weapons\Images\BigBulger.png" />
+        <None Remove="Files\Weapons\Images\BigItemSlotGlow.png" />
+        <Resource Include="Files\Weapons\Images\BigItemSlotGlow.png" />
+        <None Remove="Files\Weapons\Images\BigShot.png" />
+        <Resource Include="Files\Weapons\Images\BigShot.png" />
+        <None Remove="Files\Weapons\Images\BlackHole.png" />
+        <Resource Include="Files\Weapons\Images\BlackHole.png" />
+        <None Remove="Files\Weapons\Images\BlackWidow.png" />
+        <Resource Include="Files\Weapons\Images\BlackWidow.png" />
+        <None Remove="Files\Weapons\Images\Blaze.png" />
+        <Resource Include="Files\Weapons\Images\Blaze.png" />
+        <None Remove="Files\Weapons\Images\Blossom.png" />
+        <Resource Include="Files\Weapons\Images\Blossom.png" />
+        <None Remove="Files\Weapons\Images\Blunderbuss.png" />
+        <Resource Include="Files\Weapons\Images\Blunderbuss.png" />
+        <None Remove="Files\Weapons\Images\Bolt.png" />
+        <Resource Include="Files\Weapons\Images\Bolt.png" />
+        <None Remove="Files\Weapons\Images\Boomerang.png" />
+        <Resource Include="Files\Weapons\Images\Boomerang.png" />
+        <None Remove="Files\Weapons\Images\Botherer.png" />
+        <Resource Include="Files\Weapons\Images\Botherer.png" />
+        <None Remove="Files\Weapons\Images\Boulder.png" />
+        <Resource Include="Files\Weapons\Images\Boulder.png" />
+        <None Remove="Files\Weapons\Images\BouncyBall.png" />
+        <Resource Include="Files\Weapons\Images\BouncyBall.png" />
+        <None Remove="Files\Weapons\Images\Bounder.png" />
+        <Resource Include="Files\Weapons\Images\Bounder.png" />
+        <None Remove="Files\Weapons\Images\Bounsplode.png" />
+        <Resource Include="Files\Weapons\Images\Bounsplode.png" />
+        <None Remove="Files\Weapons\Images\Bounstorm.png" />
+        <Resource Include="Files\Weapons\Images\Bounstorm.png" />
+        <None Remove="Files\Weapons\Images\Bounstream.png" />
+        <Resource Include="Files\Weapons\Images\Bounstream.png" />
+        <None Remove="Files\Weapons\Images\Bounstrike.png" />
+        <Resource Include="Files\Weapons\Images\Bounstrike.png" />
+        <None Remove="Files\Weapons\Images\Bouquet.png" />
+        <Resource Include="Files\Weapons\Images\Bouquet.png" />
+        <None Remove="Files\Weapons\Images\BowAndArrow.png" />
+        <Resource Include="Files\Weapons\Images\BowAndArrow.png" />
+        <None Remove="Files\Weapons\Images\Bratwurst.png" />
+        <Resource Include="Files\Weapons\Images\Bratwurst.png" />
+        <None Remove="Files\Weapons\Images\Breaker.png" />
+        <Resource Include="Files\Weapons\Images\Breaker.png" />
+        <None Remove="Files\Weapons\Images\BreakerChain.png" />
+        <Resource Include="Files\Weapons\Images\BreakerChain.png" />
+        <None Remove="Files\Weapons\Images\BreakerMadness.png" />
+        <Resource Include="Files\Weapons\Images\BreakerMadness.png" />
+        <None Remove="Files\Weapons\Images\BreakerMania.png" />
+        <Resource Include="Files\Weapons\Images\BreakerMania.png" />
+        <None Remove="Files\Weapons\Images\Builder.png" />
+        <Resource Include="Files\Weapons\Images\Builder.png" />
+        <None Remove="Files\Weapons\Images\Bulger.png" />
+        <Resource Include="Files\Weapons\Images\Bulger.png" />
+        <None Remove="Files\Weapons\Images\Bullfrog.png" />
+        <Resource Include="Files\Weapons\Images\Bullfrog.png" />
+        <None Remove="Files\Weapons\Images\BumperArray.png" />
+        <Resource Include="Files\Weapons\Images\BumperArray.png" />
+        <None Remove="Files\Weapons\Images\BumperAssault.png" />
+        <Resource Include="Files\Weapons\Images\BumperAssault.png" />
+        <None Remove="Files\Weapons\Images\BumperBombs.png" />
+        <Resource Include="Files\Weapons\Images\BumperBombs.png" />
+        <None Remove="Files\Weapons\Images\BurntPopcorn.png" />
+        <Resource Include="Files\Weapons\Images\BurntPopcorn.png" />
+        <None Remove="Files\Weapons\Images\BurstFire.png" />
+        <Resource Include="Files\Weapons\Images\BurstFire.png" />
+        <None Remove="Files\Weapons\Images\Cactus.png" />
+        <Resource Include="Files\Weapons\Images\Cactus.png" />
+        <None Remove="Files\Weapons\Images\CactusStrike.png" />
+        <Resource Include="Files\Weapons\Images\CactusStrike.png" />
+        <None Remove="Files\Weapons\Images\CarpetBomb.png" />
+        <Resource Include="Files\Weapons\Images\CarpetBomb.png" />
+        <None Remove="Files\Weapons\Images\CarpetFire.png" />
+        <Resource Include="Files\Weapons\Images\CarpetFire.png" />
+        <None Remove="Files\Weapons\Images\Cat.png" />
+        <Resource Include="Files\Weapons\Images\Cat.png" />
+        <None Remove="Files\Weapons\Images\CatsandDogs.png" />
+        <Resource Include="Files\Weapons\Images\CatsandDogs.png" />
+        <None Remove="Files\Weapons\Images\Cayenne.png" />
+        <Resource Include="Files\Weapons\Images\Cayenne.png" />
+        <None Remove="Files\Weapons\Images\ChickenFling.png" />
+        <Resource Include="Files\Weapons\Images\ChickenFling.png" />
+        <None Remove="Files\Weapons\Images\ChickenHurl.png" />
+        <Resource Include="Files\Weapons\Images\ChickenHurl.png" />
+        <None Remove="Files\Weapons\Images\ChickenLaunch.png" />
+        <Resource Include="Files\Weapons\Images\ChickenLaunch.png" />
+        <None Remove="Files\Weapons\Images\Chopper.png" />
+        <Resource Include="Files\Weapons\Images\Chopper.png" />
+        <None Remove="Files\Weapons\Images\Chunker.png" />
+        <Resource Include="Files\Weapons\Images\Chunker.png" />
+        <None Remove="Files\Weapons\Images\Chunklet.png" />
+        <Resource Include="Files\Weapons\Images\Chunklet.png" />
+        <None Remove="Files\Weapons\Images\Clover.png" />
+        <Resource Include="Files\Weapons\Images\Clover.png" />
+        <None Remove="Files\Weapons\Images\Cobra.png" />
+        <Resource Include="Files\Weapons\Images\Cobra.png" />
+        <None Remove="Files\Weapons\Images\Comets.png" />
+        <Resource Include="Files\Weapons\Images\Comets.png" />
+        <None Remove="Files\Weapons\Images\ConcealedBlade.png" />
+        <Resource Include="Files\Weapons\Images\ConcealedBlade.png" />
+        <None Remove="Files\Weapons\Images\Construction.png" />
+        <Resource Include="Files\Weapons\Images\Construction.png" />
+        <None Remove="Files\Weapons\Images\CosmicRift.png" />
+        <Resource Include="Files\Weapons\Images\CosmicRift.png" />
+        <None Remove="Files\Weapons\Images\Counter3000.png" />
+        <Resource Include="Files\Weapons\Images\Counter3000.png" />
+        <None Remove="Files\Weapons\Images\Counter4000.png" />
+        <Resource Include="Files\Weapons\Images\Counter4000.png" />
+        <None Remove="Files\Weapons\Images\Counter5000.png" />
+        <Resource Include="Files\Weapons\Images\Counter5000.png" />
+        <None Remove="Files\Weapons\Images\Counter6000.png" />
+        <Resource Include="Files\Weapons\Images\Counter6000.png" />
+        <None Remove="Files\Weapons\Images\Crackler.png" />
+        <Resource Include="Files\Weapons\Images\Crackler.png" />
+        <None Remove="Files\Weapons\Images\Crazyballs.png" />
+        <Resource Include="Files\Weapons\Images\Crazyballs.png" />
+        <None Remove="Files\Weapons\Images\CrazyCluster.png" />
+        <Resource Include="Files\Weapons\Images\CrazyCluster.png" />
+        <None Remove="Files\Weapons\Images\Creek.png" />
+        <Resource Include="Files\Weapons\Images\Creek.png" />
+        <None Remove="Files\Weapons\Images\DaddyLonglegs.png" />
+        <Resource Include="Files\Weapons\Images\DaddyLonglegs.png" />
+        <None Remove="Files\Weapons\Images\Dagger.png" />
+        <Resource Include="Files\Weapons\Images\Dagger.png" />
+        <None Remove="Files\Weapons\Images\Darkshadow.png" />
+        <Resource Include="Files\Weapons\Images\Darkshadow.png" />
+        <None Remove="Files\Weapons\Images\DeadRiser.png" />
+        <Resource Include="Files\Weapons\Images\DeadRiser.png" />
+        <None Remove="Files\Weapons\Images\DeadWeight.png" />
+        <Resource Include="Files\Weapons\Images\DeadWeight.png" />
+        <None Remove="Files\Weapons\Images\Deathshadow.png" />
+        <Resource Include="Files\Weapons\Images\Deathshadow.png" />
+        <None Remove="Files\Weapons\Images\Deceiver.png" />
+        <Resource Include="Files\Weapons\Images\Deceiver.png" />
+        <None Remove="Files\Weapons\Images\DefaultCircle.png" />
+        <Resource Include="Files\Weapons\Images\DefaultCircle.png" />
+        <None Remove="Files\Weapons\Images\DefaultGlow.png" />
+        <Resource Include="Files\Weapons\Images\DefaultGlow.png" />
+        <None Remove="Files\Weapons\Images\DefaultQuarterGlow.png" />
+        <Resource Include="Files\Weapons\Images\DefaultQuarterGlow.png" />
+        <None Remove="Files\Weapons\Images\DefaultX.png" />
+        <Resource Include="Files\Weapons\Images\DefaultX.png" />
+        <None Remove="Files\Weapons\Images\Deity.png" />
+        <Resource Include="Files\Weapons\Images\Deity.png" />
+        <None Remove="Files\Weapons\Images\Desert.png" />
+        <Resource Include="Files\Weapons\Images\Desert.png" />
+        <None Remove="Files\Weapons\Images\DesertEagle.png" />
+        <Resource Include="Files\Weapons\Images\DesertEagle.png" />
+        <None Remove="Files\Weapons\Images\DiamondBlade.png" />
+        <Resource Include="Files\Weapons\Images\DiamondBlade.png" />
+        <None Remove="Files\Weapons\Images\Digger.png" />
+        <Resource Include="Files\Weapons\Images\Digger.png" />
+        <None Remove="Files\Weapons\Images\Direct.png" />
+        <Resource Include="Files\Weapons\Images\Direct.png" />
+        <None Remove="Files\Weapons\Images\DiscoBall.png" />
+        <Resource Include="Files\Weapons\Images\DiscoBall.png" />
+        <None Remove="Files\Weapons\Images\DisplacementBomb.png" />
+        <Resource Include="Files\Weapons\Images\DisplacementBomb.png" />
+        <None Remove="Files\Weapons\Images\Division.png" />
+        <Resource Include="Files\Weapons\Images\Division.png" />
+        <None Remove="Files\Weapons\Images\DollaBills.png" />
+        <Resource Include="Files\Weapons\Images\DollaBills.png" />
+        <None Remove="Files\Weapons\Images\DoubleBounder.png" />
+        <Resource Include="Files\Weapons\Images\DoubleBounder.png" />
+        <None Remove="Files\Weapons\Images\DoubleBounsplode.png" />
+        <Resource Include="Files\Weapons\Images\DoubleBounsplode.png" />
+        <None Remove="Files\Weapons\Images\DoubleBreaker.png" />
+        <Resource Include="Files\Weapons\Images\DoubleBreaker.png" />
+        <None Remove="Files\Weapons\Images\DoublePalm.png" />
+        <Resource Include="Files\Weapons\Images\DoublePalm.png" />
+        <None Remove="Files\Weapons\Images\DoubleRam.png" />
+        <Resource Include="Files\Weapons\Images\DoubleRam.png" />
+        <None Remove="Files\Weapons\Images\DoubleRamSquad.png" />
+        <Resource Include="Files\Weapons\Images\DoubleRamSquad.png" />
+        <None Remove="Files\Weapons\Images\DoubleSplitter.png" />
+        <Resource Include="Files\Weapons\Images\DoubleSplitter.png" />
+        <None Remove="Files\Weapons\Images\DoubleZipper.png" />
+        <Resource Include="Files\Weapons\Images\DoubleZipper.png" />
+        <None Remove="Files\Weapons\Images\Driller.png" />
+        <Resource Include="Files\Weapons\Images\Driller.png" />
+        <None Remove="Files\Weapons\Images\Drone.png" />
+        <Resource Include="Files\Weapons\Images\Drone.png" />
+        <None Remove="Files\Weapons\Images\DualNeedler.png" />
+        <Resource Include="Files\Weapons\Images\DualNeedler.png" />
+        <None Remove="Files\Weapons\Images\DualRoller.png" />
+        <Resource Include="Files\Weapons\Images\DualRoller.png" />
+        <None Remove="Files\Weapons\Images\EarlyBird.png" />
+        <Resource Include="Files\Weapons\Images\EarlyBird.png" />
+        <None Remove="Files\Weapons\Images\EarlyWorm.png" />
+        <Resource Include="Files\Weapons\Images\EarlyWorm.png" />
+        <None Remove="Files\Weapons\Images\Earthquake.png" />
+        <Resource Include="Files\Weapons\Images\Earthquake.png" />
+        <None Remove="Files\Weapons\Images\ElevenBall.png" />
+        <Resource Include="Files\Weapons\Images\ElevenBall.png" />
+        <None Remove="Files\Weapons\Images\Enlister.png" />
+        <Resource Include="Files\Weapons\Images\Enlister.png" />
+        <None Remove="Files\Weapons\Images\Enroller.png" />
+        <Resource Include="Files\Weapons\Images\Enroller.png" />
+        <None Remove="Files\Weapons\Images\Eruption.png" />
+        <Resource Include="Files\Weapons\Images\Eruption.png" />
+        <None Remove="Files\Weapons\Images\Excavation.png" />
+        <Resource Include="Files\Weapons\Images\Excavation.png" />
+        <None Remove="Files\Weapons\Images\Express.png" />
+        <Resource Include="Files\Weapons\Images\Express.png" />
+        <None Remove="Files\Weapons\Images\FatStacks.png" />
+        <Resource Include="Files\Weapons\Images\FatStacks.png" />
+        <None Remove="Files\Weapons\Images\Fiesta.png" />
+        <Resource Include="Files\Weapons\Images\Fiesta.png" />
+        <None Remove="Files\Weapons\Images\FighterJet.png" />
+        <Resource Include="Files\Weapons\Images\FighterJet.png" />
+        <None Remove="Files\Weapons\Images\Fireball.png" />
+        <Resource Include="Files\Weapons\Images\Fireball.png" />
+        <None Remove="Files\Weapons\Images\FireGlow.png" />
+        <Resource Include="Files\Weapons\Images\FireGlow.png" />
+        <None Remove="Files\Weapons\Images\FireStorm.png" />
+        <Resource Include="Files\Weapons\Images\FireStorm.png" />
+        <None Remove="Files\Weapons\Images\Fireworks.png" />
+        <Resource Include="Files\Weapons\Images\Fireworks.png" />
+        <None Remove="Files\Weapons\Images\FiveBall.png" />
+        <Resource Include="Files\Weapons\Images\FiveBall.png" />
+        <None Remove="Files\Weapons\Images\FiveBounce.png" />
+        <Resource Include="Files\Weapons\Images\FiveBounce.png" />
+        <None Remove="Files\Weapons\Images\Flame.png" />
+        <Resource Include="Files\Weapons\Images\Flame.png" />
+        <None Remove="Files\Weapons\Images\FlamingArrow.png" />
+        <Resource Include="Files\Weapons\Images\FlamingArrow.png" />
+        <None Remove="Files\Weapons\Images\Flasher.png" />
+        <Resource Include="Files\Weapons\Images\Flasher.png" />
+        <None Remove="Files\Weapons\Images\Flattener.png" />
+        <Resource Include="Files\Weapons\Images\Flattener.png" />
+        <None Remove="Files\Weapons\Images\Fleet.png" />
+        <Resource Include="Files\Weapons\Images\Fleet.png" />
+        <None Remove="Files\Weapons\Images\Flintlock.png" />
+        <Resource Include="Files\Weapons\Images\Flintlock.png" />
+        <None Remove="Files\Weapons\Images\Flower.png" />
+        <Resource Include="Files\Weapons\Images\Flower.png" />
+        <None Remove="Files\Weapons\Images\Flurry.png" />
+        <Resource Include="Files\Weapons\Images\Flurry.png" />
+        <None Remove="Files\Weapons\Images\FlyingV.png" />
+        <Resource Include="Files\Weapons\Images\FlyingV.png" />
+        <None Remove="Files\Weapons\Images\Fortress.png" />
+        <Resource Include="Files\Weapons\Images\Fortress.png" />
+        <None Remove="Files\Weapons\Images\Fountain.png" />
+        <Resource Include="Files\Weapons\Images\Fountain.png" />
+        <None Remove="Files\Weapons\Images\FourLeafClover.png" />
+        <Resource Include="Files\Weapons\Images\FourLeafClover.png" />
+        <None Remove="Files\Weapons\Images\Frogs.png" />
+        <Resource Include="Files\Weapons\Images\Frogs.png" />
+        <None Remove="Files\Weapons\Images\Funnel.png" />
+        <Resource Include="Files\Weapons\Images\Funnel.png" />
+        <None Remove="Files\Weapons\Images\FuriousBirds.png" />
+        <Resource Include="Files\Weapons\Images\FuriousBirds.png" />
+        <None Remove="Files\Weapons\Images\Fury.png" />
+        <Resource Include="Files\Weapons\Images\Fury.png" />
+        <None Remove="Files\Weapons\Images\GatlingGun.png" />
+        <Resource Include="Files\Weapons\Images\GatlingGun.png" />
+        <None Remove="Files\Weapons\Images\GhostBomb.png" />
+        <Resource Include="Files\Weapons\Images\GhostBomb.png" />
+        <None Remove="Files\Weapons\Images\Ghostlets.png" />
+        <Resource Include="Files\Weapons\Images\Ghostlets.png" />
+        <None Remove="Files\Weapons\Images\Ghouls.png" />
+        <Resource Include="Files\Weapons\Images\Ghouls.png" />
+        <None Remove="Files\Weapons\Images\Glock.png" />
+        <Resource Include="Files\Weapons\Images\Glock.png" />
+        <None Remove="Files\Weapons\Images\GodRays.png" />
+        <Resource Include="Files\Weapons\Images\GodRays.png" />
+        <None Remove="Files\Weapons\Images\Goldfish.png" />
+        <Resource Include="Files\Weapons\Images\Goldfish.png" />
+        <None Remove="Files\Weapons\Images\GrandFinale.png" />
+        <Resource Include="Files\Weapons\Images\GrandFinale.png" />
+        <None Remove="Files\Weapons\Images\Gravies.png" />
+        <Resource Include="Files\Weapons\Images\Gravies.png" />
+        <None Remove="Files\Weapons\Images\Gravits.png" />
+        <Resource Include="Files\Weapons\Images\Gravits.png" />
+        <None Remove="Files\Weapons\Images\GreatBeam.png" />
+        <Resource Include="Files\Weapons\Images\GreatBeam.png" />
+        <None Remove="Files\Weapons\Images\Grenade.png" />
+        <Resource Include="Files\Weapons\Images\Grenade.png" />
+        <None Remove="Files\Weapons\Images\GrenadeStorm.png" />
+        <Resource Include="Files\Weapons\Images\GrenadeStorm.png" />
+        <None Remove="Files\Weapons\Images\Groller.png" />
+        <Resource Include="Files\Weapons\Images\Groller.png" />
+        <None Remove="Files\Weapons\Images\GroovyBall.png" />
+        <Resource Include="Files\Weapons\Images\GroovyBall.png" />
+        <None Remove="Files\Weapons\Images\Guppies.png" />
+        <Resource Include="Files\Weapons\Images\Guppies.png" />
+        <None Remove="Files\Weapons\Images\Hail.png" />
+        <Resource Include="Files\Weapons\Images\Hail.png" />
+        <None Remove="Files\Weapons\Images\HeavyBackRoller.png" />
+        <Resource Include="Files\Weapons\Images\HeavyBackRoller.png" />
+        <None Remove="Files\Weapons\Images\HeavyDrone.png" />
+        <Resource Include="Files\Weapons\Images\HeavyDrone.png" />
+        <None Remove="Files\Weapons\Images\HeavyFleet.png" />
+        <Resource Include="Files\Weapons\Images\HeavyFleet.png" />
+        <None Remove="Files\Weapons\Images\HeavyHoverBall.png" />
+        <Resource Include="Files\Weapons\Images\HeavyHoverBall.png" />
+        <None Remove="Files\Weapons\Images\HeavyJet.png" />
+        <Resource Include="Files\Weapons\Images\HeavyJet.png" />
+        <None Remove="Files\Weapons\Images\HeavyNapalm.png" />
+        <Resource Include="Files\Weapons\Images\HeavyNapalm.png" />
+        <None Remove="Files\Weapons\Images\HeavyPermaroller.png" />
+        <Resource Include="Files\Weapons\Images\HeavyPermaroller.png" />
+        <None Remove="Files\Weapons\Images\HeavyRinger.png" />
+        <Resource Include="Files\Weapons\Images\HeavyRinger.png" />
+        <None Remove="Files\Weapons\Images\HeavyRoller.png" />
+        <Resource Include="Files\Weapons\Images\HeavyRoller.png" />
+        <None Remove="Files\Weapons\Images\HeavyShot.png" />
+        <Resource Include="Files\Weapons\Images\HeavyShot.png" />
+        <None Remove="Files\Weapons\Images\HeavyTaser.png" />
+        <Resource Include="Files\Weapons\Images\HeavyTaser.png" />
+        <None Remove="Files\Weapons\Images\Helianthus.png" />
+        <Resource Include="Files\Weapons\Images\Helianthus.png" />
+        <None Remove="Files\Weapons\Images\HelicopterStrike.png" />
+        <Resource Include="Files\Weapons\Images\HelicopterStrike.png" />
+        <None Remove="Files\Weapons\Images\Hexagon.png" />
+        <Resource Include="Files\Weapons\Images\Hexagon.png" />
+        <None Remove="Files\Weapons\Images\HiddenBlade.png" />
+        <Resource Include="Files\Weapons\Images\HiddenBlade.png" />
+        <None Remove="Files\Weapons\Images\HomingMissile.png" />
+        <Resource Include="Files\Weapons\Images\HomingMissile.png" />
+        <None Remove="Files\Weapons\Images\HomingRockets.png" />
+        <Resource Include="Files\Weapons\Images\HomingRockets.png" />
+        <None Remove="Files\Weapons\Images\Horizon.png" />
+        <Resource Include="Files\Weapons\Images\Horizon.png" />
+        <None Remove="Files\Weapons\Images\HoverBall.png" />
+        <Resource Include="Files\Weapons\Images\HoverBall.png" />
+        <None Remove="Files\Weapons\Images\HubScreenBack.png" />
+        <Resource Include="Files\Weapons\Images\HubScreenBack.png" />
+        <None Remove="Files\Weapons\Images\HubTabGlow.png" />
+        <Resource Include="Files\Weapons\Images\HubTabGlow.png" />
+        <None Remove="Files\Weapons\Images\Imploder.png" />
+        <Resource Include="Files\Weapons\Images\Imploder.png" />
+        <None Remove="Files\Weapons\Images\IncendiaryBombs.png" />
+        <Resource Include="Files\Weapons\Images\IncendiaryBombs.png" />
+        <None Remove="Files\Weapons\Images\Inferno.png" />
+        <Resource Include="Files\Weapons\Images\Inferno.png" />
+        <None Remove="Files\Weapons\Images\JackoLantern.png" />
+        <Resource Include="Files\Weapons\Images\JackoLantern.png" />
+        <None Remove="Files\Weapons\Images\JackoVomit.png" />
+        <Resource Include="Files\Weapons\Images\JackoVomit.png" />
+        <None Remove="Files\Weapons\Images\Jackpot.png" />
+        <Resource Include="Files\Weapons\Images\Jackpot.png" />
+        <None Remove="Files\Weapons\Images\Jammer.png" />
+        <Resource Include="Files\Weapons\Images\Jammer.png" />
+        <None Remove="Files\Weapons\Images\jetpack.png" />
+        <Resource Include="Files\Weapons\Images\jetpack.png" />
+        <None Remove="Files\Weapons\Images\Jiver.png" />
+        <Resource Include="Files\Weapons\Images\Jiver.png" />
+        <None Remove="Files\Weapons\Images\Jumper.png" />
+        <Resource Include="Files\Weapons\Images\Jumper.png" />
+        <None Remove="Files\Weapons\Images\Kamikaze.png" />
+        <Resource Include="Files\Weapons\Images\Kamikaze.png" />
+        <None Remove="Files\Weapons\Images\Kernels.png" />
+        <Resource Include="Files\Weapons\Images\Kernels.png" />
+        <None Remove="Files\Weapons\Images\Kielbasa.png" />
+        <Resource Include="Files\Weapons\Images\Kielbasa.png" />
+        <None Remove="Files\Weapons\Images\KillerBees.png" />
+        <Resource Include="Files\Weapons\Images\KillerBees.png" />
+        <None Remove="Files\Weapons\Images\Kittens.png" />
+        <Resource Include="Files\Weapons\Images\Kittens.png" />
+        <None Remove="Files\Weapons\Images\KlavikaBoldAtlas.png" />
+        <Resource Include="Files\Weapons\Images\KlavikaBoldAtlas.png" />
+        <None Remove="Files\Weapons\Images\KlavikaMediumAtlas.png" />
+        <Resource Include="Files\Weapons\Images\KlavikaMediumAtlas.png" />
+        <None Remove="Files\Weapons\Images\KlavikaRegularAtlas.png" />
+        <Resource Include="Files\Weapons\Images\KlavikaRegularAtlas.png" />
+        <None Remove="Files\Weapons\Images\KookyCluster.png" />
+        <Resource Include="Files\Weapons\Images\KookyCluster.png" />
+        <None Remove="Files\Weapons\Images\LaserBeam.png" />
+        <Resource Include="Files\Weapons\Images\LaserBeam.png" />
+        <None Remove="Files\Weapons\Images\LevelUpArrow.png" />
+        <Resource Include="Files\Weapons\Images\LevelUpArrow.png" />
+        <None Remove="Files\Weapons\Images\Lidar.png" />
+        <Resource Include="Files\Weapons\Images\Lidar.png" />
+        <None Remove="Files\Weapons\Images\Lightning.png" />
+        <Resource Include="Files\Weapons\Images\Lightning.png" />
+        <None Remove="Files\Weapons\Images\LividBirds.png" />
+        <Resource Include="Files\Weapons\Images\LividBirds.png" />
+        <None Remove="Files\Weapons\Images\LoadingBack.png" />
+        <Resource Include="Files\Weapons\Images\LoadingBack.png" />
+        <None Remove="Files\Weapons\Images\Lottery.png" />
+        <Resource Include="Files\Weapons\Images\Lottery.png" />
+        <None Remove="Files\Weapons\Images\M4.png" />
+        <Resource Include="Files\Weapons\Images\M4.png" />
+        <None Remove="Files\Weapons\Images\M9.png" />
+        <Resource Include="Files\Weapons\Images\M9.png" />
+        <None Remove="Files\Weapons\Images\M16.png" />
+        <Resource Include="Files\Weapons\Images\M16.png" />
+        <None Remove="Files\Weapons\Images\MadBirds.png" />
+        <Resource Include="Files\Weapons\Images\MadBirds.png" />
+        <None Remove="Files\Weapons\Images\Mage.png" />
+        <Resource Include="Files\Weapons\Images\Mage.png" />
+        <None Remove="Files\Weapons\Images\MagicShower.png" />
+        <Resource Include="Files\Weapons\Images\MagicShower.png" />
+        <None Remove="Files\Weapons\Images\Magnets.png" />
+        <Resource Include="Files\Weapons\Images\Magnets.png" />
+        <None Remove="Files\Weapons\Images\MakeItRain.png" />
+        <Resource Include="Files\Weapons\Images\MakeItRain.png" />
+        <None Remove="Files\Weapons\Images\MamaSeagull.png" />
+        <Resource Include="Files\Weapons\Images\MamaSeagull.png" />
+        <None Remove="Files\Weapons\Images\ManyMinions.png" />
+        <Resource Include="Files\Weapons\Images\ManyMinions.png" />
+        <None Remove="Files\Weapons\Images\MassiveShot.png" />
+        <Resource Include="Files\Weapons\Images\MassiveShot.png" />
+        <None Remove="Files\Weapons\Images\MasterBeam.png" />
+        <Resource Include="Files\Weapons\Images\MasterBeam.png" />
+        <None Remove="Files\Weapons\Images\MegaBuilder.png" />
+        <Resource Include="Files\Weapons\Images\MegaBuilder.png" />
+        <None Remove="Files\Weapons\Images\MegaDigger.png" />
+        <Resource Include="Files\Weapons\Images\MegaDigger.png" />
+        <None Remove="Files\Weapons\Images\MegaJackpot.png" />
+        <Resource Include="Files\Weapons\Images\MegaJackpot.png" />
+        <None Remove="Files\Weapons\Images\MegaNuke.png" />
+        <Resource Include="Files\Weapons\Images\MegaNuke.png" />
+        <None Remove="Files\Weapons\Images\MegaPixel.png" />
+        <Resource Include="Files\Weapons\Images\MegaPixel.png" />
+        <None Remove="Files\Weapons\Images\MegaQuake.png" />
+        <Resource Include="Files\Weapons\Images\MegaQuake.png" />
+        <None Remove="Files\Weapons\Images\MegaRainbow.png" />
+        <Resource Include="Files\Weapons\Images\MegaRainbow.png" />
+        <None Remove="Files\Weapons\Images\MegaTunneler.png" />
+        <Resource Include="Files\Weapons\Images\MegaTunneler.png" />
+        <None Remove="Files\Weapons\Images\MineLayer.png" />
+        <Resource Include="Files\Weapons\Images\MineLayer.png" />
+        <None Remove="Files\Weapons\Images\Minions.png" />
+        <Resource Include="Files\Weapons\Images\Minions.png" />
+        <None Remove="Files\Weapons\Images\MiniPinger.png" />
+        <Resource Include="Files\Weapons\Images\MiniPinger.png" />
+        <None Remove="Files\Weapons\Images\MiniTurret.png" />
+        <Resource Include="Files\Weapons\Images\MiniTurret.png" />
+        <None Remove="Files\Weapons\Images\MiniV.png" />
+        <Resource Include="Files\Weapons\Images\MiniV.png" />
+        <None Remove="Files\Weapons\Images\Minnows.png" />
+        <Resource Include="Files\Weapons\Images\Minnows.png" />
+        <None Remove="Files\Weapons\Images\Molehill.png" />
+        <Resource Include="Files\Weapons\Images\Molehill.png" />
+        <None Remove="Files\Weapons\Images\Moles.png" />
+        <Resource Include="Files\Weapons\Images\Moles.png" />
+        <None Remove="Files\Weapons\Images\Moons.png" />
+        <Resource Include="Files\Weapons\Images\Moons.png" />
+        <None Remove="Files\Weapons\Images\MP5.png" />
+        <Resource Include="Files\Weapons\Images\MP5.png" />
+        <None Remove="Files\Weapons\Images\MultiNade.png" />
+        <Resource Include="Files\Weapons\Images\MultiNade.png" />
+        <None Remove="Files\Weapons\Images\MultiStar.png" />
+        <Resource Include="Files\Weapons\Images\MultiStar.png" />
+        <None Remove="Files\Weapons\Images\Napalm.png" />
+        <Resource Include="Files\Weapons\Images\Napalm.png" />
+        <None Remove="Files\Weapons\Images\Needler.png" />
+        <Resource Include="Files\Weapons\Images\Needler.png" />
+        <None Remove="Files\Weapons\Images\Needles.png" />
+        <Resource Include="Files\Weapons\Images\Needles.png" />
+        <None Remove="Files\Weapons\Images\NerisBlackAtlas.png" />
+        <Resource Include="Files\Weapons\Images\NerisBlackAtlas.png" />
+        <None Remove="Files\Weapons\Images\NerisLightAtlas.png" />
+        <Resource Include="Files\Weapons\Images\NerisLightAtlas.png" />
+        <None Remove="Files\Weapons\Images\Ninja.png" />
+        <Resource Include="Files\Weapons\Images\Ninja.png" />
+        <None Remove="Files\Weapons\Images\Nuke.png" />
+        <Resource Include="Files\Weapons\Images\Nuke.png" />
+        <None Remove="Files\Weapons\Images\OAttack.png" />
+        <Resource Include="Files\Weapons\Images\OAttack.png" />
+        <None Remove="Files\Weapons\Images\Octagon.png" />
+        <Resource Include="Files\Weapons\Images\Octagon.png" />
+        <None Remove="Files\Weapons\Images\Oddball.png" />
+        <Resource Include="Files\Weapons\Images\Oddball.png" />
+        <None Remove="Files\Weapons\Images\Oddbomb.png" />
+        <Resource Include="Files\Weapons\Images\Oddbomb.png" />
+        <None Remove="Files\Weapons\Images\OlympicRinger.png" />
+        <Resource Include="Files\Weapons\Images\OlympicRinger.png" />
+        <None Remove="Files\Weapons\Images\OlympicSkeet.png" />
+        <Resource Include="Files\Weapons\Images\OlympicSkeet.png" />
+        <None Remove="Files\Weapons\Images\OneBounce.png" />
+        <Resource Include="Files\Weapons\Images\OneBounce.png" />
+        <None Remove="Files\Weapons\Images\Orbitals.png" />
+        <Resource Include="Files\Weapons\Images\Orbitals.png" />
+        <None Remove="Files\Weapons\Images\P90.png" />
+        <Resource Include="Files\Weapons\Images\P90.png" />
+        <None Remove="Files\Weapons\Images\Palm.png" />
+        <Resource Include="Files\Weapons\Images\Palm.png" />
+        <None Remove="Files\Weapons\Images\Paprika.png" />
+        <Resource Include="Files\Weapons\Images\Paprika.png" />
+        <None Remove="Files\Weapons\Images\Parabola.png" />
+        <Resource Include="Files\Weapons\Images\Parabola.png" />
+        <None Remove="Files\Weapons\Images\Partition.png" />
+        <Resource Include="Files\Weapons\Images\Partition.png" />
+        <None Remove="Files\Weapons\Images\PartUnlockSprite.png" />
+        <Resource Include="Files\Weapons\Images\PartUnlockSprite.png" />
+        <None Remove="Files\Weapons\Images\Payload.png" />
+        <Resource Include="Files\Weapons\Images\Payload.png" />
+        <None Remove="Files\Weapons\Images\Penetrator.png" />
+        <Resource Include="Files\Weapons\Images\Penetrator.png" />
+        <None Remove="Files\Weapons\Images\Penetratorv2.png" />
+        <Resource Include="Files\Weapons\Images\Penetratorv2.png" />
+        <None Remove="Files\Weapons\Images\Pentagram.png" />
+        <Resource Include="Files\Weapons\Images\Pentagram.png" />
+        <None Remove="Files\Weapons\Images\Pentaslam.png" />
+        <Resource Include="Files\Weapons\Images\Pentaslam.png" />
+        <None Remove="Files\Weapons\Images\Pepper.png" />
+        <Resource Include="Files\Weapons\Images\Pepper.png" />
+        <None Remove="Files\Weapons\Images\Permaroller.png" />
+        <Resource Include="Files\Weapons\Images\Permaroller.png" />
+        <None Remove="Files\Weapons\Images\Pinata.png" />
+        <Resource Include="Files\Weapons\Images\Pinata.png" />
+        <None Remove="Files\Weapons\Images\Pinger.png" />
+        <Resource Include="Files\Weapons\Images\Pinger.png" />
+        <None Remove="Files\Weapons\Images\PingFlood.png" />
+        <Resource Include="Files\Weapons\Images\PingFlood.png" />
+        <None Remove="Files\Weapons\Images\Pinpoint.png" />
+        <Resource Include="Files\Weapons\Images\Pinpoint.png" />
+        <None Remove="Files\Weapons\Images\PinsandNeedles.png" />
+        <Resource Include="Files\Weapons\Images\PinsandNeedles.png" />
+        <None Remove="Files\Weapons\Images\Pixel.png" />
+        <Resource Include="Files\Weapons\Images\Pixel.png" />
+        <None Remove="Files\Weapons\Images\Popcorn.png" />
+        <Resource Include="Files\Weapons\Images\Popcorn.png" />
+        <None Remove="Files\Weapons\Images\PortalGun.png" />
+        <Resource Include="Files\Weapons\Images\PortalGun.png" />
+        <None Remove="Files\Weapons\Images\Punisher.png" />
+        <Resource Include="Files\Weapons\Images\Punisher.png" />
+        <None Remove="Files\Weapons\Images\Puzzler.png" />
+        <Resource Include="Files\Weapons\Images\Puzzler.png" />
+        <None Remove="Files\Weapons\Images\Pyrotechnics.png" />
+        <Resource Include="Files\Weapons\Images\Pyrotechnics.png" />
+        <None Remove="Files\Weapons\Images\Python.png" />
+        <Resource Include="Files\Weapons\Images\Python.png" />
+        <None Remove="Files\Weapons\Images\Quicksand.png" />
+        <Resource Include="Files\Weapons\Images\Quicksand.png" />
+        <None Remove="Files\Weapons\Images\Radar.png" />
+        <Resource Include="Files\Weapons\Images\Radar.png" />
+        <None Remove="Files\Weapons\Images\Rage.png" />
+        <Resource Include="Files\Weapons\Images\Rage.png" />
+        <None Remove="Files\Weapons\Images\Rain.png" />
+        <Resource Include="Files\Weapons\Images\Rain.png" />
+        <None Remove="Files\Weapons\Images\Rainbow.png" />
+        <Resource Include="Files\Weapons\Images\Rainbow.png" />
+        <None Remove="Files\Weapons\Images\Rampage.png" />
+        <Resource Include="Files\Weapons\Images\Rampage.png" />
+        <None Remove="Files\Weapons\Images\RamSquad.png" />
+        <Resource Include="Files\Weapons\Images\RamSquad.png" />
+        <None Remove="Files\Weapons\Images\RapidFire.png" />
+        <Resource Include="Files\Weapons\Images\RapidFire.png" />
+        <None Remove="Files\Weapons\Images\Rave.png" />
+        <Resource Include="Files\Weapons\Images\Rave.png" />
+        <None Remove="Files\Weapons\Images\Recruiter.png" />
+        <Resource Include="Files\Weapons\Images\Recruiter.png" />
+        <None Remove="Files\Weapons\Images\Relocator.png" />
+        <Resource Include="Files\Weapons\Images\Relocator.png" />
+        <None Remove="Files\Weapons\Images\Ringer.png" />
+        <Resource Include="Files\Weapons\Images\Ringer.png" />
+        <None Remove="Files\Weapons\Images\Riot.png" />
+        <Resource Include="Files\Weapons\Images\Riot.png" />
+        <None Remove="Files\Weapons\Images\RipSaw.png" />
+        <Resource Include="Files\Weapons\Images\RipSaw.png" />
+        <None Remove="Files\Weapons\Images\River.png" />
+        <Resource Include="Files\Weapons\Images\River.png" />
+        <None Remove="Files\Weapons\Images\Rocker.png" />
+        <Resource Include="Files\Weapons\Images\Rocker.png" />
+        <None Remove="Files\Weapons\Images\RocketCluster.png" />
+        <Resource Include="Files\Weapons\Images\RocketCluster.png" />
+        <None Remove="Files\Weapons\Images\RocketFire.png" />
+        <Resource Include="Files\Weapons\Images\RocketFire.png" />
+        <None Remove="Files\Weapons\Images\Roller.png" />
+        <Resource Include="Files\Weapons\Images\Roller.png" />
+        <None Remove="Files\Weapons\Images\SaltAndPepper.png" />
+        <Resource Include="Files\Weapons\Images\SaltAndPepper.png" />
+        <None Remove="Files\Weapons\Images\Satellite.png" />
+        <Resource Include="Files\Weapons\Images\Satellite.png" />
+        <None Remove="Files\Weapons\Images\Sausage.png" />
+        <Resource Include="Files\Weapons\Images\Sausage.png" />
+        <None Remove="Files\Weapons\Images\SawBlade.png" />
+        <Resource Include="Files\Weapons\Images\SawBlade.png" />
+        <None Remove="Files\Weapons\Images\Scavengers.png" />
+        <Resource Include="Files\Weapons\Images\Scavengers.png" />
+        <None Remove="Files\Weapons\Images\ScrollerGrab.png" />
+        <Resource Include="Files\Weapons\Images\ScrollerGrab.png" />
+        <None Remove="Files\Weapons\Images\Seagull.png" />
+        <Resource Include="Files\Weapons\Images\Seagull.png" />
+        <None Remove="Files\Weapons\Images\SecretBlade.png" />
+        <Resource Include="Files\Weapons\Images\SecretBlade.png" />
+        <None Remove="Files\Weapons\Images\SevenBounce.png" />
+        <Resource Include="Files\Weapons\Images\SevenBounce.png" />
+        <None Remove="Files\Weapons\Images\Shadow.png" />
+        <Resource Include="Files\Weapons\Images\Shadow.png" />
+        <None Remove="Files\Weapons\Images\Shank.png" />
+        <Resource Include="Files\Weapons\Images\Shank.png" />
+        <None Remove="Files\Weapons\Images\ShockShell.png" />
+        <Resource Include="Files\Weapons\Images\ShockShell.png" />
+        <None Remove="Files\Weapons\Images\ShockShellTrio.png" />
+        <Resource Include="Files\Weapons\Images\ShockShellTrio.png" />
+        <None Remove="Files\Weapons\Images\Shockwave.png" />
+        <Resource Include="Files\Weapons\Images\Shockwave.png" />
+        <None Remove="Files\Weapons\Images\ShootingStar.png" />
+        <Resource Include="Files\Weapons\Images\ShootingStar.png" />
+        <None Remove="Files\Weapons\Images\Shot.png" />
+        <Resource Include="Files\Weapons\Images\Shot.png" />
+        <None Remove="Files\Weapons\Images\Shotgun.png" />
+        <Resource Include="Files\Weapons\Images\Shotgun.png" />
+        <None Remove="Files\Weapons\Images\Shrapnel.png" />
+        <Resource Include="Files\Weapons\Images\Shrapnel.png" />
+        <None Remove="Files\Weapons\Images\Shredders.png" />
+        <Resource Include="Files\Weapons\Images\Shredders.png" />
+        <None Remove="Files\Weapons\Images\Sillyballs.png" />
+        <Resource Include="Files\Weapons\Images\Sillyballs.png" />
+        <None Remove="Files\Weapons\Images\Sinkhole.png" />
+        <Resource Include="Files\Weapons\Images\Sinkhole.png" />
+        <None Remove="Files\Weapons\Images\Skeet.png" />
+        <Resource Include="Files\Weapons\Images\Skeet.png" />
+        <None Remove="Files\Weapons\Images\Skeleton.png" />
+        <Resource Include="Files\Weapons\Images\Skeleton.png" />
+        <None Remove="Files\Weapons\Images\skillchassis2.png" />
+        <Resource Include="Files\Weapons\Images\skillchassis2.png" />
+        <None Remove="Files\Weapons\Images\SkullShot.png" />
+        <Resource Include="Files\Weapons\Images\SkullShot.png" />
+        <None Remove="Files\Weapons\Images\Slammer.png" />
+        <Resource Include="Files\Weapons\Images\Slammer.png" />
+        <None Remove="Files\Weapons\Images\SmartSnipe.png" />
+        <Resource Include="Files\Weapons\Images\SmartSnipe.png" />
+        <None Remove="Files\Weapons\Images\Snake.png" />
+        <Resource Include="Files\Weapons\Images\Snake.png" />
+        <None Remove="Files\Weapons\Images\Sniper.png" />
+        <Resource Include="Files\Weapons\Images\Sniper.png" />
+        <None Remove="Files\Weapons\Images\Snowball.png" />
+        <Resource Include="Files\Weapons\Images\Snowball.png" />
+        <None Remove="Files\Weapons\Images\Snowstorm.png" />
+        <Resource Include="Files\Weapons\Images\Snowstorm.png" />
+        <None Remove="Files\Weapons\Images\SolarFlare.png" />
+        <Resource Include="Files\Weapons\Images\SolarFlare.png" />
+        <None Remove="Files\Weapons\Images\Solid.png" />
+        <Resource Include="Files\Weapons\Images\Solid.png" />
+        <None Remove="Files\Weapons\Images\Sonar.png" />
+        <Resource Include="Files\Weapons\Images\Sonar.png" />
+        <None Remove="Files\Weapons\Images\SongTilePlayBtn.png" />
+        <Resource Include="Files\Weapons\Images\SongTilePlayBtn.png" />
+        <None Remove="Files\Weapons\Images\SonicPulse.png" />
+        <Resource Include="Files\Weapons\Images\SonicPulse.png" />
+        <None Remove="Files\Weapons\Images\SourceHanSansBoldAtlas.png" />
+        <Resource Include="Files\Weapons\Images\SourceHanSansBoldAtlas.png" />
+        <None Remove="Files\Weapons\Images\SourceHanSansMediumAtlas.png" />
+        <Resource Include="Files\Weapons\Images\SourceHanSansMediumAtlas.png" />
+        <None Remove="Files\Weapons\Images\SourceHanSansRegularAtlas.png" />
+        <Resource Include="Files\Weapons\Images\SourceHanSansRegularAtlas.png" />
+        <None Remove="Files\Weapons\Images\Sparkler.png" />
+        <Resource Include="Files\Weapons\Images\Sparkler.png" />
+        <None Remove="Files\Weapons\Images\Spaz.png" />
+        <Resource Include="Files\Weapons\Images\Spaz.png" />
+        <None Remove="Files\Weapons\Images\Spaztastic.png" />
+        <Resource Include="Files\Weapons\Images\Spaztastic.png" />
+        <None Remove="Files\Weapons\Images\Spazzer.png" />
+        <Resource Include="Files\Weapons\Images\Spazzer.png" />
+        <None Remove="Files\Weapons\Images\Spider.png" />
+        <Resource Include="Files\Weapons\Images\Spider.png" />
+        <None Remove="Files\Weapons\Images\Spiker.png" />
+        <Resource Include="Files\Weapons\Images\Spiker.png" />
+        <None Remove="Files\Weapons\Images\Splitter.png" />
+        <Resource Include="Files\Weapons\Images\Splitter.png" />
+        <None Remove="Files\Weapons\Images\SplitterChain.png" />
+        <Resource Include="Files\Weapons\Images\SplitterChain.png" />
+        <None Remove="Files\Weapons\Images\Spotter.png" />
+        <Resource Include="Files\Weapons\Images\Spotter.png" />
+        <None Remove="Files\Weapons\Images\SpotterXL.png" />
+        <Resource Include="Files\Weapons\Images\SpotterXL.png" />
+        <None Remove="Files\Weapons\Images\SpotterXXL.png" />
+        <Resource Include="Files\Weapons\Images\SpotterXXL.png" />
+        <None Remove="Files\Weapons\Images\Spreader.png" />
+        <Resource Include="Files\Weapons\Images\Spreader.png" />
+        <None Remove="Files\Weapons\Images\Sprinkler.png" />
+        <Resource Include="Files\Weapons\Images\Sprinkler.png" />
+        <None Remove="Files\Weapons\Images\Sprouter.png" />
+        <Resource Include="Files\Weapons\Images\Sprouter.png" />
+        <None Remove="Files\Weapons\Images\Squadron.png" />
+        <Resource Include="Files\Weapons\Images\Squadron.png" />
+        <None Remove="Files\Weapons\Images\Square.png" />
+        <Resource Include="Files\Weapons\Images\Square.png" />
+        <None Remove="Files\Weapons\Images\Squawker.png" />
+        <Resource Include="Files\Weapons\Images\Squawker.png" />
+        <None Remove="Files\Weapons\Images\Star.png" />
+        <Resource Include="Files\Weapons\Images\Star.png" />
+        <None Remove="Files\Weapons\Images\StarFire.png" />
+        <Resource Include="Files\Weapons\Images\StarFire.png" />
+        <None Remove="Files\Weapons\Images\Static.png" />
+        <Resource Include="Files\Weapons\Images\Static.png" />
+        <None Remove="Files\Weapons\Images\StaticChain.png" />
+        <Resource Include="Files\Weapons\Images\StaticChain.png" />
+        <None Remove="Files\Weapons\Images\StaticLink.png" />
+        <Resource Include="Files\Weapons\Images\StaticLink.png" />
+        <None Remove="Files\Weapons\Images\StickyBomb.png" />
+        <Resource Include="Files\Weapons\Images\StickyBomb.png" />
+        <None Remove="Files\Weapons\Images\StickyRain.png" />
+        <Resource Include="Files\Weapons\Images\StickyRain.png" />
+        <None Remove="Files\Weapons\Images\StickyTrio.png" />
+        <Resource Include="Files\Weapons\Images\StickyTrio.png" />
+        <None Remove="Files\Weapons\Images\Stone.png" />
+        <Resource Include="Files\Weapons\Images\Stone.png" />
+        <None Remove="Files\Weapons\Images\Stream.png" />
+        <Resource Include="Files\Weapons\Images\Stream.png" />
+        <None Remove="Files\Weapons\Images\Strobie.png" />
+        <Resource Include="Files\Weapons\Images\Strobie.png" />
+        <None Remove="Files\Weapons\Images\SubSniper.png" />
+        <Resource Include="Files\Weapons\Images\SubSniper.png" />
+        <None Remove="Files\Weapons\Images\SuicideBomber.png" />
+        <Resource Include="Files\Weapons\Images\SuicideBomber.png" />
+        <None Remove="Files\Weapons\Images\Summoner.png" />
+        <Resource Include="Files\Weapons\Images\Summoner.png" />
+        <None Remove="Files\Weapons\Images\SunBurst.png" />
+        <Resource Include="Files\Weapons\Images\SunBurst.png" />
+        <None Remove="Files\Weapons\Images\Sunflower.png" />
+        <Resource Include="Files\Weapons\Images\Sunflower.png" />
+        <None Remove="Files\Weapons\Images\SuperBall.png" />
+        <Resource Include="Files\Weapons\Images\SuperBall.png" />
+        <None Remove="Files\Weapons\Images\SuperBreaker.png" />
+        <Resource Include="Files\Weapons\Images\SuperBreaker.png" />
+        <None Remove="Files\Weapons\Images\SuperCat.png" />
+        <Resource Include="Files\Weapons\Images\SuperCat.png" />
+        <None Remove="Files\Weapons\Images\SuperFleet.png" />
+        <Resource Include="Files\Weapons\Images\SuperFleet.png" />
+        <None Remove="Files\Weapons\Images\SuperPixel.png" />
+        <Resource Include="Files\Weapons\Images\SuperPixel.png" />
+        <None Remove="Files\Weapons\Images\SuperSpiker.png" />
+        <Resource Include="Files\Weapons\Images\SuperSpiker.png" />
+        <None Remove="Files\Weapons\Images\SuperSplitter.png" />
+        <Resource Include="Files\Weapons\Images\SuperSplitter.png" />
+        <None Remove="Files\Weapons\Images\SuperSynclets.png" />
+        <Resource Include="Files\Weapons\Images\SuperSynclets.png" />
+        <None Remove="Files\Weapons\Images\Sweeper.png" />
+        <Resource Include="Files\Weapons\Images\Sweeper.png" />
+        <None Remove="Files\Weapons\Images\Sword.png" />
+        <Resource Include="Files\Weapons\Images\Sword.png" />
+        <None Remove="Files\Weapons\Images\Synclets.png" />
+        <Resource Include="Files\Weapons\Images\Synclets.png" />
+        <None Remove="Files\Weapons\Images\Tadpoles.png" />
+        <Resource Include="Files\Weapons\Images\Tadpoles.png" />
+        <None Remove="Files\Weapons\Images\TangentAssault.png" />
+        <Resource Include="Files\Weapons\Images\TangentAssault.png" />
+        <None Remove="Files\Weapons\Images\TangentAttack.png" />
+        <Resource Include="Files\Weapons\Images\TangentAttack.png" />
+        <None Remove="Files\Weapons\Images\TangentFire.png" />
+        <Resource Include="Files\Weapons\Images\TangentFire.png" />
+        <None Remove="Files\Weapons\Images\TankUpgradeTokenIcon.png" />
+        <Resource Include="Files\Weapons\Images\TankUpgradeTokenIcon.png" />
+        <None Remove="Files\Weapons\Images\Tarantula.png" />
+        <Resource Include="Files\Weapons\Images\Tarantula.png" />
+        <None Remove="Files\Weapons\Images\Taser.png" />
+        <Resource Include="Files\Weapons\Images\Taser.png" />
+        <None Remove="Files\Weapons\Images\ThreeBall.png" />
+        <Resource Include="Files\Weapons\Images\ThreeBall.png" />
+        <None Remove="Files\Weapons\Images\ThreeBounce.png" />
+        <Resource Include="Files\Weapons\Images\ThreeBounce.png" />
+        <None Remove="Files\Weapons\Images\ThrowingStar.png" />
+        <Resource Include="Files\Weapons\Images\ThrowingStar.png" />
+        <None Remove="Files\Weapons\Images\Tormentor.png" />
+        <Resource Include="Files\Weapons\Images\Tormentor.png" />
+        <None Remove="Files\Weapons\Images\Torpedoes.png" />
+        <Resource Include="Files\Weapons\Images\Torpedoes.png" />
+        <None Remove="Files\Weapons\Images\Trail.png" />
+        <Resource Include="Files\Weapons\Images\Trail.png" />
+        <None Remove="Files\Weapons\Images\Train.png" />
+        <Resource Include="Files\Weapons\Images\Train.png" />
+        <None Remove="Files\Weapons\Images\Travelers.png" />
+        <Resource Include="Files\Weapons\Images\Travelers.png" />
+        <None Remove="Files\Weapons\Images\TriNade.png" />
+        <Resource Include="Files\Weapons\Images\TriNade.png" />
+        <None Remove="Files\Weapons\Images\TripleBounder.png" />
+        <Resource Include="Files\Weapons\Images\TripleBounder.png" />
+        <None Remove="Files\Weapons\Images\TripleBounsplode.png" />
+        <Resource Include="Files\Weapons\Images\TripleBounsplode.png" />
+        <None Remove="Files\Weapons\Images\TripleJumper.png" />
+        <Resource Include="Files\Weapons\Images\TripleJumper.png" />
+        <None Remove="Files\Weapons\Images\TriplePalm.png" />
+        <Resource Include="Files\Weapons\Images\TriplePalm.png" />
+        <None Remove="Files\Weapons\Images\Tsunami.png" />
+        <Resource Include="Files\Weapons\Images\Tsunami.png" />
+        <None Remove="Files\Weapons\Images\Tunneler.png" />
+        <Resource Include="Files\Weapons\Images\Tunneler.png" />
+        <None Remove="Files\Weapons\Images\TunnelStrike.png" />
+        <Resource Include="Files\Weapons\Images\TunnelStrike.png" />
+        <None Remove="Files\Weapons\Images\TurretMob.png" />
+        <Resource Include="Files\Weapons\Images\TurretMob.png" />
+        <None Remove="Files\Weapons\Images\Tweeter.png" />
+        <Resource Include="Files\Weapons\Images\Tweeter.png" />
+        <None Remove="Files\Weapons\Images\TwentyFiveBall.png" />
+        <Resource Include="Files\Weapons\Images\TwentyFiveBall.png" />
+        <None Remove="Files\Weapons\Images\Twinkler.png" />
+        <Resource Include="Files\Weapons\Images\Twinkler.png" />
+        <None Remove="Files\Weapons\Images\UFO.png" />
+        <Resource Include="Files\Weapons\Images\UFO.png" />
+        <None Remove="Files\Weapons\Images\UltimateImploder.png" />
+        <Resource Include="Files\Weapons\Images\UltimateImploder.png" />
+        <None Remove="Files\Weapons\Images\UltraBeam.png" />
+        <Resource Include="Files\Weapons\Images\UltraBeam.png" />
+        <None Remove="Files\Weapons\Images\UltraJackpot.png" />
+        <Resource Include="Files\Weapons\Images\UltraJackpot.png" />
+        <None Remove="Files\Weapons\Images\UltraPixel.png" />
+        <Resource Include="Files\Weapons\Images\UltraPixel.png" />
+        <None Remove="Files\Weapons\Images\UZI.png" />
+        <Resource Include="Files\Weapons\Images\UZI.png" />
+        <None Remove="Files\Weapons\Images\Volcano.png" />
+        <Resource Include="Files\Weapons\Images\Volcano.png" />
+        <None Remove="Files\Weapons\Images\Wackyballs.png" />
+        <Resource Include="Files\Weapons\Images\Wackyballs.png" />
+        <None Remove="Files\Weapons\Images\WackyCluster.png" />
+        <Resource Include="Files\Weapons\Images\WackyCluster.png" />
+        <None Remove="Files\Weapons\Images\Wall.png" />
+        <Resource Include="Files\Weapons\Images\Wall.png" />
+        <None Remove="Files\Weapons\Images\Wasps.png" />
+        <Resource Include="Files\Weapons\Images\Wasps.png" />
+        <None Remove="Files\Weapons\Images\WaterBalloon.png" />
+        <Resource Include="Files\Weapons\Images\WaterBalloon.png" />
+        <None Remove="Files\Weapons\Images\WaterFight.png" />
+        <Resource Include="Files\Weapons\Images\WaterFight.png" />
+        <None Remove="Files\Weapons\Images\WaterTrio.png" />
+        <Resource Include="Files\Weapons\Images\WaterTrio.png" />
+        <None Remove="Files\Weapons\Images\Waterworks.png" />
+        <Resource Include="Files\Weapons\Images\Waterworks.png" />
+        <None Remove="Files\Weapons\Images\WepIconGridItemBack.png" />
+        <Resource Include="Files\Weapons\Images\WepIconGridItemBack.png" />
+        <None Remove="Files\Weapons\Images\WickedWitch.png" />
+        <Resource Include="Files\Weapons\Images\WickedWitch.png" />
+        <None Remove="Files\Weapons\Images\WitchesBroom.png" />
+        <Resource Include="Files\Weapons\Images\WitchesBroom.png" />
+        <None Remove="Files\Weapons\Images\Woofer.png" />
+        <Resource Include="Files\Weapons\Images\Woofer.png" />
+        <None Remove="Files\Weapons\Images\XAttack.png" />
+        <Resource Include="Files\Weapons\Images\XAttack.png" />
+        <None Remove="Files\Weapons\Images\YinYang.png" />
+        <Resource Include="Files\Weapons\Images\YinYang.png" />
+        <None Remove="Files\Weapons\Images\YinYangYong.png" />
+        <Resource Include="Files\Weapons\Images\YinYangYong.png" />
+        <None Remove="Files\Weapons\Images\Zipper.png" />
+        <Resource Include="Files\Weapons\Images\Zipper.png" />
+        <None Remove="Files\Weapons\Images\ZipperQuad.png" />
+        <Resource Include="Files\Weapons\Images\ZipperQuad.png" />
+    </ItemGroup>
+
+</Project>
