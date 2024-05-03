@@ -12,16 +12,16 @@
 
     <ItemGroup>
         <PackageReference Include="CalcBinding" Version="2.5.2" />
-        <PackageReference Include="DynamicData" Version="7.14.2" />
+        <PackageReference Include="DynamicData" Version="8.4.1" />
         <PackageReference Include="Microsoft.Extensions.Primitives" Version="6.0.0" />
         <PackageReference Include="NAudio" Version="2.2.1" />
         <PackageReference Include="NAudio.Core" Version="2.2.1" />
         <PackageReference Include="NAudio.Wasapi" Version="2.2.1" />
         <PackageReference Include="NAudio.WinMM" Version="2.2.1" />
         <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-        <PackageReference Include="ReactiveUI" Version="19.4.1" />
-        <PackageReference Include="ReactiveUI.Fody" Version="19.4.1" />
-        <PackageReference Include="ReactiveUI.WPF" Version="19.4.1" />
+        <PackageReference Include="ReactiveUI" Version="19.6.1" />
+        <PackageReference Include="ReactiveUI.Fody" Version="19.5.41" />
+        <PackageReference Include="ReactiveUI.WPF" Version="19.6.1" />
         <PackageReference Include="System.Drawing.Common" Version="6.0.0" />
         <PackageReference Include="System.Management" Version="6.0.2" />
         <PackageReference Include="Tesseract" Version="5.2.0" />
@@ -29,6 +29,21 @@
     </ItemGroup>
 
     <ItemGroup>
+        <Reference Include="NetExtender.Initializer">
+            <HintPath>..\..\..\..\GitHub\NetExtender\NetExtender.Initializer\bin\Release\net6.0\NetExtender.Initializer.dll</HintPath>
+        </Reference>
+        <Reference Include="NetExtender.Core">
+            <HintPath>..\..\..\..\GitHub\NetExtender\NetExtender.Core\bin\Release\net6.0\NetExtender.Core.dll</HintPath>
+        </Reference>
+        <Reference Include="NetExtender.ReactiveUI">
+            <HintPath>..\..\..\..\GitHub\NetExtender\NetExtender.ReactiveUI\bin\Release\net6.0\NetExtender.ReactiveUI.dll</HintPath>
+        </Reference>
+        <Reference Include="NetExtender.Domain">
+            <HintPath>..\..\..\..\GitHub\NetExtender\NetExtender.Domain\bin\Release\net6.0\NetExtender.Domain.dll</HintPath>
+        </Reference>
+        <Reference Include="NetExtender.Domain.WindowsPresentation">
+            <HintPath>..\..\..\..\GitHub\NetExtender\NetExtender.Domain.WindowsPresentation\bin\Release\net6.0-windows\NetExtender.Domain.WindowsPresentation.dll</HintPath>
+        </Reference>
         <Reference Include="NetExtender.Configuration">
             <HintPath>..\..\..\..\GitHub\NetExtender\NetExtender.Configuration\bin\Release\net6.0\NetExtender.Configuration.dll</HintPath>
         </Reference>
@@ -44,38 +59,47 @@
         <Reference Include="NetExtender.Configuration.Json">
             <HintPath>..\..\..\..\GitHub\NetExtender\NetExtender.Serialization.Ini\bin\Release\net6.0\NetExtender.Serialization.Ini.dll</HintPath>
         </Reference>
-        <Reference Include="NetExtender.Logging">
-            <HintPath>..\..\..\..\GitHub\NetExtender\NetExtender.Logging\bin\Release\net6.0\NetExtender.Logging.dll</HintPath>
+        <Reference Include="NetExtender.Configuration.Property">
+            <HintPath>..\..\..\..\GitHub\NetExtender\NetExtender.Configuration.Property\bin\Release\net6.0\NetExtender.Configuration.Property.dll</HintPath>
         </Reference>
-        <Reference Include="NetExtender.Core">
-            <HintPath>..\..\..\..\GitHub\NetExtender\NetExtender.Core\bin\Release\net6.0\NetExtender.Core.dll</HintPath>
+        <Reference Include="NetExtender.Localization">
+            <HintPath>..\..\..\..\GitHub\NetExtender\NetExtender.Localization\bin\Release\net6.0\NetExtender.Localization.dll</HintPath>
         </Reference>
-        <Reference Include="NetExtender.Memento">
-            <HintPath>..\..\..\..\GitHub\NetExtender\NetExtender.Memento\bin\Release\net6.0\NetExtender.Memento.dll</HintPath>
-        </Reference>
-        <Reference Include="NetExtender.Domain">
-            <HintPath>..\..\..\..\GitHub\NetExtender\NetExtender.Domain\bin\Release\net6.0\NetExtender.Domain.dll</HintPath>
-        </Reference>
-        <Reference Include="NetExtender.Domain.WindowsPresentation">
-            <HintPath>..\..\..\..\GitHub\NetExtender\NetExtender.Domain.WindowsPresentation\bin\Release\net6.0-windows\NetExtender.Domain.WindowsPresentation.dll</HintPath>
-        </Reference>
-        <Reference Include="NetExtender.Initializer">
-            <HintPath>..\..\..\..\GitHub\NetExtender\NetExtender.Initializer\bin\Release\net6.0\NetExtender.Initializer.dll</HintPath>
+        <Reference Include="NetExtender.Localization.Property">
+            <HintPath>..\..\..\..\GitHub\NetExtender\NetExtender.Localization.Property\bin\Release\net6.0\NetExtender.Localization.Property.dll</HintPath>
         </Reference>
         <Reference Include="NetExtender.Localization.Flags">
             <HintPath>..\..\..\..\GitHub\NetExtender\NetExtender.Localization.Flags\bin\Release\net6.0-windows\NetExtender.Localization.Flags.dll</HintPath>
         </Reference>
-        <Reference Include="NetExtender.NAudio">
-            <HintPath>..\..\..\..\GitHub\NetExtender\NetExtender.NAudio\bin\Release\net6.0\NetExtender.NAudio.dll</HintPath>
+        <Reference Include="NetExtender.Logging">
+            <HintPath>..\..\..\..\GitHub\NetExtender\NetExtender.Logging\bin\Release\net6.0\NetExtender.Logging.dll</HintPath>
         </Reference>
-        <Reference Include="NetExtender.NAudio.Windows">
-            <HintPath>..\..\..\..\GitHub\NetExtender\NetExtender.NAudio.Windows\bin\Release\net6.0-windows\NetExtender.NAudio.Windows.dll</HintPath>
+        <Reference Include="NetExtender.Memento">
+            <HintPath>..\..\..\..\GitHub\NetExtender\NetExtender.Memento\bin\Release\net6.0\NetExtender.Memento.dll</HintPath>
         </Reference>
-        <Reference Include="NetExtender.ReactiveUI">
-            <HintPath>..\..\..\..\GitHub\NetExtender\NetExtender.ReactiveUI\bin\Release\net6.0\NetExtender.ReactiveUI.dll</HintPath>
+        <Reference Include="NetExtender.Windows">
+            <HintPath>..\..\..\..\GitHub\NetExtender\NetExtender.Windows\bin\Release\net6.0-windows\NetExtender.Windows.dll</HintPath>
         </Reference>
         <Reference Include="NetExtender.Registry">
             <HintPath>..\..\..\..\GitHub\NetExtender\NetExtender.Registry\bin\Release\net6.0-windows\NetExtender.Registry.dll</HintPath>
+        </Reference>
+        <Reference Include="NetExtender.WindowsPresentation">
+            <HintPath>..\..\..\..\GitHub\NetExtender\NetExtender.WindowsPresentation\bin\Release\net6.0-windows\NetExtender.WindowsPresentation.dll</HintPath>
+        </Reference>
+        <Reference Include="NetExtender.WindowsPresentation.Drawing">
+            <HintPath>..\..\..\..\GitHub\NetExtender\NetExtender.WindowsPresentation.Drawing\bin\Release\net6.0-windows\NetExtender.WindowsPresentation.Drawing.dll</HintPath>
+        </Reference>
+        <Reference Include="NetExtender.WindowsPresentation.ReactiveUI">
+            <HintPath>..\..\..\..\GitHub\NetExtender\NetExtender.WindowsPresentation.ReactiveUI\bin\Release\net6.0-windows\NetExtender.WindowsPresentation.ReactiveUI.dll</HintPath>
+        </Reference>
+        <Reference Include="NetExtender.WindowsPresentation.ActiveBinding">
+            <HintPath>..\..\..\..\GitHub\NetExtender\NetExtender.WindowsPresentation.ActiveBinding\bin\Release\net6.0-windows\NetExtender.WindowsPresentation.ActiveBinding.dll</HintPath>
+        </Reference>
+        <Reference Include="NetExtender.WindowsPresentation.Localization">
+            <HintPath>..\..\..\..\GitHub\NetExtender\NetExtender.WindowsPresentation.Localization\bin\Release\net6.0-windows\NetExtender.WindowsPresentation.Localization.dll</HintPath>
+        </Reference>
+        <Reference Include="NetExtender.WindowsPresentation.Localization.ReactiveUI">
+            <HintPath>..\..\..\..\GitHub\NetExtender\NetExtender.WindowsPresentation.Localization.ReactiveUI\bin\Release\net6.0-windows\NetExtender.WindowsPresentation.Localization.ReactiveUI.dll</HintPath>
         </Reference>
         <Reference Include="NetExtender.UserInterface">
             <HintPath>..\..\..\..\GitHub\NetExtender\NetExtender.UserInterface\bin\Release\net6.0\NetExtender.UserInterface.dll</HintPath>
@@ -86,44 +110,17 @@
         <Reference Include="NetExtender.UserInterface.WindowsPresentation">
             <HintPath>..\..\..\..\GitHub\NetExtender\NetExtender.UserInterface.WindowsPresentation\bin\Release\net6.0-windows\NetExtender.UserInterface.WindowsPresentation.dll</HintPath>
         </Reference>
-        <Reference Include="NetExtender.Windows">
-            <HintPath>..\..\..\..\GitHub\NetExtender\NetExtender.Windows\bin\Release\net6.0-windows\NetExtender.Windows.dll</HintPath>
-        </Reference>
-        <Reference Include="NetExtender.WindowsPresentation">
-            <HintPath>..\..\..\..\GitHub\NetExtender\NetExtender.WindowsPresentation\bin\Release\net6.0-windows\NetExtender.WindowsPresentation.dll</HintPath>
-        </Reference>
-        <Reference Include="NetExtender.WindowsPresentation">
-            <HintPath>..\..\..\..\GitHub\NetExtender\NetExtender.WindowsPresentation.Drawing\bin\Release\net6.0-windows\NetExtender.WindowsPresentation.Drawing.dll</HintPath>
-        </Reference>
-        <Reference Include="NetExtender.WindowsPresentation">
-            <HintPath>..\..\..\..\GitHub\NetExtender\NetExtender.WindowsPresentation.ReactiveUI\bin\Release\net6.0-windows\NetExtender.WindowsPresentation.ReactiveUI.dll</HintPath>
-        </Reference>
-        <Reference Include="NetExtender.Configuration">
-            <HintPath>..\..\..\..\GitHub\NetExtender\NetExtender.Configuration\bin\Release\net6.0\NetExtender.Configuration.dll</HintPath>
-        </Reference>
-        <Reference Include="NetExtender.Configuration.Property">
-            <HintPath>..\..\..\..\GitHub\NetExtender\NetExtender.Configuration.Property\bin\Release\net6.0\NetExtender.Configuration.Property.dll</HintPath>
-        </Reference>
-        <Reference Include="NetExtender.Configuration">
-            <HintPath>..\..\..\..\GitHub\NetExtender\NetExtender.Localization\bin\Release\net6.0\NetExtender.Localization.dll</HintPath>
-        </Reference>
-        <Reference Include="NetExtender.Configuration.Property">
-            <HintPath>..\..\..\..\GitHub\NetExtender\NetExtender.Localization.Property\bin\Release\net6.0\NetExtender.Localization.Property.dll</HintPath>
-        </Reference>
-        <Reference Include="NetExtender.WindowsPresentation.ActiveBinding">
-            <HintPath>..\..\..\..\GitHub\NetExtender\NetExtender.WindowsPresentation.ActiveBinding\bin\Release\net6.0-windows\NetExtender.WindowsPresentation.ActiveBinding.dll</HintPath>
-        </Reference>
-        <Reference Include="NetExtender.WindowsPresentation.Localization">
-            <HintPath>..\..\..\..\GitHub\NetExtender\NetExtender.WindowsPresentation.Localization\bin\Release\net6.0-windows\NetExtender.WindowsPresentation.Localization.dll</HintPath>
-        </Reference>
-        <Reference Include="NetExtender.WindowsPresentation.Localization">
-            <HintPath>..\..\..\..\GitHub\NetExtender\NetExtender.WindowsPresentation.Localization.ReactiveUI\bin\Release\net6.0-windows\NetExtender.WindowsPresentation.Localization.ReactiveUI.dll</HintPath>
-        </Reference>
         <Reference Include="NetExtender.UserInterface.WindowsPresentation.Localization">
             <HintPath>..\..\..\..\GitHub\NetExtender\NetExtender.UserInterface.WindowsPresentation.Localization\bin\Release\net6.0-windows\NetExtender.UserInterface.WindowsPresentation.Localization.dll</HintPath>
         </Reference>
-        <Reference Include="NetExtender.UserInterface.WindowsPresentation.Localization">
+        <Reference Include="NetExtender.WinForms">
             <HintPath>..\..\..\..\GitHub\NetExtender\NetExtender.WinForms\bin\Release\net6.0-windows\NetExtender.WinForms.dll</HintPath>
+        </Reference>
+        <Reference Include="NetExtender.NAudio">
+            <HintPath>..\..\..\..\GitHub\NetExtender\NetExtender.NAudio\bin\Release\net6.0\NetExtender.NAudio.dll</HintPath>
+        </Reference>
+        <Reference Include="NetExtender.NAudio.Windows">
+            <HintPath>..\..\..\..\GitHub\NetExtender\NetExtender.NAudio.Windows\bin\Release\net6.0-windows\NetExtender.NAudio.Windows.dll</HintPath>
         </Reference>
     </ItemGroup>
 

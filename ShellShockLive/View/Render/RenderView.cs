@@ -57,6 +57,7 @@ namespace ShellShockLive.View.Render
             HandleRef handle = new HandleRef(null, Handle);
             IntPtr style = GetWindowLong(handle, exstyle);
             SetWindowLongPtr(handle, exstyle, (IntPtr) ((Int32) style | 0x20 | 0x80000));
+            /*UserInterfaceUtilities.SetWindowDisplayAffinity(handle.Handle, WindowDisplayAffinity.ExcludeFromCapture);*/
             
             ResumeLayout(false);
             PerformLayout();

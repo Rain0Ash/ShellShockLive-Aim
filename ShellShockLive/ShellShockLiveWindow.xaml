@@ -19,12 +19,15 @@
                             WindowState="Maximized"
                             ResizeMode="NoResize"
                             WindowStyle="None"
+                            Initialized="Initialize"
+                            IsAltF4Enabled="False"
+                            DisplayAffinity="ExcludeFromCapture"
                             Title="{Binding Localization.Title.Current}">
     <Window.Resources>
-        <ShellShockLive:AngleViewConverter x:Key="AngleViewConverter"></ShellShockLive:AngleViewConverter>
-        <ShellShockLive:WindViewConverter x:Key="WindViewConverter"></ShellShockLive:WindViewConverter>
-        <ShellShockLive:PowerViewConverter x:Key="PowerViewConverter"></ShellShockLive:PowerViewConverter>
-        <ShellShockLive:QuarterViewConverter x:Key="QuarterViewConverter"></ShellShockLive:QuarterViewConverter>
+        <ShellShockLive:AngleViewConverter x:Key="AngleViewConverter" />
+        <ShellShockLive:WindViewConverter x:Key="WindViewConverter" />
+        <ShellShockLive:PowerViewConverter x:Key="PowerViewConverter" />
+        <ShellShockLive:QuarterViewConverter x:Key="QuarterViewConverter" />
         
         <Style x:Key="ExternalButtonStyle">
             <Setter Property="Control.Opacity" Value="0.2" />

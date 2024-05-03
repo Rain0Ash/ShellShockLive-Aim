@@ -2,12 +2,14 @@
 // PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
 
 using System;
+using System.Collections.Immutable;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
 using NetExtender.Types.Exceptions;
 using NetExtender.Types.Transactions.Interfaces;
 using NetExtender.Utilities.Types;
+using NetExtender.Utilities.UserInterface;
 using NetExtender.Utilities.Windows.IO;
 using ShellShockLive.Models.Physics.Guidances;
 using ShellShockLive.Utilities.ViewModels.History;
@@ -35,10 +37,20 @@ namespace ShellShockLive
         }
 
         public ShellShockLiveWindow()
+            : this(ImmutableArray<String>.Empty)
+        {
+        }
+
+        public ShellShockLiveWindow(ImmutableArray<String> arguments)
         {
             Model = new ShellShockLiveModel();
             RenderViewModel.Instance.Start(this);
             InitializeComponent();
+        }
+        
+        private void Initialize(Object? sender, EventArgs args)
+        {
+            this.SetWindowDisplayAffinity(WindowDisplayAffinity.ExcludeFromCapture);
         }
 
         protected override void RegisterHotKeys(Object? sender, RoutedEventArgs args)

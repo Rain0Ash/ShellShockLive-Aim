@@ -5,6 +5,7 @@ using System;
 using System.Collections;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
+using NetExtender.Types.Transactions;
 using ShellShockLive.Models.Physics;
 using ShellShockLive.Models.Physics.Guidances;
 using ShellShockLive.Models.Sight.Interfaces;
@@ -131,26 +132,36 @@ namespace ShellShockLive.ViewModels.History
         {
             private HistoryManager Manager { get; }
             private HistoryEntry Entry { get; }
-            public Boolean Successful { get; private set; } = true;
-            
+            public Boolean? IsCommit { get; private set; } = true;
+
+            public TransactionCommitPolicy Policy
+            {
+                get
+                {
+                    return TransactionCommitPolicy.Required;
+                }
+            }
+
             public HistoryTransaction(HistoryManager manager)
             {
                 Manager = manager ?? throw new ArgumentNullException(nameof(manager));
                 Entry = manager.Past.Snapshot;
             }
 
-            public void Commit()
+            public Boolean Commit()
             {
+                return true;
             }
 
-            public void Rollback()
+            public Boolean Rollback()
             {
-                Successful = false;
+                IsCommit = false;
+                return true;
             }
 
             public void Dispose()
             {
-                if (!Successful)
+                if (IsCommit != true)
                 {
                     return;
                 }

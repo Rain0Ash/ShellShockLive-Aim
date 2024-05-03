@@ -11,6 +11,7 @@ using System.Windows.Input;
 using NetExtender.Types.HotKeys;
 using NetExtender.Types.HotKeys.Comparer;
 using NetExtender.Types.HotKeys.Comparer.Interfaces;
+using NetExtender.Types.Transactions;
 using NetExtender.Types.Transactions.Interfaces;
 using NetExtender.Utilities.Types;
 using ShellShockLive.Utilities.ViewModels.History;
@@ -111,9 +112,7 @@ namespace ShellShockLive.ViewModels.Events
             }
 
             using ITransaction? transaction = command.Transaction();
-            Boolean result = await command.Invoke(hotkey).ConfigureAwait(false);
-            
-            if (result)
+            if (await command.Invoke(hotkey).ConfigureAwait(false))
             {
                 return true;
             }
@@ -369,21 +368,31 @@ namespace ShellShockLive.ViewModels.Events
 
             private sealed class RenderTransaction : ITransaction
             {
-                public Boolean Successful { get; private set; } = true;
-                
-                public void Commit()
+                public Boolean? IsCommit { get; private set; } = true;
+
+                public TransactionCommitPolicy Policy
                 {
-                    Successful = true;
+                    get
+                    {
+                        return TransactionCommitPolicy.Manual;
+                    }
                 }
 
-                public void Rollback()
+                public Boolean Commit()
                 {
-                    Successful = false;
+                    IsCommit = true;
+                    return true;
+                }
+
+                public Boolean Rollback()
+                {
+                    IsCommit = false;
+                    return true;
                 }
 
                 public void Dispose()
                 {
-                    if (Successful)
+                    if (IsCommit == true)
                     {
                         RenderViewModel.Instance.Render();
                     }

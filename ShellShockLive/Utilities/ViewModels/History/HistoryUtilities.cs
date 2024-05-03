@@ -2,6 +2,7 @@
 // PVS-Studio Static Code Analyzer for C, C++, C#, and Java: http://www.viva64.com
 
 using System;
+using NetExtender.Types.Transactions;
 using NetExtender.Types.Transactions.Interfaces;
 using ShellShockLive.ViewModels.History.Interfaces;
 using ShellShockLive.ViewModels.Render;
@@ -25,6 +26,22 @@ namespace ShellShockLive.Utilities.ViewModels.History
             public RenderViewModel Model { get; }
             public IHistoryTransaction History { get; }
 
+            public Boolean? IsCommit
+            {
+                get
+                {
+                    return History.IsCommit;
+                }
+            }
+
+            public TransactionCommitPolicy Policy
+            {
+                get
+                {
+                    return History.Policy;
+                }
+            }
+
             public RenderHistoryTransaction(IHistoryTransaction history)
                 : this(RenderViewModel.Instance, history)
             {
@@ -36,21 +53,21 @@ namespace ShellShockLive.Utilities.ViewModels.History
                 History = history ?? throw new ArgumentNullException(nameof(history));
             }
 
-            public void Commit()
+            public Boolean Commit()
             {
-                History.Commit();
+                return History.Commit();
             }
 
-            public void Rollback()
+            public Boolean Rollback()
             {
-                History.Rollback();
+                return History.Rollback();
             }
 
             public void Dispose()
             {
                 History.Dispose();
 
-                if (History.Successful)
+                if (History.IsCommit == true)
                 {
                     Model.Render();
                 }

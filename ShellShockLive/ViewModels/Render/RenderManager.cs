@@ -32,8 +32,8 @@ namespace ShellShockLive.ViewModels.Render
             }
         }
         
-        public SightViewModel Sight { get; }
-        public EnvironmentViewModel Environment { get; }
+        public SightViewModel Sight { get; } = new SightViewModel();
+        public EnvironmentViewModel Environment { get; } = new EnvironmentViewModel();
 
         public Boolean IsRender
         {
@@ -41,12 +41,6 @@ namespace ShellShockLive.ViewModels.Render
             {
                 return ShellShockLive.Settings.Instance.Interface.Value.HasFlag(InterfaceType.Render);
             }
-        }
-
-        public RenderManager()
-        {
-            Sight = new SightViewModel();
-            Environment = new EnvironmentViewModel();
         }
 
         public void Start(RenderView view)
@@ -72,6 +66,11 @@ namespace ShellShockLive.ViewModels.Render
 
         public void NextFrame(Graphics graphics)
         {
+            if (graphics is null)
+            {
+                throw new ArgumentNullException(nameof(graphics));
+            }
+
             if (!IsRender)
             {
                 return;

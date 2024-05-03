@@ -91,7 +91,7 @@ namespace ShellShockLive.Models.Physics.Guidances
             {
                 Type[] enumerators = AppDomain.CurrentDomain.GetTypes().Where(type => type.IsValueType).Where(type => type.IsAssignableFrom<IGuidanceUnsafeEnumerator>()).ToArray();
 
-                if (enumerators.FirstOrDefault(type => !type.IsLayoutSequential || type.GetSize() > Maximum) is not Type enumerator)
+                if (enumerators.FirstOrDefault(type => !type.IsLayoutSequential || type.GetSize() > Maximum) is not { } enumerator)
                 {
                     return;
                 }
@@ -100,7 +100,7 @@ namespace ShellShockLive.Models.Physics.Guidances
                 
                 if (!enumerator.IsLayoutSequential)
                 {
-                    message.Append($" It must be {nameof(Type.IsLayoutSequential)}.");
+                    message.Append($" It must be {nameof(System.Type.IsLayoutSequential)}.");
                 }
 
                 if (enumerator.GetSize() > Maximum)
@@ -112,6 +112,26 @@ namespace ShellShockLive.Models.Physics.Guidances
             }
 
             private fixed Byte Internal[Maximum];
+
+            public Type Type
+            {
+                get
+                {
+                    fixed (void* pointer = Internal)
+                    {
+                        return _type(pointer);
+                    }
+                }
+            }
+
+            public Int32 Length
+            {
+                get
+                {
+                    return sizeof(Enumerator);
+                }
+            }
+            
             public Int32 Size { get; }
 
             public readonly TrajectoryPoint Current
@@ -141,13 +161,14 @@ namespace ShellShockLive.Models.Physics.Guidances
                     return Size <= 0;
                 }
             }
-            
+
+            private readonly delegate*<void*, Type> _type;
             private readonly delegate*<void*, TrajectoryPoint> _current;
             private readonly delegate*<void*, Boolean> _next;
             private readonly delegate*<void*, void> _reset;
             private readonly delegate*<void*, void> _dispose;
 
-            public Enumerator(Span<Byte> value, delegate*<void*, TrajectoryPoint> current, delegate*<void*, Boolean> next, delegate*<void*, void> reset, delegate*<void*, void> dispose)
+            public Enumerator(Span<Byte> value, delegate*<void*, Type> type, delegate*<void*, TrajectoryPoint> current, delegate*<void*, Boolean> next, delegate*<void*, void> reset, delegate*<void*, void> dispose)
             {
                 if (value.Length > Maximum)
                 {
@@ -160,6 +181,7 @@ namespace ShellShockLive.Models.Physics.Guidances
                     UnsafeUtilities.CopyBlock(destination, source, Size = value.Length);
                 }
 
+                _type = type;
                 _current = current;
                 _next = next;
                 _reset = reset;
@@ -203,6 +225,15 @@ namespace ShellShockLive.Models.Physics.Guidances
             readonly IEnumerator IEnumerable.GetEnumerator()
             {
                 return ((IEnumerable<TrajectoryPoint>) this).GetEnumerator();
+            }
+            
+            [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+            public ref Byte GetPinnableReference()
+            {
+                fixed (Byte* pointer = this)
+                {
+                    return ref *pointer;
+                }
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]

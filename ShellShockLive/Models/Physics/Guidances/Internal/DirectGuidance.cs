@@ -89,7 +89,23 @@ namespace ShellShockLive.Models.Physics.Guidances.Internal
                 fixed (void* pointer = &value)
                 {
                     Span<Byte> span = new Span<Byte>(pointer, sizeof(Enumerator));
-                    return new Guidance.Enumerator(span, &AsCurrent, &MoveNext, &Reset, &Dispose);
+                    return new Guidance.Enumerator(span, &GetType, &AsCurrent, &MoveNext, &Reset, &Dispose);
+                }
+            }
+
+            public Type Type
+            {
+                get
+                {
+                    return typeof(Enumerator);
+                }
+            }
+            
+            public unsafe Int32 Length
+            {
+                get
+                {
+                    return sizeof(Enumerator);
                 }
             }
             
@@ -98,6 +114,14 @@ namespace ShellShockLive.Models.Physics.Guidances.Internal
                 get
                 {
                     return sizeof(Enumerator);
+                }
+            }
+            
+            public readonly Boolean IsEmpty
+            {
+                get
+                {
+                    return Shell.Weapon != default;
                 }
             }
 
@@ -174,6 +198,12 @@ namespace ShellShockLive.Models.Physics.Guidances.Internal
                 Int32 right = Physics.Resolution.Right;
                 Int32 bottom = Physics.Resolution.Height - Physics.Binding.Size.Height + Physics.Binding.Bounds.Bottom;
                 Bounds = Rectangle.FromLTRB(left, top, right, bottom);
+            }
+            
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            private static unsafe Type GetType(void* self)
+            {
+                return UnsafeUtilities.AsRef<Enumerator>(self).Type;
             }
             
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -262,6 +292,15 @@ namespace ShellShockLive.Models.Physics.Guidances.Internal
             IEnumerator IEnumerable.GetEnumerator()
             {
                 return GetEnumerator();
+            }
+            
+            [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
+            public unsafe ref Byte GetPinnableReference()
+            {
+                fixed (Byte* pointer = this)
+                {
+                    return ref *pointer;
+                }
             }
             
             public void Dispose()

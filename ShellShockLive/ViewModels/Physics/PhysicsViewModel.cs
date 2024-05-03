@@ -9,15 +9,16 @@ using NetExtender.WindowsPresentation.ReactiveUI.Types.Models;
 using ReactiveUI;
 using ReactiveUI.Fody.Helpers;
 using ShellShockLive.Models.Physics;
+using ShellShockLive.Models.Physics.Bindings;
 using ShellShockLive.Models.Physics.Bindings.Interfaces;
-using ShellShockLive.Models.Physics.Bindings.Internal;
+using ShellShockLive.ViewModels.Settings;
 
 namespace ShellShockLive.ViewModels.Physics
 {
     public class PhysicsViewModel : ReactiveViewModelSingleton<PhysicsViewModel>
     {
         [Reactive]
-        public IPhysicsBinding Binding { get; set; } = PhysicsBinding1366x768.Instance;
+        public IPhysicsBinding Binding { get; set; } = (PhysicsBinding) SettingsViewModel.Settings.Physics.Value;
 
         private Int16 _angle;
         public Int16 Angle
